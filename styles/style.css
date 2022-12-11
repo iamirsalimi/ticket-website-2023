@@ -1,0 +1,345 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    height:100vh;
+}
+
+.header{
+    position:relative;
+}
+
+.header-up{
+    position:absolute;
+    width:100%;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    background:none;
+    width:100%;
+    position:fixed;
+    align-items:center;
+    height:auto;
+    background:none;
+    appearance: none;
+    padding:15px 40px;
+    transition: 0.15s ease-out; 
+    z-index: 26;
+}
+
+nav.scrolling{
+    background:#fff;
+}
+
+.left-nav .nav-title{
+    font-family:'arial',sans;
+    color:#fff;
+    font-size:2rem;
+    transition:font-size 0.15s ease-out;
+}
+
+.scrolling .left-nav .nav-title{
+    color:rgb(0,0,0) !important;
+    font-size:1.5rem;
+}
+
+.left-nav .nav-title span{
+    color:#fff;
+    font-weight:800;
+    background-color:#dff212;
+    padding:0 2.5px;
+    margin-left:5px;
+    border-radius:2px;
+}
+
+.center-nav{
+    display:none;
+}
+
+.center-nav ul{
+    list-style: none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:2.5rem;
+    margin-left:1rem;
+}
+
+.center-nav ul .list-item a{
+    position:relative;
+    color:#fff;
+    text-transform:uppercase;
+    text-decoration: none;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.scrolling .center-nav ul .list-item a{
+    color:#432C7A;
+}
+
+.center-nav ul .list-item a::after{
+    content:'';
+    width:0%;
+    position:absolute;
+    height:2px;
+    border-radius: 5px;
+    background-color:#fff;
+    left:-2px;
+    bottom:-2px;
+    transition:width 0.125s ease-out;
+}
+
+.scrolling .center-nav ul .list-item a::after{
+    background-color:#432C7A !important;
+}
+
+.center-nav ul .list-item:hover a::after{
+    width:110%;
+}
+
+.right-nav{
+    display:none;
+    justify-content:space-between;
+    align-items:center;
+    gap:1rem;
+}
+
+.right-nav a{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border:none;
+    text-transform:uppercase;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight:600;
+}
+
+.right-nav .register-btn{
+    padding:10px 20px;
+    background-color:#fff;
+    color:#330c71;
+    transition:0.15s ease-out;
+    transform:scale(1);
+}
+
+.scrolling .right-nav .register-btn{
+    background-color:#330c71;
+    color:#E5B8F4;
+    transform:scale(0.85);
+}
+
+.scrolling .right-nav .register-btn:hover{
+    background-color:#632eba;
+}
+
+.right-nav .register-btn:hover{
+    color:#fff;
+    background-color:#330c71;
+}
+
+.right-nav .login-btn{
+    color:#fff;
+    transition:0.15s ease-out;
+    transform:scale(1);
+}
+
+.scrolling .right-nav .login-btn{
+    color:#330c71;
+    transform:scale(0.95);
+}
+
+.right-nav .login-btn:hover{
+    color:#8e12d6;
+    letter-spacing: 1px;
+}
+
+.hamburger-menu{
+    width:45px;
+    height:35px;
+    border:none;
+    background:none;
+    position:relative;
+    z-index:26;
+    cursor:pointer;
+    transform:rotate(0);
+    transition:0.15s ease-out;
+}
+
+.hamburger-menu .hamburger-top,
+.hamburger-menu .hamburger-middle,
+.hamburger-menu .hamburger-bottom{
+    width:100%;
+    height:2.5px;
+    background:#fff;
+    border-radius:5px;
+    position:absolute;
+    top:10px;
+    left:0;
+    opacity:1;
+    transition:0.25s ease-out;
+}
+
+.hamburger-middle{
+    transform:translateY(10px);
+}
+
+.hamburger-bottom{
+    transform:translateY(20px);
+}
+
+.hamburger-menu.open {
+    transform:rotate(90deg);
+}
+
+.open .hamburger-middle{
+    opacity:0;
+    background:#632eba ;
+}
+
+.open .hamburger-top{
+    transform:translateY(10px) rotate(45deg);
+    background:#632eba ;
+}
+
+.open .hamburger-bottom{
+    transform:translateY(10px) rotate(-45deg);
+    background:#632eba ;
+}
+
+.scrolling .hamburger-top,
+.scrolling .hamburger-middle,
+.scrolling .hamburger-bottom {
+    background:#2D033B ;
+    width:35px;
+}
+
+
+.header-up .menu{
+    width:100%;
+    z-index: 23;
+    list-style:none;
+    position:fixed;
+    top:-100%;
+    padding:85px 40px;
+    gap:1.5rem;
+    text-align: right;
+    height:fit-content;
+    background:rgba(255, 255, 255, 0.916);
+    /* opacity:0.8; */
+    display:flex;
+    flex-direction:column;
+}
+
+.menu.open{
+    animation:drop 0.2s ease-out forwards;
+}
+
+.header-up .menu .menu-item a{
+    text-decoration: none;
+    color:#fff;
+    text-transform: uppercase;
+    font-family:Arial, Helvetica, sans-serif;
+    display: inline-block;
+    font-weight:600;
+    transform:translate(0);
+}
+.header-up .menu .menu-item{
+    background:#632eba;
+    cursor:pointer;
+    border-radius:50px;
+    width:100%;
+    padding:5px 10px;
+    transition:0.125s ease-out;
+}
+.header-up .menu .menu-item:hover{
+    transform:translateX(-10px)
+}
+
+/* header down  */
+
+.header-bg{
+    height:100vh;
+    background-image: url('/ticket\ website/images/pexels-edoardo-tommasini-2034851.jpg');
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    overflow:hidden;
+    position:relative;
+    filter:brightness(40%);
+}
+
+.header-down {
+    height:25rem;
+    position:absolute;
+    top:60%;
+    transform:translateY(-50%);
+    font-size:1.5rem;
+    pointer-events: none;
+    left:8%;
+}
+
+.header-down .header-down-title {
+    color:#fff;
+    text-transform:uppercase;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.header-down .type{
+    display:block;
+    color:#b1b1b1;
+    width:fit-content;
+    text-transform:uppercase;
+    font-size:1.5rem;
+    border-right:1px solid #fff;
+    padding-right: 5px ; 
+}
+
+
+/* media and animation */
+@keyframes drop{
+    to{top:0;}
+}
+
+.box{
+    height:100vh;
+}
+
+
+@media (min-width:720px) {
+    .header-down{
+        font-size:2.25rem;
+        left:10%
+    }
+
+    .type{
+        font-size:2rem;
+        padding: 0 5px;
+    }
+}
+
+@media (min-width:900px) {
+    .right-nav{
+        display:flex;
+    }
+    .center-nav{
+        display:block;
+    }
+    .hamburger-menu{
+        display:none;
+    }
+    .menu{
+        display:none;
+    }
+    .header-down{
+        font-size:3rem;
+    }
+    .type{
+        font-size:4rem;
+    }
+}
