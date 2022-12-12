@@ -5,6 +5,8 @@ let navbar = $.querySelector('nav')
 let hamburger = $.querySelector('.hamburger-menu')
 let menu = $.querySelector('.menu')
 let logo = $.querySelector('.left-nav .nav-title')
+let headerSectionImg = $.querySelector('.header-bg')
+
 
 
 // changing navbar style onscroll 
@@ -43,7 +45,7 @@ TypeWriter.prototype.type = function(){
 
     this.textElement.innerHTML = `<span class="text">${this.text}</span>`
 
-    let typeSpeed = 150
+    let typeSpeed = 100
     
     if(!this.isDeleting && this.text === fullTxt){
         typeSpeed = this.wait
@@ -51,7 +53,7 @@ TypeWriter.prototype.type = function(){
     } else if(this.isDeleting && this.text === ''){
         this.isDeleting = false
         this.wordIndex++
-        typeSpeed = 300
+        typeSpeed = 200
     } 
 
     setTimeout(() => this.type() , typeSpeed)
@@ -75,14 +77,25 @@ function showMenu(){
     
     if(hamburger.className.includes('open')){
         setTimeout(function(){
-            logo.style.color = '#632eba'
+            logo.style.color = '#380091'
         } , 150)
+        headerSectionImg.style.filter = 'brightness(10%)'; 
     } else {
         logo.style.color = '#fff'
+        headerSectionImg.style.filter = 'brightness(40%)'; 
     }
     
 }
 
+function hideMenu(event){
+    if(event.target.nodeName == "DIV"){
+        logo.style.color = '#fff'
+        hamburger.classList.remove('open')
+        menu.classList.remove('open')
+        headerSectionImg.style.filter = 'brightness(40%)'; 
+    }
+}
+
 window.addEventListener('DOMContentLoaded', init)
-hamburger.addEventListener('touch',showMenu)
 hamburger.addEventListener('click',showMenu)
+document.body.addEventListener('click',hideMenu)

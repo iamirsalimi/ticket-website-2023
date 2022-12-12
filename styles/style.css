@@ -53,7 +53,7 @@ nav.scrolling{
 .left-nav .nav-title span{
     color:#fff;
     font-weight:800;
-    background-color:#dff212;
+    background-color:#eaff00;
     padding:0 2.5px;
     margin-left:5px;
     border-radius:2px;
@@ -76,6 +76,8 @@ nav.scrolling{
     position:relative;
     color:#fff;
     text-transform:uppercase;
+    font-weight:500;
+    font-size:1.25rem;
     text-decoration: none;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -159,6 +161,8 @@ nav.scrolling{
     letter-spacing: 1px;
 }
 
+/* hamburger menu and menu */
+
 .hamburger-menu{
     width:45px;
     height:35px;
@@ -216,7 +220,6 @@ nav.scrolling{
 .scrolling .hamburger-middle,
 .scrolling .hamburger-bottom {
     background:#2D033B ;
-    width:35px;
 }
 
 
@@ -231,7 +234,7 @@ nav.scrolling{
     text-align: right;
     height:fit-content;
     background:rgba(255, 255, 255, 0.916);
-    /* opacity:0.8; */
+
     display:flex;
     flex-direction:column;
 }
@@ -249,8 +252,9 @@ nav.scrolling{
     font-weight:600;
     transform:translate(0);
 }
+
 .header-up .menu .menu-item{
-    background:#632eba;
+    background:#380091;
     cursor:pointer;
     border-radius:50px;
     width:100%;
@@ -285,21 +289,23 @@ nav.scrolling{
 }
 
 .header-down .header-down-title {
-    color:#fff;
+    color:#fcfa52;
     text-transform:uppercase;
     font-family:Arial, Helvetica, sans-serif;
 }
 
 .header-down .type{
     display:block;
-    color:#b1b1b1;
+    color:#ffffff;
     width:fit-content;
     text-transform:uppercase;
-    font-size:1.5rem;
-    border-right:1px solid #fff;
-    padding-right: 5px ; 
+    font-size:1.25rem;
+    padding-right: 2px ; 
 }
 
+.type .text{
+    border-right:2px solid rgb(255, 255, 255);
+}
 
 /* media and animation */
 @keyframes drop{
@@ -317,7 +323,7 @@ nav.scrolling{
         left:10%
     }
 
-    .type{
+    .header-down .type{
         font-size:2rem;
         padding: 0 5px;
     }
@@ -339,7 +345,7 @@ nav.scrolling{
     .header-down{
         font-size:3rem;
     }
-    .type{
-        font-size:4rem;
+    .header-down .type{
+        font-size:3rem;
     }
 }
