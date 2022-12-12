@@ -6,10 +6,12 @@ let hamburger = $.querySelector('.hamburger-menu')
 let menu = $.querySelector('.menu')
 let logo = $.querySelector('.left-nav .nav-title')
 let headerSectionImg = $.querySelector('.header-bg')
-
-
+let goToUpBtn = $.querySelector('.goToUp-btn')
+let eventNumbers = $.querySelectorAll('.number')
+let maxNumber1 , maxNumber2 , maxNumber3 , currentNumber1 , currentNumber2 , currentNumber3 ,isCounterSet = false 
 
 // changing navbar style onscroll 
+
 window.onscroll = function() {
     if(document.documentElement.scrollTop > 0){
         navbar.classList.add('scrolling')
@@ -17,6 +19,16 @@ window.onscroll = function() {
     } else {
         navbar.classList.remove('scrolling')
         navbar.style.padding = '10px 40px'
+    }
+
+    if(document.documentElement.scrollTop > 150){
+        goToUpBtn.classList.add('show-btn')
+    } else {
+        goToUpBtn.classList.remove('show-btn')
+    }
+
+    if(document.documentElement.scrollTop > 530 && !isCounterSet){
+        count()
     }
 }
 
@@ -96,6 +108,35 @@ function hideMenu(event){
     }
 }
 
+// counter up
+
+
+function count(){
+    isCounterSet = true
+    eventNumbers.forEach(function(eventNumber){
+        eventNumber.innerHTML = 0
+        const updateCounter = () =>{
+            const target = +eventNumber.getAttribute('data-number')
+            const c = +eventNumber.innerText
+            const increment = target / 200
+            if(c < target){
+                eventNumber.innerText = `${Math.ceil(c + increment)}`
+                setTimeout(updateCounter,1)
+            } else {
+                eventNumber.innerText = target
+    
+            }
+        }
+        updateCounter();
+    })
+}
+
+// go to up btn 
+function goToUpHandler(){
+    scrollTo(0,0)
+}
+
+goToUpBtn.onclick = goToUpHandler
 window.addEventListener('DOMContentLoaded', init)
 hamburger.addEventListener('click',showMenu)
 document.body.addEventListener('click',hideMenu)

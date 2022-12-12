@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <div class="header" aria-hidden="true">
+    <div class="header" id="home">
         <!-- navigation and menu -->
         <div class="header-up">
             <nav>
@@ -19,16 +19,16 @@
                 <div class="center-nav">
                     <ul>
                         <li class="list-item">
-                            <a href="#">home</a>
+                            <a href="#home">home</a>
                         </li>
                         <li class="list-item">
-                            <a href="#">services</a>
+                            <a href="#services">services</a>
                         </li>
                         <li class="list-item">
-                            <a href="#">events</a>
+                            <a href="#events">events</a>
                         </li>
                         <li class="list-item">
-                            <a href="#">about us</a>
+                            <a href="#about-us">about us</a>
                         </li>
                     </ul>
                 </div>
@@ -69,16 +69,49 @@
             </h1>       
         </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <button class="goToUp-btn"></button>
-    <div class="box"></div>
+
+    <button class="goToUp-btn">
+        <img src="images/icons8-up-arrow-50.png">
+    </button>
+
+    <section class="services" id="services">
+
+        <div class="services-img">
+            <img src="images/21081.jpg">
+        </div>
+        <div class="services-content">
+            <div class="services-title">
+                <h2>our Services</h2>
+            </div>
+            <p class="sevices-desc">It is an online platform showcase events, traveling and both indoor & outdoor experiences. outinz want bring fun by allowing people to share where they go, where they want to go and get people opinion on this locations by getting likes. Events organiser can start an event here and share their details on how people could access this events.</p>
+        </div>
+    </section>
+
+    <section class="showDetails-section">
+        <div class="showDetails-bg"></div>
+        <div class="details">
+            <div class="detail">
+                <span class="number" data-number="47">0</span>
+                <span class="detail-title">Customers</span>
+            </div>
+            
+            <div class="detail">
+                <span class="number" data-number="223">0</span>
+                <span class="detail-title">Tickets</span>
+            </div>
+            
+            <div class="detail">
+                <span class="number" data-number="555">0</span>
+                <span class="detail-title">happyCustomers</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="events-section">
+        <div class="cards">
+            
+        </div>
+    </section>
 
     <script src="js/main.js"></script>
 </body>
