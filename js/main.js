@@ -9,8 +9,49 @@ let headerSectionImg = $.querySelector('.header-bg')
 let goToUpBtn = $.querySelector('.goToUp-btn')
 let eventNumbers = $.querySelectorAll('.number')
 let maxNumber1 , maxNumber2 , maxNumber3 , currentNumber1 , currentNumber2 , currentNumber3 ,isCounterSet = false 
+let cards = $.querySelector('.cards')
+let sliderPrevBtn = $.querySelector('.prev')
+let sliderNextBtn = $.querySelector('.next')
+let slideCount = 0
+let remainCards = $.querySelectorAll('.card').length
+let currentLoc
 
 // changing navbar style onscroll 
+window.onload = function(){
+    if(document.documentElement.scrollTop > 0){
+        navbar.classList.add('scrolling')
+        navbar.style.padding = '5px 40px'
+    } else {
+        navbar.classList.remove('scrolling')
+        navbar.style.padding = '10px 40px'
+    }
+    if(document.documentElement.scrollTop > 150){
+        goToUpBtn.classList.add('show-btn')
+    } else {
+        goToUpBtn.classList.remove('show-btn')
+    }
+    if(document.documentElement.scrollTop > 530 && !isCounterSet){
+        count()
+    }
+
+    if(slideCount === 0){
+        sliderPrevBtn.disabled = true
+    } else if(cards.style.transform === 'translateX(1880px)'){
+        sliderNextBtn.disabled = true
+    }
+    
+    if(remainCards <= 3){
+        sliderPrevBtn.disabled = true
+        sliderNextBtn.disabled = true
+        currentLoc = 0
+    } else if(remainCards <= 5){
+        currentLoc = 470
+    } else if(remainCards <= 7){
+        currentLoc = 920
+    }
+
+    cards.style.transform = `translateX(${currentLoc}px)`
+}
 
 window.onscroll = function() {
     if(document.documentElement.scrollTop > 0){
@@ -136,6 +177,40 @@ function goToUpHandler(){
     scrollTo(0,0)
 }
 
+// slider
+
+function nextCardHandler(){
+    slideCount++
+    sliderNextBtn.style.right = '0'
+
+    if(sliderPrevBtn.disabled){
+        sliderPrevBtn.disabled = false
+    }
+
+    cards.style.transform = `translateX(${ currentLoc - (slideCount * 470)}px)`
+    
+    if(slideCount === remainCards-3){
+        sliderNextBtn.disabled = true
+    }
+}
+
+function prevCardHandler(){
+    slideCount--
+    
+    if(sliderNextBtn.disabled){
+        sliderNextBtn.disabled = false
+    }
+    
+    cards.style.transform = `translateX(${ currentLoc - (slideCount * 470)}px)`
+
+    if(slideCount === 0){
+        sliderPrevBtn.disabled = true
+    }
+}
+
+// events
+sliderNextBtn.addEventListener('click',nextCardHandler)
+sliderPrevBtn.addEventListener('click',prevCardHandler)
 goToUpBtn.onclick = goToUpHandler
 window.addEventListener('DOMContentLoaded', init)
 hamburger.addEventListener('click',showMenu)
