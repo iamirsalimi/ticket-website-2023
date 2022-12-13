@@ -13,10 +13,11 @@ let cards = $.querySelector('.cards')
 let sliderPrevBtn = $.querySelector('.prev')
 let sliderNextBtn = $.querySelector('.next')
 let slideCount = 0
-let remainCards = $.querySelectorAll('.card').length
-let currentLoc
+let card = $.querySelectorAll('.card')
+let remainCards = card.length
+let currentLoc , showCards , nextSlideWidth 
 
-// changing navbar style onscroll 
+// changing navbar style onscroll and load
 window.onload = function(){
     if(document.documentElement.scrollTop > 0){
         navbar.classList.add('scrolling')
@@ -44,12 +45,32 @@ window.onload = function(){
         sliderPrevBtn.disabled = true
         sliderNextBtn.disabled = true
         currentLoc = 0
-    } else if(remainCards <= 5){
-        currentLoc = 470
-    } else if(remainCards <= 7){
-        currentLoc = 920
+    } else if(remainCards >= 4){
+        if(screen.width < 720){
+            showCards = 1
+            currentLoc = 620
+            nextSlideWidth = 420
+        } else if(screen.width < 900){
+            showCards = 2
+            currentLoc = 350
+            nextSlideWidth = 350
+        } else if(screen.width< 1100){
+            showCards = 2
+            currentLoc = 470
+            nextSlideWidth = 470
+        } else if(screen.width< 1350){
+            showCards = 3
+            currentLoc = 175
+            nextSlideWidth = 300
+        } else {
+            showCards = 3
+            currentLoc = 235
+            nextSlideWidth = 470
+        }
     }
-
+    
+    
+    
     cards.style.transform = `translateX(${currentLoc}px)`
 }
 
@@ -187,9 +208,9 @@ function nextCardHandler(){
         sliderPrevBtn.disabled = false
     }
 
-    cards.style.transform = `translateX(${ currentLoc - (slideCount * 470)}px)`
+    cards.style.transform = `translateX(${ currentLoc - (slideCount * nextSlideWidth)}px)`
     
-    if(slideCount === remainCards-3){
+    if(slideCount === remainCards - showCards){
         sliderNextBtn.disabled = true
     }
 }
@@ -201,7 +222,7 @@ function prevCardHandler(){
         sliderNextBtn.disabled = false
     }
     
-    cards.style.transform = `translateX(${ currentLoc - (slideCount * 470)}px)`
+    cards.style.transform = `translateX(${ currentLoc - (slideCount * nextSlideWidth)}px)`
 
     if(slideCount === 0){
         sliderPrevBtn.disabled = true

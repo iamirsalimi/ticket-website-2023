@@ -280,7 +280,7 @@ nav.scrolling{
 
 .header-bg{
     height:100vh;
-    background-image: url('/ticket\ website/images/pexels-edoardo-tommasini-2034851.jpg');
+    background-image: url(/ticketwebsite/images/pexels-edoardo-tommasini-2034851.jpg);
     background-position:center;
     background-repeat:no-repeat;
     background-size:cover;
@@ -470,7 +470,7 @@ nav.scrolling{
 /* Events sections */
 .events-section{
     height:60px;
-    width:calc(100% - 80px);
+    width:100%;
     margin:280px auto 0;
     padding:15px 25px;
     position:relative;
@@ -482,7 +482,6 @@ nav.scrolling{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:5px 40px;
 }
 
 .events-section .events-header .title{
@@ -570,52 +569,112 @@ nav.scrolling{
 }
 
 .cards-container .card{
-    width:400px;
+    width:350px;
     height:450px;
     display:flex;
     flex-direction:column;
     justify-content:flex-start;
-    align-items:center;
-    background:#fff;
+    gap:10px;
     border-radius:22px;
-    position:relative;
-    overflow:hidden;
+    background:#b59edb;
+    padding:10px 15px;
+    transition: 0.2s ease-out;
     cursor:pointer;
-    /* transition:0.125s ease-out; */
+    box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.2)
 }
 
 .cards-container .card .img{
     width:100%;  
-    background-size: cover;
-    background-position: center;
-    height:100%;
+    height:55%;
     border-radius:12px;
     overflow:hidden;
-    border-radius:22px;
-    position:absolute;
 }
 
 .cards-container .card .img img{
-    width:180%;
+    width:100%;
     height:100%;
-    position:relative;
-    left:-175px;
 }
 
-.cards-container .card .title{
-    position:absolute;
-    text-align:center;
-    line-height:120px;
-    font-size:1.5rem;
-    z-index: 2;
+
+.cards-container .cards .card-content .card-title{
     color:#1d004b;
-    background:rgb(255, 66, 239);
-    width:100px;
-    height:100px;
-    border-radius:0 0 50% 50%;
-    top:-40px;
+    text-transform:uppercase;
+    font-family:'Anton', sans-serif;
+    letter-spacing: 2px;;
+    font-size:1.7rem;
 }
-/* 
+
+
+.cards-container .cards .card-content .card-desc{
+    font-family:'Fredoka One', cursive;
+    color:#29006ac0;
+    margin-top:10px;
+    font-size:1rem;
+}
+
+.cards-container .cards .tickets-number{
+    border:2px dashed #451390;
+    background:#7644c7;
+    border-radius:12px;
+    padding:10px;
+    text-align:center;
+}
+
+.cards-container .cards .tickets-number span{
+    font-family:'Fredoka One', cursive;
+    color:#18003d;
+    margin-top:10px;
+    font-size:1.5rem;
+}
+
+.cards-container .card:hover{
+    transform:scale(1.05);
+}
+
+/* .cards-container .card .img{
+    width:100%;  
+    height:60%;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.cards-container .card .img img{
+    width:100%;
+    height:100%;
+}
+
+
+.cards-container .cards .card-content .card-title{
+    color:#1d004b;
+    text-transform:uppercase;
+    font-family:'Anton', sans-serif;
+    letter-spacing: 2px;;
+    font-size:2rem;
+}
+
+
+.cards-container .cards .card-content .card-desc{
+    font-family:'Fredoka One', cursive;
+    color:#29006ac0;
+    margin-top:10px;
+    font-size:1rem;
+}
+
+.cards-container .cards .tickets-number{
+    border:2px dashed #451390;
+    background:#7644c7;
+    border-radius:12px;
+    padding:10px;
+    text-align:center;
+}
+
+.cards-container .cards .tickets-number span{
+    font-family:'Fredoka One', cursive;
+    color:#18003d;
+    margin-top:10px;
+    font-size:1.5rem;
+}
+
 .cards-container .card:hover{
     transform:scale(1.05);
 } */
@@ -633,7 +692,7 @@ nav.scrolling{
 }
 
 
-/* media and animation */
+/*animations */
 
 @keyframes showBtn{
     from{left:-50px ;}
@@ -643,6 +702,8 @@ nav.scrolling{
 @keyframes drop{
     to{top:0;}
 }
+
+/* medias */
 
 
 @media (min-width:720px) {
@@ -662,21 +723,28 @@ nav.scrolling{
         font-size:2rem;
         padding: 0 5px;
     }
-
+    
     .services .services-img img{
         top:-80px;
     }
-
+    
     .details .detail .detail-title{
         font-size:1.5rem;
     }
-  
+    
     .details .detail .number{
         font-size:1.5rem;
         padding:8px 0;
     }
     .showDetails-bg{
         height:200px;
+    }
+    .cards-container .cards .card{
+        width:300px;
+        height:450px;
+    }
+    .cards-container .cards{
+        gap:50px;
     }
 }
 
@@ -711,11 +779,11 @@ nav.scrolling{
         height:300px;
         width:40%;
     }
-
+    
     .services .services-img img{
         top:0;
     }
-
+    
     .services .services-content{
         width:40%;
         padding-top:20px;
@@ -730,12 +798,19 @@ nav.scrolling{
     .details .detail .detail-title{
         font-size:1.75rem;
     }
-  
+    
     .details .detail .number{
         font-size:2rem;
     }
     .showDetails-bg{
         height:200px;
+    }
+    .cards-container .cards .card{
+        width:400px;
+        height:450px;
+    }
+    .cards-container .cards{
+        gap:70px;
     }
 }
 
@@ -794,8 +869,85 @@ nav.scrolling{
     .details .detail .number{
         font-size:2rem;
     }
-
+    
     .showDetails-bg{
         height:200px;
+    }
+    .cards-container .cards .card{
+        width:310px;
+        height:400px;
+    }
+
+    .events-section .events-header{
+        padding:10px 50px; 
+    }
+}
+
+@media (min-width:1350px) {
+    .right-nav{
+        display:flex;
+    }
+    .center-nav{
+        display:block;
+    }
+    .hamburger-menu{
+        display:none;
+    }
+    .menu{
+        display:none;
+    }
+    .menu li{
+        display:none;
+    }
+    .header-down{
+        font-size:3rem;
+    }
+    .header-down .type{
+        font-size:3rem;
+    }
+    .services{
+        flex-direction:row-reverse;
+        align-items:flex-start;
+        justify-content:center;
+        gap:50px;
+    }
+    .services .services-img{
+        height:400px;
+        width:40%;
+    }
+    
+    .services .services-img img{
+        top:0;
+    }
+    
+    .services .services-content{
+        width:40%;
+    }
+    
+    .services .services-content p{
+        font-size:1.5rem;
+        line-height:1.75rem;
+        width:100%;
+        text-align: justify;
+    }
+
+    .details .detail .detail-title{
+        font-size:1.75rem;
+    }
+    
+    .details .detail .number{
+        font-size:2rem;
+    }
+    
+    .showDetails-bg{
+        height:200px;
+    }
+    .cards-container .cards .card{
+        width:400px;
+        height:400px;
+    }
+
+    .events-section .events-header{
+        padding:10px 50px; 
     }
 }
