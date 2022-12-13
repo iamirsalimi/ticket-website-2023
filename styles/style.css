@@ -53,6 +53,11 @@ nav.scrolling{
     color:#fff;
     font-size:2rem;
     transition:font-size 0.15s ease-out;
+    cursor:pointer;
+}
+
+.left-nav a {
+    text-decoration:none;
 }
 
 .scrolling .left-nav .nav-title{
@@ -386,11 +391,7 @@ nav.scrolling{
 
 .services .services-content .services-title {
     position:relative;
-    width:fit-content;
-    padding: 0 10px;
     max-height:15px;
-    border-radius:10px;
-    background-color:#632eba;
 }
 
 .services .services-content h2{
@@ -409,7 +410,7 @@ nav.scrolling{
     margin-top:20px;
     font-family:'Secular One', sans-serif;
     text-align:justify;
-    color:#24005d;
+    color:#210057d8;
     font-size:1.25rem;
     line-height:1.5rem;
 }
@@ -469,12 +470,11 @@ nav.scrolling{
 
 /* Events sections */
 .events-section{
-    height:60px;
     width:100%;
     margin:280px auto 0;
     padding:15px 25px;
     position:relative;
-    height:525px;
+    height:475px;
 }
 
 .events-section .events-header{
@@ -491,7 +491,6 @@ nav.scrolling{
     max-height:15px;
     top:25px;
     border-radius:10px;
-    background-color:#632eba;
 }
 
 .events-section .events-header .title h2{
@@ -549,7 +548,7 @@ nav.scrolling{
 }
 
 .events-section .cards-container{
-    width:100%;
+    width:95%;
     height:100%;
     border-radius:22px;
     margin:20px auto;
@@ -578,9 +577,8 @@ nav.scrolling{
     border-radius:22px;
     background:#b59edb;
     padding:10px 15px;
-    transition: 0.2s ease-out;
+    transition: 0.125s ease-out;
     cursor:pointer;
-    box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.2)
 }
 
 .cards-container .card .img{
@@ -628,58 +626,51 @@ nav.scrolling{
 }
 
 .cards-container .card:hover{
-    transform:scale(1.05);
+    transform:scale(1.02);
 }
 
-/* .cards-container .card .img{
-    width:100%;  
-    height:60%;
-    border-radius:12px;
-    overflow:hidden;
-}
-
-.cards-container .card .img img{
+/* footer */
+footer{
+    background:#18003d;
+    height:200px;
     width:100%;
-    height:100%;
+    margin-top:100px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 0;
 }
 
-
-.cards-container .cards .card-content .card-title{
-    color:#1d004b;
-    text-transform:uppercase;
-    font-family:'Anton', sans-serif;
-    letter-spacing: 2px;;
-    font-size:2rem;
+footer .footer-desc{
+    display:flex;
+    width:80%;
+    height:100px;
+    gap:20px;
+    justify-content:space-between;
+    align-items:center;
 }
 
+footer .footer-desc .desc{
+    color:#fff;
+    width:50%;
+    text-align:justify;
+    font-size:1.2rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
-.cards-container .cards .card-content .card-desc{
+footer .footer-desc .social{
+    color:#fff;
+    text-align:justify;
+    font-size:1.2rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+footer .copy-write{
+    color:#fff;
     font-family:'Fredoka One', cursive;
-    color:#29006ac0;
-    margin-top:10px;
-    font-size:1rem;
+    font-size:1.25rem;
 }
-
-.cards-container .cards .tickets-number{
-    border:2px dashed #451390;
-    background:#7644c7;
-    border-radius:12px;
-    padding:10px;
-    text-align:center;
-}
-
-.cards-container .cards .tickets-number span{
-    font-family:'Fredoka One', cursive;
-    color:#18003d;
-    margin-top:10px;
-    font-size:1.5rem;
-}
-
-.cards-container .card:hover{
-    transform:scale(1.05);
-} */
-
-
 /* icons */
 .material-symbols-outlined {
   font-variation-settings:
@@ -877,6 +868,9 @@ nav.scrolling{
         width:310px;
         height:400px;
     }
+    .events-section{
+        width:calc(100%-80px);
+    }
 
     .events-section .events-header{
         padding:10px 50px; 
@@ -942,12 +936,17 @@ nav.scrolling{
     .showDetails-bg{
         height:200px;
     }
+
     .cards-container .cards .card{
         width:400px;
         height:400px;
     }
 
+    .events-section{
+        width:calc(100%-80px);
+    }
+
     .events-section .events-header{
-        padding:10px 50px; 
+        padding:10px 80px; 
     }
 }
