@@ -15,7 +15,7 @@ body{
     background:linear-gradient(90deg , #8051ef , #4800ef)
 }
 
-.container.signup{
+.container{
     background:#fff;
     border-radius:10px;
     width:850px;
@@ -72,19 +72,23 @@ body{
     border-bottom:4px solid #6210de;
     color:#6210de;
 }
-.container .signUp-form{
+.container .signUp-form,
+.container .logIn-form{
     margin-top:20px;
     display:flex;
     flex-direction:column;
     justify-content:flex-start;
 }
-.container .signUp-form .form-title h4{
+.container .signUp-form .form-title h4,
+.container .logIn-form .form-title h4{
     font-family: 'Archivo', sans-serif;
     color:#747474;
     font-size:1rem;
+    margin-top:10px;
 }
 
-.container .signUp-form .form-inputs{
+.container .signUp-form .form-inputs,
+.container .logIn-form .form-inputs{
     display:flex;
     flex-direction:column;
     justify-content:flex-start;
@@ -98,7 +102,8 @@ body{
     gap:25px;
 }
 
-.container .signUp-form .singup-inputs-container input{
+.container .signUp-form .singup-inputs-container input,
+.container .logIn-form .login-inputs-container input{
     border:none;
     border-bottom:1.5px solid #9a9a9a;
     outline:none;
@@ -111,32 +116,39 @@ body{
     width:100%;
 }
 
-.container .signUp-form .input-container p{
+.container .signUp-form .input-container p,
+.container .logIn-form .input-container p{
     display:none;
     color:#c80c1b;
     margin-top:5px;
 }
 
-.container .signUp-form .input-container p.show-err{
+.container .signUp-form .input-container p.show-err,
+.container .logIn-form .input-container p.show-err{
     display:block;
 }
 
 .container .signUp-form .input-container input:focus,
-.container .signUp-form .input-container input:valid{
+.container .signUp-form .input-container input:valid,
+.container .logIn-form .input-container input:focus,
+.container .logIn-form .input-container input:valid{
     border-bottom-color:#6210de;
 }
 
-.container .signUp-form .input-container input.invalid{
+.container .signUp-form .input-container input.invalid,
+.container .logIn-form .input-container input.invalid{
     border-bottom-color:#c80c1b;
 }
 
 
-.container .signUp-form .input-container{
+.container .signUp-form .input-container,
+.container .logIn-form .input-container{
     position:relative;
     height:fit-content;
 }
 
-.container .signUp-form .input-container span.input-ph{
+.container .signUp-form .input-container span.input-ph,
+.container .logIn-form .input-container span.input-ph{
     position:absolute;
     left:10px;
     top:0;
@@ -149,6 +161,30 @@ body{
     transition:0.15s ease-out; 
 }
 
+.signUp-form .inputs-desc{
+    margin:10px;
+    width:100%;
+    margin:0 auto;
+    background:#888;
+    padding:5px;
+    border-radius:6px;
+}
+
+.signUp-form .inputs-desc ul{
+    padding:5px 10px;
+} 
+
+.signUp-form .inputs-desc li::marker{
+    content:'*';
+    color:#c80c1b;
+}
+
+.signUp-form .inputs-desc li{
+    color:#fff;
+    font-family: 'Archivo', sans-serif;
+    margin-top:10px;
+}
+
 .container .signUp-form .input-container span.star{
     position:absolute;
     color:#c80c1b;
@@ -158,7 +194,9 @@ body{
 
 
 .container .signUp-form .input-container input:focus ~ span.input-ph,
-.container .signUp-form .input-container input:valid ~ span.input-ph{
+.container .signUp-form .input-container input:valid ~ span.input-ph,
+.container .logIn-form .input-container input:focus ~ span.input-ph,
+.container .logIn-form .input-container input:valid ~ span.input-ph{
     top:-20px;
     left:0;
     font-size:0.7rem;
@@ -170,7 +208,8 @@ body{
     color:#c80c1b;
 }
 
-.container .signUp-form .form-inputs .submit{
+.container .signUp-form .form-inputs .submit,
+.container .logIn-form .form-inputs .submit{
     padding:15px 40px;
     width:fit-content;
     border:none;
@@ -183,7 +222,8 @@ body{
     transition:0.1s linear;
 }
 
-.container .signUp-form .form-inputs .submit:hover{
+.container .signUp-form .form-inputs .submit:hover,
+.container .logIn-form .form-inputs .submit:hover{
     transform:scale(1.05);
 }
 
@@ -193,4 +233,23 @@ body{
 
 .container .signUp-form .input-container:last-child{
     grid-column: 1/-1;
+}
+
+.logIn-form .form-inputs{
+    margin-top:40px;
+}
+
+.form-inputs .login-inputs-container{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+    height:fit-content;
+    width:80%;
+    margin:0 auto;
+}
+
+.form-inputs .login-inputs-container .input-container{
+    width:100%;
 }

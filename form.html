@@ -9,16 +9,25 @@
 </head>
 <body>
 
-    <div class="container signup">
+    <div class="container">
         <div class="title">
             <h2>Sign Up</h2>
             <p class="desc">Let's create your account</p>
         </div>
         <div class="section-separator">
-            <h3 class="login" >i have an account</h3>
-            <h3 class="register active">i have not an account</h3>
+            <h3 class="login" data-form="logIn-form" >i have an account</h3>
+            <h3 class="register" data-form="signUp-form">i have not an account</h3>
         </div>
+        <!-- sign up form -->
         <form action="" class="signUp-form">
+            <div class="inputs-desc">
+                <ul>
+                    <li>Please enter your details carefully so you don't run into problems later</li>
+                    <li>all inputs are required. Please enter all your details</li>
+                    <li>The maximum length of the username should be 15 characters</li>
+                    <li>The maximum length of the password should be 16 characters</li>
+                </ul>
+            </div>
             <div class="form-title">
                 <h4>Enter your details below</h4>
             </div>
@@ -37,32 +46,55 @@
                         <p ></p>
                     </div>
                     <div class="input-container">
-                        <input type="text" class="email-input" required maxlength="25">
-                        <span class="input-ph">email</span>
+                        <input type="text" class="username-input" required maxlength="15">
+                        <span class="input-ph">user name</span>
                         <span class="star">*</span>
                         <p ></p>
                     </div>
                     <div class="input-container">
-                        <input type="password" class="password-input" required  maxlength="12">
+                        <input type="password" class="password-input" required  maxlength="16">
                         <span class="input-ph">password</span>
                         <span class="star">*</span>
                     </div>
                     <div class="input-container">
-                        <input type="password" class="repeat-password-input" required maxlength="12">
+                        <input type="password" class="repeat-password-input" required maxlength="16">
                         <span class="input-ph">confirm password</span>
                         <span class="star">*</span>
                         <p></p>
                     </div>
                     <div class="input-container">
-                        <input type="text" class="phone-number-input" required maxlength="14">
-                        <span class="input-ph">phone Number</span>         
+                        <input type="text" class="email-input" required >
+                        <span class="input-ph">Email</span>         
+                        <span class="star">*</span>
                         <p ></p>
                     </div>
                 </div>
-                <input type="button" class="submit" value="Sign Up">
+                <input type="submit" class="submit" value="Sign Up">
             </div>    
         </form>
+        <!-- log in form -->
+        <form action="" class="logIn-form">
+            <div class="form-title">
+                <h4>Enter your details below</h4>
+            </div>
+            <div class="form-inputs">
+                <div class="login-inputs-container">
+                    <div class="input-container">
+                        <input type="text" class="username-input" required maxlength="25">
+                        <span class="input-ph">user name</span>
+                        <p></p>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" class="password-input" required  maxlength="12">
+                        <span class="input-ph">password</span>
+                        <p></p>
+                    </div>
+                </div>
+                <input type="submit" class="submit" value="Log In">
+            </div>    
+        </form>
+
     </div>
-    <script src="js/main.js"></script>
+    <script src="js/form.js"></script>
 </body>
 </html>
