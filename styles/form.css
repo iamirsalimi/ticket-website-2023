@@ -9,7 +9,7 @@
 }
 
 body{
-    height:100vh;
+    height:120vh;
     display:grid;
     place-content: center;
     background:linear-gradient(90deg , #8051ef , #4800ef)
@@ -104,16 +104,21 @@ body{
 
 .container .signUp-form .singup-inputs-container input,
 .container .logIn-form .login-inputs-container input{
-    border:none;
-    border-bottom:1.5px solid #9a9a9a;
+    border:1.5px solid #9a9a9a;
     outline:none;
     caret-color: #4700b1;
     color:#6210de;
     font-size:1.25rem;
     letter-spacing:1px;
-    padding:2.5px 5px;
+    padding:5px;
     transition:0.15s ease-out; 
     width:100%;
+}
+.container .signUp-form .input-container input:focus ~ span.input-ph,
+.container .signUp-form .input-container input:valid ~ span.input-ph,
+.container .logIn-form .input-container input:focus ~ span.input-ph,
+.container .logIn-form .input-container input:valid ~ span.input-ph{
+    color:#6210de;
 }
 
 .container .signUp-form .input-container p,
@@ -132,12 +137,27 @@ body{
 .container .signUp-form .input-container input:valid,
 .container .logIn-form .input-container input:focus,
 .container .logIn-form .input-container input:valid{
-    border-bottom-color:#6210de;
+    border-color:#6210de;
+}
+.container .signUp-form .input-container span.input-ph,
+.container .logIn-form .input-container span.input-ph{
+    position:absolute;
+    left:10px;
+    top:-10px;
+    background:#fff;
+    font-weight:500;
+    padding: 0 10px;
+    font-family: 'Archivo', sans-serif;
+    pointer-events: none;
+    font-size:0.9rem;
+    color:#9a9a9a;
+    text-transform:capitalize;
+    transition:0.15s ease-out; 
 }
 
 .container .signUp-form .input-container input.invalid,
 .container .logIn-form .input-container input.invalid{
-    border-bottom-color:#c80c1b;
+    border-color:#c80c1b;
     color:#ff6e7a;
     caret-color: #ff6f7b;
 }
@@ -149,19 +169,6 @@ body{
     height:fit-content;
 }
 
-.container .signUp-form .input-container span.input-ph,
-.container .logIn-form .input-container span.input-ph{
-    position:absolute;
-    left:10px;
-    top:0;
-    font-weight:500;
-    font-family: 'Archivo', sans-serif;
-    pointer-events: none;
-    font-size:0.9rem;
-    color:#9a9a9a;
-    text-transform:capitalize;
-    transition:0.15s ease-out; 
-}
 
 .signUp-form .inputs-desc{
     margin:10px;
@@ -173,11 +180,11 @@ body{
 }
 
 .signUp-form .inputs-desc ul{
-    padding:5px 10px;
+    padding:5px 15px;
 } 
 
 .signUp-form .inputs-desc li::marker{
-    content:'*';
+    content:'* ';
     color:#c80c1b;
 }
 
@@ -191,19 +198,9 @@ body{
     position:absolute;
     color:#c80c1b;
     right:0;
-    top:0;
+    top:-15px;
 }
 
-.container .signUp-form .input-container input:focus ~ span.input-ph,
-.container .signUp-form .input-container input:valid ~ span.input-ph,
-.container .logIn-form .input-container input:focus ~ span.input-ph,
-.container .logIn-form .input-container input:valid ~ span.input-ph{
-    top:-10px;
-    left:0;
-    font-size:0.7rem;
-    color:#6210de;
-
-}
 
 .container .signUp-form .input-container input.invalid ~ span.input-ph{
     color:#c80c1b;
@@ -253,4 +250,69 @@ body{
 
 .form-inputs .login-inputs-container .input-container{
     width:100%;
+}
+
+
+/* media  queries*/
+@media (max-width : 900px){
+    .container{
+        width:650px;
+    }
+}
+
+@media (max-width : 720px){
+    .container{
+        width:450px;
+    }
+    .container .signUp-form .input-container:nth-child(1){
+        grid-column: 1/-1;
+    }
+    .container .signUp-form .input-container:nth-child(2){
+        grid-column: 1/-1;
+    }
+    .container .signUp-form .input-container:nth-child(4){
+        grid-column: 1/-1;
+    }
+    .container .signUp-form .input-container:nth-child(5){
+        grid-column: 1/-1;
+    }
+    .form-inputs .login-inputs-container{
+        width:100%;
+    }
+    .form-inputs .login-inputs-container input{
+        width:100%;
+    }
+    .container .section-separator h3{
+        padding:10px ;
+        font-size:1.2rem;
+
+    }
+}
+
+@media (max-width : 510px){
+    .container{
+        width:400px;
+    }
+    .container .signUp-form .input-container:nth-child(1){
+        grid-column: 1/-1;
+    }
+    .container .signUp-form .input-container:nth-child(2){
+        grid-column: 1/-1;
+    }
+    .container .signUp-form .input-container:nth-child(4){
+        grid-column: 1/-1;
+    }
+    .container .signUp-form .input-container:nth-child(5){
+        grid-column: 1/-1;
+    }
+    .form-inputs .login-inputs-container{
+        width:100%;
+    }
+    .form-inputs .login-inputs-container input{
+        width:100%;
+    }
+    .container .section-separator h3{
+        padding:10px ;
+        font-size:1rem;
+    }
 }

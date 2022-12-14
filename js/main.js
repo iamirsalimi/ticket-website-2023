@@ -17,6 +17,7 @@ let card = $.querySelectorAll('.card')
 let remainCards = card.length
 let currentLoc , showCards , nextSlideWidth 
 
+let menuItems = $.querySelectorAll('.menu .menu-item')
 
 // changing navbar style onscroll and load
 window.onload = function(){
@@ -49,13 +50,13 @@ window.onload = function(){
     } else if(remainCards >= 4){
         if(screen.width < 720){
             showCards = 1
-            currentLoc = 620
+            currentLoc = 630
             nextSlideWidth = 420
         } else if(screen.width < 900){
             showCards = 2
             currentLoc = 350
             nextSlideWidth = 350
-        } else if(screen.width< 1100){
+        } else if(screen.width < 1110){
             showCards = 2
             currentLoc = 470
             nextSlideWidth = 470
@@ -237,3 +238,19 @@ goToUpBtn.onclick = goToUpHandler
 window.addEventListener('DOMContentLoaded', init)
 hamburger.addEventListener('click',showMenu)
 document.body.addEventListener('click',hideMenu)
+menuItems.forEach(function(menuItem){
+    menuItem.addEventListener('click',function(){
+        hamburger.classList.remove('open')
+        menu.classList.remove('open')
+        
+        if(hamburger.className.includes('open')){
+            setTimeout(function(){
+                logo.style.color = '#380091'
+            } , 150)
+            headerSectionImg.style.filter = 'brightness(10%)'; 
+        } else {
+            logo.style.color = '#fff'
+            headerSectionImg.style.filter = 'brightness(40%)'; 
+        }
+    })
+})
