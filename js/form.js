@@ -1,6 +1,6 @@
 let $ = document
 
-let inputElems = $.querySelectorAll('.input-container .input')
+let signUpInputElems = $.querySelectorAll('.singup-inputs-container input')
 let sectionsSep = $.querySelectorAll('.section-separator h3')
 let formTarget
 let forms = $.querySelectorAll('form')
@@ -35,6 +35,30 @@ window.onload = function(){
     })
 }
 
+
+function clearSpace(event){
+    if(event.target.value.trim() === ''){
+        event.target.value = ''
+    }
+
+}
+
+signUpInputElems.forEach(function(signUpInputElem){
+    signUpInputElem.addEventListener('keyup',clearSpace)
+})
+
+
+
+signUpInputElems[4].addEventListener('blur',function(event){
+    if(event.target.value !== signUpInputElems[3].value){
+        signUpInputElems[4].classList.add('invalid')
+        event.target.parentNode.lastElementChild.classList.add('show-err')
+    } else {
+
+        signUpInputElems[4].classList.remove('invalid')
+        event.target.parentNode.lastElementChild.classList.remove('show-err')
+    }
+})
 
 // form Input
 sectionsSep.forEach(function(sectionSep){

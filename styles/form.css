@@ -138,6 +138,8 @@ body{
 .container .signUp-form .input-container input.invalid,
 .container .logIn-form .input-container input.invalid{
     border-bottom-color:#c80c1b;
+    color:#ff6e7a;
+    caret-color: #ff6f7b;
 }
 
 
@@ -192,12 +194,11 @@ body{
     top:0;
 }
 
-
 .container .signUp-form .input-container input:focus ~ span.input-ph,
 .container .signUp-form .input-container input:valid ~ span.input-ph,
 .container .logIn-form .input-container input:focus ~ span.input-ph,
 .container .logIn-form .input-container input:valid ~ span.input-ph{
-    top:-20px;
+    top:-10px;
     left:0;
     font-size:0.7rem;
     color:#6210de;
