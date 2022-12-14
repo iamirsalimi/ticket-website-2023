@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:grid;
+    place-content: center;
+    background:linear-gradient(90deg , #8051ef , #4800ef)
+}
+
+.container.signup{
+    background:#fff;
+    border-radius:10px;
+    width:850px;
+    overflow:hidden;
+    padding:30px 30px;
+    height:fit-content;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+}
+
+.container .title {
+    height:75px;
+    margin-bottom:15px;
+    padding:0 5px;
+}
+
+.container .title h2{
+    color:#6210de;
+    font-size:1.5rem;
+    font-family: 'Pacifico', cursive;
+}
+
+.container .title p.desc{
+    color:#6210de8e;
+    margin-top:10px;
+    font-size:1.2rem;
+    font-family: 'Archivo', sans-serif;
+} 
+
+.container .section-separator{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    text-align:center;
+    gap:20px;
+}
+
+.container .section-separator h3{
+    background:rgb(239, 239, 239);
+    padding:15px 0 ;
+    color:#565656;
+    font-family: 'Archivo', sans-serif;
+    width:50%;
+    transition:background-color 0.2s ease-out;
+}
+
+.container .section-separator h3:hover{
+    background-color:rgb(196, 196, 196);
+}
+
+.container .section-separator h3.active{
+    border-bottom:4px solid #6210de;
+    color:#6210de;
+}
+.container .signUp-form{
+    margin-top:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+}
+.container .signUp-form .form-title h4{
+    font-family: 'Archivo', sans-serif;
+    color:#747474;
+    font-size:1rem;
+}
+
+.container .signUp-form .form-inputs{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    gap:15px;
+}
+
+.container .signUp-form .singup-inputs-container{
+    margin-top:30px;
+    display:grid;
+    grid-template-columns : repeat(2,1fr);
+    gap:25px;
+}
+
+.container .signUp-form .singup-inputs-container input{
+    border:none;
+    border-bottom:1.5px solid #9a9a9a;
+    outline:none;
+    caret-color: #4700b1;
+    color:#6210de;
+    font-size:1.25rem;
+    letter-spacing:1px;
+    padding:2.5px 5px;
+    transition:0.15s ease-out; 
+    width:100%;
+}
+
+.container .signUp-form .input-container p{
+    display:none;
+    color:#c80c1b;
+    margin-top:5px;
+}
+
+.container .signUp-form .input-container p.show-err{
+    display:block;
+}
+
+.container .signUp-form .input-container input:focus,
+.container .signUp-form .input-container input:valid{
+    border-bottom-color:#6210de;
+}
+
+.container .signUp-form .input-container input.invalid{
+    border-bottom-color:#c80c1b;
+}
+
+
+.container .signUp-form .input-container{
+    position:relative;
+    height:fit-content;
+}
+
+.container .signUp-form .input-container span.input-ph{
+    position:absolute;
+    left:10px;
+    top:0;
+    font-weight:500;
+    font-family: 'Archivo', sans-serif;
+    pointer-events: none;
+    font-size:0.9rem;
+    color:#9a9a9a;
+    text-transform:capitalize;
+    transition:0.15s ease-out; 
+}
+
+.container .signUp-form .input-container span.star{
+    position:absolute;
+    color:#c80c1b;
+    right:0;
+    top:0;
+}
+
+
+.container .signUp-form .input-container input:focus ~ span.input-ph,
+.container .signUp-form .input-container input:valid ~ span.input-ph{
+    top:-20px;
+    left:0;
+    font-size:0.7rem;
+    color:#6210de;
+
+}
+
+.container .signUp-form .input-container input.invalid ~ span.input-ph{
+    color:#c80c1b;
+}
+
+.container .signUp-form .form-inputs .submit{
+    padding:15px 40px;
+    width:fit-content;
+    border:none;
+    margin:0 auto;
+    cursor:pointer;
+    border-radius:25px;
+    color:#fff;
+    background:linear-gradient(45deg , #4700b1 , #7f2aff);
+    font-family:'Fredoka One', cursive;
+    transition:0.1s linear;
+}
+
+.container .signUp-form .form-inputs .submit:hover{
+    transform:scale(1.05);
+}
+
+.container .signUp-form .input-container:nth-child(3){
+    grid-column: 1/-1;
+}
+
+.container .signUp-form .input-container:last-child{
+    grid-column: 1/-1;
+}

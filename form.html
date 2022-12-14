@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/form.css">
+    <title>Outinz form</title>
+</head>
+<body>
+
+    <div class="container signup">
+        <div class="title">
+            <h2>Sign Up</h2>
+            <p class="desc">Let's create your account</p>
+        </div>
+        <div class="section-separator">
+            <h3 class="login" >i have an account</h3>
+            <h3 class="register active">i have not an account</h3>
+        </div>
+        <form action="" class="signUp-form">
+            <div class="form-title">
+                <h4>Enter your details below</h4>
+            </div>
+            <div class="form-inputs">
+                <div class="singup-inputs-container">
+                    <div class="input-container">
+                        <input type="text" class="name-input" required maxlength="16">
+                        <span class="input-ph">first name</span>
+                        <span class="star">*</span>
+                        <p >please enter</p>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" class="family-input" required maxlength="16">
+                        <span class="input-ph">last name</span>
+                        <span class="star">*</span>
+                        <p ></p>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" class="email-input" required maxlength="25">
+                        <span class="input-ph">email</span>
+                        <span class="star">*</span>
+                        <p ></p>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" class="password-input" required  maxlength="12">
+                        <span class="input-ph">password</span>
+                        <span class="star">*</span>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" class="repeat-password-input" required maxlength="12">
+                        <span class="input-ph">confirm password</span>
+                        <span class="star">*</span>
+                        <p></p>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" class="phone-number-input" required maxlength="14">
+                        <span class="input-ph">phone Number</span>         
+                        <p ></p>
+                    </div>
+                </div>
+                <input type="button" class="submit" value="Sign Up">
+            </div>    
+        </form>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

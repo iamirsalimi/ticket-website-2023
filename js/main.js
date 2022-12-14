@@ -17,6 +17,9 @@ let card = $.querySelectorAll('.card')
 let remainCards = card.length
 let currentLoc , showCards , nextSlideWidth 
 
+let inputElems = $.querySelectorAll('.input-container .input')
+let sub
+
 // changing navbar style onscroll and load
 window.onload = function(){
     if(document.documentElement.scrollTop > 0){

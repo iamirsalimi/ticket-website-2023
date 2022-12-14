@@ -470,7 +470,7 @@ nav.scrolling{
 
 /* Events sections */
 .events-section{
-    width:100%;
+    width:calc(100%-20px);
     margin:280px auto 0;
     padding:15px 25px;
     position:relative;
@@ -551,7 +551,7 @@ nav.scrolling{
     width:95%;
     height:100%;
     border-radius:22px;
-    margin:20px auto;
+    margin:40px auto;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -737,6 +737,10 @@ footer .copy-write{
     .cards-container .cards{
         gap:50px;
     }
+    .events-section{
+        width:calc(100%-20px);
+    }
+
 }
 
 @media (min-width:900px) and (max-width:1110px) {
@@ -803,6 +807,10 @@ footer .copy-write{
     .cards-container .cards{
         gap:70px;
     }
+    .events-section{
+        width:calc(100%-80px);
+    }
+
 }
 
 @media (min-width:1110px) {
@@ -938,7 +946,7 @@ footer .copy-write{
     }
 
     .cards-container .cards .card{
-        width:400px;
+        width:350px;
         height:400px;
     }
 
