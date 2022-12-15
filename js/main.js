@@ -145,7 +145,6 @@ function init(){
 }
 
 
-
 // show and hide menu
 function showMenu(){
     hamburger.classList.toggle('open')

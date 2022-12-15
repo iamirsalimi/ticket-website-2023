@@ -15,6 +15,21 @@ signUpInputElems.forEach(function(signUpInputElem){
     signUpInputElem.addEventListener('keyup',clearSpace)
 })
 
+signUpInputElems[5].addEventListener('blur',function(event){
+    let emailValue = event.target.value
+    let linkRegex = /^\w+([\.-]?\w)*@\w+([\.-]?\w)*(\.\w{2,3})+$/g
+    if(linkRegex.test(emailValue)){
+        console.log('valid')
+        event.target.classList.remove('invalid')
+        event.target.parentNode.lastElementChild.classList.remove('show-err')
+    } else {
+        event.target.classList.add('invalid')
+        event.target.parentNode.lastElementChild.classList.add('show-err')
+        console.log('invalid')
+    }
+})
+
+
 signUpInputElems[4].addEventListener('blur',function(event){
     if(event.target.value !== signUpInputElems[3].value){
         signUpInputElems[3].classList.add('invalid')
