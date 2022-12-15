@@ -46,49 +46,20 @@ body{
     font-family: 'Archivo', sans-serif;
 } 
 
-.container .section-separator{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    cursor:pointer;
-    text-align:center;
-    gap:20px;
-}
-
-.container .section-separator h3{
-    background:rgb(239, 239, 239);
-    padding:15px 0 ;
-    color:#565656;
-    font-family: 'Archivo', sans-serif;
-    width:50%;
-    transition:background-color 0.2s ease-out;
-}
-
-.container .section-separator h3:hover{
-    background-color:rgb(196, 196, 196);
-}
-
-.container .section-separator h3.active{
-    border-bottom:4px solid #6210de;
-    color:#6210de;
-}
-.container .signUp-form,
-.container .logIn-form{
+.container .signUp-form{
     margin-top:20px;
     display:flex;
     flex-direction:column;
     justify-content:flex-start;
 }
-.container .signUp-form .form-title h4,
-.container .logIn-form .form-title h4{
+.container .signUp-form .form-title h4{
     font-family: 'Archivo', sans-serif;
     color:#747474;
     font-size:1rem;
     margin-top:10px;
 }
 
-.container .signUp-form .form-inputs,
-.container .logIn-form .form-inputs{
+.container .signUp-form .form-inputs{
     display:flex;
     flex-direction:column;
     justify-content:flex-start;
@@ -102,8 +73,7 @@ body{
     gap:25px;
 }
 
-.container .signUp-form .singup-inputs-container input,
-.container .logIn-form .login-inputs-container input{
+.container .signUp-form .singup-inputs-container input{
     border:1.5px solid #9a9a9a;
     outline:none;
     caret-color: #4700b1;
@@ -115,32 +85,25 @@ body{
     width:100%;
 }
 .container .signUp-form .input-container input:focus ~ span.input-ph,
-.container .signUp-form .input-container input:valid ~ span.input-ph,
-.container .logIn-form .input-container input:focus ~ span.input-ph,
-.container .logIn-form .input-container input:valid ~ span.input-ph{
+.container .signUp-form .input-container input:valid ~ span.input-ph{
     color:#6210de;
 }
 
-.container .signUp-form .input-container p,
-.container .logIn-form .input-container p{
+.container .signUp-form .input-container p{
     display:none;
     color:#c80c1b;
     margin-top:5px;
 }
 
-.container .signUp-form .input-container p.show-err,
-.container .logIn-form .input-container p.show-err{
+.container .signUp-form .input-container p.show-err{
     display:block;
 }
 
 .container .signUp-form .input-container input:focus,
-.container .signUp-form .input-container input:valid,
-.container .logIn-form .input-container input:focus,
-.container .logIn-form .input-container input:valid{
+.container .signUp-form .input-container input:valid{
     border-color:#6210de;
 }
-.container .signUp-form .input-container span.input-ph,
-.container .logIn-form .input-container span.input-ph{
+.container .signUp-form .input-container span.input-ph{
     position:absolute;
     left:10px;
     top:-10px;
@@ -155,16 +118,14 @@ body{
     transition:0.15s ease-out; 
 }
 
-.container .signUp-form .input-container input.invalid,
-.container .logIn-form .input-container input.invalid{
+.container .signUp-form .input-container input.invalid{
     border-color:#c80c1b;
     color:#ff6e7a;
     caret-color: #ff6f7b;
 }
 
 
-.container .signUp-form .input-container,
-.container .logIn-form .input-container{
+.container .signUp-form .input-container{
     position:relative;
     height:fit-content;
 }
@@ -184,7 +145,7 @@ body{
 } 
 
 .signUp-form .inputs-desc li::marker{
-    content:'* ';
+    content:'*  ';
     color:#c80c1b;
 }
 
@@ -206,8 +167,7 @@ body{
     color:#c80c1b;
 }
 
-.container .signUp-form .form-inputs .submit,
-.container .logIn-form .form-inputs .submit{
+.container .signUp-form .form-inputs .submit{
     padding:15px 40px;
     width:fit-content;
     border:none;
@@ -220,8 +180,7 @@ body{
     transition:0.1s linear;
 }
 
-.container .signUp-form .form-inputs .submit:hover,
-.container .logIn-form .form-inputs .submit:hover{
+.container .signUp-form .form-inputs .submit:hover{
     transform:scale(1.05);
 }
 
@@ -233,24 +192,23 @@ body{
     grid-column: 1/-1;
 }
 
-.logIn-form .form-inputs{
-    margin-top:40px;
+.signUp-form .goToLogin{
+    margin-top:10px;
+    text-align:center;
+    color:#8850ff;
+    font-size:1.1rem;
+    font-family:'Fredoka One', cursive;
 }
 
-.form-inputs .login-inputs-container{
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    align-items:center;
-    gap:40px;
-    height:fit-content;
-    width:80%;
-    margin:0 auto;
+.signUp-form .goToLogin a{
+    color:#4800ef;
+    text-decoration:none;
 }
 
-.form-inputs .login-inputs-container .input-container{
-    width:100%;
+.signUp-form .goToLogin a:hover{
+    text-decoration:underline;
 }
+
 
 
 /* media  queries*/
@@ -276,17 +234,6 @@ body{
     .container .signUp-form .input-container:nth-child(5){
         grid-column: 1/-1;
     }
-    .form-inputs .login-inputs-container{
-        width:100%;
-    }
-    .form-inputs .login-inputs-container input{
-        width:100%;
-    }
-    .container .section-separator h3{
-        padding:10px ;
-        font-size:1.2rem;
-
-    }
 }
 
 @media (max-width : 510px){
@@ -307,12 +254,5 @@ body{
     }
     .form-inputs .login-inputs-container{
         width:100%;
-    }
-    .form-inputs .login-inputs-container input{
-        width:100%;
-    }
-    .container .section-separator h3{
-        padding:10px ;
-        font-size:1rem;
     }
 }

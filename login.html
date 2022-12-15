@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/login.css">
+    <title>Outinz form</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="title">
+            <h2>Log In To Outinz</h2>
+            <p class="desc">We must log in to the account</p>
+        </div>
+        <!-- log in form -->
+        <form action="" class="logIn-form">
+            <div class="inputs-desc">
+                <ul>
+                    <li>Please enter your details carefully so you don't run into problems later</li>
+                    <li>You can use your email instead of username</li>
+                </ul>
+            </div>
+            <div class="form-title">
+                <h4>Enter your details below</h4>
+            </div>
+            <div class="form-inputs">
+                <div class="login-inputs-container">
+                    <div class="input-container">
+                        <input type="text" class="username-input" required maxlength="25">
+                        <span class="input-ph">user name</span>
+                        <p></p>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" class="password-input" required  maxlength="12">
+                        <span class="input-ph">password</span>
+                        <p></p>
+                    </div>
+                </div>
+                <input type="submit" class="submit" value="Log In">
+                <p class="goToRegister">have not an account ? <a href="register.html">register</a></p>
+            </div>    
+        </form>
+
+    </div>
+    <script src="js/form.js"></script>
+</body>
+</html>

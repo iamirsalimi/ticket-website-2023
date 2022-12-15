@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:120vh;
+    display:grid;
+    place-content: center;
+    background:linear-gradient(90deg , #8051ef , #4800ef)
+}
+
+.container{
+    background:#fff;
+    border-radius:10px;
+    width:850px;
+    overflow:hidden;
+    padding:30px 30px;
+    height:fit-content;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+}
+
+.container .title {
+    height:75px;
+    margin-bottom:15px;
+    padding:0 5px;
+}
+
+.container .title h2{
+    color:#6210de;
+    font-size:1.5rem;
+    font-family: 'Pacifico', cursive;
+}
+
+.container .title p.desc{
+    color:#6210de8e;
+    margin-top:10px;
+    font-size:1.2rem;
+    font-family: 'Archivo', sans-serif;
+} 
+
+.container .logIn-form{
+    margin-top:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+}
+
+.container .logIn-form .form-title h4{
+    font-family: 'Archivo', sans-serif;
+    color:#747474;
+    font-size:1rem;
+    margin-top:10px;
+}
+
+.container .logIn-form .form-inputs{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    gap:15px;
+}
+
+
+.logIn-form .inputs-desc{
+    margin:10px;
+    width:100%;
+    margin:0 auto;
+    background:#888;
+    padding:5px;
+    border-radius:6px;
+}
+
+.logIn-form .inputs-desc ul{
+    padding:5px 15px;
+} 
+
+.logIn-form .inputs-desc li::marker{
+    content:'*  ';
+    color:#c80c1b;
+}
+
+.logIn-form .inputs-desc li{
+    color:#fff;
+    font-family: 'Archivo', sans-serif;
+    margin-top:10px;
+}
+
+.container .logIn-form .login-inputs-container input{
+    border:1.5px solid #9a9a9a;
+    outline:none;
+    caret-color: #4700b1;
+    color:#6210de;
+    font-size:1.25rem;
+    letter-spacing:1px;
+    padding:5px;
+    transition:0.15s ease-out; 
+    width:100%;
+}
+
+.container .logIn-form .input-container input:focus ~ span.input-ph,
+.container .logIn-form .input-container input:valid ~ span.input-ph{
+    color:#6210de;
+}
+
+.container .logIn-form .input-container p{
+    display:none;
+    color:#c80c1b;
+    margin-top:5px;
+}
+
+.container .logIn-form .input-container p.show-err{
+    display:block;
+}
+
+.container .logIn-form .input-container input:focus,
+.container .logIn-form .input-container input:valid{
+    border-color:#6210de;
+}
+
+.container .logIn-form .input-container span.input-ph{
+    position:absolute;
+    left:10px;
+    top:-10px;
+    background:#fff;
+    font-weight:500;
+    padding: 0 10px;
+    font-family: 'Archivo', sans-serif;
+    pointer-events: none;
+    font-size:0.9rem;
+    color:#9a9a9a;
+    text-transform:capitalize;
+    transition:0.15s ease-out; 
+}
+
+.container .logIn-form .input-container input.invalid{
+    border-color:#c80c1b;
+    color:#ff6e7a;
+    caret-color: #ff6f7b;
+}
+
+.container .logIn-form .input-container{
+    position:relative;
+    height:fit-content;
+}
+
+.container .logIn-form .form-inputs .submit{
+    padding:15px 40px;
+    width:fit-content;
+    border:none;
+    margin:0 auto;
+    cursor:pointer;
+    border-radius:25px;
+    color:#fff;
+    background:linear-gradient(45deg , #4700b1 , #7f2aff);
+    font-family:'Fredoka One', cursive;
+    transition:0.1s linear;
+}
+
+.container .logIn-form .form-inputs .submit:hover{
+    transform:scale(1.05);
+}
+
+
+.logIn-form .form-inputs{
+    margin-top:40px;
+}
+
+.form-inputs .login-inputs-container{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+    height:fit-content;
+    width:80%;
+    margin:0 auto;
+}
+
+.form-inputs .login-inputs-container .input-container{
+    width:100%;
+}
+
+.logIn-form .goToRegister{
+    margin-top:10px;
+    text-align:center;
+    color:#8850ff;
+    font-size:1.1rem;
+    font-family:'Fredoka One', cursive;
+}
+
+.logIn-form .goToRegister a{
+    color:#4800ef;
+    text-decoration:none;
+}
+
+.logIn-form .goToRegister a:hover{
+    text-decoration:underline;
+}
+
+/* media  queries*/
+@media (max-width : 900px){
+    .container{
+        width:650px;
+    }
+}
+
+@media (max-width : 720px){
+    .container{
+        width:450px;
+    }
+    .form-inputs .login-inputs-container{
+        width:100%;
+    }
+    .form-inputs .login-inputs-container input{
+        width:100%;
+    }
+}
+
+@media (max-width : 510px){
+    .container{
+        width:400px;
+    }
+    .form-inputs .login-inputs-container{
+        width:100%;
+    }
+    .form-inputs .login-inputs-container input{
+        width:100%;
+    }
+}

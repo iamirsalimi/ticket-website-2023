@@ -4,22 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/form.css">
+    <link rel="stylesheet" href="styles/register.css">
     <title>Outinz form</title>
 </head>
 <body>
 
     <div class="container">
         <div class="title">
-            <h2></h2>
-            <p class="desc"></p>
+            <h2>Sign Up To Outinz</h2>
+            <p class="desc">Let's create your account</p>
         </div>
-        <div class="section-separator">
-            <h3 class="login" data-form="logIn-form" >i have an account</h3>
-            <h3 class="register" data-form="signUp-form">i have not an account</h3>
-        </div>
+
         <!-- sign up form -->
-        <form action="" class="signUp-form" style="display:none">
+        <form action="" class="signUp-form" >
             <div class="inputs-desc">
                 <ul>
                     <li>Please enter your details carefully so you don't run into problems later</li>
@@ -68,27 +65,7 @@
                     </div>
                 </div>
                 <input type="submit" class="submit" value="Sign Up">
-            </div>    
-        </form>
-        <!-- log in form -->
-        <form action="" class="logIn-form" style="display:none">
-            <div class="form-title">
-                <h4>Enter your details below</h4>
-            </div>
-            <div class="form-inputs">
-                <div class="login-inputs-container">
-                    <div class="input-container">
-                        <input type="text" class="username-input" required maxlength="25">
-                        <span class="input-ph">user name</span>
-                        <p></p>
-                    </div>
-                    <div class="input-container">
-                        <input type="password" class="password-input" required  maxlength="12">
-                        <span class="input-ph">password</span>
-                        <p></p>
-                    </div>
-                </div>
-                <input type="submit" class="submit" value="Log In">
+                <p class="goToLogin">have an account ? <a href="login.html">login</a></p>
             </div>    
         </form>
 
