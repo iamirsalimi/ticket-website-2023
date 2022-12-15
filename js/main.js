@@ -155,10 +155,8 @@ function showMenu(){
         setTimeout(function(){
             logo.style.color = '#380091'
         } , 150)
-        headerSectionImg.style.filter = 'brightness(10%)'; 
     } else {
         logo.style.color = '#fff'
-        headerSectionImg.style.filter = 'brightness(40%)'; 
     }
     
 }

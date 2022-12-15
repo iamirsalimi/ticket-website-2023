@@ -283,13 +283,14 @@ nav.scrolling{
 
 /* header down  */
 
-.header-bg{
-    height:100vh;
-    background-image: url(/ticketwebsite/images/pexels-edoardo-tommasini-2034851.jpg);
-    background-position:center;
-    background-repeat:no-repeat;
-    background-size:cover;
+.header-bg {
+    height:100%;
     overflow:hidden;
+}
+
+.header-bg img{
+    height:125%;
+    width:125%;
     position:relative;
     filter:brightness(40%);
 }
@@ -298,7 +299,7 @@ nav.scrolling{
     height:25rem;
     position:absolute;
     width:80%;
-    top:70%;
+    top:90%;
     transform:translateY(-50%);
     font-size:1.5rem;
     pointer-events: none;
@@ -309,6 +310,7 @@ nav.scrolling{
     color:#fcfa52;
     text-transform:uppercase;
     font-family:'Alfa Slab One', cursive;
+    font-size:2.5rem;
 }
 
 .header-down .type{
@@ -670,6 +672,7 @@ footer .footer-desc .social{
 
 footer .copy-write{
     color:#fff;
+    text-align:center;
     font-family:'Fredoka One', cursive;
     font-size:1.25rem;
 }
@@ -712,6 +715,10 @@ footer .copy-write{
         left:10%
     }
     
+    .header-down .header-down-title{
+        font-size:3rem;
+    }
+
     .header-down .type{
         font-size:2rem;
         padding: 0 5px;
@@ -724,7 +731,6 @@ footer .copy-write{
     .details .detail .detail-title{
         font-size:1.5rem;
     }
-    
     .details .detail .number{
         font-size:1.5rem;
         padding:8px 0;
@@ -760,6 +766,7 @@ footer .copy-write{
         align-items:center;
         padding:10px 0;
     }
+
 }
 
 @media (min-width:900px) and (max-width:1110px) {
@@ -781,6 +788,10 @@ footer .copy-write{
     .header-down{
         font-size:3rem;
     }
+    .header-down .header-down-title{
+        font-size:3.5rem;
+    }
+
     .header-down .type{
         font-size:3rem;
     }
@@ -850,7 +861,7 @@ footer .copy-write{
         align-items:center;
         padding:40px 0;
     }
-
+    
 }
 
 @media (min-width:1110px) {
@@ -871,6 +882,9 @@ footer .copy-write{
     }
     .header-down{
         font-size:3rem;
+    }
+    .header-down .header-down-title{
+        font-size:4rem;
     }
     .header-down .type{
         font-size:3rem;
@@ -931,7 +945,7 @@ footer .copy-write{
         justify-content:space-between;
         align-items:center;
         flex-direction:row;
-
+        
     }
     footer .footer-desc .desc{
         width:60%;
@@ -945,6 +959,9 @@ footer .copy-write{
         align-items:center;
         gap:40px;
         padding:25px 0;
+    }
+    .header-bg{
+        max-height:120vh;
     }
 }
 
@@ -966,6 +983,9 @@ footer .copy-write{
     }
     .header-down{
         font-size:3rem;
+    }
+    .header-down .header-down-title{
+        font-size:5rem;
     }
     .header-down .type{
         font-size:3rem;
@@ -995,7 +1015,7 @@ footer .copy-write{
         width:100%;
         text-align: justify;
     }
-
+    
     .details .detail .detail-title{
         font-size:1.75rem;
     }
@@ -1007,7 +1027,7 @@ footer .copy-write{
     .showDetails-bg{
         height:200px;
     }
-
+    
     .cards-container .cards .card{
         width:350px;
         height:400px;
@@ -1041,5 +1061,8 @@ footer .copy-write{
         align-items:center;
         gap:40px;
         padding:25px 0;
+    }
+    .header-bg{
+        max-height:120vh;
     }
 }
