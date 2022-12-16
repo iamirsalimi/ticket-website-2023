@@ -5,8 +5,22 @@ let searchBtn = $.querySelector('.serachbar span')
 let searchInput = $.querySelector('.serachbar input')
 let sectionElems = $.querySelectorAll('.content section') 
 let menuTitle = $.querySelector('.content-section-title')
+let goToCustomers = $.querySelector('.all-users-title button span')
 let userTargetMenu
 
+
+goToCustomers.addEventListener('click',function(event){
+    sectionElems.forEach(function(section){
+        section.style.display = 'none'
+    })
+    menuItems.forEach(function(item){
+        item.classList.remove('active')
+    })
+
+    sectionElems[1].removeAttribute('style')
+    menuItems[1].classList.add('active')
+    menuTitle.innerHTML = '<h2>Outinz Customers  <span>List</span></h2>'
+})
 
 
 menuItems.forEach(function(menuItem){
