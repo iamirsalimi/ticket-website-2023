@@ -15,28 +15,31 @@
         <aside>
             <div class="menuItems">
                 <ul class="menuList">
-                    <li class="menu-item">
-                        <span class="material-symbols-rounded active">dashboard_customize</span>
+                    <li class="menu-item" data-class="dashboard-content">
+                        <span class="material-symbols-rounded active" >dashboard_customize</span>
                         <div class="menu-title">Dashboard</div>
                     </li>
-                    <li class="menu-item">
+                    <li class="menu-item" data-class="customers-content">
                         <span class="material-symbols-rounded">group</span>
                         <div class="menu-title">customers</div>
                     </li>
-                    <li class="menu-item">
+                    <li class="menu-item" data-class="">
                         <span class="material-symbols-rounded">storefront</span>
                         <div class="menu-title">Stores</div>
                     </li>
-                    <li class="menu-item">
+                    <li class="menu-item" data-class="">
                         <span class="material-symbols-rounded">confirmation_number</span>
                         <div class="menu-title">Tickets</div>
                     </li>
-                    
+                    <li class="menu-item" data-class="">
+                        <span class="material-symbols-rounded">person_filled</span>
+                        <div class="menu-title">Profile</div> 
+                    </li>
                 </ul>
             </div>
-            <div class="profile">
-                <span class="material-symbols-rounded">person_filled</span>
-                <div class="menu-title">profile</div>    
+            <div class="logout">
+                <span class="material-symbols-outlined">logout</span>
+                <div class="menu-title">Log out</div>    
             </div>
         </aside>
 
@@ -44,7 +47,7 @@
             <div class="content-section-title">
                 <h2>Outinz users <span>overview</span></h2>
             </div>
-            <div class="dashboard-content">
+            <section class="dashboard-content"  style="display:none;">
                 <div class="show-number-box">
                     <span class="material-symbols-outlined">local_activity</span>                        
                     <div class="box-show-number-box">
@@ -55,7 +58,7 @@
                 <div class="show-number-box">
                     <span class="material-symbols-outlined">shopping_cart</span>                        
                     <div class="box-show-number-box">
-                        <div class="box-title">Purchased tickets</div>
+                        <div class="box-title">Purchases tickets</div>
                         <div class="box-number">245</div>
                     </div>
                 </div>
@@ -158,7 +161,7 @@
                 </div>
                 <div class="all-users users-list ">
                     <div class="all-users-title table-title">
-                        <h2>All Customers</h2>
+                        <h2>Customers</h2>
                         <button>
                             <span class="material-symbols-outlined">chevron_right</span>
                         </button>
@@ -238,8 +241,63 @@
                         </table>
                     </div>
                 </div>
-            </div>
 
+
+            </section>
+            <section class="customers-content">
+                <div class="serachbar">
+                    <input type="text" id="search-input" placeholder="username">
+                    <span class="material-symbols-outlined">search</span>
+                </div>
+                <div class="customers-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>FirstName</th>
+                                <th>LastName</th>
+                                <th>UserName</th>
+                                <th>Password</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>mohammad</td>
+                                <td>yabueian</td>
+                                <td>mohammadybn</td>
+                                <td>yaboojan1234</td>
+                                <td>yaboo@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>amir</td>
+                                <td>slm</td>
+                                <td>amirSlm</td>
+                                <td>amirslm1234</td>
+                                <td>Amir@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>ted</td>
+                                <td>green</td>
+                                <td>tedMby</td>
+                                <td>ted1234</td>
+                                <td>tedM12@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>alireza</td>
+                                <td>mohammadi</td>
+                                <td>alirezamo</td>
+                                <td>mohamadi1234</td>
+                                <td>alirezaMo@gmail.com</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
         </div>    
 
