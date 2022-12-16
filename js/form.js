@@ -19,13 +19,12 @@ signUpInputElems[5].addEventListener('blur',function(event){
     let emailValue = event.target.value
     let linkRegex = /^\w+([\.-]?\w)*@\w+([\.-]?\w)*(\.\w{2,3})+$/g
     if(linkRegex.test(emailValue)){
-        console.log('valid')
+
         event.target.classList.remove('invalid')
         event.target.parentNode.lastElementChild.classList.remove('show-err')
     } else {
         event.target.classList.add('invalid')
         event.target.parentNode.lastElementChild.classList.add('show-err')
-        console.log('invalid')
     }
 })
 
