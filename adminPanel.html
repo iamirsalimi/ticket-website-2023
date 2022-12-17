@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width , initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,100,0,200" />
-    <link rel="icon" href="images/logo.png" type="image/icon type">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="styles/adminPanel.css">
     <title>OUTINZ Admin Panel</title>
@@ -15,23 +14,27 @@
         <aside>
             <div class="menuItems">
                 <ul class="menuList">
-                    <li class="menu-item" data-class="dashboard-content">
+                    <li class="menu-item" data-class="dashboard-content" data-sep="none">
                         <span class="material-symbols-rounded active" >dashboard_customize</span>
                         <div class="menu-title">Dashboard</div>
                     </li>
-                    <li class="menu-item" data-class="customers-content">
+                    <li class="menu-item" data-class="customers-content" data-sep="none">
                         <span class="material-symbols-rounded">group</span>
                         <div class="menu-title">customers</div>
                     </li>
-                    <li class="menu-item" data-class="">
+                    <li class="menu-item" data-class="stores-content" data-sep="none">
                         <span class="material-symbols-rounded">storefront</span>
                         <div class="menu-title">Stores</div>
                     </li>
-                    <li class="menu-item" data-class="">
+                    <li class="menu-item" data-class="tickets-content" data-sep="tickets">
                         <span class="material-symbols-rounded">confirmation_number</span>
                         <div class="menu-title">Tickets</div>
                     </li>
-                    <li class="menu-item" data-class="">
+                    <li class="menu-item" data-class="add-content" data-sep="addStore-tickets">
+                        <span class="material-symbols-outlined">add_business</span>
+                        <div class="menu-title">add Stores & Ticket</div> 
+                    </li>
+                    <li class="menu-item" data-class="profile-content" data-sep="none">
                         <span class="material-symbols-rounded">person_filled</span>
                         <div class="menu-title">Profile</div> 
                     </li>
@@ -42,12 +45,30 @@
                 <div class="menu-title">Log out</div>    
             </div>
         </aside>
+        <div class="menuItem-sectionSep">
+            <div class="tickets SectionSep"> 
+                <input type="radio" name="tickets-table" id="all-tickets">
+                <label for="all-tickets">All Tickets</label>
+                
+                <input type="radio" name="tickets-table" id="recent-purcahased" class="active">
+                <label for="recent-purchased">Recently Purchased</label> 
 
+                <input type="radio" name="tickets-table" id="expired" class="active">
+                <label for="expired">Expired and deleted Tickets</label> 
+            </div>
+            <div class="addStore-tickets SectionSep">
+                <input type="radio" name="add-Store-Ticket" id="add-store">
+                <label for="add-store" data-sepTarget="add-store">Add Store</label>
+
+                <input type="radio" name="add-Store-Ticket" id="add-ticket" class="active">
+                <label for="add-ticket" data-sepTarget="add-ticket">Add Ticket</label>
+            </div>
+        </div>
         <div class="content">
             <div class="content-section-title">
                 <h2>Outinz users <span>overview</span></h2>
             </div>
-            <section class="dashboard-content"  style="display:none;">
+            <section class="dashboard-content" style="display:none;">
                 <div class="show-number-box">
                     <span class="material-symbols-outlined">local_activity</span>                        
                     <div class="box-show-number-box">
@@ -119,42 +140,6 @@
                                     <td>adele</td>
                                     <td>04/23/23</td>
                                 </tr>
-                                <tr>
-                                    <td>amir</td>
-                                    <td>concert</td>
-                                    <td>adele</td>
-                                    <td>04/23/23</td>
-                                </tr>
-                                <tr>
-                                    <td>amir</td>
-                                    <td>concert</td>
-                                    <td>adele</td>
-                                    <td>04/23/23</td>
-                                </tr>
-                                <tr>
-                                    <td>amir</td>
-                                    <td>concert</td>
-                                    <td>adele</td>
-                                    <td>04/23/23</td>
-                                </tr>
-                                <tr>
-                                    <td>amir</td>
-                                    <td>concert</td>
-                                    <td>adele</td>
-                                    <td>04/23/23</td>
-                                </tr>
-                                <tr>
-                                    <td>amir</td>
-                                    <td>concert</td>
-                                    <td>adele</td>
-                                    <td>04/23/23</td>
-                                </tr>
-                                <tr>
-                                    <td>amir</td>
-                                    <td>concert</td>
-                                    <td>adele</td>
-                                    <td>04/23/23</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -170,72 +155,36 @@
                         <table>
                             <thead>
                                 <tr>
+                                    <th>firstName</th>
+                                    <th>lastName</th>
                                     <th>UserName</th>
-                                    <th>Ticket Type</th>
-                                    <th>Store</th>
-                                    <th>date</th>
+                                    <th>userType</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>mohammad</td>
-                                    <td>party</td>
-                                    <td>gay party</td>
-                                    <td>02/22/23</td>
+                                    <td>yabueian</td>
+                                    <td>mohammadMM1234</td>
+                                    <td>customer</td>
                                 </tr>
                                 <tr>
                                     <td>amir</td>
-                                    <td>concert</td>
-                                    <td>adele</td>
-                                    <td>04/23/23</td>
+                                    <td>slm</td>
+                                    <td>amirslm1234</td>
+                                    <td>customer</td>
                                 </tr>
                                 <tr>
-                                    <td>amir</td>
-                                    <td>concert</td>
-                                    <td>adele</td>
-                                    <td>04/23/23</td>
+                                    <td>ted</td>
+                                    <td>grren</td>
+                                    <td>tedgr1234</td>
+                                    <td>admin</td>
                                 </tr>
                                 <tr>
-                                    <td>amir</td>
-                                    <td>concert</td>
-                                    <td>adele</td>
-                                    <td>04/23/23</td>
-                                </tr>
-                                <tr>
-                                    <td>amir</td>
-                                    <td>concert</td>
-                                    <td>adele</td>
-                                    <td>04/23/23</td>
-                                </tr>
-                                <tr>
-                                    <td>amir</td>
-                                    <td>concert</td>
-                                    <td>adele</td>
-                                    <td>04/23/23</td>
-                                </tr>
-                                <tr>
-                                    <td>amir</td>
-                                    <td>concert</td>
-                                    <td>adele</td>
-                                    <td>04/23/23</td>
-                                </tr>
-                                <tr>
-                                    <td>amir</td>
-                                    <td>concert</td>
-                                    <td>adele</td>
-                                    <td>04/23/23</td>
-                                </tr>
-                                <tr>
-                                    <td>amir</td>
-                                    <td>concert</td>
-                                    <td>adele</td>
-                                    <td>04/23/23</td>
-                                </tr>
-                                <tr>
-                                    <td>amir</td>
-                                    <td>concert</td>
-                                    <td>adele</td>
-                                    <td>04/23/23</td>
+                                    <td>gayclub</td>
+                                    <td>-</td>
+                                    <td>gayClub1234</td>
+                                    <td>store</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -244,7 +193,7 @@
 
 
             </section>
-            <section class="customers-content">
+            <section class="customers-content" style="display:none;">
                 <div class="serachbar">
                     <input type="text" id="search-input" placeholder="username">
                     <span class="material-symbols-outlined">search</span>
@@ -253,11 +202,10 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>id</th>
+                                <th>Id</th>
                                 <th>FirstName</th>
                                 <th>LastName</th>
                                 <th>UserName</th>
-                                <th>Password</th>
                                 <th>Email</th>
                             </tr>
                         </thead>
@@ -267,7 +215,6 @@
                                 <td>mohammad</td>
                                 <td>yabueian</td>
                                 <td>mohammadybn</td>
-                                <td>yaboojan1234</td>
                                 <td>yaboo@gmail.com</td>
                             </tr>
                             <tr>
@@ -275,7 +222,6 @@
                                 <td>amir</td>
                                 <td>slm</td>
                                 <td>amirSlm</td>
-                                <td>amirslm1234</td>
                                 <td>Amir@gmail.com</td>
                             </tr>
                             <tr>
@@ -283,7 +229,6 @@
                                 <td>ted</td>
                                 <td>green</td>
                                 <td>tedMby</td>
-                                <td>ted1234</td>
                                 <td>tedM12@gmail.com</td>
                             </tr>
                             <tr>
@@ -291,14 +236,193 @@
                                 <td>alireza</td>
                                 <td>mohammadi</td>
                                 <td>alirezamo</td>
-                                <td>mohamadi1234</td>
                                 <td>alirezaMo@gmail.com</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </section>
+            <section class="stores-content" style="display:none;">
+                <div class="serachbar">
+                    <input type="text" id="search-input" placeholder="username">
+                    <span class="material-symbols-outlined">search</span>
+                </div>
+                <div class="stores-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>StoreName</th>
+                                <th>Address</th>
+                                <th>UserName</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>adele</td>
+                                <td>north cyprus shahid alipour</td>
+                                <td>adeleJun</td>
+                                <td>adele@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>avamax</td>
+                                <td>north cyprus aiatolah khomeini</td>
+                                <td>avamaxJun</td>
+                                <td>avamax@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>gay club</td>
+                                <td>beyt rahbari ba hozur madar , zan rahbar</td>
+                                <td>rahClub</td>
+                                <td>akh@gmail.com</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="tickets-content" style="display:none;">
+                <div class="serachbar">
+                    <input type="text" id="search-input" placeholder="username">
+                    <span class="material-symbols-outlined">search</span>
+                </div>
+                <div class="tickets-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Store UserName</th>
+                                <th>Ticket Type</th>
+                                <th>Capacity</th>
+                                <th>Available Tickets</th>
+                                <th>Ticket status</th>
+                                <th>Start date</th>
+                                <th>price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>gayClub1234</td>
+                                <td>party</td>
+                                <td>200</td>
+                                <td>120</td>
+                                <td>selling</td>
+                                <td>01/07/23</td>
+                                <td>200</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>avamax1234</td>
+                                <td>concert</td>
+                                <td>300</td>
+                                <td>55</td>
+                                <td>selling</td>
+                                <td>22/07/23</td>
+                                <td>500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="add-content" >
+                <form action="" class="add-store">
+                    <h2>add store</h2>
+                    <div class="add-store-tips">
+                        <ul>
+                            <li>all Inputs are required</li>
+                            <li>Username must be between 4 and 15 characters</li>
+                            <li>Username must be between 4 and 16 characters</li>
+                        </ul>
+                    </div>
+                    <div class="inputs">
+                        <div class="input">
+                            <span class="input-title" >Store UserName</span>
+                            <input type="text" name="store-name" required minlength="4" maxlength="15"> 
+                            <span class="star">*</span>
+                        </div>
+                        <div class="input">
+                            <span class="input-title" >Store Password</span>
+                            <input type="password" name="store-pass" required  minlength="4" maxlength="16"> 
+                            <span class="star">*</span>
+                        </div>
+                        <div class="input">
+                            <span class="input-title" >Store Address</span>
+                            <input type="text" name="store-address" required> 
+                            <span class="star">*</span>
+                        </div>
+                        <div class="input">
+                            <span class="input-title"  >Store Email</span>
+                            <input type="text" name ="store-email" class="store-email" required > 
+                            <span class="star">*</span>
+                        </div>
+                    </div>
+                    <input type="submit" value="Add Store" data-modalTarget="add-ticket-modal" class="addStore-btn">
+                </form>
 
+                <form action="" class="add-ticket" style="display:none;">
+                    <h2>add ticket</h2>
+                    <div class="inputs">
+                        <div class="input input-category">
+                            <span class="input-title">Ticket Category</span>
+                            <select name="Ticket category">
+                                <option value="party">party</option>
+                                <option value="concert">concert</option>
+                                <option value="hotel">hotel</option>
+                                <option value="airplane">airplane</option>
+                            </select>
+                            <span class="star">*</span>
+                        </div>
+                        <div class="input">
+                            <span class="input-title" >Ticket Price</span>
+                            <input type="number" name="ticket-price" min="0" max="20000" required> 
+                            <span class="star">*</span>
+                        </div>
+                        <div class="input">
+                            <span class="input-title" >Ticket's store UserName</span>
+                            <input type="text" name="ticket-store-username" required> 
+                            <span class="star">*</span>
+                        </div>
+                        <div class="input">
+                            <span class="input-title" >Ticket start Date</span>
+                            <input type="date" name="ticket-start-date" required> 
+                            <span class="star">*</span>
+                        </div>
+                        <div class="input">
+                            <span class="input-title" >Ticket Capacity</span>
+                            <input type="number" name="ticket-start-date" min="0" max="2000" required> 
+                            <span class="star">*</span>
+                        </div>
+                    </div>
+                    <input type="submit" value="Add ticket" data-modalTarget="add-store-modal" class="addTicket-btn">
+                </form>
+
+                <div class="modal">
+                    <div class="add-store-modal">
+                        <ul>
+                            <li class="username">UserName is already in use</li>
+                            <li class="username">Email is invalid</li>
+                        </ul>
+                    </div>
+                    <div class="add-ticket-modal">
+                        <ul>
+                            <li class="store-username">Store username not found</li>
+                            <li class="store-username">Store username not found</li>
+                        </ul>
+                    </div>
+                    <div class="success">
+                        <p>
+                            <span class="store">store </span><span class="ticket">ticket</span> Added
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="profile-content">
+
+            </section>
         </div>    
 
     </div>

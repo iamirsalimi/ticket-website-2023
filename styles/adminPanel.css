@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 *{
     margin:0;
@@ -16,7 +18,7 @@
     padding:10px;
     display:flex;
     align-items: center;
-    gap:20px;
+    gap:10px;
 }
 
 .container aside{
@@ -38,7 +40,7 @@
     justify-content:space-between;
     align-items:center;
     flex-direction:column;
-    gap:25px;
+    gap:10px;
 }
 
 .container aside .menuItems .menuList li{
@@ -52,17 +54,20 @@
     padding:10px;
     gap:5px;
     border-radius:5px;
+    text-align: center;;
 }
 
 .container aside .menuItems .menuList li .menu-title{
     font-family: 'Bree Serif', serif;
     pointer-events: none;
 }
-.container aside .menuItems .menuList li .material-symbols-rounded{
+.container aside .menuItems .menuList li .material-symbols-rounded,
+.container aside .menuItems .menuList li .material-symbols-outlined{
     pointer-events: none;
 }
 
-.container aside .menuItems .menuList li:hover .material-symbols-rounded{
+.container aside .menuItems .menuList li:hover .material-symbols-rounded,
+.container aside .menuItems .menuList li:hover .material-symbols-outlined{
     color:#c490ff;
 }
 
@@ -71,7 +76,8 @@
 }
 
 .container aside .menuItems .menuList li.active,
-.container aside .menuItems .menuList li.active .material-symbols-rounded{
+.container aside .menuItems .menuList li.active .material-symbols-rounded,
+.container aside .menuItems .menuList li.active .material-symbols-outlined{
     background:#fff;
     color:#270062;
 }
@@ -107,10 +113,56 @@
     font-size:1.5rem;
 }
 
+/* Menu Item section Separator */
+.container .menuItem-sectionSep{
+    width:200px;
+    height:100%;
+    background:#c398ff;
+    border-radius:10px;
+    display:none;
+    padding:20px 0;
+    text-align:center;
+}
+
+.container .menuItem-sectionSep .addStore-tickets,
+.container .menuItem-sectionSep .tickets{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.container .menuItem-sectionSep .addStore-tickets input,
+.container .menuItem-sectionSep .tickets input{
+    display:none;
+}
+
+.container .menuItem-sectionSep .addStore-tickets label,
+.container .menuItem-sectionSep .tickets label{
+    color:#5b22ab;
+    cursor:pointer;
+    display:block;
+    width:100%;
+    padding:5px 0;
+    font-size:1.2rem;
+    border-top:1px solid #3b0084;
+    font-family: 'Righteous', cursive;
+    transition:0.15s ease-out;
+}
+
+.container .menuItem-sectionSep .addStore-tickets label:last-of-type,
+.container .menuItem-sectionSep .tickets label:last-of-type{
+    border-bottom:1px solid #3b0084;
+}
+
+.container .menuItem-sectionSep .addStore-tickets label:hover,
+.container .menuItem-sectionSep .tickets label:hover{
+    background:#8e46fb;
+}
 .container .content{
     width:100%;
     height:100%;
-    background:#dac9fa;
+    background:#f2eaff;
     border-radius:10px;
     padding:20px;
     display:flex;
@@ -266,7 +318,7 @@
 .container .content .dashboard-content .users-list .user-list table thead th{
     color:#7F167F;
     border-right:2px solid #7F167F;
-    font-family: 'Cinzel', serif;
+    font-family: 'Righteous', cursive;
     font-size:1.2rem;
 }
 
@@ -274,7 +326,7 @@
 .container .content .dashboard-content .users-list .user-list table tbody td{
     color:#e690bc;
     padding:5px 0;
-    font-family: 'Cinzel', serif;
+    font-family: 'Righteous', cursive;
     font-size:1.1rem;
 }
 
@@ -284,8 +336,10 @@
 }
 
 
-/* customers section */
-.customers-content{
+/* customers ,stores ,tickets section */
+.customers-content,
+.stores-content,
+.tickets-content{
     position:relative;
     height:100%;
     display:flex;
@@ -293,7 +347,9 @@
     gap:30px;
 }
 
-.customers-content .serachbar{
+.customers-content .serachbar,
+.stores-content .serachbar,
+.tickets-content .serachbar{
     position:absolute;
     max-width:400px;
     right:0;
@@ -302,7 +358,9 @@
     right:20px;
 }
 
-.customers-content #search-input{
+.customers-content #search-input,
+.stores-content #search-input,
+.tickets-content #search-input{
     width:400px;
     height:40px;
     border-radius:10px;
@@ -314,11 +372,15 @@
     border:2px solid #3b0084;
 }
 
-.customers-content #search-input::placeholder{
+.customers-content #search-input::placeholder,
+.stores-content #search-input::placeholder,
+.tickets-content #search-input::placeholder{
     color:#6a0afb;
 }
 
-.customers-content span{
+.customers-content span,
+.stores-content span,
+.tickets-content span{
     position:absolute;
     right:0;
     height:100%;
@@ -329,7 +391,9 @@
     cursor:pointer;
 }
 
-.customers-content .customers-table{
+.customers-content .customers-table,
+.stores-content .stores-table,
+.tickets-content .tickets-table{
     width:100%;
     height:100%;
     background:#fff;
@@ -338,34 +402,177 @@
     max-height:500px;
 }
 
-.customers-content .customers-table table{
+.customers-content .customers-table table,
+.stores-content .stores-table table,
+.tickets-content .tickets-table table{
     width:100%;
     text-align:center;
 }
 
-.customers-content .customers-table table thead th{
+.customers-content .customers-table table thead th,
+.stores-content .stores-table table thead th,
+.tickets-content .tickets-table table thead th{
     border-right:2px solid #3e0396;
     outline:2px solid #3e0396;
     color:#d9c0ff;
+    font-family: 'Righteous', cursive;
     font-size:1.25rem;
 }
 
-.customers-content .customers-table table thead{
+.customers-content .customers-table table thead,
+.stores-content .stores-table table thead,
+.tickets-content .tickets-table table thead{
     background:#3e0396;
     width:100%;
 }
 
 
-.customers-content .customers-table table tbody td{
+.customers-content .customers-table table tbody td,
+.stores-content .stores-table table tbody td,
+.tickets-content .tickets-table table tbody td{
     color:#8e46fb;
     padding:7.5px 0;
+    font-family: 'Righteous', cursive;
     transition:0.15s ease-out;
 }
 
-.customers-content .customers-table table tbody tr:hover{
+.customers-content .customers-table table tbody tr:hover,
+.stores-content .stores-table table tbody tr:hover,
+.tickets-content .tickets-table table tbody tr:hover{
     background:#d8b3ff;
 }
 
+.tickets-content select {
+    background:#6600ff;
+    color:#e5d3ff;
+    padding:5px 10px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+/* add stores section*/
+
+.add-content{
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    gap:25px;
+}
+
+.add-content form{
+    padding:25px 10px;
+    border:2px solid #6600ff;
+    border-radius:10px;
+    position:relative;
+    text-align:center;
+}
+
+.add-content form h2{
+    color:#6600ff;
+    background:#f2eaff;
+    padding:0 10px;
+    font-family: 'Lobster', cursive;
+    position:absolute;
+    top:-20px;
+    left:20px;
+}
+
+.add-content form .inputs{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:20px;
+}
+.add-content form .input{
+    position:relative;
+}
+
+.add-content .modal{
+    display:none;
+    text-align:center;
+    font-size:1rem;
+    border-radius:10px;
+    background:red;
+    font-family: 'Titillium Web', sans-serif;
+    color:#f2eaff;
+}
+
+.add-content .modal ul {
+    list-style:none;
+}
+.add-content form .input input{
+    width:100%;
+    font-size:1.2rem;
+    color:#6600ff;
+    padding:5px 10px;
+    background: none;
+    border:1px solid rgb(119, 32, 249);
+    outline:none;
+    border-radius:10px;
+}
+
+.add-content form .input .input-title{
+    display:inline-block;
+    position:absolute;
+    left:15px;
+    top:-10px;
+    background:#f2eaff;
+    color:rgb(119, 32, 249);
+    padding:0 10px;
+}
+
+.add-content form select{
+    background:#6a0afb;
+    width:100%;
+    border-radius:10px;
+    border:none;
+    color:#f2eaff;
+    cursor:pointer;
+    padding:5px 20px;
+    font-size:1rem;
+}
+
+.add-content .add-ticket{
+    padding:40px 10px;
+}
+
+.add-content form .input-category .input-title{
+    background:none;
+    top:-20px;
+    left:0;
+}
+
+.add-content form .input .star{
+    color:rgb(186, 0, 0);
+    position:absolute;
+    top:-15px;
+    right:10px;
+}
+
+.add-content form .addStore-btn,
+.add-content form .addTicket-btn{
+    margin-top:20px;
+    background:#7336ce;
+    border:none;
+    padding:10px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    color:#f2eaff;
+}
+
+.add-content .add-store .add-store-tips ul{
+    background:#4800b4;
+    width:100%;
+    margin:20px 0;
+    list-style: none;
+    padding:5px 10px;
+    border-radius:10px;
+}
+
+.add-content .add-store .add-store-tips li{
+    color:#d5b9ff;
+    font-family: 'Righteous', cursive;
+}
 /* icons */
 .material-symbols-rounded {
     font-variation-settings:
