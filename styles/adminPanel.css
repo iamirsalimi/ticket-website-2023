@@ -604,7 +604,7 @@
     display:grid;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(4,1fr);
-    gap:20px;
+    gap:10px;
     height:100%;
 }
 
@@ -713,8 +713,7 @@
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(3,1fr);
     column-gap: 10px;
-    row-gap: 25px;
-    
+    row-gap: 15px;
     margin-top:1rem;
 }
 
