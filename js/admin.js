@@ -2,7 +2,10 @@ let $ = document
 
 let menuItems = $.querySelectorAll('.menuList li')
 let searchBtn = $.querySelector('.serachbar span')
-let searchInput = $.querySelector('.serachbar input')
+
+let searchInputs = $.querySelectorAll('.serachbar input')
+
+
 let sectionElems = $.querySelectorAll('.content section') 
 let menuTitle = $.querySelector('.content-section-title')
 let goToCustomers = $.querySelector('.all-users-title button span')
@@ -20,7 +23,24 @@ let addForms = $.querySelectorAll('.add-content form')
 let showPass =  $.querySelector('.show-pass span')
 let adminPassInput = $.getElementById('admin-password')
 let adminEmailInput = $.getElementById('admin-email')
-let userTargetMenu , userTargetSep , targetSepElem
+let userTargetMenu , userTargetSep , targetSepElem , usernames
+
+
+
+
+
+
+// functions
+function clearInputsValueHandler(){
+    let inputs = $.querySelectorAll('input')
+    inputs.forEach(function(input){
+        if(input.type !== 'submit'){
+            input.value = ''
+        }
+    })
+}
+
+
 
 
 // show and hide password 
@@ -32,6 +52,31 @@ showPass.parentNode.addEventListener('click',function(event){
         adminPassInput.type = 'password'
         showPass.innerHTML = 'visibility'
     }
+})
+
+function checkEmail(event){
+    let emailValue = event.target.value.trim()
+    if(linkRegex.test(emailValue)){
+        event.target.parentNode.lastElementChild.classList.remove('show-err')
+    } else {
+        event.target.parentNode.lastElementChild.classList.add('show-err')
+    }
+}
+
+// load 
+window.addEventListener('DOMContentLoaded',function(){
+    sectionElems.forEach(function(section){
+        section.style.display = 'none'
+    })
+    
+    menuItems.forEach(function(item){
+        item.classList.remove('active')
+    })
+
+    menuItems[0].classList.add('active')
+    $.querySelector('.dashboard-content').removeAttribute('style')
+    menuTitle.innerHTML = '<h2>Outinz users <span>overview</span></h2>'
+    clearInputsValueHandler()
 })
 
 
@@ -88,7 +133,6 @@ menuItems.forEach(function(menuItem){
             item.classList.remove('active')
         })
 
-        console.log(event.target)
         event.target.classList.add('active')
         userTargetMenu = $.querySelector('.'+ event.target.dataset.class)
         userTargetMenu.removeAttribute('style')
@@ -126,28 +170,19 @@ menuItems.forEach(function(menuItem){
 
 
 // search input
-searchInput.addEventListener('keyup',function(event){
-    let users = $.querySelectorAll('tbody tr')
-    users.forEach(function(user){
-        if(user.children[3].innerHTML.indexOf(event.target.value.trim()) === -1){
-            user.style.display = 'none'
+searchInputs.forEach(function(searchInput){
+    searchInput.addEventListener('keyup',function(event){
+    let usernames = $.querySelectorAll('.' + event.target.dataset.section +' .username')
+    usernames.forEach(function(username){
+        if(username.innerHTML.includes(event.target.value.trim())){
+            username.parentNode.style.display = 'table-row'
         } else {
-            user.style.display = 'table-row'
+            username.parentNode.style.display = 'none'
         }
     })
 })
+})
 
-// emailValidation
 
-
-function checkEmail(event){
-    let emailValue = event.target.value.trim()
-    if(linkRegex.test(emailValue)){
-        event.target.parentNode.lastElementChild.classList.remove('show-err')
-    } else {
-        event.target.parentNode.lastElementChild.classList.add('show-err')
-    }
-}
-
-storeEmailInput.addEventListener('blur',checkEmail)
+storeEmailInput.addEventListener('keyup',checkEmail)
 adminEmailInput.addEventListener('keyup',checkEmail)

@@ -520,7 +520,7 @@
     height:100px;
     font-size:1.2rem;
     color:#6600ff;
-    padding:5px 10px;
+    padding:20px 10px;
     background:none;
     resize:none;
     border:1px solid rgb(119, 32, 249);
@@ -724,13 +724,14 @@
 }
 .profile-content .add-admin form .input .show-pass{
     position:absolute;
-    right:10px;
+    right:5px;
     top:5px;
     cursor:pointer;
 }
 
 .profile-content .add-admin form .input .show-pass .material-symbols-outlined{
     color:#6600ff;
+    display:inline-block;
     pointer-events: none;
 }
 .profile-content .add-admin form .input input{
@@ -741,6 +742,7 @@
     font-size:1.2rem;
     color:#6a0afb;
     caret-color: #6a0afb;
+    border-radius:5px;
 }
 
 .profile-content .add-admin form .input .input-title{
