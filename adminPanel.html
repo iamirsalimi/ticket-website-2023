@@ -14,30 +14,46 @@
         <aside>
             <div class="menuItems">
                 <ul class="menuList">
-                    <li class="menu-item" data-class="dashboard-content" data-sep="none">
-                        <span class="material-symbols-rounded active" >dashboard_customize</span>
-                        <div class="menu-title">Dashboard</div>
-                    </li>
-                    <li class="menu-item" data-class="customers-content" data-sep="none">
-                        <span class="material-symbols-rounded">group</span>
-                        <div class="menu-title">customers</div>
-                    </li>
-                    <li class="menu-item" data-class="stores-content" data-sep="none">
-                        <span class="material-symbols-rounded">storefront</span>
-                        <div class="menu-title">Stores</div>
-                    </li>
-                    <li class="menu-item" data-class="tickets-content" data-sep="tickets">
-                        <span class="material-symbols-rounded">confirmation_number</span>
-                        <div class="menu-title">Tickets</div>
-                    </li>
-                    <li class="menu-item" data-class="add-content" data-sep="addStore-tickets">
-                        <span class="material-symbols-outlined">add_business</span>
-                        <div class="menu-title">add Stores & Ticket</div> 
-                    </li>
-                    <li class="menu-item" data-class="profile-content" data-sep="none">
-                        <span class="material-symbols-rounded">person_filled</span>
-                        <div class="menu-title">Profile</div> 
-                    </li>
+                    <a href="#" data-class="dashboard-content" data-sep="none">                    
+                        <li class="menu-item" data-class="dashboard-content" data-sep="none">
+                            <span class="material-symbols-rounded active" >dashboard_customize</span>
+                            <div class="menu-title">Dashboard</div>
+                        </li>
+                    </a>
+
+                    <a href="#" data-class="customers-content" data-sep="none">
+                        <li class="menu-item" data-class="customers-content" data-sep="none">
+                            <span class="material-symbols-rounded">group</span>
+                            <div class="menu-title">customers</div>
+                        </li>
+                    </a>
+
+                    <a href="#" data-class="stores-content" data-sep="none">
+                        <li class="menu-item" data-class="stores-content" data-sep="none">
+                            <span class="material-symbols-rounded">storefront</span>
+                            <div class="menu-title">Stores</div>
+                        </li>
+                    </a>
+
+                    <a href="#" data-class="tickets-content" data-sep="tickets">
+                        <li class="menu-item" data-class="tickets-content" data-sep="tickets">
+                            <span class="material-symbols-rounded">confirmation_number</span>
+                            <div class="menu-title">Tickets</div>
+                        </li>
+                    </a>
+
+                    <a href="#" data-class="add-content" data-sep="addStore-tickets">
+                        <li class="menu-item" data-class="add-content" data-sep="addStore-tickets">
+                            <span class="material-symbols-outlined">add_business</span>
+                            <div class="menu-title">add Stores & Ticket</div> 
+                        </li>
+                    </a>
+                    <a href="#" data-class="profile-content" data-sep="none">
+                        <li class="menu-item" data-class="profile-content" data-sep="none">
+                            <span class="material-symbols-rounded">person_filled</span>
+                            <div class="menu-title">Profile</div> 
+                        </li>
+                    </a>
                 </ul>
             </div>
             <div class="logout">
@@ -328,7 +344,7 @@
                     </table>
                 </div>
             </section>
-            <section class="add-content" >
+            <section class="add-content" style="display:none;">
                 <form action="" class="add-store">
                     <h2>add store</h2>
                     <div class="add-store-tips">
@@ -426,8 +442,88 @@
                     </div>
                 </div>
             </section>
-            <section class="profile-content">
+            <section class="profile-content" >
+                
+                <div class="admin-profile">
+                    <div class="admin-pic">
+                        <span class="material-symbols-outlined">mood</span>
+                    </div>
+                    <div class="admin-information">
+                        <h4 class="admin-username">@mohammadali</h3>
+                        <h3 class="admin-fullname">mohammad ali sdfewfw</h2>
+                    </div>
+                </div>
+                
+                <div class="admins-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Admin FirstName</th>
+                                <th>Admin LastName</th>
+                                <th>Admin Username</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>reza</td>
+                                <td>reza sdfda</td>
+                                <td>reza sdasdf</td>
+                                <div class="online-status"></div>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>mohammad</td>
+                                <td>asdea</td>
+                                <td>mohammadali</td>
+                                <div class="online-status"></div>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
+                <div class="add-admin">
+                    <div class="add-admin-title">
+                        <h2>Add Admin</h2>
+                    </div>
+                    <form action="">
+                        <div class="inputs">
+                            <div class="input">
+                                <span class="input-title" >Admin FirstName</span>
+                                <input type="text" name="admin-forstname" required minlength="4" maxlength="15"> 
+                                <span class="star">*</span>
+                            </div>
+                            <div class="input">
+                                <span class="input-title" >Admin LastName</span>
+                                <input type="text" name="admin-lastname" required minlength="4" maxlength="15"> 
+                                <span class="star">*</span>
+                            </div>
+                            <div class="input">
+                                <span class="input-title" >Admin UserName</span>
+                                <input type="text" name="admin-username" required minlength="4" maxlength="15"> 
+                                <span class="star">*</span>
+                            </div>
+                            <div class="input">
+                                <span class="input-title" >Admin Password</span>
+                                <input type="password" id="admin-password" name="admin-pass" required  minlength="4" maxlength="16"> 
+                                <span class="star">*</span>
+                                <div class="show-pass">
+                                    <span class="material-symbols-outlined">visibility</span>
+                                    <!-- <span class="material-symbols-outlined">visibility_off</span> -->
+                                </div>
+                            </div>
+                            <div class="input">
+                                <input type="text" id="admin-email" name="admin-email" required> 
+                                <span class="input-title" >Admin Email</span>
+                                <span class="star">*</span>
+                                <p>email is invalid</p>
+                            </div>
+                        </div>
+                        <input type="submit" value="Add Admin" class="addAdmin-btn">
+                    
+                    </form>
+                </div>
             </section>
         </div>    
 

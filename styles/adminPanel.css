@@ -43,6 +43,10 @@
     gap:10px;
 }
 
+.container aside .menuItems .menuList a{
+    text-decoration:none;
+}
+
 .container aside .menuItems .menuList li{
     color:#fff;
     font-size:0.8rem;
@@ -572,6 +576,12 @@
     border-radius:10px;
     cursor:pointer;
     color:#f2eaff;
+    transition:0.15s ease-out;
+}
+
+.add-content form .addStore-btn:hover,
+.add-content form .addTicket-btn:hover{
+    background:#6600ff;
 }
 
 .add-content .add-store .add-store-tips ul{
@@ -587,6 +597,197 @@
     color:#d5b9ff;
     font-family: 'Righteous', cursive;
 }
+
+/* profile section */
+
+.profile-content{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4,1fr);
+    gap:20px;
+    height:100%;
+}
+
+.profile-content .admin-profile{
+    grid-column:1/2;
+    grid-row: 1/3;
+    height:100%;
+    background:#fff;
+    border-radius:10px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items: center;
+    gap:20px;
+    text-align:center;
+    padding:20px 5px;
+}
+
+.profile-content .admin-information{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items: center;
+    gap:10px;
+    font-family: 'Righteous', cursive;
+}
+
+.profile-content .admin-information h4{
+    color:#906ec9;
+}
+.profile-content .admin-information h3{
+    color:#4800ce;
+}
+
+.profile-content .admin-profile .admin-pic{
+    background:#dfc9ff;
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+}
+.profile-content .admin-profile .admin-pic .material-symbols-outlined{
+    font-size:4rem;
+    color:#4800b4;
+}
+
+.profile-content .admins-table{
+    width:100%;
+    height:100%;
+    background:#fff;
+    border-radius:10px;
+    grid-column:2/-1;
+    grid-row:1/3;
+    overflow-y:scroll;
+    max-height:500px;
+}
+
+.profile-content .admins-table table{
+    width:100%;
+    text-align:center;
+}
+
+.profile-content .admins-table table thead th{
+    border-right:2px solid #3e0396;
+    outline:2px solid #3e0396;
+    color:#d9c0ff;
+    font-family: 'Righteous', cursive;
+    font-size:1.25rem;
+}
+
+.profile-content .admins-table table thead{
+    background:#3e0396;
+    width:100%;
+}
+
+.profile-content .admins-table table tbody td{
+    color:#8e46fb;
+    padding:7.5px 0;
+    font-family: 'Righteous', cursive;
+    transition:0.15s ease-out;
+}
+
+.profile-content .admins-table table tbody tr:hover{
+    background:#d8b3ff;
+}
+
+.profile-content .add-admin{
+    grid-column:1/-1;
+    grid-row:3/-1;
+    background:#fff;
+    border-radius:10px;
+    padding:10px 15px;
+    text-align:center;
+}
+
+.profile-content .add-admin .add-admin-title h2{
+    font-family: 'Righteous', cursive;
+    color:#6600ff;
+}
+
+.profile-content .add-admin form .inputs{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,1fr);
+    column-gap: 10px;
+    row-gap: 25px;
+    
+    margin-top:1rem;
+}
+
+.profile-content .add-admin form .input{
+    grid-column:1/3;
+    position:relative;
+}
+.profile-content .add-admin form .input .show-pass{
+    position:absolute;
+    right:10px;
+    top:5px;
+    cursor:pointer;
+}
+
+.profile-content .add-admin form .input .show-pass .material-symbols-outlined{
+    color:#6600ff;
+    pointer-events: none;
+}
+.profile-content .add-admin form .input input{
+    width:100%;
+    padding:5px 10px;
+    border:1px solid #6600ff;
+    outline:none;
+    font-size:1.2rem;
+    color:#6a0afb;
+    caret-color: #6a0afb;
+}
+
+.profile-content .add-admin form .input .input-title{
+    position:absolute;
+    left:20px;
+    top:-15px;
+    font-family: 'Righteous', cursive;
+    padding:0 10px;
+    background:#fff;
+    color:#6600ff;
+}
+.profile-content .add-admin form .input:nth-child(even){
+    grid-column:3/-1;
+}
+
+.profile-content .add-admin form .input .star{
+    color:rgb(186, 0, 0);
+    position:absolute;
+    top:-15px;
+    right:10px;
+}
+
+.add-admin form .addAdmin-btn{
+    margin-top:20px;
+    background:#7336ce;
+    border:none;
+    padding:10px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    color:#f2eaff;
+    transition:0.15s ease-out;
+}
+
+.add-admin form .addAdmin-btn:hover{
+    background:#6600ff;
+}
+
+
+.inputs .input p{
+    display:none;
+    color:#c80c1b;
+}
+
+.inputs .input p.show-err{
+    display:block;
+}
+
 /* icons */
 .material-symbols-rounded {
     font-variation-settings:

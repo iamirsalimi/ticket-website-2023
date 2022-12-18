@@ -1,21 +1,43 @@
 let $ = document
 
-let menuItems = $.querySelectorAll('.menu-item')
+let menuItems = $.querySelectorAll('.menuList li')
 let searchBtn = $.querySelector('.serachbar span')
 let searchInput = $.querySelector('.serachbar input')
 let sectionElems = $.querySelectorAll('.content section') 
 let menuTitle = $.querySelector('.content-section-title')
 let goToCustomers = $.querySelector('.all-users-title button span')
 let goToTickets = $.querySelector('.recent-purchases-title button span')
+
 let linkRegex = /^\w+([\.-]?\w)*@\w+([\.-]?\w)*(\.\w{2,3})+$/g
 let storeEmailInput = $.querySelector('.store-email')
+
 let sectionSeps = $.querySelectorAll('.menuItem-sectionSep .SectionSep')
 let sectionSepContainer = $.querySelector('.menuItem-sectionSep')
 let addSeps = $.querySelectorAll('.menuItem-sectionSep .addStore-tickets input')
+
 let addForms = $.querySelectorAll('.add-content form')
 
+let showPass =  $.querySelector('.show-pass span')
+let adminPassInput = $.getElementById('admin-password')
+let adminEmailInput = $.getElementById('admin-email')
 let userTargetMenu , userTargetSep , targetSepElem
 
+
+// show and hide password 
+showPass.parentNode.addEventListener('click',function(event){
+    if(adminPassInput.type === 'password'){
+        adminPassInput.type = 'text'
+        showPass.innerHTML = 'visibility_off'
+    } else {
+        adminPassInput.type = 'password'
+        showPass.innerHTML = 'visibility'
+    }
+})
+
+
+
+
+// sections seps
 addSeps.forEach(function(addSep){
     addSep.addEventListener('click',function(event){
         
@@ -29,6 +51,7 @@ addSeps.forEach(function(addSep){
     })
 })
 
+// dashboard short cut
 goToTickets.addEventListener('click',function(event){
     sectionElems.forEach(function(section){
         section.style.display = 'none'
@@ -54,7 +77,7 @@ goToCustomers.addEventListener('click',function(event){
     menuTitle.innerHTML = '<h2>Outinz Customers  <span>List</span></h2>'
 })
 
-
+// menu 
 menuItems.forEach(function(menuItem){
     menuItem.addEventListener('click',function(event){
         sectionElems.forEach(function(section){
@@ -65,6 +88,7 @@ menuItems.forEach(function(menuItem){
             item.classList.remove('active')
         })
 
+        console.log(event.target)
         event.target.classList.add('active')
         userTargetMenu = $.querySelector('.'+ event.target.dataset.class)
         userTargetMenu.removeAttribute('style')
@@ -94,10 +118,14 @@ menuItems.forEach(function(menuItem){
             menuTitle.innerHTML = '<h2>Outinz Tickets  <span>List</span></h2>'
         } else if(userTargetMenu.className === 'add-content'){
             menuTitle.innerHTML = '<h2>Outinz add Store and Tickets<span> section</span></h2>'
+        } else {
+            menuTitle.innerHTML = '<h2>Outinz Admin Profile <span> section</span></h2>'
         }
     })
 })
 
+
+// search input
 searchInput.addEventListener('keyup',function(event){
     let users = $.querySelectorAll('tbody tr')
     users.forEach(function(user){
@@ -109,14 +137,17 @@ searchInput.addEventListener('keyup',function(event){
     })
 })
 
+// emailValidation
 
-storeEmailInput.addEventListener('blur',function(event){
-    let emailValue = event.target.value
+
+function checkEmail(event){
+    let emailValue = event.target.value.trim()
     if(linkRegex.test(emailValue)){
-        event.target.classList.remove('invalid')
         event.target.parentNode.lastElementChild.classList.remove('show-err')
     } else {
-        event.target.classList.add('invalid')
         event.target.parentNode.lastElementChild.classList.add('show-err')
     }
-})
+}
+
+storeEmailInput.addEventListener('blur',checkEmail)
+adminEmailInput.addEventListener('keyup',checkEmail)
