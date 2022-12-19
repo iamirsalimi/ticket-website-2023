@@ -90,6 +90,8 @@ addSeps.forEach(function(addSep){
             addForm.style.display = 'none'
         })
         userTargetElem.style.display = 'block'
+
+        menuTitle.innerHTML = '<h2>Outinz '+ event.target.nextElementSibling.innerHTML +'<span>  Section</span></h2>'
         // get active class to menu separator target
         addSeps.forEach(function(addSepElem){
             addSepElem.nextElementSibling.classList.remove('active')
@@ -218,9 +220,9 @@ menuItems.forEach(function(menuItem){
         } else if(userTargetMenu.className === 'stores-content'){
             menuTitle.innerHTML = '<h2>Outinz Stores  <span>List</span></h2>'
         } else if(userTargetMenu.className === 'tickets-content'){
-            menuTitle.innerHTML = '<h2>Outinz Tickets  <span>List</span></h2>'
+            menuTitle.innerHTML = '<h2>Outinz All Tickets <span>List</span></h2>'
         } else if(userTargetMenu.className === 'add-content'){
-            menuTitle.innerHTML = '<h2>Outinz add Store and Tickets<span> section</span></h2>'
+            menuTitle.innerHTML = '<h2>Outinz add Store <span> section</span></h2>'
         } else {
             menuTitle.innerHTML = '<h2>Outinz Admin Profile <span> section</span></h2>'
         }
