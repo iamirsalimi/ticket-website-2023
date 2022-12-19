@@ -5,7 +5,8 @@ let formTarget
 let forms = $.querySelectorAll('form')
 let formTitle = $.querySelector('.title h2')
 let formDesc = $.querySelector('.title p')
-
+let showPass =  $.querySelectorAll('.show-pass span')
+let passTarget
 
 function clearSpace(event){
     event.target.value = event.target.value.trim()
@@ -41,3 +42,19 @@ signUpInputElems[4].addEventListener('blur',function(event){
         event.target.parentNode.lastElementChild.classList.remove('show-err')
     }
 })
+
+
+// show pass
+showPass.forEach(function(showPassElem){
+    showPassElem.parentNode.addEventListener('click',function(event){
+        passTarget = $.querySelector('.'+event.target.dataset.passtarget)
+        if(passTarget.type === 'password'){
+            passTarget.type = 'text'
+            showPassElem.innerHTML = 'visibility_off'
+        } else {
+            passTarget.type = 'password'
+            showPassElem.innerHTML = 'visibility'
+        }
+    })
+})
+

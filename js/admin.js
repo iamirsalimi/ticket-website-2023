@@ -40,9 +40,6 @@ function clearInputsValueHandler(){
     })
 }
 
-
-
-
 // show and hide password 
 showPass.parentNode.addEventListener('click',function(event){
     if(adminPassInput.type === 'password'){
@@ -54,6 +51,7 @@ showPass.parentNode.addEventListener('click',function(event){
     }
 })
 
+// checking Email 
 function checkEmail(event){
     let emailValue = event.target.value.trim()
     if(linkRegex.test(emailValue)){
