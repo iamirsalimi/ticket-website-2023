@@ -789,6 +789,12 @@
     display:block;
 }
 
+
+.menuItem-sectionSep .active{
+    background:#4800b4;
+    color:#fff !important;
+}
+
 /* icons */
 .material-symbols-rounded {
     font-variation-settings:

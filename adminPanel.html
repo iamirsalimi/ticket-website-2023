@@ -61,18 +61,18 @@
                 <div class="menu-title">Log out</div>    
             </div>
         </aside>
-        <div class="menuItem-sectionSep">
-            <div class="tickets SectionSep"> 
+        <div class="menuItem-sectionSep" style="display:none;">
+            <div class="tickets SectionSep" style="display:none;"> 
                 <input type="radio" name="tickets-table" id="all-tickets">
-                <label for="all-tickets">All Tickets</label>
+                <label for="all-tickets"  data-sepTarget="all-tickets">All Tickets</label>
                 
                 <input type="radio" name="tickets-table" id="recent-purcahased" class="active">
-                <label for="recent-purchased">Recently Purchased</label> 
+                <label for="recent-purcahased"  data-sepTarget="rectent-purchased-tickets">Recently Purchased Tickets</label> 
 
                 <input type="radio" name="tickets-table" id="expired" class="active">
-                <label for="expired">Expired and deleted Tickets</label> 
+                <label for="expired"  data-sepTarget="expired-tickets">Expired and deleted Tickets</label> 
             </div>
-            <div class="addStore-tickets SectionSep">
+            <div class="addStore-tickets SectionSep" style="display:none;">
                 <input type="radio" name="add-Store-Ticket" id="add-store">
                 <label for="add-store" data-sepTarget="add-store">Add Store</label>
 
@@ -84,7 +84,7 @@
             <div class="content-section-title">
                 <h2>Outinz users <span>overview</span></h2>
             </div>
-            <section class="dashboard-content" style="display:none;">
+            <section class="dashboard-content">
                 <div class="show-number-box">
                     <span class="material-symbols-outlined">local_activity</span>                        
                     <div class="box-show-number-box">
@@ -305,7 +305,7 @@
                     <input type="text" id="search-input" placeholder="username" data-section="tickets-content">
                     <span class="material-symbols-outlined">search</span>
                 </div>
-                <div class="tickets-table">
+                <div class="tickets-table all-tickets">
                     <table>
                         <thead>
                             <tr>
@@ -320,6 +320,7 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <!-- user name class Must add to Store username -->
                             <tr>
                                 <td>1</td>
                                 <td class="username">gayClub1234</td>
@@ -339,6 +340,90 @@
                                 <td>selling</td>
                                 <td>22/07/23</td>
                                 <td>500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tickets-table rectent-purchased-tickets" style="display:none;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Store UserName</th>
+                                <th>Ticket Type</th>
+                                <th>Buyer UserName</th>
+                                <th>Ticket status</th>
+                                <th>Start date</th>
+                                <th>price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- user name class Must add to buyer username -->
+                            <tr>
+                                <td>1</td>
+                                <td>avamax1234</td>
+                                <td>concert</td>
+                                <td class="username">tedMby</td>
+                                <td>selling</td>
+                                <td>22/07/23</td>
+                                <td>500</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>gayClub1234</td>
+                                <td>party</td>
+                                <td  class="username">mohammadAli</td>
+                                <td>selling</td>
+                                <td>01/07/23</td>
+                                <td>200</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>gayClub1234</td>
+                                <td>party</td>
+                                <td  class="username">rezaSh</td>
+                                <td>selling</td>
+                                <td>01/07/23</td>
+                                <td>200</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tickets-table expired-tickets" style="display:none;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Store UserName</th>
+                                <th>Ticket Type</th>
+                                <th>Capacity</th>
+                                <th>Purchased tickets</th>
+                                <th>Ticket status</th>
+                                <th>Start date</th>
+                                <th>price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- user name class Must add to store username -->
+                            <tr>
+                                <td>1</td>
+                                <td class="username">avamax1234</td>
+                                <td>concert</td>
+                                <td>300</td>
+                                <td>55</td>
+                                <td>canceled</td>
+                                <td>22/07/23</td>
+                                <td>500</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="username">gayClub1234</td>
+                                <td>party</td>
+                                <td>200</td>
+                                <td>12</td>
+                                <td>expired</td>
+                                <td>01/07/23</td>
+                                <td>200</td>
                             </tr>
                         </tbody>
                     </table>
@@ -443,7 +528,7 @@
                     </div>
                 </div>
             </section>
-            <section class="profile-content" >
+            <section class="profile-content" style="display:none;" >
                 
                 <div class="admin-profile">
                     <div class="admin-pic">
@@ -472,12 +557,14 @@
                                 <td>reza</td>
                                 <td>reza sdfda</td>
                                 <td>reza sdasdf</td>
+                                <td>online</td>
                             </tr>
                             <tr>
                                 <td>2</td>
                                 <td>mohammad</td>
                                 <td>asdea</td>
                                 <td>mohammadali</td>
+                                <td>ofline</td>
                             </tr>
                         </tbody>
                     </table>

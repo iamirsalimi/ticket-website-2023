@@ -1,33 +1,35 @@
 let $ = document
 
+
+// menu and section variables
 let menuItems = $.querySelectorAll('.menuList li')
-let searchBtn = $.querySelector('.serachbar span')
-
-let searchInputs = $.querySelectorAll('.serachbar input')
-
-
 let sectionElems = $.querySelectorAll('.content section') 
 let menuTitle = $.querySelector('.content-section-title')
+
+// dashboard shortcuts 
 let goToCustomers = $.querySelector('.all-users-title button span')
 let goToTickets = $.querySelector('.recent-purchases-title button span')
 
 let linkRegex = /^\w+([\.-]?\w)*@\w+([\.-]?\w)*(\.\w{2,3})+$/g
-let storeEmailInput = $.querySelector('.store-email')
-
+// section Sep variables
 let sectionSeps = $.querySelectorAll('.menuItem-sectionSep .SectionSep')
 let sectionSepContainer = $.querySelector('.menuItem-sectionSep')
-let addSeps = $.querySelectorAll('.menuItem-sectionSep .addStore-tickets input')
 
+let addSeps = $.querySelectorAll('.menuItem-sectionSep .addStore-tickets input')
 let addForms = $.querySelectorAll('.add-content form')
 
+let ticketSeps = $.querySelectorAll('.menuItem-sectionSep .tickets input') 
+let ticketContents = $.querySelectorAll('.tickets-content .tickets-table')
+
+// Inputs variables
 let showPass =  $.querySelector('.show-pass span')
 let adminPassInput = $.getElementById('admin-password')
 let adminEmailInput = $.getElementById('admin-email')
+let storeEmailInput = $.querySelector('.store-email')
+let searchInputs = $.querySelectorAll('.serachbar input')
+let searchBtn = $.querySelector('.serachbar span')
+
 let userTargetMenu , userTargetSep , targetSepElem , usernames
-
-
-
-
 
 
 // functions
@@ -83,30 +85,70 @@ window.addEventListener('DOMContentLoaded',function(){
 // sections seps
 addSeps.forEach(function(addSep){
     addSep.addEventListener('click',function(event){
-        
-        console.log(event.target.nextElementSibling.dataset.septarget)
         let userTargetElem = $.querySelector('.add-content .'+ event.target.nextElementSibling.dataset.septarget)
-        console.log(userTargetElem)
         addForms.forEach(function(addForm){
             addForm.style.display = 'none'
         })
         userTargetElem.style.display = 'block'
+        // get active class to menu separator target
+        addSeps.forEach(function(addSepElem){
+            addSepElem.nextElementSibling.classList.remove('active')
+        })
+        event.target.nextElementSibling.classList.add('active')
     })
 })
 
+ticketSeps.forEach(function(ticketSep){
+    ticketSep.addEventListener('click',function(event){
+
+        let userTargetElem = $.querySelector('.tickets-content .'+ event.target.nextElementSibling.dataset.septarget)
+        ticketContents.forEach(function(ticketContent){
+            ticketContent.style.display = 'none'
+        })
+        userTargetElem.style.display = 'block'
+        
+        menuTitle.innerHTML = '<h2>Outinz '+ event.target.nextElementSibling.innerHTML +'<span>  OverView</span></h2>'
+        // get active class to menu separator target
+        ticketSeps.forEach(function(ticketSepElem){
+            ticketSepElem.nextElementSibling.classList.remove('active')
+        })
+        event.target.nextElementSibling.classList.add('active')
+    })
+})
 // dashboard short cut
 goToTickets.addEventListener('click',function(event){
+    // hide setions
+    
     sectionElems.forEach(function(section){
         section.style.display = 'none'
     })
+
     menuItems.forEach(function(item){
         item.classList.remove('active')
     })
+
+    ticketContents.forEach(function(ticketContent){
+        ticketContent.style.display = 'none'
+    })
+
+    // add active class to separator
+    ticketSeps.forEach(function(ticketSepElem){
+        if(ticketSepElem.id === 'recent-purcahased'){
+            ticketSepElem.nextElementSibling.classList.add('active')
+        } else {
+            ticketSepElem.nextElementSibling.classList.remove('active')
+        }
+    })
     
+    // add display block sections
+    sectionSeps[0].parentNode.style.display = 'block'
+    sectionSeps[0].removeAttribute('style')
+    ticketContents[1].removeAttribute('style')
     sectionElems[3].removeAttribute('style')
     menuItems[3].classList.add('active')
     menuTitle.innerHTML = '<h2>Outinz Tickets  <span>List</span></h2>'
 })
+
 goToCustomers.addEventListener('click',function(event){
     sectionElems.forEach(function(section){
         section.style.display = 'none'
@@ -123,6 +165,7 @@ goToCustomers.addEventListener('click',function(event){
 // menu 
 menuItems.forEach(function(menuItem){
     menuItem.addEventListener('click',function(event){
+        // hide all Sections
         sectionElems.forEach(function(section){
             section.style.display = 'none'
         })
@@ -130,26 +173,44 @@ menuItems.forEach(function(menuItem){
         menuItems.forEach(function(item){
             item.classList.remove('active')
         })
-
+        // show target Section
         event.target.classList.add('active')
         userTargetMenu = $.querySelector('.'+ event.target.dataset.class)
         userTargetMenu.removeAttribute('style')
-
+        
         userTargetSep = event.target.dataset.sep
-
+        // checking menu section has separator   
         if(userTargetSep !== 'none' && userTargetSep !== null){
+            
             targetSepElem = $.querySelector('.menuItem-sectionSep .'+userTargetSep)
             sectionSeps.forEach(function(sectionSep){
                 sectionSep.style.display = 'none';
             })
+
             sectionSepContainer.style.display = 'block'
             targetSepElem.style.display = 'block'
+            
+            // get active class of section Seps
+            if(targetSepElem.className.includes('tickets SectionSep')){
+                ticketSeps.forEach(function(ticketSepElem){
+                    ticketSepElem.nextElementSibling.classList.remove('active')
+                })
+            }
+            if(targetSepElem.className.includes('addStore-tickets SectionSep')){
+                console.log('addsep')
+                addSeps.forEach(function(addSepElem){
+                    addSepElem.nextElementSibling.classList.remove('active')
+                })
+            }
+
+            // add active class to section separators
+            targetSepElem.children[1].classList.add('active')
         } else {
             sectionSepContainer.style.display = 'none'
             sectionSepContainer.style.display = 'none'
         }
 
-
+        // changing menu title accord menu target
         if(userTargetMenu.className === 'dashboard-content'){
             menuTitle.innerHTML = '<h2>Outinz users <span>overview</span></h2>'
         } else if(userTargetMenu.className === 'customers-content'){
@@ -167,7 +228,7 @@ menuItems.forEach(function(menuItem){
 })
 
 
-// search input
+// search inputs
 searchInputs.forEach(function(searchInput){
     searchInput.addEventListener('keyup',function(event){
     let usernames = $.querySelectorAll('.' + event.target.dataset.section +' .username')
