@@ -515,6 +515,19 @@
     border-radius:10px;
 }
 
+.add-content form .input .show-pass{
+    position:absolute;
+    right:5px;
+    top:5px;
+    cursor:pointer;
+}
+
+.add-content  form .input .show-pass .material-symbols-outlined{
+    color:#6600ff;
+    display:inline-block;
+    pointer-events: none;
+}
+
 .add-content form .input textarea{
     width:100%;
     height:100px;

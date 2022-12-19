@@ -22,15 +22,13 @@ let ticketSeps = $.querySelectorAll('.menuItem-sectionSep .tickets input')
 let ticketContents = $.querySelectorAll('.tickets-content .tickets-table')
 
 // Inputs variables
-let showPass =  $.querySelector('.show-pass span')
-let adminPassInput = $.getElementById('admin-password')
+let showPass =  $.querySelectorAll('.show-pass span')
 let adminEmailInput = $.getElementById('admin-email')
 let storeEmailInput = $.querySelector('.store-email')
 let searchInputs = $.querySelectorAll('.serachbar input')
 let searchBtn = $.querySelector('.serachbar span')
 
-let userTargetMenu , userTargetSep , targetSepElem , usernames
-
+let userTargetMenu , userTargetSep , targetSepElem , usernames , passInput
 
 // functions
 function clearInputsValueHandler(){
@@ -43,14 +41,19 @@ function clearInputsValueHandler(){
 }
 
 // show and hide password 
-showPass.parentNode.addEventListener('click',function(event){
-    if(adminPassInput.type === 'password'){
-        adminPassInput.type = 'text'
-        showPass.innerHTML = 'visibility_off'
-    } else {
-        adminPassInput.type = 'password'
-        showPass.innerHTML = 'visibility'
-    }
+showPass.forEach(function(showPassElem){
+    showPassElem.parentNode.addEventListener('click',function(event){
+        //get passInput from target show passBtn
+        passInput = event.target.parentNode.querySelector('input') 
+        
+        if(passInput.type === 'password'){
+            passInput.type = 'text'
+            showPassElem.innerHTML = 'visibility_off'
+        } else {
+            passInput.type = 'password'
+            showPassElem.innerHTML = 'visibility'
+        }
+    })
 })
 
 // checking Email 
