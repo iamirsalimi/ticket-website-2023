@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@500&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&family=Rouge+Script&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+}
+
+.container {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:start;
+    gap:15px;
+    padding:10px 30px;
+}
+
+.container .sections{
+    color:rgb(139, 139, 139);
+    position:relative;
+    left:20px;
+}
+
+.container .sections a{
+    color:#6e0eff;
+    text-decoration:none;
+    transition:color 0.15s ease-out;
+}
+
+.container .sections a:last-child{
+    color:rgb(139, 139, 139);
+}
+
+.container .sections a:hover:not(.container .sections a:last-child){
+    color:#8432ff;
+}
+
+.container .content{
+    display:grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(4,1fr);
+    gap:10px;
+    width:100%;
+    height:100%;
+    border-radius:22px;
+    padding:10px;
+}
+
+/* user profile section */
+.container .content .userProfile{
+    grid-column:1/4;
+    grid-row:1/3;
+    background:#371B58;
+    border-radius:22px;
+    padding:10px 0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    text-align:center;
+}
+
+.container .content .userProfile .profile{
+    background:#E9D5CA;
+    width:100px;
+    height:100px;
+    display:flex;
+    border-radius:50%;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.container .content .userProfile .profile span{
+    color:#371B58;
+    font-size:4rem;
+}
+
+.container .content .userProfile .profile-desc .username{
+    color:#827397;
+    font-family: 'Rouge Script', cursive;
+    font-size:1.5rem;
+}
+
+.container .content .userProfile .profile-desc .fullname{
+    color:#E9D5CA;
+    margin-top:5px;
+    font-family: 'Merienda', cursive;
+    
+}
+
+.container .content .userProfile .btns{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+}
+
+.container .content .userProfile .btns button{
+    font-family: 'Merienda', cursive;
+    padding:10px 20px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+.container .content .userProfile .btns .delete-user{
+    background:#E9D5CA;
+    color:#371B58;
+    transition:0.1s ease-out;
+}
+
+.container .content .userProfile .btns .delete-user:hover{
+    background:#ffd3bd;
+}
+
+.container .content .userProfile .btns .edit-user{
+    background:#4C3575;
+    color:#E9D5CA;
+    transition:0.1s ease-out;
+}
+
+.container .content .userProfile .btns .edit-user:hover{
+    background:#7454ac;
+}
+
+/* user info section */
+.container .content .user-info{
+    grid-column:4/-1;
+    grid-row:1/3;
+    background:#ffe0d0;
+    border-radius:22px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    padding:10px 20px;
+    gap:10px;
+}
+.container .content .user-info .user-information{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:5px;
+    width:100%;
+    pointer-events: none;
+}
+
+.container .content .user-info .user-information:not(.container .content .user-info .user-information:last-child){
+    border-bottom:1px solid #371b58a6;
+}
+
+.container .content .user-info .user-information .info-title{
+    color:#2E0249;
+    font-family: 'Merienda', cursive;
+}
+
+.container .content .user-info .user-information .userInfo{
+    color:#1e0052c5;
+    font-family: 'Gabriela', serif;
+    width:50%;
+}
+
+/* user purchased tickets section */
+
+.content .purchased-tickets-table{
+    width:100%;
+    height:100%;
+    background:#ffe2d3;
+    border-radius:10px;
+    grid-column:1/-1;
+    grid-row:3/-1;
+    overflow-y:scroll;
+    max-height:500px;
+}
+
+.content .purchased-tickets-table table{
+    width:100%;
+    text-align:center;
+}
+
+.content .purchased-tickets-table table thead th{
+    border-right:2px solid #2E0249;
+    outline:2px solid #2E0249;
+    color:#ffe0d0;
+    font-family: 'Righteous', cursive;
+    font-size:1.25rem;
+    font-size:1rem;
+}
+
+.content .purchased-tickets-table table thead{
+    background:#2E0249;
+    width:100%;
+}
+
+.content .purchased-tickets-table table tbody td{
+    color:#4c3575;
+    padding:7.5px 0;
+    font-size:1rem;
+    font-family: 'Righteous', cursive;
+    transition:0.15s ease-out;
+}
+
+.content .purchased-tickets-table table tbody tr:hover{
+    background:#ffceb5;
+}
+
+.profile-content .add-admin{
+    grid-column:1/-1;
+    grid-row:3/-1;
+    background:#fff;
+    border-radius:10px;
+    padding:10px 15px;
+    text-align:center;
+}
+
+/* icon */
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}

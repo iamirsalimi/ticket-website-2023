@@ -17,8 +17,31 @@
     height:100vh;
     padding:10px;
     display:flex;
+    /* flex-direction:column; */
+    justify-content:center;
     align-items: center;
     gap:10px;
+}
+
+.main-section{
+    color:rgb(139, 139, 139);
+    position:relative;
+    left:20px;
+    margin:10px 0; 
+}
+
+ .main-section a{
+    color:#6e0eff;
+    text-decoration:none;
+    transition:color 0.15s ease-out;
+}
+
+.main-section a:last-child{
+    color:rgb(139, 139, 139);
+}
+
+.main-section a:hover:not(.main-section a:last-child){
+    color:#8432ff;
 }
 
 .container aside{
