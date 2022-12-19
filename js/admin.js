@@ -135,6 +135,10 @@ goToTickets.addEventListener('click',function(event){
         item.classList.remove('active')
     })
 
+    sectionSeps.forEach(function(sectionSep){
+        sectionSep.style.display = 'none'
+    })
+
     ticketContents.forEach(function(ticketContent){
         ticketContent.style.display = 'none'
     })
@@ -155,7 +159,7 @@ goToTickets.addEventListener('click',function(event){
     sectionElems[3].removeAttribute('style')
     sectionElems[3].firstElementChild.firstElementChild.placeholder = 'buyer username'
     menuItems[3].classList.add('active')
-    menuTitle.innerHTML = '<h2>Outinz Tickets  <span>List</span></h2>'
+    menuTitle.innerHTML = '<h2>Outinz Recently Purchased Tickets <span>List</span></h2>'
 })
 
 goToCustomers.addEventListener('click',function(event){
@@ -204,10 +208,26 @@ menuItems.forEach(function(menuItem){
                 ticketSeps.forEach(function(ticketSepElem){
                     ticketSepElem.nextElementSibling.classList.remove('active')
                 })
+                sectionElems[3].querySelectorAll('.tickets-table')
+                .forEach(function(section){
+                    if(section.className.includes('tickets-table all-tickets')){
+                        section.removeAttribute('style')
+                    } else {
+                        section.style.display = 'none'
+                    }
+                })
             }
             if(targetSepElem.className.includes('addStore-tickets SectionSep')){
                 addSeps.forEach(function(addSepElem){
                     addSepElem.nextElementSibling.classList.remove('active')
+                })
+                sectionElems[4].querySelectorAll('form')
+                .forEach(function(section){
+                    if(section.className.includes('add-store')){
+                        section.removeAttribute('style')
+                    } else {
+                        section.style.display = 'none'
+                    }
                 })
             }
 
