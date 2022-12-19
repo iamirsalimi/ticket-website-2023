@@ -82,9 +82,6 @@ window.addEventListener('DOMContentLoaded',function(){
     clearInputsValueHandler()
 })
 
-
-
-
 // sections seps
 addSeps.forEach(function(addSep){
     addSep.addEventListener('click',function(event){
@@ -111,7 +108,13 @@ ticketSeps.forEach(function(ticketSep){
             ticketContent.style.display = 'none'
         })
         userTargetElem.style.display = 'block'
-        
+
+        if(userTargetElem.className.includes('tickets-table rectent-purchased-tickets')){
+            userTargetElem.parentNode.querySelector('.serachbar input').placeholder = 'buyer username'
+        } else {
+            userTargetElem.parentNode.querySelector('.serachbar input').placeholder = 'username'
+        }
+
         menuTitle.innerHTML = '<h2>Outinz '+ event.target.nextElementSibling.innerHTML +'<span>  OverView</span></h2>'
         // get active class to menu separator target
         ticketSeps.forEach(function(ticketSepElem){
@@ -139,7 +142,7 @@ goToTickets.addEventListener('click',function(event){
     // add active class to separator
     ticketSeps.forEach(function(ticketSepElem){
         if(ticketSepElem.id === 'recent-purcahased'){
-            ticketSepElem.nextElementSibling.classList.add('active')
+            ticketSepElem.nextElementSibling.classList.add('active')        
         } else {
             ticketSepElem.nextElementSibling.classList.remove('active')
         }
@@ -150,6 +153,7 @@ goToTickets.addEventListener('click',function(event){
     sectionSeps[0].removeAttribute('style')
     ticketContents[1].removeAttribute('style')
     sectionElems[3].removeAttribute('style')
+    sectionElems[3].firstElementChild.firstElementChild.placeholder = 'buyer username'
     menuItems[3].classList.add('active')
     menuTitle.innerHTML = '<h2>Outinz Tickets  <span>List</span></h2>'
 })
@@ -194,7 +198,7 @@ menuItems.forEach(function(menuItem){
 
             sectionSepContainer.style.display = 'block'
             targetSepElem.style.display = 'block'
-            
+
             // get active class of section Seps
             if(targetSepElem.className.includes('tickets SectionSep')){
                 ticketSeps.forEach(function(ticketSepElem){
@@ -202,7 +206,6 @@ menuItems.forEach(function(menuItem){
                 })
             }
             if(targetSepElem.className.includes('addStore-tickets SectionSep')){
-                console.log('addsep')
                 addSeps.forEach(function(addSepElem){
                     addSepElem.nextElementSibling.classList.remove('active')
                 })
@@ -210,6 +213,7 @@ menuItems.forEach(function(menuItem){
 
             // add active class to section separators
             targetSepElem.children[1].classList.add('active')
+            userTargetMenu.firstElementChild.firstElementChild.placeholder = 'username'
         } else {
             sectionSepContainer.style.display = 'none'
             sectionSepContainer.style.display = 'none'
