@@ -172,7 +172,7 @@ body{
 .content .purchased-tickets-table{
     width:100%;
     height:100%;
-    background:#ffe2d3;
+    background:#E9D5CA;
     border-radius:10px;
     grid-column:1/-1;
     grid-row:3/-1;
@@ -189,7 +189,7 @@ body{
     border-right:2px solid #2E0249;
     outline:2px solid #2E0249;
     color:#ffe0d0;
-    font-family: 'Righteous', cursive;
+    font-family: 'Gabriela', serif;
     font-size:1.25rem;
     font-size:1rem;
 }
@@ -203,7 +203,7 @@ body{
     color:#4c3575;
     padding:7.5px 0;
     font-size:1rem;
-    font-family: 'Righteous', cursive;
+    font-family: 'Gabriela', serif;
     transition:0.15s ease-out;
 }
 
