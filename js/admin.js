@@ -235,7 +235,7 @@ searchInputs.forEach(function(searchInput){
     searchInput.addEventListener('keyup',function(event){
     let usernames = $.querySelectorAll('.' + event.target.dataset.section +' .username')
     usernames.forEach(function(username){
-        if(username.innerHTML.includes(event.target.value.trim())){
+        if(username.innerHTML.toLocaleLowerCase().includes(event.target.value.trim())){
             username.parentNode.style.display = 'table-row'
         } else {
             username.parentNode.style.display = 'none'
