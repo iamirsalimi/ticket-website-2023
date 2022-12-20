@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="styles/userPanel.css">
     <title>Outinz User Panel</title>
 </head>
@@ -16,7 +17,7 @@
             <ul>
                 <div class="top-menu">
                     <a href="">
-                        <li>
+                        <li class="active">
                             <span class="material-symbols-outlined">person</span>
                             Profile
                         </li>
@@ -44,7 +45,54 @@
                 <span><a href="">Home</a> / <a href="">User Panel</a></span>
             </div>
             <section class="user-profile">
-
+                <div class="user-informations">
+                    <div class="user-informations-title">
+                        <h2>General Information</h2>
+                    </div>
+                    <div class="userInformation">
+                        <div class="user-info">
+                            <h4 class="title">First Name</h4>
+                            <span class="userInfo">Max</span>
+                        </div>
+                        <div class="user-info">
+                            <h4 class="title">Last Name</h4>
+                            <span class="userInfo">Mozby</span>
+                        </div>
+                        <div class="user-info">
+                            <h4 class="title">User Name</h4>
+                            <span class="userInfo">MaxMozby1234</span>
+                        </div>
+                        <div class="user-info">
+                            <h4 class="title">Email</h4>
+                            <span class="userInfo">MaxMozby2000@gmail.com</span>
+                        </div>
+                    </div>
+                    <form action="" class="user-informations-inputs">
+                        <div class="inputs">
+                            <div class="input">
+                                <input type="text" placeholder="Max Or Rachel Or...">
+                                <span>First Name</span>
+                            </div>
+                            <div class="input">
+                                <input type="text" placeholder="Green Or Stinson Or...">
+                                <span>Last Name</span>
+                            </div>
+                            <div class="input">
+                                <input type="text" placeholder="MaxStinson1997 Or ...">
+                                <span>User Name</span>
+                            </div>
+                            <div class="input">
+                                <input type="text" placeholder="your password">
+                                <span>Password</span>
+                            </div>
+                            <div class="input">
+                                <input type="text" placeholder="MaxSt1997@gmail.com Or ...">
+                                <span>Email</span>
+                            </div>
+                        </div>
+                        <input type="submit" class="submit" value="Save All">
+                    </form>
+                </div>
             </section>
         </div>
     </div>
