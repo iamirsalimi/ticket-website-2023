@@ -12,7 +12,7 @@
     display:flex;
     align-items:flex-start;
     gap:15px;
-    height:100%;
+    height:100vh;
     background:rgba(243, 243, 243, 0.704);
 }
 
@@ -119,6 +119,7 @@
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(4,1fr);
     gap:10px;
+    height:95%;
 }
 
 .container .content .user-profile .user-change-informations{
@@ -212,6 +213,19 @@
 .user-profile .user-change-informations .user-informations-inputs .submit:hover{
     background:rgb(52, 52, 52);
 }
+
+.user-profile .user-change-informations .modal{
+    background:#90f97d;
+    color:#fefefe;
+    font-family: 'Righteous', cursive;
+    transition:0.15s ease-out;
+    padding:10px 20px;
+    border-radius:12px;
+    margin:10px auto;
+    font-size:1.5rem;
+}
+
+
 /* user information  */
 .content .user-profile .user-informations {
     background:rgb(57, 57, 57);
@@ -252,6 +266,7 @@
 .content .user-profile .user-informations  .user-info:not(.content .user-informations .user-info:last-child){
     border-bottom:1px solid #fefefe;
 }
+
 
 /* purchased ticket shortcut */
 .content .user-profile .user-purchased-ticket-sc{
