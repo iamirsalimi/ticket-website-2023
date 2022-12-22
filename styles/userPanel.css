@@ -98,7 +98,7 @@
 }
 
 .container .content .sections a{
-    color:#6e0eff;
+    color:rgba(0, 0, 0, 0.8);
     text-decoration:none;
     transition:color 0.15s ease-out;
 }
@@ -108,7 +108,7 @@
 }
 
 .container .content .sections a:hover:not(.container .sections a:last-child){
-    color:#8432ff;
+    color:rgba(0, 0, 0, 0.623);
 }
 
 /* user profile section */

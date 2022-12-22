@@ -16,20 +16,20 @@
         <aside class="userPanel-menu">
             <ul>
                 <div class="top-menu">
-                    <a href="">
-                        <li>
+                    <a href="#">
+                        <li data-targetMenu="user-profile">
                             <span class="material-symbols-outlined">person</span>
                             Profile
                         </li>
                     </a>
-                    <a href="">
-                        <li>
-                            <span class="material-symbols-outlined">confirmation_number</span>
-                            Purchased Tickets
-                        </li>
-                    </a>
-                    <a href="">
-                        <li class="active">
+                    <a href="#">
+                        <li data-targetMenu="user-purchased-tickets">
+                        <span class="material-symbols-outlined">confirmation_number</span>
+                        Purchased Tickets
+                    </li>
+                </a>
+                <a href="#">
+                        <li class="active"   data-targetMenu="user-shopping-cart">
                             <span class="material-symbols-outlined">local_mall</span>
                             Basket
                         </li>
@@ -282,5 +282,6 @@
 
         </div>
     </div>
+    <script src="js/userPanel.js"></script>
 </body>
 </html>
