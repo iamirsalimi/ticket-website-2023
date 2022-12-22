@@ -28,6 +28,12 @@
                             Purchased Tickets
                         </li>
                     </a>
+                    <a href="">
+                        <li>
+                            <span class="material-symbols-outlined">local_mall</span>
+                            Basket
+                        </li>
+                    </a>
                 </div>
                <div class="bottom-menu">
                     <a href="">
@@ -45,29 +51,17 @@
                 <span><a href="">Home</a> / <a href="">User Panel</a></span>
             </div>
             <section class="user-profile">
-                <div class="user-informations">
+                <!-- user change information-->
+                <div class="user-change-informations">
                     <div class="user-informations-title">
                         <h2>General Information</h2>
                     </div>
-                    <div class="userInformation">
-                        <div class="user-info">
-                            <h4 class="title">First Name</h4>
-                            <span class="userInfo">Max</span>
-                        </div>
-                        <div class="user-info">
-                            <h4 class="title">Last Name</h4>
-                            <span class="userInfo">Mozby</span>
-                        </div>
-                        <div class="user-info">
-                            <h4 class="title">User Name</h4>
-                            <span class="userInfo">MaxMozby1234</span>
-                        </div>
-                        <div class="user-info">
-                            <h4 class="title">Email</h4>
-                            <span class="userInfo">MaxMozby2000@gmail.com</span>
-                        </div>
-                    </div>
                     <form action="" class="user-informations-inputs">
+                        <ul class="tips">
+                            <li class="tip">Please enter your details carefully so you don't run into problems later</li>
+                            <li class="tip">All inputs are'nt required. Just enter the information you want to change</li>
+                            <li class="tip">The maximum length of the username should be 15 characters</li>
+                        </ul>
                         <div class="inputs">
                             <div class="input">
                                 <input type="text" placeholder="Max Or Rachel Or...">
@@ -92,6 +86,57 @@
                         </div>
                         <input type="submit" class="submit" value="Save All">
                     </form>
+                </div>
+                <!-- user informations -->
+                <div class="user-informations">
+                    <div class="user-profile-icon">
+                        <span class="material-symbols-outlined">person</span>
+                    </div>
+                    <div class="user-infos">
+                        <div class="user-info">
+                            <h4 class="title">First Name</h4>
+                            <span class="userInfo">Max</span>
+                        </div>
+                        <div class="user-info">
+                            <h4 class="title">Last Name</h4>
+                            <span class="userInfo">Mozby</span>
+                        </div>
+                        <div class="user-info">
+                            <h4 class="title">User Name</h4>
+                            <span class="userInfo">MaxMozby1234</span>
+                        </div>
+                        <div class="user-info">
+                            <h4 class="title">Email</h4>
+                            <span class="userInfo">MaxMozby2000@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- purchased tickets -->
+                <div class="user-purchased-ticket-sc">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ticket Type</th>
+                                <th>Ticket Store</th>
+                                <th>Start Date</th>
+                                <th>Start Hour</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Party</td>
+                                <td>club</td>
+                                <td>07/11/2022</td>
+                                <td>17:30</td>
+                            </tr>
+                            <tr>
+                                <td>Concert</td>
+                                <td>Adele</td>
+                                <td>01/02/2023</td>
+                                <td>20:30</td>
+                            </tr>
+                        </thead>
+                    </table>
                 </div>
             </section>
         </div>
