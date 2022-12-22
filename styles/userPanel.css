@@ -188,11 +188,24 @@
     padding:8px ;
 }
 
+.user-profile .user-change-informations .user-informations-inputs .input .show-pass{
+    position:absolute;
+    right:5px;
+    top:5px;
+    cursor:pointer;
+}
+
+.user-profile .user-change-informations .user-informations-inputs .input .show-pass .material-symbols-outlined{
+    color:rgba(0,0,0,0.2);
+    display:inline-block;
+    pointer-events: none;
+}
+
 .user-informations-inputs .inputs .input input::placeholder{
     color:rgba(0, 0, 0, 0.7);
 }
 
-.user-profile .user-change-informations .user-informations-inputs .inputs .input span{
+.user-profile .user-change-informations .user-informations-inputs .inputs .input .input-title{
     position:absolute;
     top:-25px;
     left:0;
@@ -418,7 +431,7 @@
 }
 
 .content .user-shopping-cart .user-shopping-cart-content .left-content .purchase-tips{
-    margin-top:15px;
+    margin-top:8px;
     background:rgb(41, 41, 41);
     padding:10px 5px;
     border-radius:10px;
