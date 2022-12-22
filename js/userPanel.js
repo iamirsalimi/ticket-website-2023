@@ -38,15 +38,17 @@ menu.forEach(function(menuElem){
     menuElem.addEventListener('click',function(event){
         menu.forEach(function(menuElement){
             menuElement.classList.remove('active')
-            console.log(menuElement)
         })
         menuSections.forEach(function(menuSection){
             menuSection.style.display = 'none'
         })
         
         event.target.className = 'active'
-        console.log(event.target.dataset.targetmenu)
-        targetMenu = $.querySelector('.' + event.target.dataset.targetmenu)
+        if(!event.target.dataset.targetmenu){
+            targetMenu = $.querySelector('.' + event.target.parentNode.dataset.targetmenu)
+        } else {
+            targetMenu = $.querySelector('.' + event.target.dataset.targetmenu)
+        }
         targetMenu.removeAttribute('style')
     })
-})
+})  
