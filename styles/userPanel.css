@@ -38,6 +38,7 @@
     justify-content:flex-start;
     align-items:flex-start;
     gap:10px;
+    font-family: 'Righteous', cursive;
     border-radius:5px;
     transition: 0.15s ease-out;
 }
@@ -217,7 +218,8 @@
 .user-profile .user-change-informations .modal{
     background:#90f97d;
     color:#fefefe;
-    font-family: 'Righteous', cursive;
+    font-family: 'Radio Canada', sans-serif;
+
     transition:0.15s ease-out;
     padding:10px 20px;
     border-radius:12px;
@@ -287,7 +289,7 @@
     outline:2px solid rgb(57, 57, 57);
     color:#ffffff;
     font-family: 'Righteous', cursive;
-    font-size:1rem;
+    font-size:1.1rem;
     padding:2.5px;
 }
 
@@ -305,6 +307,199 @@
 
 .content .user-profile .user-purchased-ticket-sc table tbody tr:hover{
     background:#cfcfcfc4;
+}
+
+/* purchased tickets Section */
+
+.content .user-purchased-tickets{
+    background:#fff;
+    border-radius:22px;
+    margin-top:25px;
+    overflow-x:hidden;
+    overflow-y:scroll;
+    height:90%;
+}
+
+.content .user-purchased-tickets table{
+    border-radius:22px;
+    width:100%;
+    text-align:center;
+}
+
+.content .user-purchased-tickets table thead th{
+    border-right:2px solid rgb(57, 57, 57);
+    outline:2px solid rgb(57, 57, 57);
+    color:#ffffff;
+    font-family: 'Radio Canada', sans-serif;
+    font-size:1.1rem;
+    padding:2.5px;
+}
+
+.content .user-purchased-tickets table thead{
+    background:rgb(57, 57, 57);
+    width:100%;
+}
+
+.content .user-purchased-tickets table tbody td{
+    color:#414141e3;
+    padding:7.5px 0;
+    font-family: 'Radio Canada', sans-serif;
+    transition:0.15s ease-out;
+}
+
+.content .user-purchased-tickets table tbody tr:hover{
+    background:#cfcfcfc4;
+}
+
+.content .user-purchased-tickets table tbody td .show-ticket-btn{
+    background:rgb(57, 57, 57);
+    color:#fff;
+    border:none;
+    padding:10px;
+    cursor: pointer;
+    border-radius:15px;
+    font-family: 'Radio Canada', sans-serif;
+    transition: 0.15s ease-out;
+}
+
+.content .user-purchased-tickets table tbody td .show-ticket-btn:hover{
+    background:rgb(84, 84, 84);
+}
+
+/* user shopping cart section */
+.content .user-shopping-cart{
+    background:#fff;
+    border-radius:22px;
+    margin-top:25px;
+    height:90vh;
+    padding:15px 30px;
+    position:relative;
+}
+
+.content .user-shopping-cart .user-shopping-cart-title{
+    padding:20px 5px;
+    font-size:1.5rem;
+    font-family: 'Radio Canada', sans-serif;
+    color:rgb(57, 57, 57);;
+}
+
+.content .user-shopping-cart .user-shopping-cart-content{ 
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+    padding:10px 0;
+    font-family:'Radio Canada', sans-serif;
+    gap:20px;
+}
+
+/* user shopping cart left content */
+.content .user-shopping-cart .user-shopping-cart-content .left-content{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:flex-start;
+    flex-basis:30%;
+    height:100%;
+}
+
+.content .user-shopping-cart .user-shopping-cart-content .left-content .price-title{
+    color:rgb(134, 134, 134);
+    font-size:0.75rem;
+}
+
+.content .user-shopping-cart .user-shopping-cart-content .left-content .allPrice{
+    color:#000;
+    font-size:1.5rem;
+}
+
+.content .user-shopping-cart .user-shopping-cart-content .left-content .allPrice span{
+    color:rgb(134, 134, 134);
+    font-size:0.9rem;
+}
+
+.content .user-shopping-cart .user-shopping-cart-content .left-content .purchase-tips{
+    margin-top:15px;
+    background:rgb(41, 41, 41);
+    padding:10px 5px;
+    border-radius:10px;
+}
+
+.content .user-shopping-cart .user-shopping-cart-content .left-content .purchase-tips .purchase-tips-title{
+    color:#fefefe;
+}
+
+.content .user-shopping-cart .user-shopping-cart-content .left-content .purchase-tips ul{
+    margin-top:10px;
+    list-style:none;
+}
+
+.content .user-shopping-cart .user-shopping-cart-content .left-content .purchase-tips ul li span{
+    color:rgb(134, 134, 134);
+}
+
+.content .user-shopping-cart .user-shopping-cart-content .left-content .purchase-tips ul li{
+    padding:3px 0;
+    color:rgb(134, 134, 134);
+    text-align:justify;
+}
+
+
+/* shopping card details */
+.content .user-shopping-cart .user-shopping-cart-content .right-content{
+    flex-basis:70%;
+}
+
+.user-shopping-cart .user-shopping-cart-content .right-content .cart-detail{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding:15px 0; 
+}
+
+.user-shopping-cart .user-shopping-cart-content .right-content .cart-detail:not(.user-shopping-cart .user-shopping-cart-content .right-content .cart-detail:last-child){
+    border-bottom:1px solid rgba(134, 134, 134, 0.36);
+}
+
+.user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-img{
+    width:175px;
+    height:100px;
+    border-radius:5px;
+    overflow: hidden;
+}
+.user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-img img{
+    width:100%;
+    height:100%;
+}
+.user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-titles{
+    color:rgb(134, 134, 134);
+}
+
+.user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-titles .ticket-title{
+    color:#000;
+}
+
+.user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+}
+
+.user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count .ticket-count-icon{
+    color:rgb(134, 134, 134);
+}
+
+.user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-delete,
+.user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count .ticket-count-icon{
+    cursor:pointer;
+    padding:5px 10px;
+    border-radius:10px;
+    transition:0.15s ease-out;
+}
+
+.user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-delete:hover,
+.user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count .ticket-count-icon:hover{
+    background:rgba(217, 217, 217, 0.23);
 }
 
 

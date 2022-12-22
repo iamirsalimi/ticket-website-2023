@@ -17,7 +17,7 @@
             <ul>
                 <div class="top-menu">
                     <a href="">
-                        <li class="active">
+                        <li>
                             <span class="material-symbols-outlined">person</span>
                             Profile
                         </li>
@@ -29,7 +29,7 @@
                         </li>
                     </a>
                     <a href="">
-                        <li>
+                        <li class="active">
                             <span class="material-symbols-outlined">local_mall</span>
                             Basket
                         </li>
@@ -50,7 +50,8 @@
             <div class="sections">              
                 <span><a href="">Home</a> / <a href="">User Panel</a></span>
             </div>
-            <section class="user-profile">
+            <!-- user profile section -->
+            <section class="user-profile" style="display:none;">
                 <!-- user change information-->
                 <div class="user-change-informations">
                     <div class="user-informations-title">
@@ -59,7 +60,7 @@
                     <form action="" class="user-informations-inputs">
                         <ul class="tips">
                             <li class="tip">Please enter your details carefully so you don't run into problems later</li>
-                            <li class="tip">All inputs are'nt required. Just enter the information you want to change</li>
+                            <li class="tip">All inputs are'nt required.just enter the information you want to change</li>
                             <li class="tip">The maximum length of the username should be 15 characters</li>
                         </ul>
                         <div class="inputs">
@@ -123,6 +124,7 @@
                                 <th>Start Hour</th>
                             </tr>
                         </thead>
+
                         <tbody>
                             <tr>
                                 <td>Party</td>
@@ -136,34 +138,141 @@
                                 <td>01/02/2023</td>
                                 <td>20:30</td>
                             </tr>
-                            <tr>
-                                <td>Concert</td>
-                                <td>Adele</td>
-                                <td>01/02/2023</td>
-                                <td>20:30</td>
-                            </tr>
-                            <tr>
-                                <td>Concert</td>
-                                <td>Adele</td>
-                                <td>01/02/2023</td>
-                                <td>20:30</td>
-                            </tr>
-                            <tr>
-                                <td>Concert</td>
-                                <td>Adele</td>
-                                <td>01/02/2023</td>
-                                <td>20:30</td>
-                            </tr>
-                            <tr>
-                                <td>Concert</td>
-                                <td>Adele</td>
-                                <td>01/02/2023</td>
-                                <td>20:30</td>
-                            </tr>
                         </thead>
                     </table>
                 </div>
             </section>
+            <!-- user purchased tickets section -->
+            <section class="user-purchased-tickets" style="display:none;">
+                <table class="tickets-table">
+                    <thead>
+                        <tr>
+                            <th>Ticket Type</th>
+                            <th>ticket Status</th>
+                            <th>Ticket Store Name</th>
+                            <th>Store Address</th>
+                            <th>Ticket Start Date</th>
+                            <th>Ticket Start Hour</th>
+                            <th>ticket Purchase Date</th>
+                            <th>Ticket Price</th>
+                            <th>Show Ticket</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Concert</td>
+                            <td>Selling</td>
+                            <td>Adele</td>
+                            <td>Cyprus shahid hemat</td>
+                            <td>01/11/2022</td>
+                            <td>18:30</td>
+                            <td>23/8/2022</td>
+                            <td>500</td>
+                            <td>
+                                <button class="show-ticket-btn">Show Ticket</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Party</td>
+                            <td>Expired</td>
+                            <td>Club</td>
+                            <td>Cyprus shahid mohmmadi</td>
+                            <td>01/05/2022</td>
+                            <td>11:30</td>
+                            <td>22/01/2022</td>
+                            <td>50</td>
+                            <td>
+                                <button class="show-ticket-btn">Show Ticket</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <!-- user shopping cart Section-->
+            <section class="user-shopping-cart">
+                <div class="user-shopping-cart-title">
+                    <h2>Shopping Cart</h2>
+                </div>
+                <div class="user-shopping-cart-content">
+                    <!-- all cost -->
+                    <div class="left-content">
+                        <div class="all-price">
+                            <div class="price-title">
+                                Total Cost
+                            </div>
+                            <div class="allPrice">
+                                $447<span>.00</span>
+                            </div>
+                        </div>
+
+                        <div class="purchase-tips">
+                            <h3 class="purchase-tips-title">Pay attention to these points before buying</h3>
+                            <ul>
+                                <li><span>- </span> After purchase, your name will be registered as a ticket buyer in the store.</li>
+                                <li><span>- </span> In order not to forget the date of the purchased ticket, Outinz team suggests that you write it somewhere. Also, the date and complete information of the purchased ticket can be seen in the user panel in the purchased tickets section.</li>
+                                <li><span>- </span> If a ticket is canceled for any reason. You can access the address of the store by entering the user panel in the purchased tickets section and receive your payment by referring to that location.</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- shopping carts -->
+                    <div class="right-content">
+                        <div class="cart-detail">
+                            <div class="ticket-img">
+                                <img src="images/ticketImg.jpg">
+                            </div>
+                            <div class="ticket-titles">
+                                <div class="category">Concert</div>
+                                <div class="ticket-title">Adele Concert </div>
+                            </div>
+                            <div class="ticket-count">
+                                <span class="decrease-icon ticket-count-icon">-</span>
+                                <span class="ticket-counter">4</span>
+                                <span class="increase-icon ticket-count-icon">+</span>
+                            </div>
+                            <div class="ticket-price">$550</div>
+                            <div class="ticket-delete">&times;</div>
+                        </div>
+
+                        <div class="cart-detail">
+                            <div class="ticket-img">
+                                <img src="images/ticketImg.jpg">
+                            </div>
+                            <div class="ticket-titles">
+                                <div class="category">party</div>
+                                <div class="ticket-title">Gay Party</div>
+                            </div>
+                            <div class="ticket-count">
+                                <span class="decrease-icon ticket-count-icon">-</span>
+                                <span class="ticket-counter">1</span>
+                                <span class="increase-icon ticket-count-icon">+</span>
+                            </div>
+                            <div class="ticket-price">$75</div>
+                            <div class="ticket-delete">&times;</div>
+                        </div>
+
+                        <div class="cart-detail">
+                            <div class="ticket-img">
+                                <img src="images/ticketImg.jpg">
+                            </div>
+                            <div class="ticket-titles">
+                                <div class="category">Concert</div>
+                                <div class="ticket-title">taylor swift</div>
+                            </div>
+                            <div class="ticket-count">
+                                <span class="decrease-icon ticket-count-icon">-</span>
+                                <span class="ticket-counter">2</span>
+                                <span class="increase-icon ticket-count-icon">+</span>
+                            </div>
+                            <div class="ticket-price">$200</div>
+                            <div class="ticket-delete">&times;</div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
         </div>
     </div>
 </body>
