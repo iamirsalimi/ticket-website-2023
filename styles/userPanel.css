@@ -441,12 +441,14 @@
     padding:3px 0;
     color:rgb(134, 134, 134);
     text-align:justify;
+    font-size:0.9rem;
 }
 
 
 /* shopping card details */
 .content .user-shopping-cart .user-shopping-cart-content .right-content{
     flex-basis:70%;
+    position:relative;
 }
 
 .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail{
@@ -500,6 +502,34 @@
 .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-delete:hover,
 .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count .ticket-count-icon:hover{
     background:rgba(217, 217, 217, 0.23);
+}
+
+.user-shopping-cart .user-shopping-cart-content .right-content .btns{
+    text-align:right;
+}
+
+.user-shopping-cart .user-shopping-cart-content .right-content .btns button{
+    padding:10px 20px;
+    border:none;
+    background:#000;
+    border-radius:5px;
+    color:#fff;
+    cursor:pointer;
+    transition:0.15s ease-out;
+}
+
+.user-shopping-cart .user-shopping-cart-content .right-content .btns .back-to-store{
+    background:#dadada;
+    color:rgba(0, 0, 0, 0.579);
+    margin-right:10px;
+}
+
+.user-shopping-cart .user-shopping-cart-content .right-content .btns .back-to-store:hover{
+    background:#c5c5c5;
+}
+
+.user-shopping-cart .user-shopping-cart-content .right-content .btns .purchase:hover{
+    background:rgba(0, 0, 0, 0.8);
 }
 
 
