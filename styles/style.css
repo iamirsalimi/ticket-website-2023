@@ -573,6 +573,7 @@ nav.scrolling{
     width:350px;
     height:450px;
     display:flex;
+    text-decoration:none;
     flex-direction:column;
     justify-content:flex-start;
     gap:10px;
