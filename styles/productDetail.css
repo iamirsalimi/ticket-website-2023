@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1&family=Vollkorn+SC&display=swap');
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    background:rgb(236, 236, 236);
+}
+
+.title{
+    color:rgb(63, 0, 126);
+    position:absolute;
+    top:25px;
+    left:50%;
+    transform:translateX(-50%);
+    font-family: 'Vollkorn SC', serif;
+
+}
+
+.container{
+    height:100vh;
+    display:grid;
+    place-items: center;
+}
+
+.container .ticket-details{
+    background:#fff;
+    padding:20px;
+    box-shadow:0px 0px solid rgba(0, 0, 0, 0.1);
+    border-radius:22px;
+    width:95%;
+    height:fit-content;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.container .ticket-details .content{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    gap:25px;
+    padding:5px 10px; 
+}
+
+.container .ticket-details .content .ticket-btns{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container .ticket-details .content .ticket-btns button{
+    padding:10px 30px;
+    border-radius:12px;
+    border:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    background:rgba(198, 141, 255, 0.65);
+    color:rgb(53, 0, 106);
+    font-size:1.25rem;
+    font-family: 'M PLUS 1', sans-serif;
+    cursor:pointer;
+    transition:background-color 0.15s ease-out;
+}
+
+.container .ticket-details .content .ticket-btns button span{}
+
+.container .ticket-details .content .ticket-btns button:hover{
+    background:rgba(148, 55, 240, 0.65);
+}
+
+
+.container .ticket-details .content .ticket-desc{
+    text-align:justify;
+    color:rgba(53, 0, 106, 0.735);
+    font-size:1.5rem;
+    line-height:1.75rem;
+    font-family: 'M PLUS 1', sans-serif;
+}
+
+.container .ticket-details  .details{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-auto-rows:75px;
+    place-items:center;
+    position:relative;
+    width:100%;
+    height:100%;
+    background:rgb(53, 0, 106);
+    border-radius:12px;
+    padding:20px;
+}
+
+.container .ticket-details  .details .backBtn{
+    position:absolute;
+    top:0;
+    left:0;
+    background:#fff;
+    padding:5px 10px;
+    border-radius:0 0 22px 0;
+    cursor:pointer;
+    color:rgb(53, 0, 106);;
+}
+
+.container .ticket-details  .details .detail{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    gap:10px;
+}
+
+.container .ticket-details .detail .detail-title{
+    color:rgba(205, 169, 255, 0.787);
+    font-family: 'Vollkorn SC', serif;
+}
+
+.container .ticket-details .detail .ticket-detail{
+    color:#fff;
+    font-family: 'M PLUS 1', sans-serif;
+    text-align:center;
+}
+
+/* icon  */
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+/* media queries */
+
+@media (max-width: 900px){
+    .container .ticket-details{
+        grid-template-columns: 1fr;
+        gap:25px;
+    }
+    .container .ticket-details .content .ticket-desc{
+        font-size:1.25rem;
+        line-height:1.5rem;
+    }
+}
