@@ -20,7 +20,8 @@ let currentLoc , showCards , nextSlideWidth
 let menuItems = $.querySelectorAll('.menu .menu-item')
 
 // changing navbar style onscroll and load
-window.onload = function(){
+
+function changeDetailsDependWidth(){
     if(document.documentElement.scrollTop > 0){
         navbar.classList.add('scrolling')
         navbar.style.padding = '5px 40px'
@@ -70,8 +71,6 @@ window.onload = function(){
             nextSlideWidth = 470
         }
     }
-    
-    
     
     cards.style.transform = `translateX(${currentLoc}px)`
 }
@@ -229,6 +228,8 @@ function prevCardHandler(){
 }
 
 // events
+window.addEventListener('load',changeDetailsDependWidth)
+window.addEventListener('resize',changeDetailsDependWidth)
 sliderNextBtn.addEventListener('click',nextCardHandler)
 sliderPrevBtn.addEventListener('click',prevCardHandler)
 goToUpBtn.onclick = goToUpHandler
