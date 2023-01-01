@@ -139,6 +139,9 @@ body{
 /* media queries */
 
 @media (max-width: 900px){
+    .container{
+        margin-top:50px;
+    }
     .container .ticket-details{
         grid-template-columns: 1fr;
         gap:25px;
