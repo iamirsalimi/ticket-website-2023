@@ -3,6 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 
 *{
     margin:0;
@@ -402,7 +405,7 @@ nav.scrolling{
     top:-34px;
     font-size:2.5rem;
     font-weight:900;
-    font-family:'Anton', sans-serif;
+    font-family: 'Fredoka One', cursive;
     text-transform:uppercase;
 }
 
@@ -410,7 +413,7 @@ nav.scrolling{
     width:100%;
     height:fit-content;
     margin-top:20px;
-    font-family:'Secular One', sans-serif;
+    font-family: 'Fredoka One', cursive;
     text-align:justify;
     color:#210057d8;
     font-size:1.25rem;
@@ -473,10 +476,11 @@ nav.scrolling{
 /* Events sections */
 .events-section{
     width:calc(100%-20px);
-    margin:280px auto 0;
-    padding:15px 25px;
+    margin:225px auto 0;
+    padding:15px 35px;
     position:relative;
     height:475px;
+    margin-bottom:100px;
 }
 
 .events-section .events-header{
@@ -501,7 +505,7 @@ nav.scrolling{
     top:-34px;
     font-size:2.5rem;
     font-weight:900;
-    font-family:'Anton', sans-serif;
+    font-family: 'Fredoka One', cursive;
     text-transform:uppercase;
 }
 
@@ -631,13 +635,165 @@ nav.scrolling{
 .cards-container .card:hover{
     transform:scale(1.02);
 }
+/* contact us */
+
+.contactus-section{
+    display:flex;
+    flex-direction: column-reverse;
+    align-items:flex-start;
+    gap:20px;
+    margin-top:150px !important;
+    margin:0 auto;
+    padding:0 25px;
+    height:max-content;
+}
+
+.contactus-section .left-contact{
+    flex-basis:50%;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    width:100%;
+}
+
+.contactus-section .left-contact .left-descs .left-title{
+    color:#380091;
+    font-family: 'Fredoka One', cursive;
+    font-size:2rem; 
+}
+
+.contactus-section .left-contact .left-descs{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    gap:15px;
+}
+
+
+.contactus-section .left-contact .left-descs .left-desc{
+    color:#380091a5;
+    text-align:justify;
+    font-size:1.2rem; 
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.contactus-section .left-contact form{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    height:100%;
+}
+
+.contactus-section .left-contact form .input{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.contactus-section .left-contact form .input label{
+    position:relative;
+    left:5px;
+    color:#380091;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contactus-section .left-contact form input:not(input[type="submit"]) , 
+.contactus-section .left-contact form textarea{
+    width:100%;
+    border-radius:22px;
+    padding:10px 20px;
+    border:none;
+    font-size:1.25rem;
+    outline:none;
+    letter-spacing: 1px;;
+    background:#f0e7ff;
+    caret-color: #632eba;
+    color:#380091;
+    resize:none;
+    font-family: 'Roboto', sans-serif;
+    border:1px solid transparent;
+    transition:0.15s ease-out;
+}
+
+.contactus-section .left-contact form input:not(input[type="submit"]):focus, 
+.contactus-section .left-contact form textarea:focus{
+    border-color: #380091;
+}
+
+.contactus-section .left-contact input[type="submit"]{
+    width:60%;
+    text-align:center;
+    border-radius:22px;
+    padding:10px 20px;
+    border:none;
+    font-size:1.25rem;
+    outline:none;
+    margin:0 auto;
+    color:#f0e7ff;
+    cursor:pointer;
+    background-color:#380091;
+    font-family: 'Roboto', sans-serif;
+    transition:0.15s ease-out;
+}
+
+.contactus-section .left-contact input[type="submit"]:hover{
+    background-color:#5a14ca;
+}
+
+.contactus-section .right-contact{
+    flex-basis:50%;
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+}
+
+.contactus-section .right-contact .right-img{
+    max-width:100%;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.contactus-section .right-contact .right-img img{
+    width:100%;
+    height:100%;
+}
+
+.contactus-section .right-contact .right-descs{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.contactus-section .right-contact .right-descs .contact{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    font-family: 'Roboto', sans-serif;
+    color:#380091;
+    width:100%;
+}
+
+.contactus-section .right-contact .right-descs .contact span{
+    color:#380091;
+}
+
+.contactus-section .right-contact .right-descs .contact:last-child{
+    text-align:justify;
+    color:#ca1414;
+}
+
+.contactus-section .right-contact .right-descs .contact:last-child span{
+    color:#ca1414;
+}
 
 /* footer */
 footer{
     background:#18003d;
     height:fit-content;
     width:100%;
-    margin-top:100px;
+    margin-top:40px;
     display:flex;
     flex-direction:column;
     justify-content:space-between;
@@ -767,6 +923,49 @@ footer .copy-write{
         align-items:center;
         padding:10px 0;
     }
+    .contactus-section{
+        flex-direction:column-reverse;
+        align-items:center;
+        padding:0 40px;
+    }
+    
+    .contactus-section .left-contact{
+        flex-basis:100%;
+        gap:25px;
+    }
+    
+    .contactus-section .left-contact .left-descs .left-title{
+        font-size:1.5rem; 
+    }
+    
+    .contactus-section .left-contact .left-descs .left-desc{
+        font-size:1rem; 
+    }
+    
+    
+    .contactus-section .left-contact form{
+        width:100%;
+    }
+
+    .contactus-section .left-contact input[type="submit"]{
+        font-size:1.25rem;
+    }
+
+
+    .contactus-section .right-contact .right-img{
+        max-width:100%;
+        min-height:350px;
+    }
+    
+    .contactus-section .right-contact .right-img img{
+        width:100%;
+        height:100%;
+    }
+
+    .contactus-section .right-contact{
+        flex-basis:100%;
+        gap:40px;
+    }
 
 }
 
@@ -863,6 +1062,48 @@ footer .copy-write{
         padding:40px 0;
     }
     
+    .contactus-section{
+        flex-direction:row-reverse;
+        padding:0 25px;
+    }
+    
+    .contactus-section .left-contact{
+        flex-basis:50%;
+        gap:20px;
+    }
+    
+    .contactus-section .left-contact .left-descs .left-title{
+        font-size:1.75rem; 
+    }
+    
+    .contactus-section .left-contact .left-descs .left-desc{
+        font-size:1rem; 
+    }
+    
+    
+    .contactus-section .left-contact form{
+        width:90%;
+    }
+
+    .contactus-section .left-contact input[type="submit"]{
+        font-size:1.25rem;
+    }
+
+
+    .contactus-section .right-contact .right-img{
+        max-width:550px;
+        min-height:350px;
+    }
+    
+    .contactus-section .right-contact .right-img img{
+        width:100%;
+        height:100%;
+    }
+
+    .contactus-section .right-contact{
+        flex-basis:50%;
+        gap:40px;
+    }
 }
 
 @media (min-width:1110px) {
@@ -963,6 +1204,49 @@ footer .copy-write{
     }
     .header-bg{
         max-height:120vh;
+    }
+
+    .contactus-section{
+        flex-direction:row-reverse;
+        padding:0 25px;
+    }
+    
+    .contactus-section .left-contact{
+        flex-basis:50%;
+        gap:40px;
+    }
+    
+    .contactus-section .left-contact .left-descs .left-title{
+        font-size:1.75rem; 
+    }
+    
+    .contactus-section .left-contact .left-descs .left-desc{
+        font-size:1rem; 
+    }
+    
+    
+    .contactus-section .left-contact form{
+        width:90%;
+    }
+
+    .contactus-section .left-contact input[type="submit"]{
+        font-size:1.25rem;
+    }
+
+
+    .contactus-section .right-contact .right-img{
+        max-width:550px;
+        min-height:350px;
+    }
+    
+    .contactus-section .right-contact .right-img img{
+        width:100%;
+        height:100%;
+    }
+
+    .contactus-section .right-contact{
+        flex-basis:50%;
+        gap:40px;
     }
 }
 
@@ -1065,5 +1349,49 @@ footer .copy-write{
     }
     .header-bg{
         max-height:120vh;
+    }
+    
+    .contactus-section{
+        margin:0 auto;
+        padding:0 50px;
+    }
+    
+    .contactus-section .left-contact{
+        flex-basis:50%;
+        gap:25px;
+    }
+    
+    .contactus-section .left-contact .left-descs .left-title{
+        font-size:2rem; 
+    }
+    
+    .contactus-section .left-contact .left-descs .left-desc{
+        font-size:1.2rem; 
+    }
+    
+    
+    .contactus-section .left-contact form{
+        width:90%;
+    }
+
+    .contactus-section .left-contact input[type="submit"]{
+        width:60%;
+        font-size:1.25rem;
+    }
+
+
+    .contactus-section .right-contact .right-img{
+        max-width:550px;
+        min-height:350px;
+    }
+    
+    .contactus-section .right-contact .right-img img{
+        width:100%;
+        height:100%;
+    }
+
+    .contactus-section .right-contact{
+        flex-basis:50%;
+        gap:40px;
     }
 }

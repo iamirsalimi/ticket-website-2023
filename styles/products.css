@@ -101,6 +101,7 @@ body{
   display:flex;
   flex-direction:column;
   width:350px;
+  min-height:466px;
   background:rgb(53, 0, 106);
   font-family: 'Shippori Antique B1', sans-serif;
   color:#fff;
@@ -289,6 +290,7 @@ body{
   }
   .container .products .ticket {
     width:335px;
+    left:-10px;
   }
   .container .products .ticket .top-ticket::before,
   .container .products .ticket .top-ticket::after{
