@@ -15,10 +15,9 @@
 .container {
     width:100%;
     height:100vh;
-    padding:10px;
+    padding:10px 5px;
     display:flex;
     justify-content:center;
-    align-items: center;
     gap:10px;
 }
 
@@ -26,6 +25,7 @@
     color:rgb(139, 139, 139);
     position:relative;
     left:20px;
+    width:fit-content;
     margin:10px 0; 
 }
 
@@ -141,7 +141,7 @@
 
 /* Menu Item section Separator */
 .container .menuItem-sectionSep{
-    width:200px;
+    width: 165px;
     height:100%;
     background:#c398ff;
     border-radius:10px;
@@ -379,7 +379,7 @@
     position:absolute;
     max-width:400px;
     right:0;
-    top:-60px;
+    top:-125px;
     max-height:40px;
     right:20px;
 }
@@ -388,12 +388,12 @@
 .stores-content #search-input,
 .tickets-content #search-input{
     width:400px;
-    height:40px;
+    height:35px;
     border-radius:10px;
     background:none;
     outline:none;
     padding:2px 10px;
-    font-size:1.5rem;
+    font-size:1.25rem;
     color:#7336ce;
     border:2px solid #3b0084;
 }
@@ -513,19 +513,6 @@
     position:relative;
 }
 
-.add-content .modal{
-    display:none;
-    text-align:center;
-    font-size:1rem;
-    border-radius:10px;
-    background:red;
-    font-family: 'Titillium Web', sans-serif;
-    color:#f2eaff;
-}
-
-.add-content .modal ul {
-    list-style:none;
-}
 .add-content form .input input{
     width:100%;
     font-size:1.2rem;
@@ -535,6 +522,11 @@
     border:1px solid rgb(119, 32, 249);
     outline:none;
     border-radius:10px;
+}
+
+.add-content form .input:nth-child(3),
+.add-content form .input:last-child{
+    grid-column:1/-1
 }
 
 .add-content form .input .show-pass{
@@ -619,33 +611,19 @@
     background:#6600ff;
 }
 
-.add-content .add-store .add-store-tips ul{
-    background:#4800b4;
-    width:100%;
-    margin:20px 0;
-    list-style: none;
-    padding:5px 10px;
-    border-radius:10px;
-}
-
-.add-content .add-store .add-store-tips li{
-    color:#d5b9ff;
-    font-family: 'Righteous', cursive;
-}
-
 /* profile section */
 
 .profile-content{
     display:grid;
     grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(4,1fr);
+    grid-template-rows: repeat(3,1fr);
     gap:10px;
-    height:100%;
+    max-height:90%;
 }
 
 .profile-content .admin-profile{
     grid-column:1/2;
-    grid-row: 1/3;
+    grid-row: 1/2;
     height:100%;
     background:#fff;
     border-radius:10px;
@@ -695,7 +673,7 @@
     background:#fff;
     border-radius:10px;
     grid-column:2/-1;
-    grid-row:1/3;
+    grid-row:1/2;
     overflow-y:scroll;
     max-height:500px;
 }
@@ -725,13 +703,17 @@
     transition:0.15s ease-out;
 }
 
+table tbody tr:nth-child(even){
+    background:rgb(244, 237, 255);
+}
+
 .profile-content .admins-table table tbody tr:hover{
     background:#d8b3ff;
 }
 
 .profile-content .add-admin{
-    grid-column:1/-1;
-    grid-row:3/-1;
+    grid-column:1/4;
+    grid-row:2/-1;
     background:#fff;
     border-radius:10px;
     padding:10px 15px;
@@ -747,8 +729,7 @@
     display:grid;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(3,1fr);
-    column-gap: 10px;
-    row-gap: 15px;
+    gap: 10px;
     margin-top:1rem;
 }
 
@@ -763,7 +744,7 @@
     cursor:pointer;
 }
 
-.profile-content .add-admin form .input .show-pass .material-symbols-outlined{
+.add-admin form .input .show-pass .material-symbols-outlined{
     color:#6600ff;
     display:inline-block;
     pointer-events: none;
@@ -814,21 +795,55 @@
     background:#6600ff;
 }
 
-
-.inputs .input p{
-    display:none;
-    color:#c80c1b;
-}
-
-.inputs .input p.show-err{
-    display:block;
-}
-
-
 .menuItem-sectionSep .active{
     background:#4800b4;
     color:#fff !important;
 }
+
+.profile-content .add-store-and-ticket{
+    background:#fff;
+    border-radius:10px;
+    grid-column:4/-1;
+    grid-row:2/-1;
+    padding:10px 5px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    align-items: center;
+    gap:20px;
+}
+
+.profile-content .add-store-and-ticket .add-store-and-ticket-title{
+    color:#6600ff;
+    font-family: 'Righteous', cursive;
+    flex-basis:30%;
+    text-align:center;
+}
+
+.profile-content .add-store-and-ticket-btns{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items: center;
+    gap:20px;
+    flex-basis:70%;
+}
+
+.profile-content .add-store-and-ticket-btns a{
+    background:#3b0084;
+    color:#fff;
+    padding:10px 20px;
+    border-radius:12px;
+    text-align:center;
+    cursor:pointer;
+    font-family: 'Righteous', cursive;
+    text-decoration:none;
+    transition:background-color 0.15s ease-in-out;
+}
+.profile-content .add-store-and-ticket-btns a:hover{
+    background:#6600ff;
+}
+
 
 /* icons */
 .material-symbols-rounded {
@@ -845,4 +860,238 @@
   'wght' 400,
   'GRAD' 0,
   'opsz' 48
+}
+
+/* media queries */
+
+@media screen and (max-width:1135px){
+    .profile-content .add-store-and-ticket .add-store-and-ticket-title{
+        font-size:1rem;
+    }
+    .profile-content .admins-table table thead th,
+    .customers-content .customers-table table thead th,
+    .stores-content .stores-table table thead th,
+    .tickets-content .tickets-table table thead th{
+        font-size:1rem;
+    } 
+    .profile-content .admins-table table tbody td,
+    .customers-content .customers-table table tbody td,
+    .stores-content .stores-table table tbody td,
+    .tickets-content .tickets-table table body td{
+        font-size:0.9rem;
+    }
+
+    .dashboard-content .users-list table thead th{
+        font-size:1rem !important;
+    }
+
+    .dashboard-content .users-list table tbody td{
+        font-size:0.8rem !important;
+    }
+
+    .content-section-title h2,
+    .content-section-title span{
+        font-size:1.15rem;
+    }
+
+    .dashboard-content #search-input,
+    .tickets-content #search-input,
+    .customers-content  #search-input,
+    .stores-content #search-input,
+    .profile-content #search-input{
+        width:300px;
+        font-size:1.25rem;
+    }
+
+    .dashboard-content .table-title h2{
+        font-size:1.1rem;
+    }
+
+    .container .menuItem-sectionSep label{
+        font-size:1rem;
+    }
+    
+}
+
+@media screen and (max-width:970px){
+    .profile-content .add-store-and-ticket .add-store-and-ticket-title{
+        font-size:1rem;
+    }
+    .profile-content .admins-table table thead th,
+    .customers-content .customers-table table thead th,
+    .stores-content .stores-table table thead th,
+    .tickets-content .tickets-table table thead th{
+        font-size:1rem;
+    } 
+    .profile-content .admins-table table tbody td,
+    .customers-content .customers-table table tbody td,
+    .stores-content .stores-table table tbody td,
+    .tickets-content .tickets-table table body td{
+        font-size:0.9rem;
+    }
+
+    .dashboard-content .users-list table thead th{
+        font-size:1rem !important;
+    }
+
+    .dashboard-content .users-list table tbody td{
+        font-size:0.8rem !important;
+    }
+
+    .container .content .dashboard-content .users-list{
+        grid-column:1/-1;
+        grid-row:unset;
+    }
+
+    .container .content .dashboard-content{
+        height:90%;
+    }
+
+    .container .content .dashboard-content .recent-purcahses {
+        grid-row:2/3 !important;
+    }
+    .container .content .dashboard-content .purchases-list{
+        grid-row:3/-1 !important;
+    }
+
+    .content-section-title h2,
+    .content-section-title span{
+        font-size:1.15rem;
+    }
+
+    .container .content .dashboard-content .box-title{
+        font-size:0.75rem;
+    }
+
+    .container .content .dashboard-content .box-number{
+        font-size:1.5rem;
+    }
+
+    .dashboard-content #search-input,
+    .tickets-content #search-input,
+    .customers-content  #search-input,
+    .stores-content #search-input,
+    .profile-content #search-input{
+        width:300px;
+        font-size:1.25rem;
+    }
+
+    .dashboard-content .table-title h2{
+        font-size:1.1rem;
+    }
+
+    .container .menuItem-sectionSep label{
+        font-size:1rem;
+    }
+    
+}
+
+@media screen and (max-width:720px){
+    .profile-content .add-store-and-ticket .add-store-and-ticket-title{
+        font-size:1rem;
+    }
+    .profile-content .admins-table table thead th,
+    .customers-content .customers-table table thead th,
+    .stores-content .stores-table table thead th,
+    .tickets-content .tickets-table table thead th{
+        font-size:1rem;
+    } 
+    .profile-content .admins-table table tbody td,
+    .customers-content .customers-table table tbody td,
+    .stores-content .stores-table table tbody td,
+    .tickets-content .tickets-table table body td{
+        font-size:0.9rem;
+    }
+
+    .dashboard-content .users-list table thead th{
+        font-size:1rem !important;
+    }
+
+    .dashboard-content .users-list table tbody td{
+        font-size:0.8rem !important;
+    }
+
+    .container .content .dashboard-content .users-list{
+        grid-column:1/-1;
+        grid-row:unset;
+    }
+
+    .container .content .dashboard-content{
+        height:90%;
+    }
+
+    .container .content .dashboard-content .recent-purcahses {
+        grid-row:2/3 !important;
+    }
+    .container .content .dashboard-content .purchases-list{
+        grid-row:3/-1 !important;
+    }
+
+    .content-section-title h2,
+    .content-section-title span{
+        font-size:1.15rem;
+    }
+
+    .container .content .dashboard-content .box-title{
+        font-size:0.6rem;
+    }
+
+    .container .content .dashboard-content .box-number{
+        font-size:1.5rem;
+    }
+
+    .dashboard-content #search-input,
+    .tickets-content #search-input,
+    .customers-content  #search-input,
+    .stores-content #search-input,
+    .profile-content #search-input{
+        width:300px;
+        font-size:1.25rem;
+    }
+
+    .container{
+        flex-direction:column-reverse;
+        width:98%;
+        margin:80px auto 0;
+    }
+
+    .container aside{
+        font-size:0.7rem;
+        width:100%;
+        max-height:150px;
+    }
+    
+    .container aside .menuItems {
+        width:100%;
+    }
+        
+    .container aside .menuItems .menuList{
+        flex-direction:row;
+        width:100%;
+    }
+    
+    .container .menuItem-sectionSep{
+        width:unset;
+        height: 90px;
+        padding:0;
+        overflow: hidden
+    }
+
+    .container .menuItem-sectionSep .addStore-tickets, .container .menuItem-sectionSep .tickets{
+        flex-direction:row;
+    }
+    
+    .container .menuItem-sectionSep .addStore-tickets, .container .menuItem-sectionSep .tickets label{
+        border:none;
+        height:100px;
+    }
+
+    .dashboard-content .table-title h2{
+        font-size:1.1rem;
+    }
+
+    .container .menuItem-sectionSep label{
+        font-size:1rem;
+    }
+    
 }

@@ -1,0 +1,226 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f2eaff;
+}
+
+.container{
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    gap:25px;
+}
+
+.main-section{
+    color:rgb(139, 139, 139);
+    position:relative;
+    width:fit-content;
+    left:20px;
+    margin:10px 0; 
+}
+
+.main-section a{
+    color:#6e0eff;
+    text-decoration:none;
+    transition:color 0.15s ease-out;
+}
+
+.main-section a:last-child{
+    color:rgb(139, 139, 139);
+}
+
+.main-section a:hover:not(.main-section a:last-child){
+    color:#8432ff;
+}
+
+.add-content{
+    width:90%;
+    margin:0 auto;
+
+}
+
+.add-content form{
+    padding:25px 10px;
+    border:2px solid #6600ff;
+    border-radius:10px;
+    position:relative;
+    text-align:center;
+}
+
+.add-content form h2{
+    color:#6600ff;
+    background:#f2eaff;
+    padding:0 10px;
+    font-family: 'Lobster', cursive;
+    position:absolute;
+    top:-20px;
+    left:20px;
+}
+
+.add-content form .inputs{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:30px;
+}
+.add-content form .input{
+    position:relative;
+}
+
+.add-content .modal{
+    display:none;
+    text-align:center;
+    font-size:1rem;
+    border-radius:10px;
+    background:red;
+    font-family: 'Titillium Web', sans-serif;
+    color:#f2eaff;
+}
+
+.add-content .modal ul {
+    list-style:none;
+}
+.add-content form .input input{
+    width:100%;
+    font-size:1.2rem;
+    color:#6600ff;
+    padding:5px 10px;
+    background: none;
+    border:1px solid rgb(119, 32, 249);
+    outline:none;
+    border-radius:10px;
+}
+
+.add-content form .input:nth-child(3),
+.add-content form .input:last-child{
+    grid-column:1/-1
+}
+
+.add-content form .input .show-pass{
+    position:absolute;
+    right:5px;
+    top:5px;
+    cursor:pointer;
+}
+
+.add-content  form .input .show-pass .material-symbols-outlined{
+    color:#6600ff;
+    display:inline-block;
+    pointer-events: none;
+}
+
+.add-content form .input textarea{
+    width:100%;
+    height:100px;
+    font-size:1.2rem;
+    color:#6600ff;
+    padding:20px 10px;
+    background:none;
+    resize:none;
+    border:1px solid rgb(119, 32, 249);
+    outline:none;
+    border-radius:10px;
+}
+
+
+.add-content form .input .input-title{
+    display:inline-block;
+    position:absolute;
+    left:15px;
+    top:-10px;
+    background:#f2eaff;
+    color:rgb(119, 32, 249);
+    padding:0 10px;
+}
+
+.add-content form select{
+    background:#6a0afb;
+    width:100%;
+    border-radius:10px;
+    border:none;
+    color:#f2eaff;
+    cursor:pointer;
+    padding:5px 20px;
+    font-size:1rem;
+}
+
+.add-content .add-ticket{
+    padding:40px 10px;
+}
+
+.add-content form .input-category .input-title{
+    background:none;
+    top:-20px;
+    left:0;
+}
+
+.add-content form .input .star{
+    color:rgb(186, 0, 0);
+    position:absolute;
+    top:-15px;
+    right:10px;
+}
+
+.inputs .input p{
+    display:none;
+    color:#c80c1b;
+}
+
+.inputs .input p.show-err{
+    display:block;
+}
+
+.add-content form .addStore-btn{
+    margin-top:20px;
+    background:#4800b4;
+    border:none;
+    padding:10px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    color:#f2eaff;
+    transition:0.15s ease-out;
+}
+
+.add-content form .addStore-btn:hover{
+    background:#6600ff;
+}
+
+.add-store .add-store-tips ul{
+    background:#4800b4;
+    width:100%;
+    margin:20px 0;
+    list-style: none;
+    padding:5px 10px;
+    border-radius:10px;
+}
+
+.add-store .add-store-tips li{
+    color:#d5b9ff;
+    font-family: 'Righteous', cursive;
+}
+
+.add-content .modal{
+    display:none;
+    text-align:center;
+    font-size:1rem;
+    border-radius:10px;
+    background:red;
+    font-family: 'Titillium Web', sans-serif;
+    color:#f2eaff;
+}
+
+.add-content .modal ul {
+    list-style:none;
+}
+
+/* media queries */
+
+@media screen and (max-width:720px){
+    .add-content form .input{
+        grid-column:1/-1
+    }
+}

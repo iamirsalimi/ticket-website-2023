@@ -15,9 +15,6 @@ let linkRegex = /^\w+([\.-]?\w)*@\w+([\.-]?\w)*(\.\w{2,3})+$/g
 let sectionSeps = $.querySelectorAll('.menuItem-sectionSep .SectionSep')
 let sectionSepContainer = $.querySelector('.menuItem-sectionSep')
 
-let addSeps = $.querySelectorAll('.menuItem-sectionSep .addStore-tickets input')
-let addForms = $.querySelectorAll('.add-content form')
-
 let ticketSeps = $.querySelectorAll('.menuItem-sectionSep .tickets input') 
 let ticketContents = $.querySelectorAll('.tickets-content .tickets-table')
 
@@ -67,39 +64,9 @@ function checkEmail(event){
 }
 
 // load 
-window.addEventListener('DOMContentLoaded',function(){
-    sectionElems.forEach(function(section){
-        section.style.display = 'none'
-    })
-    
-    menuItems.forEach(function(item){
-        item.classList.remove('active')
-    })
-
-    menuItems[0].classList.add('active')
-    $.querySelector('.dashboard-content').removeAttribute('style')
-    menuTitle.innerHTML = '<h2>Outinz users <span>overview</span></h2>'
-    clearInputsValueHandler()
-})
+window.addEventListener('DOMContentLoaded',clearInputsValueHandler)
 
 // sections seps
-addSeps.forEach(function(addSep){
-    addSep.addEventListener('click',function(event){
-        let userTargetElem = $.querySelector('.add-content .'+ event.target.nextElementSibling.dataset.septarget)
-        addForms.forEach(function(addForm){
-            addForm.style.display = 'none'
-        })
-        userTargetElem.style.display = 'block'
-
-        menuTitle.innerHTML = '<h2>Outinz '+ event.target.nextElementSibling.innerHTML +'<span>  Section</span></h2>'
-        // get active class to menu separator target
-        addSeps.forEach(function(addSepElem){
-            addSepElem.nextElementSibling.classList.remove('active')
-        })
-        event.target.nextElementSibling.classList.add('active')
-    })
-})
-
 ticketSeps.forEach(function(ticketSep){
     ticketSep.addEventListener('click',function(event){
 
@@ -107,6 +74,7 @@ ticketSeps.forEach(function(ticketSep){
         ticketContents.forEach(function(ticketContent){
             ticketContent.style.display = 'none'
         })
+        
         userTargetElem.style.display = 'block'
 
         if(userTargetElem.className.includes('tickets-table rectent-purchased-tickets')){
@@ -201,7 +169,7 @@ menuItems.forEach(function(menuItem){
             })
 
             sectionSepContainer.style.display = 'block'
-            targetSepElem.style.display = 'block'
+            targetSepElem.style.display = 'flex'
 
             // get active class of section Seps
             if(targetSepElem.className.includes('tickets SectionSep')){
@@ -217,25 +185,11 @@ menuItems.forEach(function(menuItem){
                     }
                 })
             }
-            if(targetSepElem.className.includes('addStore-tickets SectionSep')){
-                addSeps.forEach(function(addSepElem){
-                    addSepElem.nextElementSibling.classList.remove('active')
-                })
-                sectionElems[4].querySelectorAll('form')
-                .forEach(function(section){
-                    if(section.className.includes('add-store')){
-                        section.removeAttribute('style')
-                    } else {
-                        section.style.display = 'none'
-                    }
-                })
-            }
 
             // add active class to section separators
             targetSepElem.children[1].classList.add('active')
             userTargetMenu.firstElementChild.firstElementChild.placeholder = 'username'
         } else {
-            sectionSepContainer.style.display = 'none'
             sectionSepContainer.style.display = 'none'
         }
 
@@ -248,9 +202,7 @@ menuItems.forEach(function(menuItem){
             menuTitle.innerHTML = '<h2>Outinz Stores  <span>List</span></h2>'
         } else if(userTargetMenu.className === 'tickets-content'){
             menuTitle.innerHTML = '<h2>Outinz All Tickets <span>List</span></h2>'
-        } else if(userTargetMenu.className === 'add-content'){
-            menuTitle.innerHTML = '<h2>Outinz add Store <span> section</span></h2>'
-        } else {
+        }  else {
             menuTitle.innerHTML = '<h2>Outinz Admin Profile <span> section</span></h2>'
         }
     })

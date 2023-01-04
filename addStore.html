@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <link rel="stylesheet" href="styles/addStore.css">
+    <title>OUTINZ Add Store</title>
+</head>
+<body>
+    <div class="container">
+        <div class="main-section">
+            <span><a href="index.html">Home</a> / <a href="adminPanel.html">Admin Panel</a> / <a href="#">Add Store</a> </span>
+        </div>
+        <div class="add-content">
+            <form action="" class="add-store">
+                <h2>add store</h2>
+                <div class="add-store-tips">
+                    <ul>
+                        <li>All inputs are required</li>
+                        <li>Username must be between 4 and 15 characters</li>
+                        <li>Username must be between 4 and 16 characters</li>
+                    </ul>
+                </div>
+                <div class="inputs">
+                    <div class="input">
+                        <span class="input-title" >Store Name</span>
+                        <input type="text" name="store-name" required minlength="4"> 
+                        <span class="star">*</span>
+                    </div>
+                    <div class="input">
+                        <span class="input-title" >Store UserName</span>
+                        <input type="text" name="store-UserName" required minlength="4" maxlength="15"> 
+                        <span class="star">*</span>
+                    </div>
+                    <div class="input">
+                        <span class="input-title" >Store Address</span>
+                        <input type="text" name="store-address" required> 
+                        <span class="star">*</span>
+                    </div>
+                    <div class="input">
+                        <span class="input-title" >Store Password</span>
+                        <input type="password" name="store-pass" required  minlength="4" maxlength="16"> 
+                        <span class="star">*</span>
+                        <div class="show-pass">
+                            <span class="material-symbols-outlined">visibility</span>
+                        </div>
+                    </div>
+                    <div class="input">
+                        <span class="input-title" >Repeat Password</span>
+                        <input type="password" name="store-pass" required  minlength="4" maxlength="16"> 
+                        <span class="star">*</span>
+                        <div class="show-pass">
+                            <span class="material-symbols-outlined">visibility</span>
+                        </div>
+                    </div>
+                    <div class="input">
+                        <span class="input-title"  >Store Email</span>
+                        <input type="text" name ="store-email" class="store-email" required > 
+                        <span class="star">*</span>
+                        <p>email is invalid</p>
+                    </div>
+                </div>
+                <input type="submit" value="Add Store" data-modalTarget="add-ticket-modal" class="addStore-btn">
+            </form>
+            <div class="modal">
+                <div class="add-store-modal">
+                    <ul>
+                        <li class="username">UserName is already in use</li>
+                        <li class="username">Email is invalid</li>
+                    </ul>
+                </div>
+                <div class="success">
+                    <p>store Added</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

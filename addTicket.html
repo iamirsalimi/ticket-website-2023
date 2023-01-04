@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="styles/addTicket.css">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>OUTINZ Add Ticket</title>
+</head>
+<body>
+    <div class="container">
+        <div class="main-section">
+            <span><a href="index.html">Home</a> / <a href="adminPanel.html">Admin Panel</a> / <a href="#">Add Ticket</a> </span>
+        </div>
+        <div class="add-content">
+            <form action="" class="add-ticket">
+                <h2>add ticket</h2>
+                <div class="inputs">
+                    <div class="input input-category">
+                        <span class="input-title">Ticket Category</span>
+                        <select name="Ticket category">
+                            <option value="party">party</option>
+                            <option value="concert">concert</option>
+                            <option value="hotel">hotel</option>
+                            <option value="airplane">airplane</option>
+                        </select>
+                        <span class="star">*</span>
+                    </div>
+                    <div class="input">
+                        <span class="input-title" >Ticket Price</span>
+                        <input type="number" name="ticket-price" min="0" max="20000" required> 
+                        <span class="star">*</span>
+                    </div>
+                    <div class="input">
+                        <span class="input-title" >Ticket's store UserName</span>
+                        <input type="text" name="ticket-store-username" required> 
+                        <span class="star">*</span>
+                    </div>
+                    <div class="input">
+                        <span class="input-title" >Ticket start Date</span>
+                        <input type="date" name="ticket-start-date" required> 
+                        <span class="star">*</span>
+                    </div>
+                    <div class="input">
+                        <span class="input-title" >Ticket Capacity</span>
+                        <input type="number" name="ticket-start-date" min="0" max="2000" required> 
+                        <span class="star">*</span>
+                    </div>
+                    <div class="input">
+                        <span class="input-title" >Ticket Description</span>
+                        <textarea name="ticket-description" rows="10"></textarea> 
+                        <span class="star">*</span>
+                        
+                    </div>
+                </div>
+                <input type="submit" value="Add ticket" data-modalTarget="add-store-modal" class="addTicket-btn">
+            </form>
+            
+            <div class="modal">
+                <div class="add-ticket-modal">
+                    <ul>
+                        <li class="store-username">Store username not found</li>
+                        <li class="store-username">Date is Invalid</li>
+                    </ul>
+                </div>
+                <div class="success">
+                    <p>Ticket Added</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

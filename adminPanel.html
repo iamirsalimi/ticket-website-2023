@@ -11,14 +11,14 @@
 </head>
 <body>
     <div class="main-section">
-        <span><a href="">Home</a> / <a href="">Admin Panel</a></span>
+        <span><a href="index.html">Home</a> / <a href="#">Admin Panel</a></span>
     </div>
     <div class="container">
         <aside>
             <div class="menuItems">
                 <ul class="menuList">
                     <a href="#" data-class="dashboard-content" data-sep="none">                    
-                        <li class="menu-item" data-class="dashboard-content" data-sep="none">
+                        <li class="menu-item active" data-class="dashboard-content" data-sep="none">
                             <span class="material-symbols-rounded active" >dashboard_customize</span>
                             <div class="menu-title">Dashboard</div>
                         </li>
@@ -45,12 +45,6 @@
                         </li>
                     </a>
 
-                    <a href="#" data-class="add-content" data-sep="addStore-tickets">
-                        <li class="menu-item" data-class="add-content" data-sep="addStore-tickets">
-                            <span class="material-symbols-outlined">add_business</span>
-                            <div class="menu-title">add Stores & Ticket</div> 
-                        </li>
-                    </a>
                     <a href="#" data-class="profile-content" data-sep="none">
                         <li class="menu-item" data-class="profile-content" data-sep="none">
                             <span class="material-symbols-rounded">person_filled</span>
@@ -75,13 +69,7 @@
                 <input type="radio" name="tickets-table" id="expired" class="active">
                 <label for="expired"  data-sepTarget="expired-tickets">Expired and deleted Tickets</label> 
             </div>
-            <div class="addStore-tickets SectionSep" style="display:none;">
-                <input type="radio" name="add-Store-Ticket" id="add-store">
-                <label for="add-store" data-sepTarget="add-store">Add Store</label>
 
-                <input type="radio" name="add-Store-Ticket" id="add-ticket" class="active">
-                <label for="add-ticket" data-sepTarget="add-ticket">Add Ticket</label>
-            </div>
         </div>
         <div class="content">
             <div class="content-section-title">
@@ -429,112 +417,8 @@
                     </table>
                 </div>
             </section>
-            <!-- add store and ticket section -->
-            <section class="add-content" style="display:none;">
-                <form action="" class="add-store">
-                    <h2>add store</h2>
-                    <div class="add-store-tips">
-                        <ul>
-                            <li>all Inputs are required</li>
-                            <li>Username must be between 4 and 15 characters</li>
-                            <li>Username must be between 4 and 16 characters</li>
-                        </ul>
-                    </div>
-                    <div class="inputs">
-                        <div class="input">
-                            <span class="input-title" >Store UserName</span>
-                            <input type="text" name="store-name" required minlength="4" maxlength="15"> 
-                            <span class="star">*</span>
-                        </div>
-                        <div class="input">
-                            <span class="input-title" >Store Password</span>
-                            <input type="password" name="store-pass" required  minlength="4" maxlength="16"> 
-                            <span class="star">*</span>
-                            <div class="show-pass">
-                                <span class="material-symbols-outlined">visibility</span>
-                            </div>
-
-                        </div>
-                        <div class="input">
-                            <span class="input-title" >Store Address</span>
-                            <input type="text" name="store-address" required> 
-                            <span class="star">*</span>
-                        </div>
-                        <div class="input">
-                            <span class="input-title"  >Store Email</span>
-                            <input type="text" name ="store-email" class="store-email" required > 
-                            <span class="star">*</span>
-                            <p>email is invalid</p>
-                        </div>
-                    </div>
-                    <input type="submit" value="Add Store" data-modalTarget="add-ticket-modal" class="addStore-btn">
-                </form>
-
-                <form action="" class="add-ticket" style="display:none;">
-                    <h2>add ticket</h2>
-                    <div class="inputs">
-                        <div class="input input-category">
-                            <span class="input-title">Ticket Category</span>
-                            <select name="Ticket category">
-                                <option value="party">party</option>
-                                <option value="concert">concert</option>
-                                <option value="hotel">hotel</option>
-                                <option value="airplane">airplane</option>
-                            </select>
-                            <span class="star">*</span>
-                        </div>
-                        <div class="input">
-                            <span class="input-title" >Ticket Price</span>
-                            <input type="number" name="ticket-price" min="0" max="20000" required> 
-                            <span class="star">*</span>
-                        </div>
-                        <div class="input">
-                            <span class="input-title" >Ticket's store UserName</span>
-                            <input type="text" name="ticket-store-username" required> 
-                            <span class="star">*</span>
-                        </div>
-                        <div class="input">
-                            <span class="input-title" >Ticket start Date</span>
-                            <input type="date" name="ticket-start-date" required> 
-                            <span class="star">*</span>
-                        </div>
-                        <div class="input">
-                            <span class="input-title" >Ticket Capacity</span>
-                            <input type="number" name="ticket-start-date" min="0" max="2000" required> 
-                            <span class="star">*</span>
-                        </div>
-                        <div class="input">
-                            <span class="input-title" >Ticket Description</span>
-                            <textarea name="ticket-description" rows="10"></textarea> 
-                            <span class="star">*</span>
-                            
-                        </div>
-                    </div>
-                    <input type="submit" value="Add ticket" data-modalTarget="add-store-modal" class="addTicket-btn">
-                </form>
-
-                <div class="modal">
-                    <div class="add-store-modal">
-                        <ul>
-                            <li class="username">UserName is already in use</li>
-                            <li class="username">Email is invalid</li>
-                        </ul>
-                    </div>
-                    <div class="add-ticket-modal">
-                        <ul>
-                            <li class="store-username">Store username not found</li>
-                            <li class="store-username">Store username not found</li>
-                        </ul>
-                    </div>
-                    <div class="success">
-                        <p>
-                            <span class="store">store </span><span class="ticket">ticket</span> Added
-                        </p>
-                    </div>
-                </div>
-            </section>
             <!-- admin profile and add Admin section -->
-            <section class="profile-content" style="display:none;" >
+            <section class="profile-content" style="display:none;"  >
                 
                 <div class="admin-profile">
                     <div class="admin-pic">
@@ -606,6 +490,14 @@
                                 </div>
                             </div>
                             <div class="input">
+                                <span class="input-title" >Repeat Password</span>
+                                <input type="password" id="admin-password" name="admin-pass" required  minlength="4" maxlength="16"> 
+                                <span class="star">*</span>
+                                <div class="show-pass">
+                                    <span class="material-symbols-outlined">visibility</span>
+                                </div>
+                            </div>
+                            <div class="input">
                                 <input type="text" id="admin-email" name="admin-email" required> 
                                 <span class="input-title" >Admin Email</span>
                                 <span class="star">*</span>
@@ -616,9 +508,15 @@
                     
                     </form>
                 </div>
+                <div class="add-store-and-ticket">
+                    <h3 class="add-store-and-ticket-title">Add Store And Tickets</h3>
+                    <div class="add-store-and-ticket-btns">
+                        <a href="addStore.html" class="add-store">Add Store</a>
+                        <a href="addTicket.html" class="add-ticket">Add Ticket</a>
+                    </div>
+                </div>
             </section>
         </div>    
-
     </div>
 
 
