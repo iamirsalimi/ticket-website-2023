@@ -22,7 +22,7 @@ let ticketContents = $.querySelectorAll('.tickets-content .tickets-table')
 let showPass =  $.querySelectorAll('.show-pass span')
 let adminEmailInput = $.getElementById('admin-email')
 let storeEmailInput = $.querySelector('.store-email')
-let searchInputs = $.querySelectorAll('.serachbar input')
+let searchInput = $.querySelector('.serachbar input')
 let searchBtn = $.querySelector('.serachbar span')
 
 let userTargetMenu , userTargetSep , targetSepElem , usernames , passInput
@@ -78,9 +78,9 @@ ticketSeps.forEach(function(ticketSep){
         userTargetElem.style.display = 'block'
 
         if(userTargetElem.className.includes('tickets-table rectent-purchased-tickets')){
-            userTargetElem.parentNode.querySelector('.serachbar input').placeholder = 'buyer username'
+            searchInput.placeholder = 'buyer username'
         } else {
-            userTargetElem.parentNode.querySelector('.serachbar input').placeholder = 'username'
+            searchInput.placeholder = 'username'
         }
 
         menuTitle.innerHTML = '<h2>Outinz '+ event.target.nextElementSibling.innerHTML +'<span>  OverView</span></h2>'
@@ -188,7 +188,7 @@ menuItems.forEach(function(menuItem){
 
             // add active class to section separators
             targetSepElem.children[1].classList.add('active')
-            userTargetMenu.firstElementChild.firstElementChild.placeholder = 'username'
+            searchInput.placeholder = 'username'
         } else {
             sectionSepContainer.style.display = 'none'
         }
@@ -210,9 +210,9 @@ menuItems.forEach(function(menuItem){
 
 
 // search inputs
-searchInputs.forEach(function(searchInput){
-    searchInput.addEventListener('keyup',function(event){
-    let usernames = $.querySelectorAll('.' + event.target.dataset.section +' .username')
+
+searchInput.addEventListener('keyup',function(event){
+    let usernames = $.querySelectorAll('.container .content .username')
     usernames.forEach(function(username){
         if(username.innerHTML.toLocaleLowerCase().includes(event.target.value.trim())){
             username.parentNode.style.display = 'table-row'
@@ -221,8 +221,8 @@ searchInputs.forEach(function(searchInput){
         }
     })
 })
-})
 
 
-storeEmailInput.addEventListener('keyup',checkEmail)
-adminEmailInput.addEventListener('keyup',checkEmail)
+
+// storeEmailInput.addEventListener('keyup',checkEmail)
+// adminEmailInput.addEventListener('keyup',checkEmail)

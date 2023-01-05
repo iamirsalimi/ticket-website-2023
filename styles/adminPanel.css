@@ -19,12 +19,14 @@
     display:flex;
     justify-content:center;
     gap:10px;
+    margin-top:40px;
 }
 
 .main-section{
     color:rgb(139, 139, 139);
-    position:relative;
+    position:absolute;
     left:20px;
+    top:0;
     width:fit-content;
     margin:10px 0; 
 }
@@ -373,22 +375,17 @@
     gap:30px;
 }
 
-.customers-content .serachbar,
-.stores-content .serachbar,
-.tickets-content .serachbar{
+.serachbar{
     position:absolute;
     max-width:400px;
-    right:0;
-    top:-125px;
     max-height:40px;
     right:20px;
+    top:5px;
 }
 
-.customers-content #search-input,
-.stores-content #search-input,
-.tickets-content #search-input{
+.serachbar #search-input{
     width:400px;
-    height:35px;
+    height:100%;
     border-radius:10px;
     background:none;
     outline:none;
@@ -398,19 +395,18 @@
     border:2px solid #3b0084;
 }
 
-.customers-content #search-input::placeholder,
-.stores-content #search-input::placeholder,
-.tickets-content #search-input::placeholder{
+.serachbar #search-input::placeholder{
     color:#6a0afb;
 }
 
-.customers-content span,
-.stores-content span,
-.tickets-content span{
+.serachbar span{
     position:absolute;
     right:0;
+    top:0;
+    width:40px;
     height:100%;
     padding:10px;
+    line-height:10px;
     border-radius: 0 10px 10px 0;
     background:#3b0084;
     color:#ebd8ff;
@@ -894,11 +890,7 @@ table tbody tr:nth-child(even){
         font-size:1.15rem;
     }
 
-    .dashboard-content #search-input,
-    .tickets-content #search-input,
-    .customers-content  #search-input,
-    .stores-content #search-input,
-    .profile-content #search-input{
+    .top-content #search-input{
         width:300px;
         font-size:1.25rem;
     }
@@ -952,6 +944,10 @@ table tbody tr:nth-child(even){
     }
     .container .content .dashboard-content .purchases-list{
         grid-row:3/-1 !important;
+    }
+
+    .container .content{
+        overflow-y: auto;
     }
 
     .content-section-title h2,
@@ -1015,7 +1011,136 @@ table tbody tr:nth-child(even){
         grid-column:1/-1;
         grid-row:unset;
     }
+    .container .content{
+        overflow-y: auto;
+    }
+    .container .content .dashboard-content{
+        height:90%;
+    }
 
+    .container .content .dashboard-content .recent-purcahses {
+        grid-row:2/3 !important;
+    }
+    .container .content .dashboard-content .purchases-list{
+        grid-row:3/-1 !important;
+    }
+
+    .content-section-title h2,
+    .content-section-title span{
+        font-size:1.15rem;
+    }
+    
+    .container .content .dashboard-content .box-title{
+        font-size:0.6rem;
+    }
+
+    .container .content .dashboard-content .box-number{
+        font-size:1.5rem;
+    }
+
+    .serachbar{
+        top:50px;
+    }
+
+    .serachbar #search-input{
+        width:300px;
+        font-size:1.2rem;
+    }
+
+    .profile-content{
+        height:unset;
+    }
+
+    .profile-content .add-store-and-ticket{
+        grid-column:1/-1;
+        grid-row:3/-1;
+    }
+
+    .profile-content .add-admin{
+        grid-column:1/-1;
+        grid-row:2/3;
+    }
+
+    .container{
+        flex-direction:column-reverse;
+        width:98%;
+        margin:80px auto 0 !important;
+    }
+
+    .container aside{
+        font-size:0.7rem;
+        width:100%;
+        max-height:150px;
+    }
+    
+    .container aside .menuItems {
+        width:100%;
+    }
+        
+    .container aside .menuItems .menuList{
+        flex-direction:row;
+        justify-content:center;
+        width:100%;
+    }
+    
+    .container .menuItem-sectionSep{
+        width:unset;
+        height: 90px;
+        padding:0;
+        overflow: hidden
+    }
+
+    .container .menuItem-sectionSep .addStore-tickets, .container .menuItem-sectionSep .tickets{
+        flex-direction:row;
+    }
+    
+    .container .menuItem-sectionSep .addStore-tickets, .container .menuItem-sectionSep .tickets label{
+        border:none;
+        height:100px;
+    }
+
+    .dashboard-content .table-title h2{
+        font-size:1.1rem;
+    }
+
+    .container .menuItem-sectionSep label{
+        font-size:1rem;
+    }
+    
+}
+
+@media screen and (max-width:500px){
+    .profile-content .add-store-and-ticket .add-store-and-ticket-title{
+        font-size:1rem;
+    }
+    .profile-content .admins-table table thead th,
+    .customers-content .customers-table table thead th,
+    .stores-content .stores-table table thead th,
+    .tickets-content .tickets-table table thead th{
+        font-size:0.7rem;
+    } 
+    .profile-content .admins-table table tbody td,
+    .customers-content .customers-table table tbody td,
+    .stores-content .stores-table table tbody td,
+    .tickets-content .tickets-table table tbody td{
+        font-size:0.6rem;
+    }
+
+    .dashboard-content .users-list table thead th{
+        font-size:0.75rem !important;
+    }
+
+    .dashboard-content .users-list table tbody td{
+        font-size:0.6rem !important;
+    }
+
+    .container .content .dashboard-content .users-list{
+        grid-column:1/-1;
+        grid-row:unset;
+    }
+    .container .content{
+        overflow-y: auto;
+    }
     .container .content .dashboard-content{
         height:90%;
     }
@@ -1040,19 +1165,60 @@ table tbody tr:nth-child(even){
         font-size:1.5rem;
     }
 
-    .dashboard-content #search-input,
-    .tickets-content #search-input,
-    .customers-content  #search-input,
-    .stores-content #search-input,
-    .profile-content #search-input{
-        width:300px;
-        font-size:1.25rem;
+    .serachbar{
+        top:50px;
+    }
+
+    .serachbar #search-input{
+        max-width:300px;
+        font-size:1.2rem;
+    }
+
+    .profile-content{
+        max-height:unset;
+        grid-template-rows:250px 1fr 1fr 250px;
+    }
+
+    .profile-content .add-store-and-ticket{
+        grid-column:1/-1;
+        grid-row:4/-1;
+    }
+
+    .profile-content .admin-profile{
+        grid-column:1/-1;
+    }
+
+    .profile-content .admins-table{
+        grid-column:1/-1;
+        grid-row:2/3;
+    }
+
+    .profile-content .add-admin{
+        grid-column:1/-1;
+        grid-row:3/4;
+    }
+
+    .profile-content .add-admin form .inputs{
+        grid-template-rows: repeat(6,1fr);
+    }
+
+    .profile-content .add-admin form .input,
+    .profile-content .add-admin form .input:nth-child(even){
+        grid-column:1/-1;
     }
 
     .container{
         flex-direction:column-reverse;
         width:98%;
-        margin:80px auto 0;
+        margin:80px auto 0  !important;
+    }
+
+    .profile-content .admin-profile .admin-username{
+        font-size:0.75rem;
+    }
+
+    .profile-content .admin-profile .admin-fullname{
+        font-size:0.9rem;
     }
 
     .container aside{
@@ -1063,11 +1229,23 @@ table tbody tr:nth-child(even){
     
     .container aside .menuItems {
         width:100%;
+        flex-wrap:wrap;
     }
-        
+    
     .container aside .menuItems .menuList{
+        gap:0;
+        justify-content: center;
         flex-direction:row;
         width:100%;
+    }
+
+    .container aside .menuItems li{
+        font-size:0.5rem;
+        padding:5px;
+    }
+
+    .container aside .menuItems span{
+        font-size:20px;
     }
     
     .container .menuItem-sectionSep{
@@ -1084,6 +1262,7 @@ table tbody tr:nth-child(even){
     .container .menuItem-sectionSep .addStore-tickets, .container .menuItem-sectionSep .tickets label{
         border:none;
         height:100px;
+        font-size:0.8rem;
     }
 
     .dashboard-content .table-title h2{
