@@ -21,7 +21,7 @@ let ticketContents = $.querySelectorAll('.tickets-content .tickets-table')
 // Inputs variables
 let showPass =  $.querySelectorAll('.show-pass span')
 let adminEmailInput = $.getElementById('admin-email')
-let storeEmailInput = $.querySelector('.store-email')
+let addAdminBtn = $.querySelector('.addAdmin-btn')
 let searchInput = $.querySelector('.serachbar input')
 let searchBtn = $.querySelector('.serachbar span')
 
@@ -56,11 +56,18 @@ showPass.forEach(function(showPassElem){
 // checking Email 
 function checkEmail(event){
     let emailValue = event.target.value.trim()
-    if(linkRegex.test(emailValue)){
-        event.target.parentNode.lastElementChild.classList.remove('show-err')
-    } else {
-        event.target.parentNode.lastElementChild.classList.add('show-err')
+    let emailErr = event.target.parentNode.lastElementChild
+    console.log(!emailValue.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{3,3}$/))
+    if(!emailValue.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+        emailErr.innerHTML = 'Please enter a Valid Number'
+        emailErr.parentNode.classList.add('invalid')
+        addAdminBtn.setAttribute('disabled', 'disabled')
+        return false
     }
+
+    emailErr.innerHTML = ''
+    emailErr.parentNode.classList.remove('invalid')
+    addAdminBtn.removeAttribute('disabled')
 }
 
 // load 
@@ -223,6 +230,4 @@ searchInput.addEventListener('keyup',function(event){
 })
 
 
-
-// storeEmailInput.addEventListener('keyup',checkEmail)
-// adminEmailInput.addEventListener('keyup',checkEmail)
+adminEmailInput.addEventListener('keyup',checkEmail)

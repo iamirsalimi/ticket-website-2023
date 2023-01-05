@@ -725,7 +725,8 @@ table tbody tr:nth-child(even){
     display:grid;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(3,1fr);
-    gap: 10px;
+    column-gap:10px;
+    row-gap: 20px;
     margin-top:1rem;
 }
 
@@ -754,6 +755,22 @@ table tbody tr:nth-child(even){
     color:#6a0afb;
     caret-color: #6a0afb;
     border-radius:5px;
+}
+
+.profile-content .add-admin form .input.invalid input{
+    border-color: rgb(255, 77, 77);
+    color:rgb(255, 77, 77);
+    caret-color: rgb(255, 77, 77);
+}
+
+.profile-content .add-admin form .input.invalid span{
+    color:rgb(255, 77, 77);
+}
+
+.profile-content .add-admin form .input.invalid p{
+    color:rgb(255, 77, 77);
+    margin-top:10px;
+    font-family: 'Righteous', cursive;
 }
 
 .profile-content .add-admin form .input .input-title{
