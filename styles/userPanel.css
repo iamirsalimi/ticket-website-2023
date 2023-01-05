@@ -24,19 +24,15 @@
     background:rgb(29, 29, 29);
 }
 
-.container .userPanel-menu ul a{
-    text-decoration:none;
-    display:inline-block;
-    width:100%;
-}
-
 .container .userPanel-menu ul li{
+    width:100%;
     color:#fff;
     font-size:1rem;
     padding:10px;
     display:flex;
     justify-content:flex-start;
     align-items:flex-start;
+    cursor:pointer;
     gap:10px;
     font-family: 'Righteous', cursive;
     border-radius:5px;
@@ -79,6 +75,7 @@
 
 .container .userPanel-menu ul .bottom-menu li span{
     color:rgb(196, 0, 0);
+    pointer-events: none;
 }
 
 
@@ -109,6 +106,11 @@
 
 .container .content .sections a:hover:not(.container .sections a:last-child){
     color:rgba(0, 0, 0, 0.623);
+}
+
+.content .user-purchased-ticket-sc table{
+    overflow:auto;
+    overflow-x:scroll;
 }
 
 /* user profile section */
@@ -457,6 +459,9 @@
     font-size:0.9rem;
 }
 
+.container .content{
+    overflow-y: scroll;
+}
 
 /* shopping card details */
 .content .user-shopping-cart .user-shopping-cart-content .right-content{
@@ -561,4 +566,275 @@
   'wght' 400,
   'GRAD' 0,
   'opsz' 48
+}
+
+/* media queries */
+
+@media screen and (max-width: 1100px) and (min-width: 970px){
+    .content .user-purchased-tickets table thead th{
+        font-size:0.75rem;
+    }
+
+    .content .user-purchased-tickets table tbody td{
+        font-size:0.6rem;
+    }
+
+    .container .user-infos .user-info{
+        flex-direction:column;
+    }
+
+    .container .content .user-profile{
+        grid-template-rows:500px 1fr 1fr;
+    }
+
+    .container .content .user-profile .user-change-informations{
+        grid-column:1/-1;
+        grid-row:1/4;
+    }
+    .content .user-profile .user-informations{
+        grid-column:1/2;
+        grid-row:4/-1;
+    }
+
+    .content .user-profile .user-purchased-ticket-sc{
+        grid-column:2/-1;
+        grid-row:4/-1;
+    }
+
+    .user-profile .user-informations-inputs .tips .tip{
+        font-size:0.9rem;
+    }
+
+}
+
+@media screen and (max-width: 970px) and (min-width: 780px){
+    .content .user-purchased-tickets table thead th{
+        font-size:0.75rem;
+    }
+
+    .content .user-purchased-tickets table tbody td{
+        font-size:0.6rem;
+    }
+
+    .content .user-purchased-tickets table thead th{
+        font-size:0.75rem;
+    }
+
+    .content .user-purchased-tickets table tbody td .show-ticket-btn{
+        padding:2.5px;
+    }
+
+    .container .user-infos .user-info{
+        flex-direction:column;
+    }
+
+    .container .content .user-profile{
+        grid-template-rows:500px 1fr 1fr;
+    }
+
+
+    .container .content .user-profile .user-change-informations{
+        grid-column:1/-1;
+        grid-row:1/4;
+    }
+    .content .user-profile .user-informations{
+        grid-column:1/2;
+        grid-row:4/-1;
+    }
+
+    .content .user-profile .user-purchased-ticket-sc{
+        grid-column:2/-1;
+        grid-row:4/-1;
+    }
+
+    .user-profile .user-informations-inputs .tips .tip{
+        font-size:0.9rem;
+    }
+}
+
+@media screen and (max-width: 780px) and (min-width: 590px){
+    .content .user-profile .user-purchased-ticket-sc table tbody td{
+        font-size:0.6rem;
+    }
+
+    .content .user-profile .user-purchased-ticket-sc table thead th{
+        font-size:0.75rem;
+    }
+
+    .user-profile .user-informations-inputs{
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+    }
+    
+    .content .user-purchased-tickets table tbody td .show-ticket-btn{
+        padding:2.5px;
+    }
+
+    .user-change-informations .user-informations-inputs .inputs{
+        grid-template-rows:repeat(4,1fr);
+        margin-top:-30px;
+    }
+    
+    
+    .content .user-purchased-tickets table thead th{
+        font-size:0.75rem;
+    }
+    .content .user-purchased-tickets table tbody td{
+        font-size:0.5rem;
+    }
+
+    .container .user-infos .user-info{
+        flex-direction:column;
+    }
+
+    .container .content .user-profile{
+        grid-template-rows:350px 1fr;
+    }
+
+    .container .content .user-profile .user-change-informations{
+        grid-column:1/-1;
+        grid-row:2/-1;
+    }
+    .content .user-profile .user-informations{
+        grid-column:1/2;
+        grid-row:1/2;
+    }
+
+    .content .user-profile .user-purchased-ticket-sc{
+        grid-column:2/-1;
+        grid-row:1/2;
+    }
+
+    .user-profile .user-informations-inputs .tips .tip{
+        font-size:0.75rem;
+    }
+
+    .user-change-informations .user-informations-inputs .inputs .input{
+        grid-column:1/-1;
+    }
+
+    .container .userPanel-menu ul li p{
+        display:none;
+    }
+
+}
+
+@media screen and (max-width: 590px) {
+    .container{
+        flex-direction:column-reverse;
+    }
+    
+    .content .user-profile .user-purchased-ticket-sc table tbody td{
+        font-size:0.6rem;
+    }
+
+    .content .user-profile .user-purchased-ticket-sc table thead th{
+        font-size:0.75rem;
+    }
+    
+    .content .user-purchased-tickets table thead th{
+        font-size:0.75rem;
+    }
+    .content .user-purchased-tickets table tbody td{
+        font-size:0.5rem;
+    }
+
+    .content .user-purchased-tickets table tbody td .show-ticket-btn{
+        padding:2.5px;
+    }
+
+    .container .content{
+        margin:0 auto;
+    }
+
+    .container .userPanel-menu{
+        height:fit-content;
+        width:100%;
+        min-width:unset;
+    }
+
+    .container .userPanel-menu ul{
+        flex-direction:row;
+    }
+
+    .container .userPanel-menu ul .top-menu{
+        flex-direction:row;
+        justify-content: space-evenly;
+        width:100%;
+    }
+
+    .container .userPanel-menu ul .bottom-menu{
+        border:none;
+        width:fit-content;
+    }
+
+    .container .userPanel-menu ul li{
+        width:fit-content;
+    }
+
+    .user-profile .user-informations-inputs{
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .user-change-informations .user-informations-inputs .inputs{
+        grid-template-rows:repeat(4,1fr);
+        margin-top:-30px;
+    }
+
+    .content .user-purchased-tickets table thead th{
+        font-size:0.75rem;
+    }
+    .content .user-purchased-tickets table tbody td{
+        font-size:0.5rem;
+    }
+
+    .container .user-infos .user-info{
+        flex-direction:column;
+    }
+
+    .container .content .user-profile{
+        grid-template-rows:350px 1fr;
+    }
+
+    .container .content .user-profile .user-change-informations{
+        grid-column:1/-1;
+        grid-row:2/-1;
+    }
+    .content .user-profile .user-informations{
+        grid-column:1/2;
+        grid-row:1/2;
+    }
+
+    .content .user-profile .user-purchased-ticket-sc{
+        grid-column:2/-1;
+        grid-row:1/2;
+    }
+
+    .user-profile .user-informations-inputs .tips .tip{
+        font-size:0.75rem;
+    }
+
+    .user-profile .user-informations-inputs .tips{
+        margin-top:-20px;
+    }
+
+    .user-change-informations .user-informations-inputs .inputs .input{
+        grid-column:1/-1;
+    }
+
+    .container .userPanel-menu ul li p{
+        display:block;
+        font-size:0.8rem;
+    }
+
+    .container .userPanel-menu ul li{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+
 }

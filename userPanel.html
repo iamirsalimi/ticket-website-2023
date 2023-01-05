@@ -17,33 +17,26 @@
         <aside class="userPanel-menu">
             <ul>
                 <div class="top-menu">
-                    <a href="#">
-                        <li data-targetMenu="user-profile">
-                            <span class="material-symbols-outlined">person</span>
-                            Profile
-                        </li>
-                    </a>
-                    <a href="#">
-                        <li data-targetMenu="user-purchased-tickets">
-                        <span class="material-symbols-outlined">confirmation_number</span>
-                        Purchased Tickets
+                    
+                    <li data-targetMenu="user-profile" title="Profile">
+                        <span class="material-symbols-outlined">person</span>
+                        <p>Profile</p>
                     </li>
-                </a>
-                <a href="#">
-                        <li class="active"   data-targetMenu="user-shopping-cart">
+                    <li data-targetMenu="user-purchased-tickets" title="Purchased Tickets">
+                        <span class="material-symbols-outlined">confirmation_number</span>
+                        <p>Purchased Tickets</p>
+                    </li>
+                    <li class="active"   data-targetMenu="user-shopping-cart" title="Basket">
                             <span class="material-symbols-outlined">local_mall</span>
-                            Basket
-                        </li>
-                    </a>
+                            <p>Basket</p>
+                    </li>
                 </div>
-               <div class="bottom-menu">
-                    <a href="">
-                        <li>
-                            <span class="material-symbols-outlined">logout</span>
-                            Log Out
-                        </li>
-                    </a>
-               </div>
+                <div class="bottom-menu">
+                    <li title="log out">
+                        <span class="material-symbols-outlined">logout</span>
+                        <p>Log Out</p>
+                    </li>
+                </div>
             </ul>
         </aside>
 
@@ -61,7 +54,7 @@
                     <form action="" class="user-informations-inputs">
                         <ul class="tips">
                             <li class="tip">Please enter your details carefully so you don't run into problems later</li>
-                            <li class="tip">All inputs aren't required.just enter the information you want to change</li>
+                            <li class="tip">All inputs aren't required . just enter the information you want to change</li>
                             <li class="tip">The maximum length of the username should be 15 characters</li>
                         </ul>
                         <div class="inputs">
@@ -84,7 +77,7 @@
                         </div>
                         <input type="submit" class="submit" value="Save All">
                     </form>
-                    <div class="modal">The information was saved successfully</div>
+                    <div class="modal" style="display:none;">The information was saved successfully</div>
                 </div>
                 <!-- user informations -->
                 <div class="user-informations">
