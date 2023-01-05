@@ -31,46 +31,44 @@
                     </div>
                     <div class="input">
                         <span class="input-title" >Ticket Price</span>
-                        <input type="number" name="ticket-price" min="0" max="20000" required> 
+                        <input type="number" name="ticket-price" class="ticket-price ticket-input" min="0" required> 
                         <span class="star">*</span>
+                        <p></p>
                     </div>
                     <div class="input">
                         <span class="input-title" >Ticket's store UserName</span>
-                        <input type="text" name="ticket-store-username" required> 
+                        <input type="text" name="ticket-store-username" class="ticket-input" required> 
                         <span class="star">*</span>
+                        <p style="display:none;">Store username not found</p>
                     </div>
                     <div class="input">
                         <span class="input-title" >Ticket start Date</span>
-                        <input type="date" name="ticket-start-date" required> 
+                        <input type="date" name="ticket-start-date" class="ticket-input" required> 
                         <span class="star">*</span>
+                        <p style="display:none">Date is Invalid</p>
                     </div>
                     <div class="input">
                         <span class="input-title" >Ticket Capacity</span>
-                        <input type="number" name="ticket-start-date" min="0" max="2000" required> 
+                        <input type="number" name="ticket-capacity ticket-input" class="ticket-capacity" min="0" required> 
                         <span class="star">*</span>
+                        <p></p>
                     </div>
                     <div class="input">
                         <span class="input-title" >Ticket Description</span>
-                        <textarea name="ticket-description" rows="10"></textarea> 
+                        <textarea name="ticket-description" class="ticket-desc" rows="10"></textarea> 
                         <span class="star">*</span>
-                        
                     </div>
                 </div>
                 <input type="submit" value="Add ticket" data-modalTarget="add-store-modal" class="addTicket-btn">
             </form>
             
             <div class="modal">
-                <div class="add-ticket-modal">
-                    <ul>
-                        <li class="store-username">Store username not found</li>
-                        <li class="store-username">Date is Invalid</li>
-                    </ul>
-                </div>
                 <div class="success">
                     <p>Ticket Added</p>
                 </div>
             </div>
         </div>
     </div>
+    <script src="js/addTicket.js"></script>
 </body>
 </html>

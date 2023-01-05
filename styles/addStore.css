@@ -165,13 +165,20 @@ body{
     right:10px;
 }
 
-.inputs .input p{
-    display:none;
-    color:#c80c1b;
+.add-content form .input.invalid input{
+    border-color: rgb(255, 77, 77);
+    color:rgb(255, 77, 77);
+    caret-color: rgb(255, 77, 77);
 }
 
-.inputs .input p.show-err{
-    display:block;
+.add-content form .input.invalid span{
+    color:rgb(255, 77, 77) !important;
+}
+
+.add-content form .input.invalid p{
+    color:rgb(255, 77, 77);
+    margin-top:10px;
+    font-family: 'Righteous', cursive;
 }
 
 .add-content form .addStore-btn{

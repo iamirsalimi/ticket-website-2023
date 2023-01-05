@@ -21,7 +21,6 @@ let ticketContents = $.querySelectorAll('.tickets-content .tickets-table')
 // Inputs variables
 let showPass =  $.querySelectorAll('.show-pass span')
 let adminEmailInput = $.getElementById('admin-email')
-let addAdminBtn = $.querySelector('.addAdmin-btn')
 let searchInput = $.querySelector('.serachbar input')
 let searchBtn = $.querySelector('.serachbar span')
 
@@ -57,17 +56,18 @@ showPass.forEach(function(showPassElem){
 function checkEmail(event){
     let emailValue = event.target.value.trim()
     let emailErr = event.target.parentNode.lastElementChild
-    console.log(!emailValue.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{3,3}$/))
+    let submitBtn = event.target.parentNode.parentNode.parentNode.lastElementChild
+    console.log(submitBtn)
     if(!emailValue.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
-        emailErr.innerHTML = 'Please enter a Valid Number'
+        emailErr.innerHTML = 'Please enter a Valid Email'
         emailErr.parentNode.classList.add('invalid')
-        addAdminBtn.setAttribute('disabled', 'disabled')
+        submitBtn.setAttribute('disabled', 'disabled')
         return false
     }
 
     emailErr.innerHTML = ''
     emailErr.parentNode.classList.remove('invalid')
-    addAdminBtn.removeAttribute('disabled')
+    submitBtn.removeAttribute('disabled')
 }
 
 // load 
@@ -202,14 +202,19 @@ menuItems.forEach(function(menuItem){
 
         // changing menu title accord menu target
         if(userTargetMenu.className === 'dashboard-content'){
+            searchInput.parentNode.style.display = 'none'
             menuTitle.innerHTML = '<h2>Outinz users <span>overview</span></h2>'
         } else if(userTargetMenu.className === 'customers-content'){
+            searchInput.parentNode.style.display = 'block'
             menuTitle.innerHTML = '<h2>Outinz Customers  <span>List</span></h2>'
         } else if(userTargetMenu.className === 'stores-content'){
+            searchInput.parentNode.style.display = 'block'
             menuTitle.innerHTML = '<h2>Outinz Stores  <span>List</span></h2>'
         } else if(userTargetMenu.className === 'tickets-content'){
+            searchInput.parentNode.style.display = 'block'
             menuTitle.innerHTML = '<h2>Outinz All Tickets <span>List</span></h2>'
         }  else {
+            searchInput.parentNode.style.display = 'none'
             menuTitle.innerHTML = '<h2>Outinz Admin Profile <span> section</span></h2>'
         }
     })
