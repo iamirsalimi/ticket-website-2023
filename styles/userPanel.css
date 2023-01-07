@@ -277,7 +277,11 @@
     justify-content:space-between;
     align-items:center;
     padding:10px 0;
-    color:#fefefe;
+    color:#ffffff7d;
+}
+
+.content .user-profile .user-informations .user-info .userInfo{
+    color:#fff;
 }
 
 .content .user-profile .user-informations  .user-info:not(.content .user-informations .user-info:last-child){
@@ -317,7 +321,6 @@
     color:#414141e3;
     padding:7.5px 0;
     font-family: 'Righteous', cursive;
-    transition:0.15s ease-out;
 }
 
 .content .user-profile .user-purchased-ticket-sc table tbody tr:hover{
@@ -550,6 +553,11 @@
     background:rgba(0, 0, 0, 0.8);
 }
 
+.content .user-profile .user-purchased-ticket-sc table tr:nth-child(even),
+.content .user-purchased-tickets table tr:nth-child(even){
+    background:rgb(225, 225, 225);
+}
+
 
 /* icons */
 .material-symbols-outlined {
@@ -733,6 +741,10 @@
         font-size:0.75rem;
     }
     
+    .content .user-purchased-tickets {
+        overflow:auto;
+    }
+
     .content .user-purchased-tickets table thead th{
         font-size:0.75rem;
     }
@@ -792,25 +804,32 @@
     }
 
     .container .user-infos .user-info{
-        flex-direction:column;
+        flex-direction:row;
+        flex-wrap:wrap;
+        font-size:0.8rem;
+    }
+    .container .user-infos{
+        flex-basis:60%;
     }
 
     .container .content .user-profile{
-        grid-template-rows:350px 1fr;
+        grid-template-rows:175px 175px 1fr;
     }
 
     .container .content .user-profile .user-change-informations{
         grid-column:1/-1;
-        grid-row:2/-1;
+        grid-row:3/-1;
     }
     .content .user-profile .user-informations{
-        grid-column:1/2;
+        grid-column:1/-1;
         grid-row:1/2;
+        flex-direction:row;
+        align-items:center;
     }
 
     .content .user-profile .user-purchased-ticket-sc{
-        grid-column:2/-1;
-        grid-row:1/2;
+        grid-column:1/-1;
+        grid-row:2/3;
     }
 
     .user-profile .user-informations-inputs .tips .tip{
@@ -828,6 +847,10 @@
     .container .userPanel-menu ul li p{
         display:block;
         font-size:0.8rem;
+    }
+
+    .container .userPanel-menu ul .log-out p{
+        display:none;
     }
 
     .container .userPanel-menu ul li{
