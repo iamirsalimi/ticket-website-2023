@@ -5,7 +5,7 @@ let formTarget
 let forms = $.querySelectorAll('form')
 let formTitle = $.querySelector('.title h2')
 let formDesc = $.querySelector('.title p')
-let showPass =  $.querySelectorAll('.show-pass span')
+let showPass =  $.querySelectorAll('.show-pass i')
 let passTarget
 
 function clearSpace(event){
@@ -50,10 +50,10 @@ showPass.forEach(function(showPassElem){
         passTarget = $.querySelector('.'+event.target.dataset.passtarget)
         if(passTarget.type === 'password'){
             passTarget.type = 'text'
-            showPassElem.innerHTML = 'visibility_off'
+            showPassElem.className = 'fa-solid fa-eye-slash'
         } else {
             passTarget.type = 'password'
-            showPassElem.innerHTML = 'visibility'
+            showPassElem.className = 'fa-solid fa-eye'
         }
     })
 })

@@ -136,15 +136,16 @@ body{
     top:5px;
     cursor:pointer;
 }
-.signUp-form .input-container .show-pass .material-symbols-outlined{
+.signUp-form .input-container .show-pass i{
     color:#9a9a9a;
     display:inline-block;
     pointer-events: none;
+    font-size:1.25rem;
 }
 
 
-.signUp-form .input-container input:focus ~ .show-pass .material-symbols-outlined,
-.signUp-form .input-container input:valid ~ .show-pass .material-symbols-outlined{
+.signUp-form .input-container input:focus ~ .show-pass i,
+.signUp-form .input-container input:valid ~ .show-pass i{
     color:#6600ff;
 }
 

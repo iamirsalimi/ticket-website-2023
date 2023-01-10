@@ -349,6 +349,12 @@ nav.scrolling{
     overflow:hidden;
 }
 
+.goToUp-btn i{
+    font-size:1.5rem;
+    width:20px;
+    height:20px;
+}
+
 .show-btn{
     display:flex;
     animation:showBtn 0.2s ease-out forwards; 
@@ -532,15 +538,16 @@ nav.scrolling{
     transition: 0.15s ease-in-out;
 }
 
-.Event-btns button span{
+.Event-btns button i{
     transition:0.1s linear;
+    font-size: 2rem;
 }
 
-.Event-btns button:disabled span{
-    color:rgba(78, 78, 78, 0.252) ;
+.Event-btns button:disabled i{
+    color:#4e4e4e40 ;
 }
 
-.prev span{
+.prev i{
     position:relative;
     right:-5px;
 }
@@ -775,8 +782,9 @@ nav.scrolling{
     width:100%;
 }
 
-.contactus-section .right-contact .right-descs .contact span{
+.contactus-section .right-contact .right-descs .contact i{
     color:#380091;
+    font-size:1.5rem;
 }
 
 .contactus-section .right-contact .right-descs .contact:last-child{
@@ -784,7 +792,7 @@ nav.scrolling{
     color:#ca1414;
 }
 
-.contactus-section .right-contact .right-descs .contact:last-child span{
+.contactus-section .right-contact .right-descs .contact:last-child i{
     color:#ca1414;
 }
 
@@ -823,8 +831,28 @@ footer .footer-desc .desc{
 footer .footer-desc .social{
     color:#fff;
     text-align:justify;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    gap:10px;
     font-size:1.2rem;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+footer .footer-desc .social a{
+    text-decoration:none;
+}
+
+footer .footer-desc .social i{
+    color: #fff;
+    font-size: 1.5rem;
+    cursor:pointer;
+    transition:0.15s ease-in-out;
+}
+
+footer .footer-desc .social i:hover{
+    color:#b184f9;
 }
 
 footer .copy-write{
