@@ -194,21 +194,21 @@
                     <div class="left-desc">To request to add your store or to tell us a problem or comment or criticism or... , contact us directly or fill out the form and we will contact you quickly.</div>
                 </div>
             </div>
-            <form action="" class="get-user-infos">
+            <form action=""  class="get-user-infos" autocomplete="off">
                 <div class="input">
                     <label for="name-input">Your Name</label>
-                    <input type="text" id="name-input" maxlength="20">
+                    <input type="text" id="name-input" data-next="Email-input" required maxlength="20">
                 </div>
                 <div class="input">
                     <label for="Email-input">Your Email</label>
-                    <input type="text" id="Email-input" maxlength="28">
+                    <input type="text" id="Email-input" data-next="message-input" required maxlength="30">
                 </div>
                 <div class="input">
                     <label for="message-input">Your Message</label>
-                    <textarea id="message-input" cols="30" rows="10"></textarea>
+                    <textarea id="message-input" cols="30" rows="10" required></textarea>
                 </div>
                 <div class="input">
-                    <input type="submit" value="Send Message">
+                    <input type="submit" type="submit" onclick="sendEmail(); reset(); return false"  value="Send Message">
                 </div>
             </form>
         </div>
@@ -219,15 +219,15 @@
             <div class="right-descs">
                 <div class="contact-location contact">
                     <i class="fa-solid fa-location-dot"></i>
-                    <p>151 New Park Ave , Hartford , CT06106 , New York</p>
+                    <a>151 New Park Ave , Hartford , CT06106 , New York</a>
                 </div>
                 <div class="contact-Call contact">
                     <i class="fa-sharp fa-solid fa-phone"></i>
-                    <p>+1 (111) 111-1111</p>
+                    <a href="tel:+9892230311401">+1 (111) 111-1111</a>
                 </div>
                 <div class="contact-EmailAddress contact">
                     <i class="fa-solid fa-envelope"></i>
-                    <p>Outinz2022@gmail.com</p>
+                    <a href="mailto:Outinz2022@gmail.com">Outinz2022@gmail.com</a>
                 </div>
                 <div class="contact-EmailAddress contact">
                     <i class="fa-solid fa-circle-info"></i>
@@ -252,6 +252,8 @@
         </div>
     </footer>
 
+    
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="js/main.js"></script>
 
 </body>

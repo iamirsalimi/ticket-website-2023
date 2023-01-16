@@ -17,6 +17,8 @@ let card = $.querySelectorAll('.card')
 let remainCards = card.length
 let currentLoc , showCards , nextSlideWidth 
 
+let formElem = $.querySelector('.contactus-section .get-user-infos')
+let formInputs = $.querySelectorAll('.contactus-section input')
 let menuItems = $.querySelectorAll('.menu .menu-item')
 
 // changing navbar style onscroll and load
@@ -226,6 +228,47 @@ function prevCardHandler(){
         sliderPrevBtn.disabled = true
     }
 }
+
+
+// contact us auto next input
+
+function nextInputHandler(event){
+    event.target.blur()
+    let nextInputId = event.target.dataset.next
+    let nextInput = $.getElementById(nextInputId)
+    nextInput.focus()
+}
+
+formInputs.forEach(function(input){
+    input.addEventListener('keypress',function(event){
+        let maxLength = event.target.getAttribute('maxlength')
+        if(+maxLength === event.target.value.length){
+            nextInputHandler(event)
+        }
+    })
+})
+
+
+// sending email
+
+let emailInput = $.getElementById('Email-input')
+let nameInput = $.getElementById('name-input')
+let messageInput = $.getElementById('message-input')
+
+function sendEmail(){
+    if(nameInput.value !== ''&& emailInput.value!== '' && messageInput.value !== ''){
+        Email.send({
+            SecureToken :'e4c153e9-2328-4e7d-bd33-db4b3680bb9c',
+            To : 'e638fe6b03@boxmail.lol',
+            From : 'wonderguy2003@gmail.com',
+            Subject : "New Contact From Enquiry",
+            Body : "Name : " + nameInput.value + '<br><br> Email : '+ emailInput.value + '<br><br> Message : ' + messageInput.value
+        }).then(
+          message => alert(message)
+        );
+    }
+}
+
 
 // events
 window.addEventListener('load',changeDetailsDependWidth)

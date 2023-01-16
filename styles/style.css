@@ -12,6 +12,7 @@
     padding:0;
     box-sizing:border-box;
     scroll-behavior: smooth;
+    scroll-padding-top:5rem;
 }
 
 body{
@@ -519,7 +520,6 @@ nav.scrolling{
 .events-section .events-header .Event-btns{
     width:100px;
     position:relative;
-    bottom:-15px;
     gap:10px;
     display:flex;
     align-items: center;
@@ -785,6 +785,11 @@ nav.scrolling{
 .contactus-section .right-contact .right-descs .contact i{
     color:#380091;
     font-size:1.5rem;
+}
+
+.contactus-section .right-contact .right-descs .contact a{
+    color:#380091;
+    text-decoration:none;
 }
 
 .contactus-section .right-contact .right-descs .contact:last-child{
