@@ -27,9 +27,10 @@ let content = $.querySelector('.content')
 
 window.addEventListener('load',function(){
     content.classList.remove('content')
+    loader.classList.add('hidden')
     setTimeout(function(){
-        loader.classList.add('hidden')
-    },1000)
+        loader.style.zIndex = '0'
+    },500)
 })
 
 
@@ -63,19 +64,19 @@ function changeDetailsDependWidth(){
         sliderNextBtn.disabled = true
         currentLoc = 0
     } else if(remainCards >= 4){
-        if(screen.width < 720){
+        if(window.innerWidth< 720){
             showCards = 1
             currentLoc = 630
             nextSlideWidth = 420
-        } else if(screen.width < 900){
+        } else if(window.innerWidth< 900){
             showCards = 2
             currentLoc = 350
             nextSlideWidth = 350
-        } else if(screen.width < 1110){
+        } else if(window.innerWidth < 1110){
             showCards = 2
             currentLoc = 470
             nextSlideWidth = 470
-        } else if(screen.width< 1350){
+        } else if(window.innerWidth< 1350){
             showCards = 3
             currentLoc = 175
             nextSlideWidth = 300
@@ -84,8 +85,9 @@ function changeDetailsDependWidth(){
             currentLoc = 235
             nextSlideWidth = 470
         }
+        sliderPrevBtn.disabled = true
     }
-    
+    slideCount = 0
     cards.style.transform = `translateX(${currentLoc}px)`
 }
 
@@ -178,7 +180,6 @@ function hideMenu(event){
         logo.style.color = '#fff'
         hamburger.classList.remove('open')
         menu.classList.remove('open')
-        headerSectionImg.style.filter = 'brightness(40%)'; 
     }
 }
 

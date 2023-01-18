@@ -965,6 +965,18 @@ footer .copy-write{
 /* medias */
 
 
+@media (max-width:400px) {
+    .cards-container .cards .card{
+        padding:10px 30px;
+    }
+}
+
+@media (max-width:375px) {
+    .cards-container .cards .card{
+        padding:10px 40px;
+    }
+}
+
 @media (min-width:720px) {
     .menu{
         display:none;
