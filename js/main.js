@@ -20,6 +20,18 @@ let currentLoc , showCards , nextSlideWidth
 let formElem = $.querySelector('.contactus-section .get-user-infos')
 let formInputs = $.querySelectorAll('.contactus-section input')
 let menuItems = $.querySelectorAll('.menu .menu-item')
+let loader = $.querySelector('.loader')
+let content = $.querySelector('.content')
+
+// loading
+
+window.addEventListener('load',function(){
+    content.classList.remove('content')
+    setTimeout(function(){
+        loader.classList.add('hidden')
+    },1000)
+})
+
 
 // changing navbar style onscroll and load
 
