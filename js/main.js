@@ -5,7 +5,6 @@ let navbar = $.querySelector('nav')
 let hamburger = $.querySelector('.hamburger-menu')
 let menu = $.querySelector('.menu')
 let logo = $.querySelector('.left-nav .nav-title')
-let headerSectionImg = $.querySelector('.header-bg')
 let goToUpBtn = $.querySelector('.goToUp-btn')
 let eventNumbers = $.querySelectorAll('.number')
 let maxNumber1 , maxNumber2 , maxNumber3 , currentNumber1 , currentNumber2 , currentNumber3 ,isCounterSet = false 
@@ -27,9 +26,11 @@ let content = $.querySelector('.content')
 
 window.addEventListener('load',function(){
     content.classList.remove('content')
-    loader.classList.add('hidden')
     setTimeout(function(){
-        loader.style.zIndex = '0'
+        loader.classList.add('hidden')
+        setTimeout(function(){
+            loader.style.display = 'none'
+        },1000)
     },500)
 })
 
@@ -301,10 +302,8 @@ menuItems.forEach(function(menuItem){
             setTimeout(function(){
                 logo.style.color = '#380091'
             } , 150)
-            headerSectionImg.style.filter = 'brightness(10%)'; 
         } else {
             logo.style.color = '#fff'
-            headerSectionImg.style.filter = 'brightness(40%)'; 
         }
     })
 })
