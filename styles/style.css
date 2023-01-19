@@ -36,7 +36,7 @@ body{
 .loader .loader-inner{
     position:absolute;
     top:50%;
-    left:50%;
+    left:45%;
     transform : translate(-50%,-50%);
     width:100px;
     height:100px;
@@ -320,7 +320,7 @@ nav.scrolling{
     z-index: 23;
     list-style:none;
     position:fixed;
-    top:-100%;
+    top:-200%;
     padding:85px 40px;
     gap:1.5rem;
     text-align: right;
@@ -969,11 +969,38 @@ footer .copy-write{
     .cards-container .cards .card{
         padding:10px 30px;
     }
+    
+    .header-down{
+        top:110%;
+    }
+    
+    .header-down .header-down-title{
+        font-size:1.75rem;
+    }
+
+    
+    .header-down .type{
+        font-size:1.25rem;
+        padding: 0 5px;
+    }
 }
 
 @media (max-width:375px) {
     .cards-container .cards .card{
         padding:5px 40px;
+    }
+
+    .header-down{
+        top:110%;
+    }
+
+    .header-down .header-down-title{
+        font-size:1.75rem;
+    }
+
+    .header-down .type{
+        font-size:1.25rem;
+        padding: 0 5px;
     }
 }
 
@@ -1091,13 +1118,13 @@ footer .copy-write{
         display:block;
     }
     .hamburger-menu{
-        display:none;
+        display:none !important;
     }
     .menu{
-        display:none;
+        display:none !important;
     }
     .menu li{
-        display:none;
+        display:none !important;
     }
     .header-down{
         font-size:3rem;
@@ -1223,13 +1250,13 @@ footer .copy-write{
         display:block;
     }
     .hamburger-menu{
-        display:none;
+        display:none !important;
     }
     .menu{
-        display:none;
+        display:none !important;
     }
     .menu li{
-        display:none;
+        display:none !important;
     }
     .header-down{
         font-size:3rem;
