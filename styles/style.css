@@ -20,6 +20,17 @@ body{
     position:relative;
 }
 
+::-webkit-scrollbar{
+    width:12px;
+    background:#ecf1f0;
+}
+
+::-webkit-scrollbar-thumb{
+    width:10px;
+    background:#18003d;
+    border-radius:20px;
+}
+
 .content{
     display:none;
 }
@@ -35,8 +46,8 @@ body{
 
 .loader .loader-inner{
     position:absolute;
-    top:50%;
-    left:45%;
+    top:40%;
+    left:47%;
     transform : translate(-50%,-50%);
     width:100px;
     height:100px;
@@ -127,6 +138,7 @@ nav.scrolling{
 
 .left-nav .nav-title{
     font-family:'arial',sans;
+    -webkit-font-family:'arial',sans;
     color:#fff;
     font-size:2rem;
     transition:font-size 0.15s ease-out;

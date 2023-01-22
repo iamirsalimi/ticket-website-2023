@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="styles/products.css">
     <link rel="icon" href="images/Screenshot_20230104_233603.jpg" type="image/icon type">
     <title>Outinz Tickets</title>
@@ -20,12 +21,35 @@
                     <h1 class="title">Outinz Tickets</h1>
                 </div>
                 <div class="ticket-type">
-                    <label for="ticket-type">Filter</label>
-                    <select name="ticket-type" id="ticket-type">
+                    <!-- <label for="ticket-type">Filter</label> -->
+                    <!-- <select name="ticket-type" id="ticket-type">
                         <option value="All">All</option>
                         <option value="Last-10-tickets">Last 10 tickets</option>
                         <option value="cheapest">cheapest</option>
-                    </select>
+                    </select> -->
+                    
+                    
+                    <div class="select-box">
+                        <div class="options-container">
+                            <div class="option">
+                                <input type="radio" class="radio" id="all" name="filter">
+                                <label for="all">All</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" class="radio" id="last-10" name="filter">
+                                <label for="last-10">Last 10 Tickets</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" class="radio" id="cheapest" name="filter">
+                                <label for="cheapest">Cheapest</label>
+                            </div>
+                        </div>
+                        <div class="selected">
+                            <span class="selected-title">Select Ticket Filter</span>
+                            <span class="material-symbols-rounded">expand_more</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <div class="products">
