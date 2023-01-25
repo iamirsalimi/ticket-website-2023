@@ -155,3 +155,48 @@ body{
         top:10px;
     }
 }
+
+@media (max-width: 720px){
+    .container{
+        margin-top:50px !important;
+    }
+    .container .ticket-details{
+        grid-template-columns: 1fr;
+        gap:25px;
+    }
+    .container .ticket-details .content .ticket-desc{
+        font-size:1.25rem;
+        line-height:1.5rem;
+    }
+    .title{
+        font-size:1.5rem;
+        top:10px;
+    }
+}
+
+@media (max-width: 480px){
+    .container{
+        margin-top:100px 50px !important;
+    }
+    .container .ticket-details{
+        grid-template-columns: 1fr;
+        gap:25px;
+    }
+    .container .ticket-details .content .ticket-desc{
+        font-size:1.25rem;
+        line-height:1.5rem;
+    }
+
+    .container .ticket-details .details .detail{
+        font-size:0.8rem;
+    }
+
+    .container .ticket-details .content .ticket-btns button{
+        font-size:1rem;
+    }
+
+    .title{
+        font-size:1.5rem;
+        top:10px;
+    }
+}

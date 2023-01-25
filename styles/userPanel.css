@@ -8,6 +8,74 @@
     box-sizing:border-box;
 }
 
+.loader{
+    position:absolute;
+    z-index:99;
+    background:#ecf1f0;
+    width:100%;
+    height:100%;
+    transition:opacity 1s ease-out;
+}
+
+.loader .loader-inner{
+    position:absolute;
+    top:40%;
+    left:47%;
+    transform : translate(-50%,-50%);
+    width:100px;
+    height:100px;
+    padding:10px;
+}
+
+.loader span{
+    position:absolute;
+    width:40%;
+    height:40%;
+    border-radius: 50%;
+    animation: loading 2s ease infinite;
+}
+
+.loader.hidden{
+    opacity:0;
+}
+
+@keyframes loading {
+    0% , 100%{
+        transform:translate(0);
+    }
+    
+    25%{
+        transform:translate(80px);
+    }
+    50%{
+        transform:translate(80px , 80px);
+    }
+    75%{
+        transform:translate(0 , 80px);
+    }
+}
+
+
+.loader span:nth-child(1){
+    background:rgb(20, 20, 20);
+    animation-delay: 0.5s;
+}
+
+.loader span:nth-child(2){
+    background:rgb(134, 134, 134);
+    animation-delay: 1s;
+}
+
+.loader span:nth-child(3){
+    background:rgb(20, 20, 20);
+    animation-delay: 1.5s;
+}
+
+.loader span:nth-child(4){
+    background:rgb(134, 134, 134);
+    animation-delay: 2s;
+}
+
 .container {
     display:flex;
     align-items:flex-start;
@@ -31,12 +99,29 @@
     padding:10px;
     display:flex;
     justify-content:flex-start;
-    align-items:flex-start;
+    align-items:center;
     cursor:pointer;
     gap:10px;
     font-family: 'Righteous', cursive;
     border-radius:5px;
+    user-select: none;
     transition: 0.15s ease-out;
+}
+
+.container .userPanel-menu ul li i{
+    color:#fff;
+    font-size:1rem;
+}
+
+.container .userPanel-menu ul li svg{
+    fill:#fff;
+    width:1.25rem;
+    pointer-events:none;
+}
+
+.container .userPanel-menu ul .bottom-menu li svg{
+    fill:rgb(255, 46, 46);
+    width:1.25rem;
 }
 
 .container .userPanel-menu ul li:hover{
@@ -236,15 +321,78 @@
 }
 
 .user-profile .user-change-informations .modal{
-    background:#90f97d;
-    color:#fefefe;
+    background:#f0f0f0;
+    height:fit-content;
+    color:#54c441;
     font-family: 'Radio Canada', sans-serif;
-
-    transition:0.15s ease-out;
-    padding:10px 20px;
+    position:absolute;
+    left:50%;
+    top:-200%;
+    transform:translate(-50% , -50%);
+    transition:0.5s ease-out;
+    padding:12px 24px;
     border-radius:12px;
     margin:10px auto;
     font-size:1.5rem;
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2);
+    overflow:hidden;
+}
+
+.user-profile .user-change-informations .modal .success, 
+.user-profile .user-change-informations .modal .err{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+}
+ 
+.user-profile .user-change-informations .modal .message{
+    text-transform:capitalize;
+    text-align: center;
+}
+.user-profile .user-change-informations .modal .err {
+    color:rgb(255, 78, 78);
+}
+
+.user-profile .user-change-informations .modal .success .message{
+    color:#54c441;
+}
+
+.user-profile .user-change-informations .modal.active{
+    top:50%;
+}
+
+.user-profile .user-change-informations .modal img{
+    height:auto;
+    width:200px;
+    border-radius:8px;
+}
+
+.user-profile .user-change-informations .modal button{
+    padding:12px 24px;
+    width:200px;
+    border-radius:8px;
+    transition:background-color 0.1s ease-in-out;
+    border:none;
+    cursor:pointer;
+    color:#fefefe;
+}
+
+.user-profile .user-change-informations .modal .success button{
+    background:#54c441;
+}
+
+.user-profile .user-change-informations .modal .success button:hover{
+    background:#3f9430;
+}
+
+.user-profile .user-change-informations .modal .err button{
+    background:rgb(255, 78, 78);
+}
+
+.user-profile .user-change-informations .modal .err button:hover{
+    background:rgb(250, 32, 32);
 }
 
 
@@ -273,9 +421,9 @@
     margin:0 auto;
 }
 
-.content .user-profile .user-informations .user-profile-icon span{
-    font-size:4rem;
-    color:rgb(57, 57, 57);
+.content .user-profile .user-informations .user-profile-icon svg{
+    width:3.5rem;
+    fill:rgb(57, 57, 57);
 }
 
 .content .user-profile .user-informations .user-info{
@@ -369,6 +517,10 @@
     padding:7.5px 0;
     font-family: 'Radio Canada', sans-serif;
     transition:0.15s ease-out;
+}
+
+.content .user-purchased-tickets table tbody td.ticket-status-td{
+    color:rgb(255, 0, 0) !important;
 }
 
 .content .user-purchased-tickets table tbody tr:hover{
@@ -496,7 +648,7 @@
 .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail{
     display:flex;
     justify-content: space-between;
-    align-items:flex-end;
+    align-items:center;
     padding:15px 0; 
 }
 
@@ -506,7 +658,7 @@
 
 .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-titles{
     color:rgb(134, 134, 134);
-    width:35%;
+    width:25%;
 }
 
 .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-titles .ticket-title{
@@ -518,11 +670,30 @@
     justify-content:space-between;
     align-items:center;
     font-size:1rem;
-    width:25%;
+    width:40%;
+}
+
+.user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-date span , 
+.user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-price span , 
+.user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-delete{
+    color:rgb(134, 134, 134);
+}
+
+.user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count , 
+.user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-delete{
+    margin-bottom:-5px;
+}
+
+.user-shopping-cart .user-shopping-cart-content .right-content .ticket-details{
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10px 0;
 }
 
 .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-price{
-    width:7.5%;
+    width:auto;
 }
 
 .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count{
@@ -642,7 +813,7 @@
 
 }
 
-@media screen and (max-width: 970px) and (min-width: 780px){
+@media screen and (max-width: 970px) and (min-width: 820px){
     .content .user-purchased-tickets table thead th{
         font-size:0.75rem;
     }
@@ -690,6 +861,11 @@
         width: 25%;
     }
 
+    
+    .user-profile .user-change-informations .modal{
+        font-size: 1.25rem;
+    }
+
     .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count {
         gap: 10px;
         width: 20%;
@@ -697,7 +873,7 @@
 
 }
 
-@media screen and (max-width: 780px) and (min-width: 590px){
+@media screen and (max-width: 820px) and (min-width: 590px){
     .content .user-profile .user-purchased-ticket-sc table tbody td{
         font-size:0.6rem;
     }
@@ -764,16 +940,25 @@
     }
 
     .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-titles {  
-        width: 25%;
+        width: 100%;
+    }
+
+    .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-details {  
+        width: 100%;
+        margin-top: -10px;
+    }
+    .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail {  
+        flex-direction:column;
+        font-size: 0.8rem;
     }
 
     .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count {
-        gap: 10px;
+        gap: 5px;
         width: 20%;
     }
-
-    .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail {
-        font-size: 0.8rem;
+    
+    .user-profile .user-change-informations .modal{
+        font-size: 1rem;
     }
 
     .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-date {
@@ -916,16 +1101,34 @@
     }
 
     .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-titles {  
-        width: 25%;
+        width: 100%;
+    }
+
+    .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-details {  
+        width: 100%;
+        margin-top: -10px;
+    }
+    .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail {  
+        flex-direction:column;
+        font-size: 0.8rem;
     }
 
     .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count {
-        gap: 10px;
+        gap: 2px;
         width: 20%;
     }
 
-    .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail {
-        font-size: 0.8rem;
+    .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count .ticket-count-icon , 
+    .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-delete{
+        background-color:rgba(230, 229, 229, 0.296);
+    }
+
+    .container .userPanel-menu ul li{
+        text-align:center;
+    }
+
+    .user-profile .user-change-informations .modal{
+        font-size: 1rem;
     }
 
     .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-date {

@@ -47,7 +47,7 @@ body{
 .loader .loader-inner{
     position:absolute;
     top:40%;
-    left:47%;
+    left:50%;
     transform : translate(-50%,-50%);
     width:100px;
     height:100px;
@@ -623,16 +623,21 @@ nav.scrolling{
     transition: 0.15s ease-in-out;
 }
 
-.Event-btns button i{
+.Event-btns button svg{
     transition:0.1s linear;
-    font-size: 2rem;
+    width: 2rem;
+    height: 2rem;
 }
 
-.Event-btns button:disabled i{
-    color:#4e4e4e40 ;
+.Event-btns button svg{
+    fill:#18003d;
 }
 
-.prev i{
+.Event-btns button:disabled svg{
+    fill:#4e4e4e40 ;
+}
+
+.prev svg{
     position:relative;
     right:-5px;
 }
@@ -867,9 +872,10 @@ nav.scrolling{
     width:100%;
 }
 
-.contactus-section .right-contact .right-descs .contact i{
-    color:#380091;
-    font-size:1.5rem;
+.contactus-section .right-contact .right-descs .contact svg{
+    fill:#380091;
+    width:1.5rem;
+    height:1.5rem;
 }
 
 .contactus-section .right-contact .right-descs .contact a{
@@ -934,15 +940,15 @@ footer .footer-desc .social a{
     text-decoration:none;
 }
 
-footer .footer-desc .social i{
-    color: #fff;
-    font-size: 1.5rem;
+footer .footer-desc .social svg{
+    fill: #fff;
+    width: 1.5rem;
     cursor:pointer;
     transition:0.15s ease-in-out;
 }
 
-footer .footer-desc .social i:hover{
-    color:#b184f9;
+footer .footer-desc .social svg:hover{
+    background-color:#b184f9;
 }
 
 footer .copy-write{
