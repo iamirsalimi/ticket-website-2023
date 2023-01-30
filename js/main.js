@@ -21,6 +21,7 @@ let formInputs = $.querySelectorAll('.contactus-section input')
 let menuItems = $.querySelectorAll('.menu .menu-item')
 let loader = $.querySelector('.loader')
 let content = $.querySelector('.content')
+let navbarImg = $.querySelector('.left-nav img')
 
 // loading
 
@@ -34,7 +35,6 @@ window.addEventListener('load',function(){
     },500)
 })
 
-
 // changing navbar style onscroll and load
 
 function changeDetailsDependWidth(){
@@ -45,6 +45,7 @@ function changeDetailsDependWidth(){
         navbar.classList.remove('scrolling')
         navbar.style.padding = '10px 40px'
     }
+
     if(document.documentElement.scrollTop > 150){
         goToUpBtn.classList.add('show-btn')
     } else {
@@ -92,13 +93,24 @@ function changeDetailsDependWidth(){
     cards.style.transform = `translateX(${currentLoc}px)`
 }
 
+
 window.onscroll = function() {
     if(document.documentElement.scrollTop > 0){
         navbar.classList.add('scrolling')
-        navbar.style.padding = '5px 40px'
+        if(window.innerWidth < 550 ){
+            navbar.style.padding = '5px 15px'
+        } else {
+            navbar.style.padding = '5px 40px'
+        }
+        navbarImg.setAttribute('src' , 'images/ticket logo purple png.png')
     } else {
         navbar.classList.remove('scrolling')
-        navbar.style.padding = '10px 40px'
+        if(window.innerWidth < 550 ){
+            navbar.style.padding = '5px 15px'
+        } else {
+            navbar.style.padding = '5px 40px'
+        }
+        navbarImg.setAttribute('src' , 'images/ticket logo gray png.png')
     }
 
     if(document.documentElement.scrollTop > 150){
@@ -165,15 +177,6 @@ function init(){
 function showMenu(){
     hamburger.classList.toggle('open')
     menu.classList.toggle('open')
-    
-    if(hamburger.className.includes('open')){
-        setTimeout(function(){
-            logo.style.color = '#380091'
-        } , 150)
-    } else {
-        logo.style.color = '#fff'
-    }
-    
 }
 
 function hideMenu(event){
@@ -183,6 +186,7 @@ function hideMenu(event){
         menu.classList.remove('open')
     }
 }
+console.warn('checking hide menu');
 
 // counter up
 
@@ -289,7 +293,7 @@ window.addEventListener('load',changeDetailsDependWidth)
 window.addEventListener('resize',changeDetailsDependWidth)
 sliderNextBtn.addEventListener('click',nextCardHandler)
 sliderPrevBtn.addEventListener('click',prevCardHandler)
-goToUpBtn.onclick = goToUpHandler
+goToUpBtn.addEventListener('click',goToUpHandler)
 window.addEventListener('DOMContentLoaded', init)
 hamburger.addEventListener('click',showMenu)
 document.body.addEventListener('click',hideMenu)

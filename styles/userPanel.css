@@ -8,6 +8,19 @@
     box-sizing:border-box;
 }
 
+
+::-webkit-scrollbar{
+    width:12px;
+    background:#ecf1f0;
+}
+
+::-webkit-scrollbar-thumb{
+    width:10px;
+    background:rgb(20, 20, 20);
+    border-radius:20px;
+}
+
+
 .loader{
     position:absolute;
     z-index:99;
@@ -725,6 +738,9 @@
     text-align:right;
     margin-top:25px;
     flex-basis:20%;
+}
+.user-shopping-cart .user-shopping-cart-content .right-content .btns a{
+    text-decoration:none;
 }
 
 .user-shopping-cart .user-shopping-cart-content .right-content .btns button{
