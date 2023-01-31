@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@500&family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gabriela&family=Rouge+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+
 *{
     margin:0;
     padding:0;
@@ -8,6 +13,15 @@
 
 body{
     height:100vh;
+    background:#d7d7d7;
+}
+
+*td,
+*th{
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
 }
 
 .container {
@@ -134,7 +148,7 @@ body{
 .container .content .user-info{
     grid-column:4/-1;
     grid-row:1/3;
-    background:#ffe0d0;
+    background:#E9D5CA;
     border-radius:22px;
     display:flex;
     flex-direction:column;
@@ -211,6 +225,10 @@ body{
     background:#ffceb5;
 }
 
+.content .purchased-tickets-table table tbody tr:nth-child(even){
+    background:#dc9f80;
+}
+
 .profile-content .add-admin{
     grid-column:1/-1;
     grid-row:3/-1;
@@ -220,11 +238,387 @@ body{
     text-align:center;
 }
 
-/* icon */
+.edit-user-form{    
+    background:#fff;
+    border-radius:10px;
+    width:850px;
+    overflow:hidden;
+    padding:30px 30px;
+    height:fit-content;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50% , -50%);
+}
+
+.edit-user-form .title {
+    height:75px;
+    margin-bottom:15px;
+    padding:0 5px;
+}
+
+.edit-user-form .title h2{
+    color:#6210de;
+    font-size:1.5rem;
+    font-family: 'Pacifico', cursive;
+}
+
+.edit-user-form .title p.desc{
+    color:#6210de8e;
+    margin-top:10px;
+    font-size:1.2rem;
+    font-family: 'Archivo', sans-serif;
+} 
+
+.edit-user-form .signUp-form{
+    margin-top:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+}
+.edit-user-form .signUp-form .form-title h4{
+    font-family: 'Archivo', sans-serif;
+    color:#747474;
+    font-size:1rem;
+    margin-top:10px;
+}
+
+.edit-user-form .signUp-form .form-inputs{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    gap:15px;
+}
+
+.edit-user-form .signUp-form .singup-inputs-container{
+    margin-top:30px;
+    display:grid;
+    grid-template-columns : repeat(2,1fr);
+    gap:25px;
+}
+
+.edit-user-form .signUp-form .singup-inputs-container input{
+    border:1.5px solid #9a9a9a;
+    outline:none;
+    caret-color: #4700b1;
+    color:#6210de;
+    font-size:1.25rem;
+    letter-spacing:1px;
+    padding:5px;
+    transition:0.15s ease-out; 
+    width:100%;
+}
+.edit-user-form .signUp-form .input-container input:focus ~ span.input-ph{
+    color:#6210de;
+}
+
+.edit-user-form .signUp-form .input-container p{
+    display:none;
+    color:#c80c1b;
+    margin-top:5px;
+}
+
+.edit-user-form .signUp-form .input-container p.show-err{
+    display:block;
+}
+
+.edit-user-form .signUp-form .input-container input:focus{
+    border-color:#6210de;
+}
+.edit-user-form .signUp-form .input-container span.input-ph{
+    position:absolute;
+    left:10px;
+    top:-10px;
+    background:#fff;
+    font-weight:500;
+    padding: 0 10px;
+    font-family: 'Archivo', sans-serif;
+    pointer-events: none;
+    font-size:0.9rem;
+    color:#9a9a9a;
+    text-transform:capitalize;
+    transition:0.15s ease-out; 
+}
+
+.edit-user-form .signUp-form .input-container input.invalid{
+    border-color:#c80c1b;
+    color:#ff6e7a;
+    caret-color: #ff6f7b;
+}
+
+
+.edit-user-form .signUp-form .input-container{
+    position:relative;
+    height:fit-content;
+}
+
+.signUp-form .input-container .show-pass{
+    position:absolute;
+    right:5px;
+    top:5px;
+    cursor:pointer;
+}
+.signUp-form .input-container .show-pass i{
+    color:#9a9a9a;
+    display:inline-block;
+    pointer-events: none;
+    font-size:1.25rem;
+}
+
+.signUp-form .input-container input:focus ~ .show-pass i{
+    color:#6600ff;
+}
+
+.signUp-form .inputs-desc{
+    margin:10px;
+    width:100%;
+    margin:0 auto;
+    background:#888;
+    padding:5px;
+    border-radius:6px;
+}
+
+.signUp-form .inputs-desc ul{
+    padding:5px 15px;
+} 
+
+.signUp-form .inputs-desc li::marker{
+    content:'*  ';
+    color:#c80c1b;
+}
+
+.signUp-form .inputs-desc li{
+    color:#fff;
+    font-family: 'Archivo', sans-serif;
+    margin-top:10px;
+}
+
+.edit-user-form .signUp-form .input-container span.star{
+    position:absolute;
+    color:#c80c1b;
+    right:0;
+    top:-15px;
+}
+
+
+.edit-user-form .signUp-form .input-container input.invalid ~ span.input-ph{
+    color:#c80c1b;
+}
+
+.edit-user-form .signUp-form .input-container input.invalid ~ .show-pass .material-symbols-outlined{
+    color:#c80c1b;
+}
+
+.edit-user-form .signUp-form .form-inputs .submit{
+    padding:15px 40px;
+    width:fit-content;
+    border:none;
+    margin:0 auto;
+    cursor:pointer;
+    border-radius:25px;
+    color:#fff;
+    background:linear-gradient(45deg , #4700b1 , #7f2aff);
+    font-family:'Fredoka One', cursive;
+    transition:0.1s linear;
+}
+
+.edit-user-form .signUp-form .form-inputs .submit:hover,
+.back-to-infos:hover{
+    transform:scale(1.05);
+}
+
+.edit-user-form .signUp-form .input-container:nth-child(3){
+    grid-column: 1/-1;
+}
+
+.edit-user-form .signUp-form .input-container:last-child{
+    grid-column: 1/-1;
+}
+
+.back-to-infos{
+    background:linear-gradient(45deg , #4700b1 , #7f2aff);
+    color:#fff;
+    padding:8px 12px;
+    border-radius:12px;
+    border:none;
+    outline:none;
+    cursor:pointer;
+    transition:0.15s ease-out; 
+}
+
+/* icons */
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+/* media  queries*/
+@media (max-width : 1120px){
+    .edit-user-form{
+        width:650px;
+    }
+
+    .container .content .userProfile .profile-desc .username{
+        font-size:1.1rem !important;
+    }
+
+    .container .content .user-info .user-information .userInfo{
+        width:60%;
+        font-size: 0.75rem;
+    }
+
+    .container .content .user-info .user-information .info-title{
+        font-size:0.9rem;
+    }
+
+    .container .content .userProfile .profile-desc .fullname{
+        font-size:1rem !important;
+    }
+
+    .container .content .userProfile .btns{
+        flex-direction:column;
+    }
+}
+
+@media (max-width : 800px){
+    .edit-user-form{
+        width:650px;
+    }
+
+    .container .content .userProfile .profile-desc .username{
+        font-size:1.5rem ;
+    }
+
+    .container .content {
+        grid-template-rows: repeat(8,1fr);
+    }
+
+    .content .purchased-tickets-table{
+        grid-row:5/-1;
+    }
+
+    .container .content .user-info{
+        grid-row:3/5;
+        grid-column:1/-1;
+    }
+    
+    .container .content .userProfile{
+        grid-column:1/-1;
+    }
+
+    .container .content .user-info .user-information .userInfo{
+        width:50%;
+        font-size: 1.1rem;
+    }
+
+    .container .content .user-info .user-information .info-title{
+        font-size:1.25rem;
+    }
+
+    .container .content .userProfile .profile-desc .fullname{
+        font-size:1.5rem ;
+    }
+
+    .container .content .userProfile .btns{
+        flex-direction:row !important;
+    }
+
+    .content .purchased-tickets-table table thead th{
+        font-size:0.9rem;
+    }
+
+    .content .purchased-tickets-table table tbody td{
+        font-size:0.75rem;
+    }
+}
+
+@media (max-width : 900px){
+    .edit-user-form{
+        width:650px;
+    }
+
+    .container .content .userProfile .profile-desc .username{
+        font-size:1.1rem !important;
+    }
+
+    .container .content .user-info .user-information .userInfo{
+        width:60%;
+        font-size: 0.75rem;
+    }
+
+    .container .content .user-info .user-information .info-title{
+        font-size:0.9rem;
+    }
+
+    .container .content .userProfile .profile-desc .fullname{
+        font-size:1rem !important;
+    }
+
+    .container .content .userProfile .btns{
+        flex-direction:column;
+    }
+
+}
+
+@media (max-width : 720px){
+    .edit-user-form{
+        width:450px;
+    }
+    .edit-user-form .signUp-form .input-container:nth-child(1){
+        grid-column: 1/-1;
+    }
+    .edit-user-form .signUp-form .input-container:nth-child(2){
+        grid-column: 1/-1;
+    }
+    .edit-user-form .signUp-form .input-container:nth-child(4){
+        grid-column: 1/-1;
+    }
+    .edit-user-form .signUp-form .input-container:nth-child(5){
+        grid-column: 1/-1;
+    }
+}
+
+@media (max-width : 510px){
+    .edit-user-form{
+        width:400px;
+    }
+    .edit-user-form .signUp-form .input-container:nth-child(1){
+        grid-column: 1/-1;
+    }
+    .edit-user-form .signUp-form .input-container:nth-child(2){
+        grid-column: 1/-1;
+    }
+    .edit-user-form .signUp-form .input-container:nth-child(4){
+        grid-column: 1/-1;
+    }
+    .edit-user-form .signUp-form .input-container:nth-child(5){
+        grid-column: 1/-1;
+    }
+    .form-inputs .login-inputs-container{
+        width:100%;
+    }
+
+    .container .content .user-info{
+        padding: 5px 10px;
+    }
+
+    .container .content .user-info .user-information{
+        flex-direction:column !important;
+        justify-content: start;
+        align-items: start;
+    }
 }

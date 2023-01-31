@@ -10,9 +10,9 @@
     <title>Outinz user info</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" >
         <div class="sections">
-            <span><a href="">Home</a> / <a href="">Admin Panel</a> / <a href="#">userProfile</a> </span>
+            <span><a href="./index.html">Home</a> / <a href="./adminPanel.html">Admin Panel</a> / <a href="#">userProfile</a> </span>
         </div>
 
         <div class="content">
@@ -72,17 +72,60 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <td>1</td>
-                        <td>avamax1234</td>
-                        <td>concert</td>
-                        <td>selling</td>
-                        <td>cyprus shahid hemat</td>
-                        <td>11/07/2022</td>
-                        <td>100</td>
+                        <tr>
+                            <td>1</td>
+                            <td>avamax1234</td>
+                            <td>concert</td>
+                            <td>selling</td>
+                            <td>cyprus shahid hemat</td>
+                            <td>11/07/2022</td>
+                            <td>100</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+    <div class="edit-user-form" style="display:none;">
+        <button class="back-to-infos">Back To Informations</button>
+        <!-- edit form -->
+        <form action="" class="signUp-form" >
+            <div class="inputs-desc">
+                <ul>
+                    <li>Please enter your details carefully so you don't run into problems later</li>
+                    <li>All inputs aren't required . just enter the information you want to change</li>
+                    <li>The maximum length of the username should be 15 characters</li>
+                </ul>
+            </div>
+            <div class="form-title">
+                <h4>Enter your details below</h4>
+            </div>
+            <div class="form-inputs">
+                <div class="singup-inputs-container">
+                    <div class="input-container">
+                        <input type="text" class="name-input" maxlength="16">
+                        <span class="input-ph">first name</span>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" class="family-input" maxlength="16">
+                        <span class="input-ph">last name</span>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" class="username-input" maxlength="15">
+                        <span class="input-ph">user name</span>
+                        <p></p>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" class="email-input">
+                        <span class="input-ph">Email</span>         
+                        <p>The email is invalid</p>
+                    </div>
+                </div>
+                <input type="submit" class="submit" value="Edit User">
+            </div>    
+        </form>
+    </div>
+
+    <script src="js/userInfo.js"></script>
 </body>
 </html>

@@ -413,6 +413,10 @@
     cursor:pointer;
 }
 
+.customers-content .customers-table a{
+    text-decoration:none;
+}
+
 .customers-content .customers-table,
 .stores-content .stores-table,
 .tickets-content .tickets-table{
@@ -448,11 +452,18 @@
     width:100%;
 }
 
+.customers-content .customers-table table tbody a{
+    text-decoration:none;
+}
 
 .customers-content .customers-table table tbody td,
 .stores-content .stores-table table tbody td,
 .tickets-content .tickets-table table tbody td{
     color:#8e46fb;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
     padding:7.5px 0;
     font-family: 'Righteous', cursive;
     transition:0.15s ease-out;
