@@ -104,7 +104,7 @@ body{
     padding:5px 10px;
     border-radius:0 0 22px 0;
     cursor:pointer;
-    color:rgb(53, 0, 106);;
+    color:rgb(53, 0, 106);
 }
 
 .container .ticket-details  .details .detail{
@@ -125,6 +125,18 @@ body{
     font-family: 'M PLUS 1', sans-serif;
     text-align:center;
 }
+
+.content .ticket-btns .added-txt{
+    background:rgba(205, 169, 255, 0.471);
+    color:rgb(53, 0, 106);
+    border-radius:8px;
+    border:2px dashed rgb(53, 0, 106);
+    font-size:1.25rem;
+    text-align: center;
+    padding:12px 24px;
+    font-family: 'M PLUS 1', sans-serif;
+}
+
 
 /* icon  */
 

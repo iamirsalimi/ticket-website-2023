@@ -1,0 +1,1051 @@
+@import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+::-webkit-scrollbar{
+    width:12px;
+    background:#ecf1f0;
+}
+
+::-webkit-scrollbar-thumb{
+    width:10px;
+    background:rgb(20, 20, 20);
+    border-radius:20px;
+}
+
+.search-input{
+    position:absolute;
+    right:40px;
+    top:8px;
+    width:40%;
+    height:50px
+}
+
+.search-input input{
+    width:100%;
+    padding:10px 15px;
+    border:1px solid rgba(0,0,0,0.2);
+    border-radius:12px;
+    outline:none;
+    transition:0.15s ease-in-out;
+}
+
+.search-input input:focus{
+    border-color : rgba(0,0,0,0.5);
+}
+
+.loader{
+    position:absolute;
+    z-index:99;
+    background:#ecf1f0;
+    width:100%;
+    height:100%;
+    transition:opacity 1s ease-out;
+}
+
+.loader .loader-inner{
+    position:absolute;
+    top:40%;
+    left:47%;
+    transform : translate(-50%,-50%);
+    width:100px;
+    height:100px;
+    padding:10px;
+}
+
+.loader span{
+    position:absolute;
+    width:40%;
+    height:40%;
+    border-radius: 50%;
+    animation: loading 2s ease infinite;
+}
+
+.loader.hidden{
+    opacity:0;
+}
+
+@keyframes loading {
+    0% , 100%{
+        transform:translate(0);
+    }
+    
+    25%{
+        transform:translate(80px);
+    }
+    50%{
+        transform:translate(80px , 80px);
+    }
+    75%{
+        transform:translate(0 , 80px);
+    }
+}
+
+
+.loader span:nth-child(1){
+    background:rgb(20, 20, 20);
+    animation-delay: 0.5s;
+}
+
+.loader span:nth-child(2){
+    background:rgb(134, 134, 134);
+    animation-delay: 1s;
+}
+
+.loader span:nth-child(3){
+    background:rgb(20, 20, 20);
+    animation-delay: 1.5s;
+}
+
+.loader span:nth-child(4){
+    background:rgb(134, 134, 134);
+    animation-delay: 2s;
+}
+
+.container {
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+    height:100vh;
+    background:rgba(243, 243, 243, 0.704);
+}
+
+.container .storePanel-menu{
+    height:100vh;
+    width:100px;
+    min-width:fit-content;
+    padding:20px;
+    background:rgb(29, 29, 29);
+}
+
+.container .storePanel-menu ul li{
+    width:100%;
+    color:#fff;
+    font-size:1rem;
+    padding:10px;
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    cursor:pointer;
+    gap:10px;
+    font-family: 'Righteous', cursive;
+    border-radius:5px;
+    user-select: none;
+    transition: 0.15s ease-out;
+}
+
+.container .storePanel-menu ul li svg{
+    fill:#fff;
+    width:1.25rem;
+    pointer-events:none;
+}
+
+.container .storePanel-menu ul li p{
+    pointer-events:none;
+}
+
+
+.container .storePanel-menu ul .bottom-menu li svg{
+    fill:rgb(255, 46, 46);
+    width:1.25rem;
+}
+
+.container .storePanel-menu ul li:hover{
+    background:rgba(184, 184, 184, 0.582);
+}
+.container .storePanel-menu ul li.active{
+    background:rgba(112, 112, 112, 0.582);
+}
+
+.container .storePanel-menu ul{
+    list-style:none;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.container .storePanel-menu ul .top-menu{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+    gap:10px;
+}
+
+.container .storePanel-menu ul .top-menu li{
+    color:#fff;
+}
+
+.container .storePanel-menu ul .bottom-menu{
+    border-top:1px solid rgb(136, 136, 136);
+    width:100%;
+    padding:5px 0px;
+}
+
+.container .storePanel-menu ul .bottom-menu li span{
+    color:rgb(196, 0, 0);
+    pointer-events: none;
+}
+
+
+/* content */
+
+.container .content{
+    width:calc(100% - 15px);
+    height:100%;
+    padding:10px;
+    overflow:scroll;
+}
+
+.container .content .sections{
+    color:rgb(139, 139, 139);
+    position:relative;
+    top:2.5px;
+    left:-10px;
+    width:max-content;
+}
+
+.container .content .sections a{
+    color:rgba(0, 0, 0, 0.8);
+    text-decoration:none;
+    transition:color 0.15s ease-out;
+}
+
+.container .content .sections a:last-child{
+    color:rgb(139, 139, 139);
+}
+
+.container .content .sections a:hover:not(.container .sections a:last-child){
+    color:rgba(0, 0, 0, 0.623);
+}
+
+.content .store-purchased-ticket-sc table{
+    overflow:auto;
+    overflow-x:scroll;
+}
+
+/* store profile section */
+
+.container .content .store-profile{
+    border-radius:12px;
+    padding:10px;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,1fr);
+    gap:10px;
+    height:95%;
+}
+
+.container .content .store-profile .store-change-informations{
+    grid-column:1/3;
+    grid-row: 1/-1;
+    background:#fff;
+    box-shadow: 0 0 100px 5px rgba(0,0,0,.2);
+    border-radius:22px;
+    padding:10px 15px 20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:flex-start;
+    gap:40px;
+}
+
+.container .content .store-change-informations .store-informations-title{
+    color:rgb(20, 20, 20);
+    font-family: 'MuseoModerno', cursive;
+
+}
+
+.store-profile .store-informations-inputs {
+    width:100%;
+    position:relative;
+    top:-10px;
+}
+
+.store-profile .store-informations-inputs .tips{
+    background:rgb(57, 57, 57);
+    color:#fff;
+    text-align:center;
+    padding:10px;
+    border-radius:12px;
+    margin-bottom:50px;
+    list-style:none;
+}
+
+.store-profile .store-informations-inputs .tips .tip{
+    padding:2px 0;
+    font-family: 'Radio Canada', sans-serif;
+}
+
+.store-profile .store-informations-inputs .inputs{
+    margin-top:40px;
+}
+
+.store-change-informations .store-informations-inputs .inputs{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    grid-template-rows:repeat(3,1fr);
+    gap:40px;
+}
+
+.store-change-informations .store-informations-inputs .inputs .input{
+    position:relative;
+}
+
+.store-profile .store-change-informations .store-informations-inputs .inputs .input input{
+    width:100%;
+    border-radius:5px;
+    border:1px solid rgba(0,0,0,0.2);
+    background:none;
+    outline:none;
+    padding:8px ;
+    transition:0.15s linear;
+}
+
+.store-profile .store-change-informations .store-informations-inputs .inputs .input input:focus{
+    border:1px solid rgba(0,0,0,0.7);
+}
+
+
+.store-profile .store-change-informations .store-informations-inputs .input .show-pass{
+    position:absolute;
+    right:5px;
+    top:5px;
+    cursor:pointer;
+}
+
+.store-profile .store-change-informations .store-informations-inputs .input .show-pass .material-symbols-outlined{
+    color:rgba(0,0,0,0.2);
+    display:inline-block;
+    pointer-events: none;
+}
+
+.store-informations-inputs .inputs .input input::placeholder{
+    color:rgba(0, 0, 0, 0.7);
+}
+
+.store-profile .store-change-informations .store-informations-inputs .inputs .input .input-title{
+    position:absolute;
+    top:-25px;
+    left:0;
+    color:rgba(26, 26, 26, 0.76);
+    font-family: 'Radio Canada', sans-serif;
+}
+
+.store-profile .store-change-informations .store-informations-inputs .submit{
+    background:#000;
+    color:#fff;
+    padding:10px 20px;
+    border:none;
+    cursor:pointer;
+    border-radius:5px;
+    transition:0.15s ease-out;
+}
+
+.store-profile .store-change-informations .store-informations-inputs .submit:hover{
+    background:rgb(52, 52, 52);
+}
+
+.store-profile .store-change-informations .modal{
+    background:#f0f0f0;
+    height:fit-content;
+    color:#54c441;
+    font-family: 'Radio Canada', sans-serif;
+    position:absolute;
+    left:50%;
+    top:-200%;
+    transform:translate(-50% , -50%);
+    transition:0.5s ease-out;
+    padding:12px 24px;
+    border-radius:12px;
+    margin:10px auto;
+    font-size:1.5rem;
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2);
+    overflow:hidden;
+}
+
+.store-profile .store-change-informations .modal .success, 
+.store-profile .store-change-informations .modal .err{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+}
+ 
+.store-profile .store-change-informations .modal .message{
+    text-transform:capitalize;
+    text-align: center;
+}
+.store-profile .store-change-informations .modal .err {
+    color:rgb(255, 78, 78);
+}
+
+.store-profile .store-change-informations .modal .success .message{
+    color:#54c441;
+}
+
+.store-profile .store-change-informations .modal.active{
+    top:50%;
+}
+
+.store-profile .store-change-informations .modal img{
+    height:auto;
+    width:200px;
+    border-radius:8px;
+}
+
+.store-profile .store-change-informations .modal button{
+    padding:12px 24px;
+    width:200px;
+    border-radius:8px;
+    transition:background-color 0.1s ease-in-out;
+    border:none;
+    cursor:pointer;
+    color:#fefefe;
+}
+
+.store-profile .store-change-informations .modal .success button{
+    background:#54c441;
+}
+
+.store-profile .store-change-informations .modal .success button:hover{
+    background:#3f9430;
+}
+
+.store-profile .store-change-informations .modal .err button{
+    background:rgb(255, 78, 78);
+}
+
+.store-profile .store-change-informations .modal .err button:hover{
+    background:rgb(250, 32, 32);
+}
+
+
+/* store information  */
+.content .store-profile .store-informations {
+    background:rgb(57, 57, 57);
+    padding:10px 20px;
+    border-radius:5px;
+    grid-column:3/-1;
+    grid-row:1/3;
+    border-radius:22px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.content .store-profile .store-informations .store-profile-icon{
+    background:#fff;
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    pointer-events:none;
+    margin:0 auto;
+}
+
+.content .store-profile .store-informations .store-profile-icon svg{
+    width:3.5rem;
+    fill:rgb(57, 57, 57);
+}
+
+.content .store-profile .store-informations .store-info{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 0;
+    color:#ffffff7d;
+}
+
+.content .store-profile .store-informations .store-info .storeInfo{
+    color:#fff;
+}
+
+.content .store-profile .store-informations  .store-info:not(.content .store-informations .store-info:last-child){
+    border-bottom:1px solid #fefefe;
+}
+
+
+/* purchased ticket shortcut */
+.content .store-profile .store-purchased-ticket-sc{
+    background:#fff;
+    grid-column:3/-1;
+    grid-row:3/-1;
+    border-radius:22px;
+    overflow:hidden;
+}
+
+.content .store-profile .store-purchased-ticket-sc table{
+    width:100%;
+    text-align:center;
+}
+
+.content .store-profile .store-purchased-ticket-sc table thead th{
+    border-right:2px solid rgb(57, 57, 57);
+    outline:2px solid rgb(57, 57, 57);
+    color:#ffffff;
+    font-family: 'Righteous', cursive;
+    font-size:1.1rem;
+    padding:2.5px;
+}
+
+.content .store-profile .store-purchased-ticket-sc table thead{
+    background:rgb(57, 57, 57);
+    width:100%;
+}
+
+.content .store-profile .store-purchased-ticket-sc table tbody td{
+    color:#414141e3;
+    padding:7.5px 0;
+    font-family: 'Righteous', cursive;
+}
+
+.content .store-profile .store-purchased-ticket-sc table tbody tr:hover{
+    background:#cfcfcfc4;
+}
+
+/* purchased tickets Section */
+
+.content .store-tickets{
+    background:#fff;
+    border-radius:22px;
+    margin-top:25px;
+    overflow-x:hidden;
+    overflow-y:scroll;
+    height:90%;
+}
+
+.content .store-tickets table{
+    border-radius:22px;
+    width:100%;
+    text-align:center;
+}
+
+.content .store-tickets table thead th{
+    border-right:2px solid rgb(57, 57, 57);
+    outline:2px solid rgb(57, 57, 57);
+    color:#ffffff;
+    font-family: 'Radio Canada', sans-serif;
+    font-size:1.1rem;
+    padding:10px 5px;
+}
+
+.content .store-tickets table thead{
+    background:rgb(57, 57, 57);
+    width:100%;
+}
+
+.content .store-tickets table tbody td{
+    color:#414141e3;
+    padding:7.5px 0;
+    font-family: 'Radio Canada', sans-serif;
+    transition:0.15s ease-out;
+    padding:10px 5px;
+}
+
+.content .store-tickets table tbody td.ticket-status-td{
+    color:rgb(255, 0, 0) !important;
+}
+
+.content .store-tickets table tbody tr:hover{
+    background:#cfcfcfc4;
+}
+
+.content .store-tickets table tbody td .show-ticket-btn{
+    background:rgb(57, 57, 57);
+    color:#fff;
+    border:none;
+    padding:10px;
+    cursor: pointer;
+    border-radius:15px;
+    font-family: 'Radio Canada', sans-serif;
+    transition: 0.15s ease-out;
+}
+
+.content .store-tickets table tbody td .show-ticket-btn:hover{
+    background:rgb(84, 84, 84);
+}
+
+/* purchased tickets Section */
+
+.content table tbody tr:nth-child(even){
+    background-color:rgba(187, 187, 187, 0.348);
+}
+
+
+.content .store-purchased-tickets{
+    background:#fff;
+    border-radius:22px;
+    margin-top:25px;
+    overflow-x:hidden;
+    overflow-y:scroll;
+    height:90%;
+}
+
+.content .store-purchased-tickets table{
+    border-radius:22px;
+    width:100%;
+    text-align:center;
+}
+
+.content .store-purchased-tickets table thead th{
+    border-right:2px solid rgb(57, 57, 57);
+    outline:2px solid rgb(57, 57, 57);
+    color:#ffffff;
+    font-family: 'Radio Canada', sans-serif;
+    font-size:1.1rem;
+    padding:10px 5px;
+}
+
+.content .store-purchased-tickets table thead{
+    background:rgb(57, 57, 57);
+    width:100%;
+}
+
+.content .store-purchased-tickets table tbody td{
+    color:#414141e3;
+    padding:7.5px 0;
+    font-family: 'Radio Canada', sans-serif;
+    transition:0.15s ease-out;
+    padding:10px 5px;
+}
+
+.content .store-purchased-tickets table tbody td.ticket-status-td{
+    color:rgb(255, 0, 0) !important;
+}
+
+.content .store-purchased-tickets table tbody tr:hover{
+    background:#cfcfcfc4;
+}
+
+.content .store-purchased-tickets table tbody td .show-ticket-btn{
+    background:rgb(57, 57, 57);
+    color:#fff;
+    border:none;
+    padding:10px;
+    cursor: pointer;
+    border-radius:15px;
+    font-family: 'Radio Canada', sans-serif;
+    transition: 0.15s ease-out;
+}
+
+.content .store-purchased-tickets table tbody td .show-ticket-btn:hover{
+    background:rgb(84, 84, 84);
+}
+
+
+/* icons */
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+/* media queries */
+
+@media screen and (max-width: 1170px) and (min-width: 970px){
+    .content .store-purchased-tickets table thead th,
+    .content .store-tickets table thead th{
+        font-size:0.75rem;
+    }
+
+    .content .store-purchased-tickets table tbody td,
+    .content .store-tickets table tbody td{
+        font-size:0.6rem;
+    }
+
+    .content .store-purchased-tickets table,
+    .content .store-tickets table{
+        overflow:scroll !important;
+    }
+
+    .container .store-infos .store-info{
+        flex-direction:column;
+    }
+
+    .container .content .store-profile{
+        grid-template-rows:500px 1fr 1fr;
+    }
+
+    .container .content .store-profile .store-change-informations{
+        grid-column:1/-1;
+        grid-row:1/4;
+    }
+    .content .store-profile .store-informations{
+        grid-column:1/2;
+        grid-row:4/-1;
+    }
+
+    .content .store-profile .store-purchased-ticket-sc{
+        grid-column:2/-1;
+        grid-row:4/-1;
+    }
+
+    .store-profile .store-informations-inputs .tips .tip{
+        font-size:0.9rem;
+    }
+}
+
+@media screen and (max-width: 970px) and (min-width: 820px){
+    .content .store-purchased-tickets table thead th,
+    .content .store-tickets table thead th{
+        font-size:0.75rem;
+    }
+
+    .content .store-purchased-tickets table tbody td,
+    .content .store-tickets table tbody td{
+        font-size:0.6rem;
+    }
+
+    .content .store-purchased-tickets table tbody td .show-ticket-btn,
+    .content .store-tickets table tbody td .show-ticket-btn{
+        padding:2.5px;
+    }
+
+    .content .store-purchased-tickets,
+    .content .store-tickets{
+        overflow:scroll !important;
+    }
+
+    .container .store-infos .store-info{
+        flex-direction:column;
+    }
+
+    .container .content .store-profile{
+        grid-template-rows:500px 1fr 1fr;
+    }
+
+    .search-input{
+        right:10px;
+        width:50%;
+    }
+
+    .container .content .store-profile .store-change-informations{
+        grid-column:1/-1;
+        grid-row:1/4;
+    }
+    .content .store-profile .store-informations{
+        grid-column:1/2;
+        grid-row:4/-1;
+    }
+
+    .content .store-profile .store-purchased-ticket-sc{
+        grid-column:2/-1;
+        grid-row:4/-1;
+    }
+
+    .store-profile .store-informations-inputs .tips .tip{
+        font-size:0.9rem;
+    }
+
+    .store-shopping-cart .store-shopping-cart-content .right-content .cart-detail .ticket-titles {  
+        width: 25%;
+    }
+
+    
+    .store-profile .store-change-informations .modal{
+        font-size: 1.25rem;
+    }
+
+    .store-shopping-cart .store-shopping-cart-content .right-content .cart-detail .ticket-count {
+        gap: 10px;
+        width: 20%;
+    }
+
+}
+
+@media screen and (max-width: 820px) and (min-width: 590px){
+    .content .store-profile .store-purchased-ticket-sc table tbody td{
+        font-size:0.6rem;
+    }
+
+    .content .store-profile .store-purchased-ticket-sc table thead th{
+        font-size:0.75rem;
+    }
+
+    .store-profile .store-informations-inputs{
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .content .store-purchased-tickets,
+    .content .store-tickets{
+        overflow:scroll !important;
+    }
+    
+    .content .store-purchased-tickets table tbody td .show-ticket-btn,
+    .content .store-tickets table tbody td .show-ticket-btn{
+        padding:2.5px;
+    }
+
+    .store-change-informations .store-informations-inputs .inputs{
+        grid-template-rows:repeat(4,1fr);
+        margin-top:-30px;
+    }
+    
+    .search-input{
+        right:10px;
+        width:50%;
+    }
+    
+    .content .store-purchased-tickets table thead th,
+    .content .store-tickets table thead th{
+        font-size:0.75rem;
+    }
+
+    .content .store-purchased-tickets table tbody td,
+    .content .store-tickets table tbody td{
+        font-size:0.5rem;
+    }
+    .container .store-infos .store-info{
+        flex-direction:column;
+    }
+
+    .container .content .store-profile{
+        grid-template-rows:350px 1fr;
+    }
+
+    .container .content .store-profile .store-change-informations{
+        grid-column:1/-1;
+        grid-row:2/-1;
+    }
+    .content .store-profile .store-informations{
+        grid-column:1/2;
+        grid-row:1/2;
+    }
+
+    .content .store-profile .store-purchased-ticket-sc{
+        grid-column:2/-1;
+        grid-row:1/2;
+    }
+
+    .store-profile .store-informations-inputs .tips .tip{
+        font-size:0.75rem;
+    }
+
+    .store-change-informations .store-informations-inputs .inputs .input{
+        grid-column:1/-1;
+    }
+
+    .container .storePanel-menu ul li p{
+        display:none;
+    }
+
+    .store-shopping-cart .store-shopping-cart-content .right-content .cart-detail .ticket-titles {  
+        width: 100%;
+    }
+
+    .store-shopping-cart .store-shopping-cart-content .right-content .cart-detail .ticket-details {  
+        width: 100%;
+        margin-top: -10px;
+    }
+    .store-shopping-cart .store-shopping-cart-content .right-content .cart-detail {  
+        flex-direction:column;
+        font-size: 0.8rem;
+    }
+
+    .store-shopping-cart .store-shopping-cart-content .right-content .cart-detail .ticket-count {
+        gap: 5px;
+        width: 20%;
+    }
+    
+    .store-profile .store-change-informations .modal{
+        font-size: 1rem;
+    }
+
+    .store-shopping-cart .store-shopping-cart-content .right-content .cart-detail .ticket-date {
+        align-items: flex-end;
+        font-size: 0.8rem;
+      }
+
+}
+
+@media screen and (max-width: 590px) {
+    .container{
+        flex-direction:column-reverse;
+    }
+    
+    .content .store-purchased-tickets table thead th,
+    .content .store-tickets table thead th{
+        font-size:0.75rem;
+    }
+
+    .content .store-purchased-tickets table tbody td,
+    .content .store-tickets table tbody td{
+        font-size:0.75rem;
+    }
+
+    .content .store-purchased-tickets,
+    .content .store-tickets {
+        overflow:scroll !important;
+    }
+
+    .content .store-purchased-tickets table tbody td .show-ticket-btn{
+        padding:2.5px;
+    }
+
+    .search-input{
+        right:10px;
+        width:50%;
+    }
+
+    .content{
+        padding:30px 10px;
+    }
+
+    .container .content{
+        margin:0 auto;
+    }
+
+    .container .storePanel-menu{
+        height:fit-content;
+        width:100%;
+        min-width:unset;
+    }
+
+    .container .storePanel-menu ul{
+        flex-direction:row;
+    }
+
+    .container .storePanel-menu ul .top-menu{
+        flex-direction:row;
+        justify-content: space-evenly;
+        width:100%;
+    }
+
+    .container .storePanel-menu ul .bottom-menu{
+        border:none;
+        width:fit-content;
+    }
+
+    .container .storePanel-menu ul li{
+        width:fit-content;
+    }
+
+    .store-profile .store-informations-inputs{
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .store-change-informations .store-informations-inputs .inputs{
+        grid-template-rows:repeat(4,1fr);
+        margin-top:-30px;
+    }
+
+    .container .store-infos .store-info{
+        flex-direction:row;
+        flex-wrap:wrap;
+        font-size:0.8rem;
+    }
+    .container .store-infos{
+        flex-basis:60%;
+    }
+
+    .container .content .store-profile{
+        grid-template-rows:175px 175px 1fr;
+    }
+
+    .container .content .store-profile .store-change-informations{
+        grid-column:1/-1;
+        grid-row:3/-1;
+    }
+    .content .store-profile .store-informations{
+        grid-column:1/-1;
+        grid-row:1/2;
+        flex-direction:row;
+        align-items:center;
+    }
+
+    .content .store-profile .store-purchased-ticket-sc{
+        grid-column:1/-1;
+        grid-row:2/3;
+    }
+
+    .store-profile .store-informations-inputs .tips .tip{
+        font-size:0.75rem;
+    }
+
+    .store-profile .store-informations-inputs .tips{
+        margin-top:-20px;
+    }
+
+    .store-change-informations .store-informations-inputs .inputs .input{
+        grid-column:1/-1;
+    }
+
+    .container .storePanel-menu ul li p{
+        display:block;
+        font-size:0.8rem;
+    }
+
+    .container .storePanel-menu ul .log-out p{
+        display:none;
+    }
+
+    .container .storePanel-menu ul li{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .store-shopping-cart .store-shopping-cart-content .right-content .cart-detail .ticket-titles {  
+        width: 100%;
+    }
+
+    .store-shopping-cart .store-shopping-cart-content .right-content .cart-detail .ticket-details {  
+        width: 100%;
+        margin-top: -10px;
+    }
+    .store-shopping-cart .store-shopping-cart-content .right-content .cart-detail {  
+        flex-direction:column;
+        font-size: 0.8rem;
+    }
+
+    .store-shopping-cart .store-shopping-cart-content .right-content .cart-detail .ticket-count {
+        gap: 2px;
+        width: 20%;
+    }
+
+    .store-shopping-cart .store-shopping-cart-content .right-content .cart-detail .ticket-count .ticket-count-icon , 
+    .store-shopping-cart .store-shopping-cart-content .right-content .cart-detail .ticket-delete{
+        background-color:rgba(230, 229, 229, 0.296);
+    }
+
+    .container .storePanel-menu ul li{
+        text-align:center;
+    }
+
+    .store-profile .store-change-informations .modal{
+        font-size: 1rem;
+    }
+
+    .store-shopping-cart .store-shopping-cart-content .right-content .cart-detail .ticket-date {
+        align-items: flex-end;
+        font-size: 0.8rem;
+      }
+
+}

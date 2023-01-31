@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles/storePanel.css">
+    <link rel="icon" href="images/ticket logo orange.jpg" type="image/icon type">
+    <title>Outinz Store Panel</title>
+</head>
+<body>
+
+    <div class="loader">
+        <div class="loader-inner">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="search-input" style="display:none;">
+        <input type="text" placeholder="Buyer UserName">
+    </div>
+
+    <div class="container" style="display:none">
+        <aside class="storePanel-menu">
+            <ul>
+                <div class="top-menu">
+                    <li data-targetMenu="store-profile" title="Profile">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80 256h64c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm96-96c0 35.3-28.7 64-64 64s-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64zm128-32H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>
+                        <p>Store Profile</p>
+                    </li>
+                    <li data-targetMenu="store-tickets" title="Purchased Tickets">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M64 64C28.7 64 0 92.7 0 128v80c26.5 0 48 21.5 48 48s-21.5 48-48 48v80c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V304c-26.5 0-48-21.5-48-48s21.5-48 48-48V128c0-35.3-28.7-64-64-64H64zm64 96l0 192H448V160H128zm-32 0c0-17.7 14.3-32 32-32H448c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32H128c-17.7 0-32-14.3-32-32V160z"/></svg>
+                        <p>Store Tickets</p>
+                    </li>
+                    <li class="active" data-targetMenu="store-purchased-tickets" title="Basket">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
+                        <p>Purchased Tickets</p>
+                    </li>
+                </div>
+                <div class="bottom-menu">
+                    <li title="log out" class="log-out">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96C43 32 0 75 0 128V384c0 53 43 96 96 96h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H96c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32h64zM504.5 273.4c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22v72H192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32H320v72c0 9.6 5.7 18.2 14.5 22s19 2 26-4.6l144-136z"/></svg>
+                        <p>Log Out</p>
+                    </li>
+                </div>
+            </ul>
+        </aside>
+
+        <div class="content">
+            <div class="sections">              
+                <span><a href="index.html">Home</a> / <a href="#">Store Panel</a></span>
+            </div>
+            <!-- store profile section -->
+            <section class="store-profile" style="display:none;">
+                <!-- store change information-->
+                <div class="store-change-informations">
+                    <div class="store-informations-title">
+                        <h2>Store General Information</h2>
+                    </div>
+                    <form action="" class="store-informations-inputs">
+                        <ul class="tips">
+                            <li class="tip">Please enter your details carefully so you don't run into problems later</li>
+                            <li class="tip">All inputs aren't required . just enter the information you want to change</li>
+                            <li class="tip">The maximum length of the username should be 15 characters</li>
+                        </ul>
+                        <div class="inputs">
+                            <div class="input">
+                                <input type="text" placeholder="adele or novoClub or...">
+                                <span class="input-title">Store Name</span>
+                            </div>
+                            <div class="input">
+                                <input type="text" placeholder="novoClub1997 Or ...">
+                                <span class="input-title">Store UserName</span>
+                            </div>
+                            <div class="input">
+                                <input type="text" class="email-input" placeholder="novoClub97@gmail.com Or ...">
+                                <span class="input-title">Store Email</span>
+                            </div>
+                        </div>
+                        <input type="submit" class="submit" value="Save All">
+                    </form>
+                    <div class="modal">
+                        <div class="success" style="display:none;">
+                            <div class="icon">
+                                <img src="images/successfull.gif" alt="seccessfull">
+                            </div>
+                            <p class="message"></p>
+                            <div class="close-modalBtn">
+                                <button>Okay</button>
+                            </div>
+                        </div>
+
+                        <div class="err">
+                            <div class="icon">
+                                <img src="images/error.gif" alt="error">
+                            </div>
+                            <p class="message"></p>
+                            <div class="close-modalBtn">
+                                <button>Okay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- store informations -->
+                <div class="store-informations">
+                    <div class="store-profile-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M272 304h-96C78.8 304 0 382.8 0 480c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32C448 382.8 369.2 304 272 304zM48.99 464C56.89 400.9 110.8 352 176 352h96c65.16 0 119.1 48.95 127 112H48.99zM224 256c70.69 0 128-57.31 128-128c0-70.69-57.31-128-128-128S96 57.31 96 128C96 198.7 153.3 256 224 256zM224 48c44.11 0 80 35.89 80 80c0 44.11-35.89 80-80 80S144 172.1 144 128C144 83.89 179.9 48 224 48z"/></svg>
+                    </div>
+                    <div class="store-infos">
+                        <div class="store-info">
+                            <h4 class="title">Store Name</h4>
+                            <span class="storeInfo"> party </span>
+                        </div>
+                        <div class="store-info">
+                            <h4 class="title">Store User Name</h4>
+                            <span class="storeInfo">club</span>
+                        </div>
+                        <div class="store-info">
+                            <h4 class="title">Store Address</h4>
+                            <span class="storeInfo">cyprus shahid hand hide</span>
+                        </div>
+                        <div class="store-info">
+                            <h4 class="title">Store Email</h4>
+                            <span class="storeInfo">party20club@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- purchased tickets -->
+                <div class="store-purchased-ticket-sc">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ticket Type</th>
+                                <th>Ticket capacity</th>
+                                <th>Start Date</th>
+                                <th>Start Hour</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Party</td>
+                                <td>50</td>
+                                <td>07/11/2022</td>
+                                <td>17:30</td>
+                            </tr>
+                            <tr>
+                                <td>Concert</td>
+                                <td>25</td>
+                                <td>01/02/2023</td>
+                                <td>20:30</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </section>
+            <!-- store purchased tickets section -->
+            <section class="store-tickets" style="display:none;">
+                <table class="tickets-table">
+                    <thead>
+                        <tr>
+                            <th>Ticket Type</th>
+                            <th>ticket Status</th>
+                            <th>Store Address</th>
+                            <th>Ticket Start Date</th>
+                            <th>Ticket Start Hour</th>
+                            <th>Ticket Remaining</th>
+                            <th>ticket capacity</th>
+                            <th>Ticket Price</th>
+                            <th>Show Ticket</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Concert</td>
+                            <td class="ticket-status-td">Selling</td>
+                            <td>Cyprus shahid hemat</td>
+                            <td>01/11/2022</td>
+                            <td>18:30</td>
+                            <td>17</td>
+                            <td>25</td>
+                            <td>$ 500</td>
+                            <td>
+                                <button class="show-ticket-btn">Show Ticket</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Party</td>
+                            <td class="ticket-status-td">Expired</td>
+                            <td>Cyprus shahid mohmmadi</td>
+                            <td>01/05/2022</td>
+                            <td>11:30</td>
+                            <td>10</td>
+                            <td>50</td>
+                            <td>$ 50</td>
+                            <td>
+                                <button class="show-ticket-btn">Show Ticket</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <!-- store shopping cart Section-->
+            <section class="store-purchased-tickets">
+                <table class="tickets-table">
+                    <thead>
+                        <tr>
+                            <th>Ticket Type</th>
+                            <th>ticket Status</th>
+                            <th>Buyer UserName</th>
+                            <th>Ticket Purchase Date</th>
+                            <th>Ticket Start Date</th>
+                            <th>Ticket Start Hour</th>
+                            <th>Baught Tickets Count</th>
+                            <th>ticket capacity</th>
+                            <th>Ticket Price</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                        <tr>
+                            <td>Concert</td>
+                            <td class="ticket-status-td">Selling</td>
+                            <td class="username">maxStinson20</td>
+                            <td>01/10/2022</td>
+                            <td>01/11/2022</td>
+                            <td>18:30</td>
+                            <td>5</td>
+                            <td>25</td>
+                            <td>$ 500</td>
+                        </tr>
+                        <tr>
+                            <td>Party</td>
+                            <td class="ticket-status-td">Expired</td>
+                            <td class="username">rachel18St</td>
+                            <td>01/04/2022</td>
+                            <td>01/05/2022</td>
+                            <td>11:30</td>
+                            <td>2</td>
+                            <td>50</td>
+                            <td>$ 50</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+    <script src="js/storePanel.js"></script>
+</body>
+</html>
