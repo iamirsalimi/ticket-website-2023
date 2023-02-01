@@ -1,15 +1,14 @@
 let $ = document
 
 let container = $.querySelector('.container')
-let editForm = $.querySelector('.edit-user-form')
+let editForm = $.querySelector('.edit-ticket-form')
 let addTicketToUserContainer = $.querySelector('.add-ticket-form')
-let editUserBtn = $.querySelector('.userProfile .btns .edit-user')
-let editTicketBtn = $.querySelector('.addTicket-to-user-btn')
+let editBtn = $.querySelector('.ticketProfile .btns .edit-ticket')
 let backBtns = $.querySelectorAll('.back-to-infos')
-let signUpInputElems = $.querySelectorAll('.singup-inputs-container input')
 let addTicketToUserBtn = $.querySelector('.addTicket-btn')
 let editTicketModal = $.querySelector('.modal-add-ticket-details') 
 let closeEditModalBtn = $.getElementById('cancel-btn')
+let signUpInputElems = $.querySelectorAll('.singup-inputs-container input')
 let forms = $.querySelectorAll('form')
 let formTitle = $.querySelector('.title h2')
 let formDesc = $.querySelector('.title p')
@@ -22,18 +21,6 @@ function clearSpace(event){
 
 signUpInputElems.forEach(function(signUpInputElem){
     signUpInputElem.addEventListener('keyup',clearSpace)
-})
-
-signUpInputElems[signUpInputElems.length-1].addEventListener('blur',function(event){
-    let emailValue = event.target.value
-    let linkRegex = /^\w+([\.-]?\w)*@\w+([\.-]?\w)*(\.\w{2,3})+$/g
-    if(linkRegex.test(emailValue) || emailValue.trim() === ''){
-        event.target.classList.remove('invalid')
-        event.target.parentNode.lastElementChild.classList.remove('show-err')
-    } else {
-        event.target.classList.add('invalid')
-        event.target.parentNode.lastElementChild.classList.add('show-err')
-    }
 })
 
 // show pass
@@ -50,16 +37,10 @@ showPass.forEach(function(showPassElem){
     })
 })
 
-editUserBtn.addEventListener('click',function(){
+editBtn.addEventListener('click',function(){
     container.style.display = 'none'
     addTicketToUserContainer.style.display = 'none'
     editForm.style.display = 'flex'
-})
-
-editTicketBtn.addEventListener('click',function(){
-    container.style.display = 'none'
-    addTicketToUserContainer.style.display = 'flex'
-    editForm.style.display = 'none'
 })
 
 backBtns.forEach(function(backBtn){
@@ -70,8 +51,9 @@ backBtns.forEach(function(backBtn){
     })
 })
 
-addTicketToUserBtn.addEventListener('click',function(event){
+addTicketToUserBtn.addEventListener('submit',function(event){
     event.preventDefault()
+    console.log(editTicketModal);
     editTicketModal.classList.add('active')
 })
 

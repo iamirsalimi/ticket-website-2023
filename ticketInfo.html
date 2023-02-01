@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="styles/ticketInfo.css">
+    <link rel="icon" href="images/Screenshot_20230104_233603.jpg" type="image/icon type">
+    <title>Outinz ticket info</title>
+</head>
+<body>
+    <div class="container" style="">
+        <div class="sections">
+            <span><a href="./index.html">Home</a> / <a href="./adminPanel.html">Admin Panel</a> / <a href="#">ticketProfile</a> </span>
+        </div>
+
+        <div class="content">
+            <!-- ticket profile section -->
+            <div class="ticketProfile">
+              <div class="profile">
+                <span class="material-symbols-outlined">sentiment_satisfied</span>
+              </div>
+              <div class="profile-desc">
+                <h4 class="username">@avamax</h4>
+                <h2 class="fullname">Avamax Concert</h2>
+                <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores dolorem voluptate, reiciendis eos consequatur id aut fuga provident officia accusamus!</div>
+              </div>
+              <div class="btns">
+                <button class="edit-ticket">Edit ticket</button>
+              </div>
+            </div>
+            <!-- ticket information section -->
+            <div class="ticket-info">
+                <div class=" ticket-information">
+                    <h3 class="info-title">Ticket Id</h3>
+                    <p class="ticketInfo">1</p>
+                </div>
+                <div class=" ticket-information">
+                    <h3 class="info-title">Ticket Type</h3>
+                    <p class="ticketInfo">Concert</p>
+                </div>
+                <div class=" ticket-information">
+                    <h3 class="info-title">Ticket Status</h3>
+                    <p class="ticketInfo">selling</p>
+                </div>
+                <div class=" ticket-information">
+                    <h3 class="info-title">Provider User Name</h3>
+                    <p class="ticketInfo">mohammadallipour12</p>
+                </div> 
+                <div class=" ticket-information">
+                    <h3 class="info-title">Provider Venue</h3>
+                    <p class="ticketInfo">Cyprus hide hand</p>
+                </div> 
+                <div class=" ticket-information">
+                    <h3 class="info-title">Provider Email</h3>
+                    <p class="ticketInfo">MohammadaliPour1992@gmail.com</p>
+                </div> 
+                <div class=" ticket-information">
+                    <h3 class="info-title">Ticket Capacity</h3>
+                    <p class="ticketInfo">35</p>
+                </div> 
+                <div class=" ticket-information">
+                    <h3 class="info-title">Ticket remaining</h3>
+                    <p class="ticketInfo">15</p>
+                </div> 
+                <div class=" ticket-information">
+                    <h3 class="info-title">Ticket start date</h3>
+                    <p class="ticketInfo">15/7/2023</p>
+                </div> 
+                <div class=" ticket-information">
+                    <h3 class="info-title">Ticket start hour</h3>
+                    <p class="ticketInfo">22:00</p>
+                </div> 
+                <div class=" ticket-information">
+                    <h3 class="info-title">Ticket Price</h3>
+                    <p class="ticketInfo">$ 150</p>
+                </div> 
+            </div>
+            <!-- ticket purchased tickets -->
+            <div class="purchased-tickets-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Buyer UserName</th>
+                            <th>Number of tickets purchased</th>
+                            <th>Provider UserName</th>
+                            <th>Provider Venue</th>
+                            <th>Purchase Date</th>
+                            <th>The cost has been taken</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>ali20fr</td>
+                            <td>2</td>
+                            <td>avamax2000</td>
+                            <td>cyprus hide hand</td>
+                            <td>5/07/2022</td>
+                            <td>$ 300</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="edit-ticket-form" style="display:none;">
+        <div class="backInfo-Btn">
+            <button class="back-to-infos">Back To Informations</button>
+        </div>
+        <!-- edit form -->
+        <div class="add-content">
+            <form action="" class="add-ticket">
+                <h2>Change Ticket Information</h2>
+                <div class="inputs">
+                    <div class="input input-category">
+                        <span class="input-title">Ticket Category</span>
+                        <select name="Ticket category">
+                            <option value="party">party</option>
+                            <option value="concert">concert</option>
+                        </select>
+                    </div>
+                    <div class="input input-category">
+                        <span class="input-title">Ticket Status</span>
+                        <select name="Ticket category">
+                            <option value="Selling">Selling</option>
+                            <option value="Canceled">Canceled</option>
+                            <option value="Deleted">Deleted</option>
+                        </select>
+                    </div>
+                    <div class="input">
+                        <span class="input-title" >Ticket Price</span>
+                        <input type="number" name="ticket-price"
+                        <p></p>
+                    </div>
+                    <div class="input">
+                        <span class="input-title" >Ticket's Provider UserName</span>
+                        <input type="text" name="ticket-store-username" class="ticket-input" >
+                        <p style="display:none;">Store username not found</p>
+                    </div>
+                    <div class="input">
+                        <span class="input-title" >Ticket Start Date</span>
+                        <input type="date" name="ticket-start-date" class="ticket-input">
+                        <p style="display:none">Date is Invalid</p>
+                    </div>
+                    <div class="input">
+                        <span class="input-title" >Ticket Start Hour</span>
+                        <input type="time" name="ticket-start-date" class="ticket-input">
+                        <p style="display:none">Date is Invalid</p>
+                    </div>
+                    <div class="input">
+                        <span class="input-title" >Ticket Capacity</span>
+                        <input type="number" name="ticket-capacity ticket-input" class="ticket-capacity" min="0" > 
+                        <p></p>
+                    </div>
+                    <div class="input">
+                        <span class="input-title" >Ticket Description</span>
+                        <textarea name="ticket-description" class="ticket-desc" rows="10"></textarea> 
+                    </div>
+                </div>
+                <input type="submit" value="Add ticket" data-modalTarget="add-store-modal" class="addTicket-btn">
+            </form>
+        </div>
+    </div>
+
+    <script src="js/ticketInfo.js"></script>
+</body>
+</html>

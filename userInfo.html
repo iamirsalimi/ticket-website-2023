@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="styles/usersInfo.css">
-    <link rel="icon" href="images/Screenshot_20230104_233603.jpg" type="image/icon type">
+    <link rel="icon" href="images/ticket logo orange.jpg" type="image/icon type">
     <title>Outinz user info</title>
 </head>
 <body>
@@ -28,6 +28,7 @@
               <div class="btns">
                 <button class="delete-user">Delete User</button>
                 <button class="edit-user">Edit User</button>
+                <button class="edit-user addTicket-to-user-btn">Add Ticket</button>
               </div>
             </div>
             <!-- user information section -->
@@ -111,11 +112,6 @@
                         <span class="input-ph">last name</span>
                     </div>
                     <div class="input-container">
-                        <input type="text" class="username-input" maxlength="15">
-                        <span class="input-ph">user name</span>
-                        <p></p>
-                    </div>
-                    <div class="input-container">
                         <input type="text" class="email-input">
                         <span class="input-ph">Email</span>         
                         <p>The email is invalid</p>
@@ -124,6 +120,80 @@
                 <input type="submit" class="submit" value="Edit User">
             </div>    
         </form>
+    </div>
+    <div class="add-ticket-form" style="display:none;">
+        <div class="backInfo-Btn">
+            <button class="back-to-infos">Back To Informations</button>
+        </div>
+        <!-- edit form -->
+        <div class="add-content">
+            <form action="" class="add-ticket">
+                <h2>Add Ticket To User</h2>
+                <div class="inputs">
+                    <div class="input">
+                        <span class="input-title" >Ticket's Provider Id</span>
+                        <input type="text" name="ticket-start-date" class="ticket-input">
+                        <p style="display:none">Id is Invalid</p>
+                    </div>
+                </div>
+                <input type="submit" value="Add ticket" class="addTicket-btn">
+            </form>
+        </div>
+        <div class="modal-add-ticket-details">
+            <div class="ticket-info-tips">
+                Make sure that the ticket information is as follows. If not, click Cancel. After accepting the ticket, it will be added to the user's purchased tickets
+            </div>
+            <div class="ticket-info">
+                <div class=" ticket-information">
+                    <h3 class="info-title">Ticket Id</h3>
+                    <p class="ticketInfo">1</p>
+                </div>
+                <div class=" ticket-information">
+                    <h3 class="info-title">Ticket Type</h3>
+                    <p class="ticketInfo">Concert</p>
+                </div>
+                <div class=" ticket-information">
+                    <h3 class="info-title">Ticket Status</h3>
+                    <p class="ticketInfo">selling</p>
+                </div>
+                <div class=" ticket-information">
+                    <h3 class="info-title">Provider User Name</h3>
+                    <p class="ticketInfo">mohammadallipour12</p>
+                </div> 
+                <div class=" ticket-information">
+                    <h3 class="info-title">Provider Venue</h3>
+                    <p class="ticketInfo">Cyprus hide hand</p>
+                </div> 
+                <div class=" ticket-information">
+                    <h3 class="info-title">Provider Email</h3>
+                    <p class="ticketInfo">MohammadaliPour1992@gmail.com</p>
+                </div> 
+                <div class=" ticket-information">
+                    <h3 class="info-title">Ticket Capacity</h3>
+                    <p class="ticketInfo">35</p>
+                </div> 
+                <div class=" ticket-information">
+                    <h3 class="info-title">Ticket remaining</h3>
+                    <p class="ticketInfo">15</p>
+                </div> 
+                <div class=" ticket-information">
+                    <h3 class="info-title">Ticket start date</h3>
+                    <p class="ticketInfo">15/7/2023</p>
+                </div> 
+                <div class=" ticket-information">
+                    <h3 class="info-title">Ticket start hour</h3>
+                    <p class="ticketInfo">22:00</p>
+                </div> 
+                <div class=" ticket-information">
+                    <h3 class="info-title">Ticket Price</h3>
+                    <p class="ticketInfo">$ 150</p>
+                </div> 
+            </div>
+            <div class="add-ticket-btns">
+                <button id="cancel-btn" type="button">Cancel</button>
+                <button id="accept-btn" type="button">accept</button>
+            </div>
+        </div>
     </div>
 
     <script src="js/userInfo.js"></script>

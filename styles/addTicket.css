@@ -223,6 +223,10 @@ body{
     list-style:none;
 }
 
+.add-content form .input.capacity{
+    grid-column:1/-1 !important;
+}
+
 /* icons */
 .material-symbols-rounded {
     font-variation-settings:

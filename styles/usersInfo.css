@@ -16,14 +16,6 @@ body{
     background:#d7d7d7;
 }
 
-*td,
-*th{
-    user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -webkit-user-select: none;
-}
-
 .container {
     display:flex;
     flex-direction:column;
@@ -117,7 +109,7 @@ body{
 
 .container .content .userProfile .btns button{
     font-family: 'Merienda', cursive;
-    padding:10px 20px;
+    padding:7.5px 15px;
     border:none;
     outline:none;
     border-radius:12px;
@@ -206,6 +198,11 @@ body{
     font-family: 'Gabriela', serif;
     font-size:1.25rem;
     font-size:1rem;
+    padding:4px 10px;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
 }
 
 .content .purchased-tickets-table table thead{
@@ -215,7 +212,7 @@ body{
 
 .content .purchased-tickets-table table tbody td{
     color:#4c3575;
-    padding:7.5px 0;
+    padding:4px 10;
     font-size:1rem;
     font-family: 'Gabriela', serif;
     transition:0.15s ease-out;
@@ -449,6 +446,297 @@ body{
     transition:0.15s ease-out; 
 }
 
+/* add ticket section */
+
+
+.add-ticket-form{
+    display:flex;
+    flex-direction:column;
+    gap:50px;
+    justify-content: center;
+    align-items: center;
+    margin-top:20px;
+}
+
+.add-ticket-form .backInfo-Btn{
+    width:90%;
+    display:flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.main-section{
+    color:rgb(139, 139, 139);
+    position:relative;
+    width:fit-content;
+    left:20px;
+    margin:10px 0; 
+}
+
+.main-section a{
+    color:#6e0eff;
+    text-decoration:none;
+    transition:color 0.15s ease-out;
+}
+
+.main-section a:last-child{
+    color:rgb(139, 139, 139);
+}
+
+.main-section a:hover:not(.main-section a:last-child){
+    color:#8432ff;
+}
+
+.add-content{
+    width:90%;
+    margin:0 auto;
+}
+
+.add-content form{
+    padding:25px 10px;
+    border:2px solid #6600ff;
+    border-radius:10px;
+    position:relative;
+    text-align:center;
+}
+
+.add-content form h2{
+    color:#6600ff;
+    background:#d7d7d7;
+    padding:0 10px;
+    font-family: 'Lobster', cursive;
+    position:absolute;
+    top:-20px;
+    left:20px;
+}
+
+.add-content form .inputs{
+    display:grid;
+    grid-template-columns: repeat(1,1fr);
+    gap:30px;
+}
+.add-content form .input{
+    position:relative;
+}
+
+.add-content .modal ul {
+    list-style:none;
+}
+.add-content form .input input{
+    width:100%;
+    font-size:1.2rem;
+    color:#6600ff;
+    padding:12px 24px;
+    background: none;
+    border:1px solid rgb(119, 32, 249);
+    outline:none;
+    border-radius:10px;
+}
+
+.add-content form .input{
+    grid-column:1/-1;
+}
+
+.add-content form .input .show-pass{
+    position:absolute;
+    right:5px;
+    top:5px;
+    cursor:pointer;
+}
+
+.add-content  form .input .show-pass .material-symbols-outlined{
+    color:#6600ff;
+    display:inline-block;
+    pointer-events: none;
+}
+
+.add-content form .input textarea{
+    width:100%;
+    height:100px;
+    font-size:1.2rem;
+    color:#6600ff;
+    padding:20px 10px;
+    background:none;
+    resize:none;
+    border:1px solid rgb(119, 32, 249);
+    outline:none;
+    border-radius:10px;
+}
+
+
+.add-content form .input .input-title{
+    display:inline-block;
+    position:absolute;
+    left:15px;
+    top:-10px;
+    background:#d7d7d7;
+    color:rgb(119, 32, 249);
+    padding:0 10px;
+}
+
+.add-content form select{
+    background:#6a0afb;
+    width:100%;
+    border-radius:10px;
+    border:none;
+    color:#f2eaff;
+    cursor:pointer;
+    padding:5px 20px;
+    font-size:1rem;
+}
+
+.add-content .add-ticket{
+    padding:40px 10px;
+}
+
+.add-content form .input-category .input-title{
+    background:none;
+    top:-20px;
+    left:0;
+}
+
+.add-content form .input .star{
+    color:rgb(186, 0, 0);
+    position:absolute;
+    top:-15px;
+    right:10px;
+}
+
+.add-content form .input.invalid input{
+    border-color: rgb(255, 77, 77);
+    color:rgb(255, 77, 77);
+    caret-color: rgb(255, 77, 77);
+}
+
+.add-content form .input.invalid span{
+    color:rgb(255, 77, 77) !important;
+}
+
+.add-content form .input.invalid p{
+    color:rgb(255, 77, 77);
+    margin-top:10px;
+    font-family: 'Righteous', cursive;
+}
+
+.add-content form .addTicket-btn{
+    margin-top:20px;
+    background:#4800b4;
+    border:none;
+    padding:10px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    color:#f2eaff;
+    transition:0.15s ease-out;
+}
+
+.add-content form .addTicket-btn:hover{
+    background:#6600ff;
+}
+
+.add-ticket .add-ticket-tips ul{
+    background:#4800b4;
+    width:100%;
+    margin:20px 0;
+    list-style: none;
+    padding:5px 10px;
+    border-radius:10px;
+}
+
+.add-ticket .add-ticket-tips li{
+    color:#d5b9ff;
+    font-family: 'Righteous', cursive;
+}
+
+.back-to-infos{
+    background:linear-gradient(45deg , #4700b1 , #7f2aff);
+    color:#fff;
+    padding:8px 12px;
+    border-radius:12px;
+    border:none;
+    outline:none;
+    cursor:pointer;
+}
+
+/* .modal */
+
+.modal-add-ticket-details{
+    background:#fff;
+    border-radius:12px;
+    padding:8px 12px;
+    min-width:500px;
+    display:flex;
+    gap:20px;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    top:-200%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    transition:0.5s ease-in-out;
+
+}
+
+.modal-add-ticket-details.active{
+    top:50%;
+}
+
+.modal-add-ticket-details .ticket-info-tips{
+    text-align:center;
+    color:rgb(255, 70, 70);
+    font-family: 'Lobster', cursive;
+}
+.modal-add-ticket-details .ticket-info{
+    width:100%;
+}
+
+.modal-add-ticket-details .ticket-info .ticket-information{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:5px;
+    width:100%;
+    pointer-events: none;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+
+.modal-add-ticket-details .ticket-info .ticket-information:not(.container .content .ticket-info .ticket-information:last-child){
+    border-bottom:1px solid #371b58a6;
+}
+
+.modal-add-ticket-details .ticket-info .ticket-information .info-title{
+    color:#2E0249;
+    font-family: 'Merienda', cursive;
+}
+
+.modal-add-ticket-details .ticket-info .ticket-information .ticketInfo{
+    color:#1e0052c5;
+    font-family: 'Lobster', cursive;
+    width:50%;
+    font-size:0.75rem;
+}
+
+.modal-add-ticket-details .ticket-info .ticket-information .info-title{
+    font-size:1rem;
+}
+
+.modal-add-ticket-details .add-ticket-btns button{
+    padding:12px 24px;
+    border-radius:8px;
+    border:none;
+    background:#4700b1;
+    color:#fff;
+    cursor:pointer;
+    font-family: 'Lobster', cursive;
+}
+
+.modal-add-ticket-details .add-ticket-btns #cancel-btn{
+    background:rgb(255, 48, 48) !important;
+}
+
 /* icons */
 .material-symbols-outlined {
     font-variation-settings:
@@ -620,5 +908,22 @@ body{
         flex-direction:column !important;
         justify-content: start;
         align-items: start;
+    }
+
+    .modal-add-ticket-details .ticket-info .ticket-information{
+        flex-direction:column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .modal-add-ticket-details{
+        min-width:300px;
+    }
+
+    .modal-add-ticket-details .ticket-info-tips{
+        font-size:0.8rem;
+    }
+
+    .container .content .userProfile .btns{
+        flex-direction:column !important;
     }
 }
