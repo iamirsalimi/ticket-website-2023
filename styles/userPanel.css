@@ -20,6 +20,13 @@
     border-radius:20px;
 }
 
+*td,
+*th{
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
 
 .loader{
     position:absolute;

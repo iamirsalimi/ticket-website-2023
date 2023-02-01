@@ -1,0 +1,660 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@500&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&family=Rouge+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    background:#d7d7d7;
+}
+
+*td,
+*th{
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+
+.container {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:start;
+    gap:15px;
+    padding:10px 30px;
+}
+
+.container .sections{
+    color:rgb(139, 139, 139);
+    position:relative;
+    left:20px;
+}
+
+.container .sections a{
+    color:#6e0eff;
+    text-decoration:none;
+    transition:color 0.15s ease-out;
+}
+
+.container .sections a:last-child{
+    color:rgb(139, 139, 139);
+}
+
+.container .sections a:hover:not(.container .sections a:last-child){
+    color:#8432ff;
+}
+
+.container .content{
+    display:grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(4,1fr);
+    gap:10px;
+    width:100%;
+    height:100%;
+    border-radius:22px;
+    padding:10px;
+}
+
+/* store profile section */
+.container .content .storeProfile{
+    grid-column:1/4;
+    grid-row:1/3;
+    background:#371B58;
+    border-radius:22px;
+    padding:10px 0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    text-align:center;
+}
+
+.container .content .storeProfile .profile{
+    background:#E9D5CA;
+    width:100px;
+    height:100px;
+    display:flex;
+    border-radius:50%;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.container .content .storeProfile .profile span{
+    color:#371B58;
+    font-size:4rem;
+}
+
+.container .content .storeProfile .profile-desc .username{
+    color:#827397;
+    font-family: 'Rouge Script', cursive;
+    font-size:1.5rem;
+}
+
+.container .content .storeProfile .profile-desc .fullname{
+    color:#E9D5CA;
+    margin-top:5px;
+    font-family: 'Merienda', cursive;
+    
+}
+
+.container .content .storeProfile .btns{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+}
+
+.container .content .storeProfile .btns button{
+    font-family: 'Merienda', cursive;
+    padding:10px 20px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+.container .content .storeProfile .btns .delete-store{
+    background:#E9D5CA;
+    color:#371B58;
+    transition:0.1s ease-out;
+}
+
+.container .content .storeProfile .btns .delete-store:hover{
+    background:#ffd3bd;
+}
+
+.container .content .storeProfile .btns .edit-store{
+    background:#4C3575;
+    color:#E9D5CA;
+    transition:0.1s ease-out;
+}
+
+.container .content .storeProfile .btns .edit-store:hover{
+    background:#7454ac;
+}
+
+/* store info section */
+.container .content .store-info{
+    grid-column:4/-1;
+    grid-row:1/3;
+    background:#E9D5CA;
+    border-radius:22px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    padding:10px 20px;
+    gap:10px;
+}
+.container .content .store-info .store-information{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:5px;
+    width:100%;
+    pointer-events: none;
+}
+
+.container .content .store-info .store-information:not(.container .content .store-info .store-information:last-child){
+    border-bottom:1px solid #371b58a6;
+}
+
+.container .content .store-info .store-information .info-title{
+    color:#2E0249;
+    font-family: 'Merienda', cursive;
+}
+
+.container .content .store-info .store-information .storeInfo{
+    color:#1e0052c5;
+    font-family: 'Gabriela', serif;
+    width:50%;
+}
+
+/* store purchased tickets section */
+
+.content .purchased-tickets-table{
+    width:100%;
+    height:100%;
+    background:#E9D5CA;
+    border-radius:10px;
+    grid-column:1/-1;
+    grid-row:3/-1;
+    overflow-y:scroll;
+    max-height:500px;
+}
+
+.content .purchased-tickets-table table{
+    width:100%;
+    text-align:center;
+}
+
+.content .purchased-tickets-table table thead th{
+    border-right:2px solid #2E0249;
+    outline:2px solid #2E0249;
+    color:#ffe0d0;
+    font-family: 'Gabriela', serif;
+    font-size:1.25rem;
+    font-size:1rem;
+}
+
+.content .purchased-tickets-table table thead{
+    background:#2E0249;
+    width:100%;
+}
+
+.content .purchased-tickets-table table tbody td{
+    color:#4c3575;
+    padding:7.5px 0;
+    font-size:1rem;
+    font-family: 'Gabriela', serif;
+    transition:0.15s ease-out;
+}
+
+.content .purchased-tickets-table table tbody tr:hover{
+    background:#ffceb5;
+}
+
+.content .purchased-tickets-table table tbody tr:nth-child(even){
+    background:#dc9f80;
+}
+
+.profile-content .add-admin{
+    grid-column:1/-1;
+    grid-row:3/-1;
+    background:#fff;
+    border-radius:10px;
+    padding:10px 15px;
+    text-align:center;
+}
+
+.edit-store-form{    
+    background:#fff;
+    border-radius:10px;
+    width:850px;
+    overflow:hidden;
+    padding:30px 30px;
+    height:fit-content;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50% , -50%);
+}
+
+.edit-store-form .title {
+    height:75px;
+    margin-bottom:15px;
+    padding:0 5px;
+}
+
+.edit-store-form .title h2{
+    color:#6210de;
+    font-size:1.5rem;
+    font-family: 'Pacifico', cursive;
+}
+
+.edit-store-form .title p.desc{
+    color:#6210de8e;
+    margin-top:10px;
+    font-size:1.2rem;
+    font-family: 'Archivo', sans-serif;
+} 
+
+.edit-store-form .signUp-form{
+    margin-top:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+}
+.edit-store-form .signUp-form .form-title h4{
+    font-family: 'Archivo', sans-serif;
+    color:#747474;
+    font-size:1rem;
+    margin-top:10px;
+}
+
+.edit-store-form .signUp-form .form-inputs{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    gap:15px;
+}
+
+.edit-store-form .signUp-form .singup-inputs-container{
+    margin-top:30px;
+    display:grid;
+    grid-template-columns : repeat(2,1fr);
+    gap:25px;
+}
+
+.edit-store-form .signUp-form .singup-inputs-container input{
+    border:1.5px solid #9a9a9a;
+    outline:none;
+    caret-color: #4700b1;
+    color:#6210de;
+    font-size:1.25rem;
+    letter-spacing:1px;
+    padding:5px;
+    transition:0.15s ease-out; 
+    width:100%;
+}
+.edit-store-form .signUp-form .input-container input:focus ~ span.input-ph{
+    color:#6210de;
+}
+
+.edit-store-form .signUp-form .input-container p{
+    display:none;
+    color:#c80c1b;
+    margin-top:5px;
+}
+
+.edit-store-form .signUp-form .input-container p.show-err{
+    display:block;
+}
+
+.edit-store-form .signUp-form .input-container input:focus{
+    border-color:#6210de;
+}
+.edit-store-form .signUp-form .input-container span.input-ph{
+    position:absolute;
+    left:10px;
+    top:-10px;
+    background:#fff;
+    font-weight:500;
+    padding: 0 10px;
+    font-family: 'Archivo', sans-serif;
+    pointer-events: none;
+    font-size:0.9rem;
+    color:#9a9a9a;
+    text-transform:capitalize;
+    transition:0.15s ease-out; 
+}
+
+.edit-store-form .signUp-form .input-container input.invalid{
+    border-color:#c80c1b;
+    color:#ff6e7a;
+    caret-color: #ff6f7b;
+}
+
+
+.edit-store-form .signUp-form .input-container{
+    position:relative;
+    height:fit-content;
+}
+
+.signUp-form .input-container .show-pass{
+    position:absolute;
+    right:5px;
+    top:5px;
+    cursor:pointer;
+}
+.signUp-form .input-container .show-pass i{
+    color:#9a9a9a;
+    display:inline-block;
+    pointer-events: none;
+    font-size:1.25rem;
+}
+
+.signUp-form .input-container input:focus ~ .show-pass i{
+    color:#6600ff;
+}
+
+.signUp-form .inputs-desc{
+    margin:10px;
+    width:100%;
+    margin:0 auto;
+    background:#888;
+    padding:5px;
+    border-radius:6px;
+}
+
+.signUp-form .inputs-desc ul{
+    padding:5px 15px;
+} 
+
+.signUp-form .inputs-desc li::marker{
+    content:'*  ';
+    color:#c80c1b;
+}
+
+.signUp-form .inputs-desc li{
+    color:#fff;
+    font-family: 'Archivo', sans-serif;
+    margin-top:10px;
+}
+
+.edit-store-form .signUp-form .input-container span.star{
+    position:absolute;
+    color:#c80c1b;
+    right:0;
+    top:-15px;
+}
+
+
+.edit-store-form .signUp-form .input-container input.invalid ~ span.input-ph{
+    color:#c80c1b;
+}
+
+.edit-store-form .signUp-form .input-container input.invalid ~ .show-pass .material-symbols-outlined{
+    color:#c80c1b;
+}
+
+.edit-store-form .signUp-form .form-inputs .submit{
+    padding:15px 40px;
+    width:fit-content;
+    border:none;
+    margin:0 auto;
+    cursor:pointer;
+    border-radius:25px;
+    color:#fff;
+    background:linear-gradient(45deg , #4700b1 , #7f2aff);
+    font-family:'Fredoka One', cursive;
+    transition:0.1s linear;
+}
+
+.edit-store-form .signUp-form .form-inputs .submit:hover,
+.back-to-infos:hover{
+    transform:scale(1.05);
+}
+
+.edit-store-form .signUp-form .input-container:nth-child(3){
+    grid-column: 1/-1;
+}
+
+.edit-store-form .signUp-form .input-container:last-child{
+    grid-column: 1/-1;
+}
+
+.back-to-infos{
+    background:linear-gradient(45deg , #4700b1 , #7f2aff);
+    color:#fff;
+    padding:8px 12px;
+    border-radius:12px;
+    border:none;
+    outline:none;
+    cursor:pointer;
+    transition:0.15s ease-out; 
+}
+
+/* icons */
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+/* media  queries*/
+@media (max-width : 1120px){
+    .edit-store-form{
+        width:650px;
+    }
+
+    .container .content .storeProfile .profile-desc .username{
+        font-size:1.1rem !important;
+    }
+
+    .container .content .store-info .store-information .storeInfo{
+        width:60%;
+        font-size: 0.75rem;
+    }
+
+    .container .content .store-info .store-information .info-title{
+        font-size:0.9rem;
+    }
+
+    .container .content .storeProfile .profile-desc .fullname{
+        font-size:1rem !important;
+    }
+
+    .container .content .storeProfile .btns{
+        flex-direction:column;
+    }
+}
+
+@media (max-width : 800px){
+    .edit-store-form{
+        width:650px;
+    }
+
+    .container .content .storeProfile .profile-desc .username{
+        font-size:1.5rem ;
+    }
+
+    .container .content {
+        grid-template-rows: repeat(8,1fr);
+    }
+
+    .content .purchased-tickets-table{
+        grid-row:5/-1;
+    }
+
+    .container .content .store-info{
+        grid-row:3/5;
+        grid-column:1/-1;
+    }
+    
+    .container .content .storeProfile{
+        grid-column:1/-1;
+    }
+
+    .container .content .store-info .store-information .storeInfo{
+        width:50%;
+        font-size: 1.1rem;
+    }
+
+    .container .content .store-info .store-information .info-title{
+        font-size:1.25rem;
+    }
+
+    .container .content .storeProfile .profile-desc .fullname{
+        font-size:1.5rem ;
+    }
+
+    .container .content .storeProfile .btns{
+        flex-direction:row !important;
+    }
+
+    .content .purchased-tickets-table table thead th{
+        font-size:0.9rem;
+    }
+
+    .content .purchased-tickets-table table tbody td{
+        font-size:0.75rem;
+    }
+}
+
+@media (max-width : 900px){
+    .edit-store-form{
+        width:650px;
+    }
+
+    .container .content .storeProfile .profile-desc .username{
+        font-size:1.1rem !important;
+    }
+
+    .container .content .store-info .store-information .storeInfo{
+        width:60%;
+        font-size: 0.75rem;
+    }
+
+    .container .content .store-info .store-information .info-title{
+        font-size:0.9rem;
+    }
+
+    .container .content .storeProfile .profile-desc .fullname{
+        font-size:1rem !important;
+    }
+
+    .container .content .storeProfile .btns{
+        flex-direction:column;
+    }
+
+}
+
+@media (max-width : 720px){
+    .edit-store-form{
+        width:450px;
+    }
+    .edit-store-form .signUp-form .input-container:nth-child(1){
+        grid-column: 1/-1;
+    }
+    .edit-store-form .signUp-form .input-container:nth-child(2){
+        grid-column: 1/-1;
+    }
+    .edit-store-form .signUp-form .input-container:nth-child(4){
+        grid-column: 1/-1;
+    }
+    .edit-store-form .signUp-form .input-container:nth-child(5){
+        grid-column: 1/-1;
+    }
+}
+
+@media (max-width : 510px){
+    .edit-store-form{
+        width:400px;
+    }
+    .edit-store-form .signUp-form .input-container:nth-child(1){
+        grid-column: 1/-1;
+    }
+    .edit-store-form .signUp-form .input-container:nth-child(2){
+        grid-column: 1/-1;
+    }
+    .edit-store-form .signUp-form .input-container:nth-child(4){
+        grid-column: 1/-1;
+    }
+    .edit-store-form .signUp-form .input-container:nth-child(5){
+        grid-column: 1/-1;
+    }
+    .form-inputs .login-inputs-container{
+        width:100%;
+    }
+
+    .container .content .store-info{
+        padding: 5px 10px;
+    }
+
+    .container .content .store-info .store-information{
+        flex-direction:column !important;
+        justify-content: start;
+        align-items: start;
+    }
+}
+
+@media (max-width : 380px){
+    .edit-store-form{
+        width:400px;
+    }
+    .edit-store-form .signUp-form .input-container:nth-child(1){
+        grid-column: 1/-1;
+    }
+    .edit-store-form .signUp-form .input-container:nth-child(2){
+        grid-column: 1/-1;
+    }
+    .edit-store-form .signUp-form .input-container:nth-child(4){
+        grid-column: 1/-1;
+    }
+    .edit-store-form .signUp-form .input-container:nth-child(5){
+        grid-column: 1/-1;
+    }
+    .form-inputs .login-inputs-container{
+        width:100%;
+    }
+
+    .container .content .store-info{
+        padding: 5px 10px;
+    }
+
+    .container .content .store-info .store-information{
+        flex-direction:column !important;
+        justify-content: start;
+        align-items: start;
+    }
+
+    .container .content .storeProfile .btns{
+        flex-direction:column !important;
+    }
+}
+

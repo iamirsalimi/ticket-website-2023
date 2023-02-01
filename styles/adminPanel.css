@@ -22,6 +22,14 @@
     margin-top:40px;
 }
 
+*td,
+*th{
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+
 .main-section{
     color:rgb(139, 139, 139);
     position:absolute;
