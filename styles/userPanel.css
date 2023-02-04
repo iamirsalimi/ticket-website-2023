@@ -996,7 +996,7 @@
 .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-date span , 
 .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-price span , 
 .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-delete{
-    color:rgb(134, 134, 134);
+    color:rgb(189, 189, 189);
 }
 
 .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count , 
@@ -1018,6 +1018,14 @@
     padding: 10px 0;
 }
 
+.user-shopping-cart .user-shopping-cart-content .right-content .ticket-details .ticket-count-sec{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    width:55%;
+}
+
 .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-price{
     width:auto;
 }
@@ -1037,7 +1045,7 @@
 }
 
 .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count .ticket-count-icon{
-    color:rgb(134, 134, 134);
+    color:rgb(189, 189, 189);
 }
 
 .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-delete,
@@ -1165,7 +1173,7 @@
 
 }
 
-@media screen and (max-width: 970px) and (min-width: 820px){
+@media screen and (max-width: 970px) and (min-width: 880px){
     .content .user-purchased-tickets table thead th{
         font-size:0.75rem;
     }
@@ -1233,7 +1241,7 @@
 
 }
 
-@media screen and (max-width: 820px) and (min-width: 590px){
+@media screen and (max-width: 880px) and (min-width: 590px){
     .content .user-profile .user-purchased-ticket-sc table tbody td{
         font-size:0.6rem;
     }
@@ -1569,4 +1577,251 @@
         font-size: 0.8rem;
       }
 
+}
+
+@media screen and (max-width: 400px) {
+    .container{
+        -webkit-box-orient:vertical;
+        -webkit-box-direction:reverse;
+            -ms-flex-direction:column-reverse;
+                flex-direction:column-reverse;
+    }
+    
+    .content .user-profile .user-purchased-ticket-sc table tbody td{
+        font-size:0.6rem;
+    }
+
+    .content .user-profile .user-purchased-ticket-sc table thead th{
+        font-size:0.75rem;
+    }
+    
+    .content .user-purchased-tickets {
+        overflow:auto;
+    }
+
+    .content .user-purchased-tickets table thead th{
+        font-size:0.75rem;
+    }
+    .content .user-purchased-tickets table tbody td{
+        font-size:0.5rem;
+    }
+
+    .content .user-purchased-tickets table tbody td .show-ticket-btn{
+        padding:2.5px;
+    }
+
+    .container .content{
+        margin:0 auto;
+    }
+
+    .container .userPanel-menu{
+        height:-webkit-fit-content;
+        height:-moz-fit-content;
+        height:fit-content;
+        width:100%;
+        min-width:unset;
+    }
+
+    .container .userPanel-menu ul{
+        -webkit-box-orient:horizontal;
+        -webkit-box-direction:normal;
+            -ms-flex-direction:row;
+                flex-direction:row;
+    }
+
+    .container .userPanel-menu ul .top-menu{
+        -webkit-box-orient:horizontal;
+        -webkit-box-direction:normal;
+            -ms-flex-direction:row;
+                flex-direction:row;
+        -webkit-box-pack: space-evenly;
+            -ms-flex-pack: space-evenly;
+                justify-content: space-evenly;
+        width:100%;
+    }
+
+    .container .userPanel-menu ul .bottom-menu{
+        border:none;
+        width:-webkit-fit-content;
+        width:-moz-fit-content;
+        width:fit-content;
+    }
+
+    .container .userPanel-menu ul li{
+        width:-webkit-fit-content;
+        width:-moz-fit-content;
+        width:fit-content;
+    }
+
+    .user-profile .user-informations-inputs{
+        display:-webkit-box;
+        display:-ms-flexbox;
+        display:flex;
+        -webkit-box-orient:vertical;
+        -webkit-box-direction:normal;
+            -ms-flex-direction:column;
+                flex-direction:column;
+        gap:10px;
+    }
+
+    .user-change-informations .user-informations-inputs .inputs{
+        -ms-grid-rows:repeat(4,1fr);
+        grid-template-rows:repeat(4,1fr);
+        margin-top:-30px;
+    }
+
+    .content .user-purchased-tickets table thead th{
+        font-size:0.75rem;
+    }
+    .content .user-purchased-tickets table tbody td{
+        font-size:0.5rem;
+    }
+
+    .container .user-infos .user-info{
+        -webkit-box-orient:horizontal;
+        -webkit-box-direction:normal;
+            -ms-flex-direction:row;
+                flex-direction:row;
+        -ms-flex-wrap:wrap;
+            flex-wrap:wrap;
+        font-size:0.8rem;
+    }
+    .container .user-infos{
+        -ms-flex-preferred-size:60%;
+            flex-basis:60%;
+    }
+
+    .container .content .user-profile{
+        -ms-grid-rows:175px 175px 1fr;
+        grid-template-rows:175px 175px 1fr;
+    }
+
+    .container .content .user-profile .user-change-informations{
+        grid-column:1/-1;
+        grid-row:3/-1;
+    }
+    .content .user-profile .user-informations{
+        grid-column:1/-1;
+        -ms-grid-row:1;
+        -ms-grid-row-span:1;
+        grid-row:1/2;
+        -webkit-box-orient:horizontal;
+        -webkit-box-direction:normal;
+            -ms-flex-direction:row;
+                flex-direction:row;
+        -webkit-box-align:center;
+            -ms-flex-align:center;
+                align-items:center;
+    }
+
+    .content .user-profile .user-purchased-ticket-sc{
+        grid-column:1/-1;
+        -ms-grid-row:2;
+        -ms-grid-row-span:1;
+        grid-row:2/3;
+    }
+
+    .user-profile .user-informations-inputs .tips .tip{
+        font-size:0.75rem;
+    }
+
+    .user-profile .user-informations-inputs .tips{
+        margin-top:-20px;
+    }
+
+    .user-change-informations .user-informations-inputs .inputs .input{
+        grid-column:1/-1;
+    }
+
+    .container .userPanel-menu ul li p{
+        display:block;
+        font-size:0.8rem;
+    }
+
+    .container .userPanel-menu ul .log-out p{
+        display:none;
+    }
+
+    .container .userPanel-menu ul li{
+        display:-webkit-box;
+        display:-ms-flexbox;
+        display:flex;
+        -webkit-box-orient:vertical;
+        -webkit-box-direction:normal;
+            -ms-flex-direction:column;
+                flex-direction:column;
+        -webkit-box-pack:center;
+            -ms-flex-pack:center;
+                justify-content:center;
+        -webkit-box-align:center;
+            -ms-flex-align:center;
+                align-items:center;
+    }
+
+    .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-titles {  
+        width: 100%;
+    }
+
+    .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-details {  
+        width: 100%;
+        margin-top: -10px;
+    }
+    .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail {  
+        -webkit-box-orient:vertical;  
+        -webkit-box-direction:normal;  
+            -ms-flex-direction:column;  
+                flex-direction:column;
+        font-size: 0.8rem;
+        gap:5px;
+    }
+
+    .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count {
+        gap: 2px;
+        width: 20%;
+    }
+
+    .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count .ticket-count-icon , 
+    .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-delete{
+        background-color:rgba(230, 229, 229, 0.296);
+    }
+
+    .container .userPanel-menu ul li{
+        text-align:center;
+    }
+
+    .user-profile .user-change-informations .modal{
+        font-size: 1rem;
+    }
+
+    .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-date {
+        -webkit-box-align: end;
+            -ms-flex-align: end;
+                align-items: flex-end;
+        font-size: 0.8rem;
+      }
+
+      .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-details{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: start;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: start;
+        gap: 10px;
+        padding-bottom:0;
+      }
+      
+      .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-details .ticket-count-sec{
+        width:100%;
+      }
+      .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-details .ticket-date{
+        width:60%;
+      }
+      .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count{
+        gap:10px;
+      }
 }

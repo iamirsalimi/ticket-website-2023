@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,100,0,200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="icon" href="images/Screenshot_20230104_233603.jpg" type="image/icon type">
-    <title>OUTINZ Add Store</title>
+    <title>OUTINZ Add Provider</title>
 </head>
 <body>
     <div class="container">
         <div class="main-section">
-            <span><a href="index.html">Home</a> / <a href="adminPanel.html">Admin Panel</a> / <a href="#">Add Store</a> </span>
+            <span><a href="index.html">Home</a> / <a href="adminPanel.html">Admin Panel</a> / <a href="#">Add Provider</a> </span>
         </div>
         <div class="add-content">
             <form action="" class="add-store">
-                <h2>add store</h2>
+                <h2>add Provider</h2>
                 <div class="add-store-tips">
                     <ul>
                         <li>All inputs are required</li>
@@ -27,23 +27,23 @@
                 </div>
                 <div class="inputs">
                     <div class="input">
-                        <span class="input-title" >Store Name</span>
+                        <span class="input-title" >Provider  Name</span>
                         <input type="text" name="store-name" required minlength="4"> 
                         <span class="star">*</span>
                     </div>
                     <div class="input">
-                        <span class="input-title" >Store UserName</span>
+                        <span class="input-title" >Provider UserName</span>
                         <input type="text" name="store-UserName" required minlength="5" maxlength="15"> 
                         <span class="star">*</span>
                         <p style="display:none;">UserName is already in use</p>
                     </div>
                     <div class="input">
-                        <span class="input-title" >Store Address</span>
-                        <input type="text" name="store-address" required> 
+                        <span class="input-title" >Provider Venue</span>
+                        <input type="text" name="store-Venue" required> 
                         <span class="star">*</span>
                     </div>
                     <div class="input">
-                        <span class="input-title" >Store Password</span>
+                        <span class="input-title" >Provider Password</span>
                         <input type="password" name="store-pass" class="pass-input" required  minlength="8" maxlength="14"> 
                         <span class="star">*</span>
                         <div class="show-pass">
@@ -60,17 +60,17 @@
                         <p></p>
                     </div>
                     <div class="input">
-                        <span class="input-title"  >Store Email</span>
+                        <span class="input-title"  >Provider Email</span>
                         <input type="text" name ="store-email" class="store-email" required > 
                         <span class="star">*</span>
                         <p></p>
                     </div>
                 </div>
-                <input type="submit" value="Add Store" data-modalTarget="add-ticket-modal" class="addStore-btn">
+                <input type="submit" value="Add Provider" data-modalTarget="add-ticket-modal" class="addStore-btn">
             </form>
             <div class="modal">
                 <div class="success">
-                    <p>store Added</p>
+                    <p>Provider Added</p>
                 </div>
             </div>
         </div>

@@ -140,7 +140,7 @@
                         <thead>
                             <tr>
                                 <th>Ticket Type</th>
-                                <th>Ticket Store</th>
+                                <th>Ticket Provider</th>
                                 <th>Start Date</th>
                                 <th>Start Hour</th>
                             </tr>
@@ -170,8 +170,8 @@
                         <tr>
                             <th>Ticket Type</th>
                             <th>ticket Status</th>
-                            <th>Ticket Store Name</th>
-                            <th>Store Address</th>
+                            <th>Ticket Provider Name</th>
+                            <th>Provider Venue</th>
                             <th>Ticket Start Date</th>
                             <th>Ticket Start Hour</th>
                             <th>ticket Purchase Date</th>
@@ -221,9 +221,9 @@
                         <div class="purchase-tips">
                             <h3 class="purchase-tips-title">Pay attention to these points before buying</h3>
                             <ul>
-                                <li><span>- </span> After purchase, your name will be registered as a ticket buyer in the store.</li>
+                                <li><span>- </span> After purchase, your name will be registered as a ticket buyer in the Provider panel.</li>
                                 <li><span>- </span> In order not to forget the date of the purchased ticket, Outinz team suggests that you write it somewhere. Also, the date and complete information of the purchased ticket can be seen in the user panel in the purchased tickets section.</li>
-                                <li><span>- </span> If a ticket is canceled for any reason. You can access the address of the store by entering the user panel in the purchased tickets section and receive your payment by referring to that location.</li>
+                                <li><span>- </span> If a ticket is canceled for any reason. You can access the Venue of the Provider by entering the user panel in the purchased tickets section and receive your payment by referring to that location.</li>
 
                             </ul>
                         </div>
@@ -250,13 +250,15 @@
                                         <span> at </span> 
                                         <div class="ticket-time">20:30</div>
                                     </div>
-                                    <div class="ticket-count">
-                                        <span class="decrease-icon ticket-count-icon" onclick="decreaseTicketCount(event)">-</span>
-                                        <span class="ticket-counter">4</span>
-                                        <span class="increase-icon ticket-count-icon" onclick="increaseTicketCount(event)">+</span>
+                                    <div class="ticket-count-sec">
+                                        <div class="ticket-count">
+                                            <span class="decrease-icon ticket-count-icon" onclick="decreaseTicketCount(event)">-</span>
+                                            <span class="ticket-counter">4</span>
+                                            <span class="increase-icon ticket-count-icon" onclick="increaseTicketCount(event)">+</span>
+                                        </div>
+                                        <div class="ticket-price"><span>$</span> 550</div>
+                                        <div class="ticket-delete">&times;</div>
                                     </div>
-                                    <div class="ticket-price"><span>$</span> 550</div>
-                                    <div class="ticket-delete">&times;</div>
                                 </div>
                             </div>
 
@@ -271,13 +273,15 @@
                                         <span> at </span>
                                         <div class="ticket-time">20:30</div>
                                     </div>
-                                    <div class="ticket-count">
-                                        <span class="decrease-icon ticket-count-icon">-</span>
-                                        <span class="ticket-counter">1</span>
-                                        <span class="increase-icon ticket-count-icon">+</span>
+                                    <div class="ticket-count-sec">
+                                        <div class="ticket-count">
+                                            <span class="decrease-icon ticket-count-icon" onclick="decreaseTicketCount(event)">-</span>
+                                            <span class="ticket-counter">4</span>
+                                            <span class="increase-icon ticket-count-icon" onclick="increaseTicketCount(event)">+</span>
+                                        </div>
+                                        <div class="ticket-price"><span>$</span> 550</div>
+                                        <div class="ticket-delete">&times;</div>
                                     </div>
-                                    <div class="ticket-price"><span>$</span> 75</div>
-                                    <div class="ticket-delete">&times;</div>
                                 </div>
                             </div>
 
@@ -292,13 +296,15 @@
                                         <span> at </span>
                                         <div class="ticket-time">20:30</div>
                                     </div>
-                                    <div class="ticket-count">
-                                        <span class="decrease-icon ticket-count-icon">-</span>
-                                        <span class="ticket-counter">2</span>
-                                        <span class="increase-icon ticket-count-icon">+</span>
+                                    <div class="ticket-count-sec">
+                                        <div class="ticket-count">
+                                            <span class="decrease-icon ticket-count-icon" onclick="decreaseTicketCount(event)">-</span>
+                                            <span class="ticket-counter">4</span>
+                                            <span class="increase-icon ticket-count-icon" onclick="increaseTicketCount(event)">+</span>
+                                        </div>
+                                        <div class="ticket-price"><span>$</span> 550</div>
+                                        <div class="ticket-delete">&times;</div>
                                     </div>
-                                    <div class="ticket-price"><span>$</span> 200</div>
-                                    <div class="ticket-delete">&times;</div>
                                 </div>
                             </div>
                             <div class="cart-detail">
@@ -312,13 +318,15 @@
                                         <span> at </span>
                                         <div class="ticket-time">20:30</div>
                                     </div>
-                                    <div class="ticket-count">
-                                        <span class="decrease-icon ticket-count-icon">-</span>
-                                        <span class="ticket-counter">2</span>
-                                        <span class="increase-icon ticket-count-icon">+</span>
+                                    <div class="ticket-count-sec">
+                                        <div class="ticket-count">
+                                            <span class="decrease-icon ticket-count-icon" onclick="decreaseTicketCount(event)">-</span>
+                                            <span class="ticket-counter">4</span>
+                                            <span class="increase-icon ticket-count-icon" onclick="increaseTicketCount(event)">+</span>
+                                        </div>
+                                        <div class="ticket-price"><span>$</span> 550</div>
+                                        <div class="ticket-delete">&times;</div>
                                     </div>
-                                    <div class="ticket-price"><span>$</span> 200</div>
-                                    <div class="ticket-delete">&times;</div>
                                 </div>
                             </div>
                             <div class="cart-detail">
@@ -332,13 +340,15 @@
                                         <span> at </span>
                                         <div class="ticket-time">20:30</div>
                                     </div>
-                                    <div class="ticket-count">
-                                        <span class="decrease-icon ticket-count-icon">-</span>
-                                        <span class="ticket-counter">2</span>
-                                        <span class="increase-icon ticket-count-icon">+</span>
+                                    <div class="ticket-count-sec">
+                                        <div class="ticket-count">
+                                            <span class="decrease-icon ticket-count-icon" onclick="decreaseTicketCount(event)">-</span>
+                                            <span class="ticket-counter">4</span>
+                                            <span class="increase-icon ticket-count-icon" onclick="increaseTicketCount(event)">+</span>
+                                        </div>
+                                        <div class="ticket-price"><span>$</span> 550</div>
+                                        <div class="ticket-delete">&times;</div>
                                     </div>
-                                    <div class="ticket-price"><span>$</span> 200</div>
-                                    <div class="ticket-delete">&times;</div>
                                 </div>
                             </div>
 
