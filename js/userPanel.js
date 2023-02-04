@@ -100,3 +100,18 @@ submitBtn.addEventListener('click',function(event){
     modal.classList.add('active')  
     checkEmail(emailInput.value)
 })
+
+function increaseTicketCount(event){
+    let ticketContainer = event.target.parentNode
+    let ticketCountElem = ticketContainer.querySelector('.ticket-counter')
+    ticketCountElem.innerHTML = +ticketCountElem.innerHTML + 1
+}
+
+function decreaseTicketCount(event){
+    let ticketContainer = event.target.parentNode
+    let ticketCountElem = ticketContainer.querySelector('.ticket-counter')
+    
+    if(+ticketCountElem.innerHTML !== 1){
+        ticketCountElem.innerHTML = +ticketCountElem.innerHTML - 1
+    }
+}

@@ -5,13 +5,17 @@
 *{
     margin:0;
     padding:0;
-    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+            box-sizing:border-box;
 }
 
 body{
     height:120vh;
+    display:-ms-grid;
     display:grid;
     place-content: center;
+    background:-webkit-gradient(linear , left top, right top , from(#8051ef) , to(#4800ef));
+    background:-o-linear-gradient(left , #8051ef , #4800ef);
     background:linear-gradient(90deg , #8051ef , #4800ef)
 }
 
@@ -21,10 +25,19 @@ body{
     width:850px;
     overflow:hidden;
     padding:30px 30px;
+    height:-webkit-fit-content;
+    height:-moz-fit-content;
     height:fit-content;
+    display:-webkit-box;
+    display:-ms-flexbox;
     display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+        -ms-flex-direction:column;
+            flex-direction:column;
+    -webkit-box-pack:start;
+        -ms-flex-pack:start;
+            justify-content:flex-start;
 }
 
 .container .title {
@@ -48,9 +61,16 @@ body{
 
 .container .signUp-form{
     margin-top:20px;
+    display:-webkit-box;
+    display:-ms-flexbox;
     display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+        -ms-flex-direction:column;
+            flex-direction:column;
+    -webkit-box-pack:start;
+        -ms-flex-pack:start;
+            justify-content:flex-start;
 }
 .container .signUp-form .form-title h4{
     font-family: 'Archivo', sans-serif;
@@ -60,15 +80,24 @@ body{
 }
 
 .container .signUp-form .form-inputs{
+    display:-webkit-box;
+    display:-ms-flexbox;
     display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+        -ms-flex-direction:column;
+            flex-direction:column;
+    -webkit-box-pack:start;
+        -ms-flex-pack:start;
+            justify-content:flex-start;
     gap:15px;
 }
 
 .container .signUp-form .singup-inputs-container{
     margin-top:30px;
+    display:-ms-grid;
     display:grid;
+    -ms-grid-columns : 1fr 25px 1fr;
     grid-template-columns : repeat(2,1fr);
     gap:25px;
 }
@@ -81,6 +110,8 @@ body{
     font-size:1.25rem;
     letter-spacing:1px;
     padding:5px;
+    -webkit-transition:0.15s ease-out;
+    -o-transition:0.15s ease-out;
     transition:0.15s ease-out; 
     width:100%;
 }
@@ -115,6 +146,8 @@ body{
     font-size:0.9rem;
     color:#9a9a9a;
     text-transform:capitalize;
+    -webkit-transition:0.15s ease-out;
+    -o-transition:0.15s ease-out;
     transition:0.15s ease-out; 
 }
 
@@ -127,6 +160,8 @@ body{
 
 .container .signUp-form .input-container{
     position:relative;
+    height:-webkit-fit-content;
+    height:-moz-fit-content;
     height:fit-content;
 }
 
@@ -191,19 +226,26 @@ body{
 
 .container .signUp-form .form-inputs .submit{
     padding:15px 40px;
+    width:-webkit-fit-content;
+    width:-moz-fit-content;
     width:fit-content;
     border:none;
     margin:0 auto;
     cursor:pointer;
     border-radius:25px;
     color:#fff;
+    background:-o-linear-gradient(45deg , #4700b1 , #7f2aff);
     background:linear-gradient(45deg , #4700b1 , #7f2aff);
     font-family:'Fredoka One', cursive;
+    -webkit-transition:0.1s linear;
+    -o-transition:0.1s linear;
     transition:0.1s linear;
 }
 
 .container .signUp-form .form-inputs .submit:hover{
-    transform:scale(1.05);
+    -webkit-transform:scale(1.05);
+        -ms-transform:scale(1.05);
+            transform:scale(1.05);
 }
 
 .container .signUp-form .input-container:nth-child(3){
