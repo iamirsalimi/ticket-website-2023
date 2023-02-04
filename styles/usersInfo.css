@@ -733,13 +733,20 @@ body{
     margin-top:10px;
 }
 
-.edit-user-form .signUp-form .input-container span.star{
-    position:absolute;
-    color:#c80c1b;
-    right:0;
-    top:-15px;
+.edit-user-form .signUp-form .input-container select{
+    width:100%;
+    padding:12px 24px;
+    border-radius:5px;
+    background:#fff;
+    color: #6210de;
+    border:1px solid #6210de;
+    cursor:pointer;
+    margin-bottom:12px;
 }
 
+.edit-user-form .signUp-form .input-container.userType-input-container span{
+    color: #6210de !important;
+}
 
 .edit-user-form .signUp-form .input-container input.invalid ~ span.input-ph{
     color:#c80c1b;

@@ -608,10 +608,6 @@
     cursor:pointer;
 }
 
-.customers-content .customers-table a{
-    text-decoration:none;
-}
-
 .customers-content .customers-table,
 .stores-content .stores-table,
 .tickets-content .tickets-table{
