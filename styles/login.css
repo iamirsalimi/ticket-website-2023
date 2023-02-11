@@ -277,7 +277,7 @@ body{
 
 .container .logIn-form .input-container input:focus ~ .show-pass-icons .icon-wrapper svg,
 .container .logIn-form .input-container input:valid ~ .show-pass-icons .icon-wrapper svg{
-    fill:#6210de !important;
+    fill:#6210de;
 }
 
 /* media  queries*/
@@ -302,6 +302,18 @@ body{
 @media (max-width : 510px){
     .container{
         width:400px;
+    }
+    .form-inputs .login-inputs-container{
+        width:100%;
+    }
+    .form-inputs .login-inputs-container input{
+        width:100%;
+    }
+}
+
+@media (max-width : 400px){
+    .container{
+        width:350px;
     }
     .form-inputs .login-inputs-container{
         width:100%;

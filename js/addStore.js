@@ -3,30 +3,29 @@ let $ = document
 let emailInput = $.querySelector('.store-email')
 let passInputs = $.querySelectorAll('.pass-input')
 let showPass = $.querySelectorAll('.show-pass span')
-
+let showPassIcon = document.querySelector('.pass-input-container .show-pass-icon')
+let hidePassIcon = document.querySelector('.pass-input-container .hide-pass-icon')
+let passInputElem = document.querySelector('.pass-input-container input')
+let rShowPassIcon = document.querySelector('.repeat-pass-input-container .show-pass-icon')
+let rHidePassIcon = document.querySelector('.repeat-pass-input-container .hide-pass-icon')
+let rPassInput = document.querySelector('.repeat-pass-input-container input')
 let passInput
 // checking Email 
-function checkEmail(event){
+emailInput.addEventListener('keyup',function(event){
     let emailValue = event.target.value.trim()
-    let emailErr = event.target.parentNode.lastElementChild
-    let submitBtn = event.target.parentNode.parentNode.parentNode.lastElementChild
-    console.log( emailErr.parentNode)
-    if(!emailValue.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
-        emailErr.innerHTML = 'Please enter a Valid Email'
-        emailErr.parentNode.classList.add('invalid')
-        submitBtn.setAttribute('disabled', 'disabled')
-        return false
+    let linkRegex = /^\w+([\.-]?\w)*@\w+([\.-]?\w)*(\.\w{2,3})+$/g
+    if(linkRegex.test(emailValue) || emailValue === ''){
+        event.target.parentNode.classList.remove('invalid')
+    } else {
+        event.target.parentNode.classList.add('invalid')
     }
-    
-    emailErr.innerHTML = ''
-    emailErr.parentNode.classList.remove('invalid')
-    submitBtn.removeAttribute('disabled')
-}
+})
 
 // checking Paswwords
 
 function checkPassword(event){
-    let passErr = passInputs[1].parentNode.lastElementChild
+    let passErr = passInputs[1].parentNode.querySelector('p')
+    console.log(passErr)
     let submitBtn = event.target.parentNode.parentNode.parentNode.lastElementChild
 
     if(passInputs[0].value !== passInputs[1].value){
@@ -44,23 +43,31 @@ function checkPassword(event){
 }
 
 // show and hide password 
-showPass.forEach(function(showPassElem){
-    showPassElem.parentNode.addEventListener('click',function(event){
-        //get passInput from target show passBtn
-        passInput = event.target.parentNode.querySelector('input') 
-        
-        if(passInput.type === 'password'){
-            passInput.type = 'text'
-            showPassElem.innerHTML = 'visibility_off'
-        } else {
-            passInput.type = 'password'
-            showPassElem.innerHTML = 'visibility'
-        }
-    })
+showPassIcon.addEventListener('click',function(){
+    hidePassIcon.removeAttribute('style')
+    showPassIcon.style.display = 'none'
+    passInputElem.type = 'text'
+})
+
+hidePassIcon.addEventListener('click',function(){
+    showPassIcon.removeAttribute('style')
+    hidePassIcon.style.display = 'none'
+    passInputElem.type = 'password'
+})
+
+rShowPassIcon.addEventListener('click',function(){
+    rHidePassIcon.removeAttribute('style')
+    rShowPassIcon.style.display = 'none'
+    rPassInput.type = 'text'
+})
+
+rHidePassIcon.addEventListener('click',function(){
+    rShowPassIcon.removeAttribute('style')
+    rHidePassIcon.style.display = 'none'
+    rPassInput.type = 'password'
 })
 
 
 passInputs.forEach(function(passInput){
     passInput.addEventListener('keyup',checkPassword)
 })
-emailInput.addEventListener('keyup',checkEmail)

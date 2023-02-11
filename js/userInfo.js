@@ -11,10 +11,15 @@ let addTicketToUserBtn = $.querySelector('.addTicket-btn')
 let editTicketModal = $.querySelector('.modal-add-ticket-details') 
 let closeEditModalBtn = $.getElementById('cancel-btn')
 let forms = $.querySelectorAll('form')
-let formTitle = $.querySelector('.title h2')
-let formDesc = $.querySelector('.title p')
-let showPass =  $.querySelectorAll('.show-pass i')
+let ticketInput = $.querySelector('.add-content form .ticket-input')
+let emailInput = $.querySelector('.email-input')
 let formTarget , passTarget
+
+window.addEventListener('load',function(){
+    signUpInputElems.forEach(function(signUpInputElem){
+        signUpInputElem.value = ''
+    })
+})
 
 function clearSpace(event){
     event.target.value = event.target.value.trim()
@@ -24,30 +29,14 @@ signUpInputElems.forEach(function(signUpInputElem){
     signUpInputElem.addEventListener('keyup',clearSpace)
 })
 
-signUpInputElems[signUpInputElems.length-1].addEventListener('blur',function(event){
+emailInput.addEventListener('blur',function(event){
     let emailValue = event.target.value
     let linkRegex = /^\w+([\.-]?\w)*@\w+([\.-]?\w)*(\.\w{2,3})+$/g
     if(linkRegex.test(emailValue) || emailValue.trim() === ''){
-        event.target.classList.remove('invalid')
-        event.target.parentNode.lastElementChild.classList.remove('show-err')
+        event.target.parentNode.classList.remove('invalid')
     } else {
-        event.target.classList.add('invalid')
-        event.target.parentNode.lastElementChild.classList.add('show-err')
+        event.target.parentNode.classList.add('invalid')
     }
-})
-
-// show pass
-showPass.forEach(function(showPassElem){
-    showPassElem.parentNode.addEventListener('click',function(event){
-        passTarget = $.querySelector('.'+event.target.dataset.passtarget)
-        if(passTarget.type === 'password'){
-            passTarget.type = 'text'
-            showPassElem.className = 'fa-solid fa-eye-slash'
-        } else {
-            passTarget.type = 'password'
-            showPassElem.className = 'fa-solid fa-eye'
-        }
-    })
 })
 
 editUserBtn.addEventListener('click',function(){
@@ -72,7 +61,9 @@ backBtns.forEach(function(backBtn){
 
 addTicketToUserBtn.addEventListener('click',function(event){
     event.preventDefault()
-    editTicketModal.classList.add('active')
+    if(ticketInput.value.trim()){
+        editTicketModal.classList.add('active')
+    }
 })
 
 closeEditModalBtn.addEventListener('click',function(){

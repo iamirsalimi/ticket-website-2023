@@ -5,12 +5,17 @@ let editForm = $.querySelector('.edit-store-form')
 let editBtn = $.querySelector('.storeProfile .btns .edit-store')
 let backBtn = $.querySelector('.back-to-infos')
 let signUpInputElems = $.querySelectorAll('.singup-inputs-container input')
-let formTarget
 let forms = $.querySelectorAll('form')
 let formTitle = $.querySelector('.title h2')
 let formDesc = $.querySelector('.title p')
 let showPass =  $.querySelectorAll('.show-pass i')
-let passTarget
+let formTarget , passTarget
+
+window.addEventListener('load',function(){
+    signUpInputElems.forEach(function(signUpInputElem){
+        signUpInputElem.value = ''
+    })
+})
 
 function clearSpace(event){
     event.target.value = event.target.value.trim()

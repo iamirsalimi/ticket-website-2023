@@ -635,8 +635,8 @@ body{
 .edit-user-form .signUp-form .singup-inputs-container input{
     border:1.5px solid #9a9a9a;
     outline:none;
-    caret-color: #4700b1;
-    color:#6210de;
+    caret-color: #9a9a9a;
+    color:#9a9a9a;
     font-size:1.25rem;
     letter-spacing:1px;
     padding:5px;
@@ -645,22 +645,35 @@ body{
     transition:0.15s ease-out; 
     width:100%;
 }
+
+.edit-user-form .signUp-form .input-container.invalid input{
+    caret-color: #c80c1b !important;
+    color:#ff293b !important;
+    border:1.5px solid #ff293b !important;
+}
+
+.edit-user-form .signUp-form .input-container.invalid span.input-ph{
+    color:#ff293b !important;
+}
+
 .edit-user-form .signUp-form .input-container input:focus ~ span.input-ph{
     color:#6210de;
 }
 
 .edit-user-form .signUp-form .input-container p{
     display:none;
-    color:#c80c1b;
+    color:#ff293b;
     margin-top:5px;
 }
 
-.edit-user-form .signUp-form .input-container p.show-err{
+.edit-user-form .signUp-form .input-container.invalid p{
     display:block;
 }
 
 .edit-user-form .signUp-form .input-container input:focus{
     border-color:#6210de;
+    caret-color: #6210de;
+    color:#6210de;
 }
 .edit-user-form .signUp-form .input-container span.input-ph{
     position:absolute;
