@@ -130,11 +130,19 @@ body{
     position:absolute;
     top:0;
     left:0;
+    border:none;
+    outline:none;
     background:#fff;
     padding:5px 10px;
     border-radius:0 0 22px 0;
     cursor:pointer;
     color:rgb(53, 0, 106);
+}
+
+.container .ticket-details  .details .backBtn svg{
+    fill:rgb(53, 0, 106);
+    width:1.5rem;
+    height:1.5rem;
 }
 
 .container .ticket-details  .details .detail{
@@ -176,6 +184,11 @@ body{
     font-family: 'M PLUS 1', sans-serif;
 }
 
+.content .ticket-btns svg{
+    fill:rgb(53, 0, 106);
+    width:1.25rem;
+    height:1.25rem;
+}
 
 /* icon  */
 

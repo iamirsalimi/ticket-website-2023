@@ -82,6 +82,12 @@ body{
   font-size:1.2rem;
 }
 
+.container .top-section .container-title .back-history svg{
+  fill:#fff;
+  width:1.2rem;
+  height:1.2rem;
+}
+
 .container .top-section .container-title .back-history:hover{
   background:rgb(75, 0, 149);
 }
@@ -327,14 +333,16 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 
-.ticket-type .select-box .selected .material-symbols-rounded{
-  font-size:2rem;
+.ticket-type .select-box .selected svg{
+  fill:#f5f6fa;
+  width:1.5rem;
+  height:1.5rem;
   -webkit-transition:all 0.25s ease-in-out;
   -o-transition:all 0.25s ease-in-out;
   transition:all 0.25s ease-in-out;
 }
 
-.ticket-type .select-box .options-container.active + .selected .material-symbols-rounded{
+.ticket-type .select-box .options-container.active + .selected svg{
   -webkit-transform:rotate(180deg);
       -ms-transform:rotate(180deg);
           transform:rotate(180deg);
