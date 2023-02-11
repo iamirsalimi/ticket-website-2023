@@ -22,12 +22,12 @@ body{
 }
 
 ::-webkit-scrollbar{
-    width:12px;
+    width:10px;
     background:#ecf1f0;
 }
 
 ::-webkit-scrollbar-thumb{
-    width:10px;
+    width:8px;
     background:#18003d;
     border-radius:20px;
 }

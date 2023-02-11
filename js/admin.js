@@ -5,7 +5,8 @@ let $ = document
 let menuItems = $.querySelectorAll('.menuList li')
 let sectionElems = $.querySelectorAll('.content section') 
 let menuTitle = $.querySelector('.content-section-title')
-
+let content = $.querySelector('.container')
+let loader = $.querySelector('.loader') 
 // dashboard shortcuts 
 let goToCustomers = $.querySelector('.all-users-title button')
 let goToTickets = $.querySelector('.recent-purchases-title button')
@@ -26,6 +27,17 @@ let searchBtn = $.querySelector('.serachbar span')
 
 let userTargetMenu , userTargetSep , targetSepElem , usernames , passInput
 
+loader
+window.addEventListener('load',function(){
+    content.classList.remove('content-con')
+    setTimeout(function(){
+        loader.classList.add('hidden')
+        setTimeout(function(){
+            loader.style.display = 'none'
+        },1000)
+    },500)
+})
+
 // functions
 function clearInputsValueHandler(){
     let inputs = $.querySelectorAll('input')
@@ -35,22 +47,6 @@ function clearInputsValueHandler(){
         }
     })
 }
-
-// show and hide password 
-showPass.forEach(function(showPassElem){
-    showPassElem.parentNode.addEventListener('click',function(event){
-        //get passInput from target show passBtn
-        passInput = event.target.parentNode.querySelector('input') 
-        
-        if(passInput.type === 'password'){
-            passInput.type = 'text'
-            showPassElem.innerHTML = 'visibility_off'
-        } else {
-            passInput.type = 'password'
-            showPassElem.innerHTML = 'visibility'
-        }
-    })
-})
 
 // checking Email 
 function checkEmail(event){
@@ -226,7 +222,7 @@ menuItems.forEach(function(menuItem){
 searchInput.addEventListener('keyup',function(event){
     let usernames = $.querySelectorAll('.container .content .username')
     usernames.forEach(function(username){
-        if(username.innerHTML.toLocaleLowerCase().includes(event.target.value.trim())){
+        if(username.innerHTML.toLocaleLowerCase().includes(event.target.value.toLocaleLowerCase().trim())){
             username.parentNode.style.display = 'table-row'
         } else {
             username.parentNode.style.display = 'none'

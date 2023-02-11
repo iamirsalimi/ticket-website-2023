@@ -92,10 +92,12 @@ function clearInputsValue(){
     })
 }
 
+
+// search
 searchInput.addEventListener('keyup',function(){
     let usernames = $.querySelectorAll('.container .content .store-purchased-tickets .username')
     usernames.forEach(function(username){
-        if(username.innerHTML.toLocaleLowerCase().includes(event.target.value.trim())){
+        if(username.innerHTML.toLocaleLowerCase().includes(event.target.value.toLocaleLowerCase().trim())){
             username.parentNode.style.display = 'table-row'
         } else {
             username.parentNode.style.display = 'none'
