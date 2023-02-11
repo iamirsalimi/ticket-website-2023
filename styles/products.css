@@ -692,12 +692,86 @@ body{
 
   .container .products{
     padding-top:30px;
+    margin-left:-10px;
+    width:108%;
   }
 
   .container .products .ticket:hover {
     -webkit-transform:unset;
         -ms-transform:unset;
             transform:unset;
+  }
+  .container .products .ticket .top-ticket::before,
+  .container .products .ticket .top-ticket::after{
+    bottom:22%;
+  }
+}
+
+
+@media screen and (max-width:340px){
+  .container .products{
+    -ms-grid-columns:1fr;
+    grid-template-columns:1fr;
+    gap:75px;
+  }
+
+  .container .top-section .container-title .back-history{
+    font-size:0.9rem;
+  }
+  
+  .container .top-section .container-title{
+    gap:10px;
+  }
+
+  .container .top-section{
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+        -ms-flex-direction:column;
+            flex-direction:column;
+    gap:15px;
+    height:100px;
+  }
+  .container .top-section .container-title{
+    position:absolute;
+    left:0;
+  }
+
+  .container .top-section .ticket-type{
+    position:absolute;
+    bottom:-10px;
+    right:0;
+    width:100%;
+  }
+
+  .container .products .ticket .bottom-ticket button{
+    font-size:0.9rem;
+  }
+  
+  .container .top-section .ticket-type .select-box{
+    width:100% !important;
+    width:unset;
+  }
+  .container .products .ticket {
+    width:275px;
+    left:-10px;
+  }
+
+  .container .products{
+    padding-top:30px;
+    margin-left:-15px;
+    width:108%;
+    background:none;
+  }
+
+  .container .products .ticket:hover {
+    -webkit-transform:unset;
+        -ms-transform:unset;
+            transform:unset;
+  }
+
+  .container .products .ticket .top-ticket::before,
+  .container .products .ticket .top-ticket::after{
+    background:rgb(215, 215, 215);
   }
   .container .products .ticket .top-ticket::before,
   .container .products .ticket .top-ticket::after{

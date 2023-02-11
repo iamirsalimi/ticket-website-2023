@@ -1286,6 +1286,10 @@ footer .copy-write{
         top:110%;
     }
 
+    .events-section .events-header .title h2{
+        font-size:2rem;
+    }
+
     .header-down .header-down-title{
         font-size:1.75rem;
     }
@@ -1307,6 +1311,10 @@ footer .copy-write{
     
     .header-down{
         top:110%;
+    }
+    
+    .events-section .events-header .title h2{
+        font-size:2rem;
     }
     
     .services .services-content h2{
@@ -1336,8 +1344,17 @@ footer .copy-write{
         padding:10px 30px;
     }
     
+    .contactus-section .right-contact .right-descs .contact:last-child svg{
+        width:8rem;
+        margin-left:-5px;
+    }
+
     .header-down{
         top:110%;
+    }
+
+    .events-section .events-header .title h2{
+        font-size:2rem;
     }
 
     .services .services-content h2{
@@ -1732,6 +1749,13 @@ footer .copy-write{
         width:310px;
         height:400px;
     }
+
+    .cards-container .cards .card:hover{
+        -webkit-transform:unset;
+        -ms-transform:unset;
+            transform:unset;
+    }
+
     .events-section{
         width:calc(100%-80px);
     }
