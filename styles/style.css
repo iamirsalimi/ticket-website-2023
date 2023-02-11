@@ -1136,8 +1136,9 @@ nav.scrolling{
     color:#ca1414;
 }
 
-.contactus-section .right-contact .right-descs .contact:last-child i{
-    color:#ca1414;
+.contactus-section .right-contact .right-descs .contact:last-child svg{
+    fill:#ca1414 !important;
+    width:3rem;
 }
 
 /* footer */

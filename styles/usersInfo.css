@@ -359,9 +359,10 @@ body{
             align-items:center;
 }
 
-.container .content .userProfile .profile span{
-    color:#371B58;
-    font-size:4rem;
+.container .content .userProfile .profile svg{
+    fill:#371B58;
+    width:4rem;
+    height:4rem;
 }
 
 .container .content .userProfile .profile-desc .username{

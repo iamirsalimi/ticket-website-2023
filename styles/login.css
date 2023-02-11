@@ -255,6 +255,31 @@ body{
     text-decoration:underline;
 }
 
+.input-container .show-pass-icons{
+    position:absolute;
+    right:5px;
+    top:3px;;
+}
+
+.input-container .show-pass-icons .icon-wrapper{
+    padding:2px 5px;
+    background:none;
+    border:none;
+    outline:none;
+    cursor:pointer;
+}
+
+.input-container .show-pass-icons .icon-wrapper svg{
+    fill:#747474;
+    width:1.5rem;
+    height:1.5rem;
+}
+
+.container .logIn-form .input-container input:focus ~ .show-pass-icons .icon-wrapper svg,
+.container .logIn-form .input-container input:valid ~ .show-pass-icons .icon-wrapper svg{
+    fill:#6210de !important;
+}
+
 /* media  queries*/
 @media (max-width : 900px){
     .container{

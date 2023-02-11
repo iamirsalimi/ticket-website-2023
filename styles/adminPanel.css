@@ -135,25 +135,28 @@
     font-family: 'Bree Serif', serif;
     pointer-events: none;
 }
-.container aside .menuItems .menuList li .material-symbols-rounded,
-.container aside .menuItems .menuList li .material-symbols-outlined{
+.container aside .menuItems .menuList li svg{
+    fill:#fff;
     pointer-events: none;
+    width:1.5rem;
+    height:1.5rem;
 }
 
-.container aside .menuItems .menuList li:hover .material-symbols-rounded,
-.container aside .menuItems .menuList li:hover .material-symbols-outlined{
-    color:#c490ff;
+.container aside .menuItems .menuList li:hover svg{
+    fill:#c490ff !important;
 }
 
 .container aside .menuItems .menuList li:hover .menu-title{
     color:#c490ff;
 }
 
-.container aside .menuItems .menuList li.active,
-.container aside .menuItems .menuList li.active .material-symbols-rounded,
-.container aside .menuItems .menuList li.active .material-symbols-outlined{
+.container aside .menuItems .menuList li.active{
     background:#fff;
     color:#270062;
+}
+
+.container aside .menuItems .menuList li.active svg{
+    fill:#270062 ;
 }
 
 .container aside .logout{
@@ -188,14 +191,14 @@
     color:#e6d6ff;
 }
 
-.container aside .logout:hover .menu-title,
-.container aside .logout:hover span{
+.container aside .logout:hover .menu-title{
     color:#18003d;
 }
 
-.container aside .logout span{
-    color:#e6d6ff;
-    font-size:1.5rem;
+.container aside .logout svg{
+    fill:rgb(252, 64, 64);
+    width:1.5rem;
+    height:1.5rem;
 }
 
 /* Menu Item section Separator */
@@ -388,15 +391,22 @@
     border-radius:10px;
 }
 
-.container .content .dashboard-content .show-number-box span{
+.container .content .dashboard-content .show-number-box .icon-wrapper{
     background:#fff;
     display:block;
     border-radius:50% 50% 0 0;
-    color:#810CA8;
     width:60px;
     height:60px;
     font-size:1.5rem;
-    line-height:60px;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack:center;
+        -ms-flex-pack:start;
+            justify-content:center;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
     border-bottom:2px solid #810CA8;
     position:absolute;
     top:-30px;
@@ -404,6 +414,12 @@
     -webkit-transform:translateX(-50%);
         -ms-transform:translateX(-50%);
             transform:translateX(-50%);
+}
+
+.container .content .dashboard-content .show-number-box .icon-wrapper svg{
+    fill:#810CA8;
+    width:1.5rem;
+    height:1.5rem;
 }
 
 .container .content .dashboard-content .show-number-box .box-show-number-box{
@@ -485,6 +501,7 @@
     background:none;
     border:none;
     cursor:pointer;
+    padding:2px 5px;
     -webkit-transition: 0.2s ease-out;
     -o-transition: 0.2s ease-out;
     transition: 0.2s ease-out;
@@ -495,9 +512,10 @@
     background:#e3d0ff;
 }
 
-.container .content .dashboard-content .users-list .table-title span{
-    font-size:2rem;
-    color:#6600ff;
+.container .content .dashboard-content .users-list .table-title svg{
+    width:1.5rem;
+    height:1.5rem;
+    fill:#6600ff;
 
 }
 .container .content .dashboard-content .users-list .purchases-list table, 
@@ -594,18 +612,32 @@
     color:#6a0afb;
 }
 
-.serachbar span{
+.serachbar .search-icon-wrapper{
     position:absolute;
     right:0;
     top:0;
     width:40px;
     height:100%;
     padding:10px;
-    line-height:10px;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;            
     border-radius: 0 10px 10px 0;
     background:#3b0084;
     color:#ebd8ff;
     cursor:pointer;
+}
+
+.serachbar .search-icon-wrapper svg{
+    width:1.5rem;
+    height:1.5rem;
+    fill:#ebd8ff;
 }
 
 .customers-content .customers-table,
@@ -967,9 +999,10 @@
         -ms-flex-align: center;
             align-items: center;
 }
-.profile-content .admin-profile .admin-pic .material-symbols-outlined{
-    font-size:4rem;
-    color:#4800b4;
+.profile-content .admin-profile .admin-pic svg{
+    width:4rem;
+    height:4rem;
+    fill:#4800b4;
 }
 
 .profile-content .admins-table{

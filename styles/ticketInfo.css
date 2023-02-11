@@ -360,9 +360,10 @@ body{
             align-items:center;
 }
 
-.container .content .ticketProfile .profile span{
-    color:#371B58;
-    font-size:4rem;
+.container .content .ticketProfile .profile svg{
+    fill:#371B58;
+    width:4rem;
+    height:4rem;
 }
 
 .container .content .ticketProfile .profile-desc{
