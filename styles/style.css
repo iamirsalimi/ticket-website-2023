@@ -1273,6 +1273,32 @@ footer .copy-write{
 
 /* medias */
 
+@media (max-width:375px) {
+    .cards-container .cards .card{
+        padding:5px 58px !important;
+    }
+
+    .services .services-content h2{
+        font-size:2rem;
+    }
+
+    .header-down{
+        top:110%;
+    }
+
+    .header-down .header-down-title{
+        font-size:1.75rem;
+    }
+
+    .header-up nav{
+        padding:5px 15px !important;
+    }
+
+    .header-down .type{
+        font-size:1.25rem;
+        padding: 0 5px;
+    }
+}
 
 @media (max-width:400px) {
     .cards-container .cards .card{
@@ -1283,6 +1309,10 @@ footer .copy-write{
         top:110%;
     }
     
+    .services .services-content h2{
+        font-size:2rem;
+    }
+
     .details .detail .detail-title{
         font-size:0.8rem;
     }
@@ -1301,28 +1331,6 @@ footer .copy-write{
     }
 }
 
-@media (max-width:375px) {
-    .cards-container .cards .card{
-        padding:5px 45px !important;
-    }
-
-    .header-down{
-        top:110%;
-    }
-
-    .header-down .header-down-title{
-        font-size:1.75rem;
-    }
-
-    .header-up nav{
-        padding:5px 15px !important;
-    }
-
-    .header-down .type{
-        font-size:1.25rem;
-        padding: 0 5px;
-    }
-}
 @media (max-width:550px) {
     .cards-container .cards .card{
         padding:10px 30px;
@@ -1330,6 +1338,10 @@ footer .copy-write{
     
     .header-down{
         top:110%;
+    }
+
+    .services .services-content h2{
+        font-size:2rem;
     }
     
     .header-down .header-down-title{
