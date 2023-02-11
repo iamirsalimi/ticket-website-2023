@@ -539,12 +539,12 @@
     background:rgb(52, 52, 52);
 }
 
-.user-profile .user-change-informations .modal{
+.user-profile .user-change-informations .success-modal,
+.user-profile .user-change-informations .err-modal{
     background:#f0f0f0;
     height:-webkit-fit-content;
     height:-moz-fit-content;
     height:fit-content;
-    color:#54c441;
     font-family: 'Radio Canada', sans-serif;
     position:absolute;
     left:50%;
@@ -564,8 +564,8 @@
     overflow:hidden;
 }
 
-.user-profile .user-change-informations .modal .success, 
-.user-profile .user-change-informations .modal .err{
+.user-profile .user-change-informations .success-modal .success, 
+.user-profile .user-change-informations .err-modal .err{
     display:-webkit-box;
     display:-ms-flexbox;
     display:flex;
@@ -582,29 +582,33 @@
     gap:10px;
 }
  
-.user-profile .user-change-informations .modal .message{
+.user-profile .user-change-informations .success-modal .message,
+.user-profile .user-change-informations .err-modal .message{
     text-transform:capitalize;
     text-align: center;
 }
-.user-profile .user-change-informations .modal .err {
+.user-profile .user-change-informations .err-modal .err .message{
     color:rgb(255, 78, 78);
 }
 
-.user-profile .user-change-informations .modal .success .message{
+.user-profile .user-change-informations .success-modal .success .message{
     color:#54c441;
 }
 
-.user-profile .user-change-informations .modal.active{
+.user-profile .user-change-informations .success-modal.active,
+.user-profile .user-change-informations .err-modal.active{
     top:50%;
 }
 
-.user-profile .user-change-informations .modal img{
+.user-profile .user-change-informations .success-modal img,
+.user-profile .user-change-informations .err-modal img{
     height:auto;
     width:200px;
     border-radius:8px;
 }
 
-.user-profile .user-change-informations .modal button{
+.user-profile .user-change-informations .success-modal button,
+.user-profile .user-change-informations .err-modal button{
     padding:12px 24px;
     width:200px;
     border-radius:8px;
@@ -616,19 +620,19 @@
     color:#fefefe;
 }
 
-.user-profile .user-change-informations .modal .success button{
+.user-profile .user-change-informations .success-modal .success button{
     background:#54c441;
 }
 
-.user-profile .user-change-informations .modal .success button:hover{
+.user-profile .user-change-informations .success-modal .success button:hover{
     background:#3f9430;
 }
 
-.user-profile .user-change-informations .modal .err button{
+.user-profile .user-change-informations .err-modal .err button{
     background:rgb(255, 78, 78);
 }
 
-.user-profile .user-change-informations .modal .err button:hover{
+.user-profile .user-change-informations .err-modal .err button:hover{
     background:rgb(250, 32, 32);
 }
 
@@ -1042,6 +1046,29 @@
             align-items:center;
     gap:25px;
     width:25%;
+}
+
+.user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count .ticket-counter{
+    background:none;
+    border:none;
+    width:15px;
+    font-size:1.25rem;
+    outline:none;
+}
+
+.user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count input:disabled{
+    color:#000;
+}
+
+.user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count .ticket-counter::-webkit-outer-spin-button,
+.user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count .ticket-counter::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count input[type=number] {
+  -moz-appearance: textfield;
 }
 
 .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count .ticket-count-icon{

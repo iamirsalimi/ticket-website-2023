@@ -3,9 +3,8 @@ let $ = document
 let menuSections = $.querySelectorAll('section')
 let menu = $.querySelectorAll('.storePanel-menu .top-menu li')
 let targetMenu , targetPasswordInput
-let closeModalBtns = $.querySelectorAll('.modal .close-modalBtn button')
+let closeModalBtns = $.querySelectorAll('.close-modalBtn button')
 let submitBtn = $.querySelector('.submit')
-let modal = $.querySelector('.modal')
 let emailInput = $.querySelector('.input .email-input')
 let content = $.querySelector('.container')
 let loader = $.querySelector('.loader')
@@ -108,11 +107,10 @@ searchInput.addEventListener('keyup',function(){
 // show and hide Modal
 closeModalBtns.forEach(function(closeModalBtn){
     closeModalBtn.addEventListener('click',function(){
-        modal.classList.remove('active')
+        closeModalBtn.parentNode.parentNode.parentNode.classList.remove('active')
     })
 })
 
 submitBtn.addEventListener('click',function(event){
-    event.preventDefault() 
-    checkEmail(emailInput.value)
+    event.preventDefault()
 })

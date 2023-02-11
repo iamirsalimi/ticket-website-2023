@@ -77,34 +77,33 @@
                                 <input type="text" placeholder="Green Or Stinson Or...">
                                 <span class="input-title">Last Name</span>
                             </div>
-                            <div class="input">
-                                <input type="text" class="email-input" placeholder="MaxSt1997@gmail.com Or ...">
-                                <span class="input-title">Email</span>
-                            </div>
                         </div>
                         <input type="submit" class="submit" value="Save All">
                     </form>
-                    <div class="modal">
-                        <div class="success" style="display:none;">
+
+                    <div class="success-modal">
+                        <div class="success">
                             <div class="icon">
                                 <img src="images/successfull.gif" alt="seccessfull">
                             </div>
-                            <p class="message">dsfh</p>
-                            <div class="close-modalBtn">
-                                <button>Okay</button>
-                            </div>
-                        </div>
-
-                        <div class="err">
-                            <div class="icon">
-                                <img src="images/error.gif" alt="error">
-                            </div>
-                            <p class="message">dfj</p>
+                            <p class="message">information was saved successfully</p>
                             <div class="close-modalBtn">
                                 <button>Okay</button>
                             </div>
                         </div>
                     </div>
+                    <div class="err-modal">
+                        <div class="err">
+                            <div class="icon">
+                                <img src="images/error.gif" alt="error">
+                            </div>
+                            <p class="message">dsaghasdgjkhasdghh saglasdg</p>
+                            <div class="close-modalBtn">
+                                <button>Okay</button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 <!-- user informations -->
                 <div class="user-informations">
@@ -245,7 +244,7 @@
                                     <div class="ticket-count-sec">
                                         <div class="ticket-count">
                                             <span class="decrease-icon ticket-count-icon" onclick="decreaseTicketCount(event)">-</span>
-                                            <span class="ticket-counter">1</span>
+                                            <input type="number" value="1" disabled="disabled" class="ticket-counter">
                                             <span class="increase-icon ticket-count-icon" onclick="increaseTicketCount(event)">+</span>
                                         </div>
                                         <div class="ticket-price"><span>$</span> 550</div>
@@ -268,7 +267,7 @@
                                     <div class="ticket-count-sec">
                                         <div class="ticket-count">
                                             <span class="decrease-icon ticket-count-icon" onclick="decreaseTicketCount(event)">-</span>
-                                            <span class="ticket-counter">2</span>
+                                            <input type="number" value="1" disabled="disabled" class="ticket-counter">
                                             <span class="increase-icon ticket-count-icon" onclick="increaseTicketCount(event)">+</span>
                                         </div>
                                         <div class="ticket-price"><span>$</span> 550</div>

@@ -569,12 +569,12 @@
     background:rgb(52, 52, 52);
 }
 
-.store-profile .store-change-informations .modal{
+.store-profile .store-change-informations .success-modal,
+.store-profile .store-change-informations .err-modal{
     background:#f0f0f0;
     height:-webkit-fit-content;
     height:-moz-fit-content;
     height:fit-content;
-    color:#54c441;
     font-family: 'Radio Canada', sans-serif;
     position:absolute;
     left:50%;
@@ -594,8 +594,8 @@
     overflow:hidden;
 }
 
-.store-profile .store-change-informations .modal .success, 
-.store-profile .store-change-informations .modal .err{
+.store-profile .store-change-informations .success-modal .success, 
+.store-profile .store-change-informations .err-modal .err{
     display:-webkit-box;
     display:-ms-flexbox;
     display:flex;
@@ -612,29 +612,33 @@
     gap:10px;
 }
  
-.store-profile .store-change-informations .modal .message{
+.store-profile .store-change-informations .success-modal .message,
+.store-profile .store-change-informations .err-modal .message{
     text-transform:capitalize;
     text-align: center;
 }
-.store-profile .store-change-informations .modal .err {
+.store-profile .store-change-informations .err-modal .err .message{
     color:rgb(255, 78, 78);
 }
 
-.store-profile .store-change-informations .modal .success .message{
+.store-profile .store-change-informations .success-modal .success .message{
     color:#54c441;
 }
 
-.store-profile .store-change-informations .modal.active{
+.store-profile .store-change-informations .success-modal.active,
+.store-profile .store-change-informations .err-modal.active{
     top:50%;
 }
 
-.store-profile .store-change-informations .modal img{
+.store-profile .store-change-informations .success-modal img,
+.store-profile .store-change-informations .err-modal img{
     height:auto;
     width:200px;
     border-radius:8px;
 }
 
-.store-profile .store-change-informations .modal button{
+.store-profile .store-change-informations .success-modal button,
+.store-profile .store-change-informations .err-modal button{
     padding:12px 24px;
     width:200px;
     border-radius:8px;
@@ -646,22 +650,21 @@
     color:#fefefe;
 }
 
-.store-profile .store-change-informations .modal .success button{
+.store-profile .store-change-informations .success-modal .success button{
     background:#54c441;
 }
 
-.store-profile .store-change-informations .modal .success button:hover{
+.store-profile .store-change-informations .success-modal .success button:hover{
     background:#3f9430;
 }
 
-.store-profile .store-change-informations .modal .err button{
+.store-profile .store-change-informations .err-modal .err button{
     background:rgb(255, 78, 78);
 }
 
-.store-profile .store-change-informations .modal .err button:hover{
+.store-profile .store-change-informations .err-modal .err button:hover{
     background:rgb(250, 32, 32);
 }
-
 
 /* store information  */
 .content .store-profile .store-informations {
