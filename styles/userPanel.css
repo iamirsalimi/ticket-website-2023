@@ -1023,9 +1023,15 @@
 }
 
 .user-shopping-cart .user-shopping-cart-content .right-content .ticket-details .ticket-count-sec{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 0 10px;
     width:55%;
 }
@@ -1133,24 +1139,6 @@
 .content .user-profile .user-purchased-ticket-sc table tr:nth-child(even),
 .content .user-purchased-tickets table tr:nth-child(even){
     background:rgb(225, 225, 225);
-}
-
-
-/* icons */
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
-}
-
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
 }
 
 /* media queries */
@@ -1704,13 +1692,16 @@
         font-size:0.5rem;
     }
 
-    .container .user-infos .user-info{
+    .content .user-profile .user-informations .user-info{
         -webkit-box-orient:horizontal;
         -webkit-box-direction:normal;
-            -ms-flex-direction:row;
-                flex-direction:row;
+            -ms-flex-direction:column;
+                flex-direction:column;
         -ms-flex-wrap:wrap;
             flex-wrap:wrap;
+        -webkit-box-align:start;
+            -ms-flex-align:start;
+                align-items:start;
         font-size:0.8rem;
     }
     .container .user-infos{
@@ -1727,6 +1718,15 @@
         grid-column:1/-1;
         grid-row:3/-1;
     }
+
+    .content .user-profile .user-informations .user-profile-icon{
+        height:85px;
+    }
+
+    .content .user-profile .user-informations .user-profile-icon svg{
+        width:2.5rem;
+    }
+
     .content .user-profile .user-informations{
         grid-column:1/-1;
         -ms-grid-row:1;
@@ -1739,6 +1739,22 @@
         -webkit-box-align:center;
             -ms-flex-align:center;
                 align-items:center;
+        gap: 5px;
+        padding: 5px 10px;
+    }
+
+    .user-shopping-cart .user-shopping-cart-content .right-content .btns{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
+        -webkit-box-align:start;
+            -ms-flex-align:start;
+                align-items:start;
+        gap:10px;
     }
 
     .content .user-profile .user-purchased-ticket-sc{

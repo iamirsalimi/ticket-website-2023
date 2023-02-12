@@ -994,7 +994,7 @@ body{
 
 @media (max-width : 380px){
     .edit-store-form{
-        width:400px;
+        width:335px;
     }
     .edit-store-form .signUp-form .input-container:nth-child(1){
         grid-column: 1/-1;
@@ -1014,6 +1014,10 @@ body{
 
     .container .content .store-info{
         padding: 5px 10px;
+    }
+
+    .container .content .storeProfile .btns button{
+        width:100%;
     }
 
     .container .content .store-info .store-information{

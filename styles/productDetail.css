@@ -165,6 +165,7 @@ body{
 .container .ticket-details .detail .detail-title{
     color:rgba(205, 169, 255, 0.787);
     font-family: 'Vollkorn SC', serif;
+    text-align:center;
 }
 
 .container .ticket-details .detail .ticket-detail{

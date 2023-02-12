@@ -1151,23 +1151,6 @@ body{
     background:rgb(255, 48, 48) !important;
 }
 
-/* icons */
-.material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 48
-}
-
-.material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 48
-}
-
 /* media  queries*/
 @media (max-width : 1120px){
     .edit-user-form{
@@ -1308,7 +1291,7 @@ body{
 
 @media (max-width : 510px){
     .edit-user-form{
-        width:400px;
+        width:335px;
     }
     .edit-user-form .signUp-form .input-container:nth-child(1){
         grid-column: 1/-1;
@@ -1361,6 +1344,11 @@ body{
 
     .modal-add-ticket-details .ticket-info-tips{
         font-size:0.8rem;
+    }
+
+    .add-content form h2{
+        top:-15px;
+        font-size:1rem;
     }
 
     .container .content .userProfile .btns{
