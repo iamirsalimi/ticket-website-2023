@@ -53,7 +53,6 @@ function checkEmail(event){
     let emailValue = event.target.value.trim()
     let emailErr = event.target.parentNode.lastElementChild
     let submitBtn = event.target.parentNode.parentNode.parentNode.lastElementChild
-    console.log(submitBtn)
     if(!emailValue.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
         emailErr.innerHTML = 'Please enter a Valid Email'
         emailErr.parentNode.classList.add('invalid')
@@ -124,6 +123,7 @@ goToTickets.addEventListener('click',function(event){
     })
     
     // add display block sections
+    searchInput.parentNode.style.display = 'block'
     sectionSeps[0].parentNode.style.display = 'block'
     sectionSeps[0].removeAttribute('style')
     ticketContents[1].removeAttribute('style')
@@ -141,6 +141,7 @@ goToCustomers.addEventListener('click',function(event){
         item.classList.remove('active')
     })
 
+    searchInput.parentNode.style.display = 'block'
     sectionElems[1].removeAttribute('style')
     menuItems[1].classList.add('active')
     menuTitle.innerHTML = '<h2>Outinz Customers  <span>List</span></h2>'
