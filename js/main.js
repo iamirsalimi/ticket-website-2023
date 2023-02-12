@@ -54,12 +54,6 @@ function changeDetailsDependWidth(){
     if(document.documentElement.scrollTop > 530 && !isCounterSet){
         count()
     }
-
-    if(slideCount === 0){
-        sliderPrevBtn.disabled = true
-    } else if(cards.style.transform === 'translateX(1880px)'){
-        sliderNextBtn.disabled = true
-    }
     
     if(remainCards <= 3){
         sliderPrevBtn.disabled = true
@@ -89,7 +83,6 @@ function changeDetailsDependWidth(){
         }
         sliderPrevBtn.disabled = true
     }
-    slideCount = 0
     cards.style.transform = `translateX(${currentLoc}px)`
 }
 
