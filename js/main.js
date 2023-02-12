@@ -290,7 +290,6 @@ function sendEmail(){
 
 // events
 window.addEventListener('load',changeDetailsDependWidth)
-window.addEventListener('resize',changeDetailsDependWidth)
 sliderNextBtn.addEventListener('click',nextCardHandler)
 sliderPrevBtn.addEventListener('click',prevCardHandler)
 goToUpBtn.addEventListener('click',goToUpHandler)
