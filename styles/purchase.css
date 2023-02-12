@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Secular+One&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.active{
+    display:flex !important;
+}
+
+body{
+    background:rgb(187, 187, 223);
+    height:100vh;
+
+}
+
+.container{
+    width:100%;
+    height:100%;
+    display:grid;
+    place-items:center;
+}
+
+
+.container .success-message,
+.container .err-message{
+    width:35%;
+    min-width:500px;
+    background:#fff;
+    display:none;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    gap:25px;
+    padding:25px 50px;
+    border-radius:16px;
+    box-shadow:-20px 20px 100px 2px rgba(0,0,0,0.2)
+}
+
+.container .success-message .icon-wrapper,
+.container .err-message .icon-wrapper{
+    width:6rem;
+    height:6rem;
+    background:#3C6255;
+    padding:10px;
+    border-radius:50%;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.container .err-message .icon-wrapper{
+    background:#FF0032;
+}
+
+.container .success-message svg,
+.container .err-message svg{
+    width:4rem;
+    height:4rem;
+    fill:#fff;
+}
+
+.container .success-message .content-wrapper,
+.container .err-message .content-wrapper{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    gap:5px;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+
+.container .success-message .content-wrapper .content-title,
+.container .err-message .content-wrapper .content-title{
+    color:#3C6255;
+    font-family: 'Secular One', sans-serif;
+}
+
+.container .err-message .content-wrapper .content-title{
+    color:#FF0032;
+}
+
+.container .success-message .content-wrapper .content-desc,
+.container .err-message .content-wrapper .content-desc{
+    text-align:center;
+    color:#767676a8;
+    font-family: 'Kanit', sans-serif;
+}
+
+.container .success-message .btns-wrapper,
+.container .err-message .btns-wrapper{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    gap:10px;
+}
+
+.container .success-message .btns-wrapper button,
+.container .err-message .btns-wrapper button{
+    background:#3C6255;
+    color:#f2f2f2;
+    padding:12px 32px;
+    font-family: 'Kanit', sans-serif;
+    border-radius:8px;
+    font-weight:500;
+    border:none;
+    outline:none;
+    cursor:pointer;
+    transition:background-color 0.25s ease-out;
+}
+
+.container .err-message .btns-wrapper button{
+    background:#CD0404;
+}
+
+.container .success-message .btns-wrapper button:hover{
+    background:#61876E;
+}
+
+.container .err-message .btns-wrapper button:hover{
+    background:#FF0032;
+}
+
+
+@media (max-width:520px){
+    .container .success-message,
+    .container .err-message{
+        min-width:380px;
+        padding:16px 20px;
+    }
+    
+    .container .success-message .content-wrapper .content-title,
+    .container .err-message .content-wrapper .content-title{
+        font-size:1.25rem;
+    }
+    
+    .container .success-message .content-wrapper .content-desc,
+    .container .err-message .content-wrapper .content-desc{
+        font-size:0.8rem;
+    }
+
+    .container .success-message .btns-wrapper button,
+    .container .err-message .btns-wrapper button{
+        padding:8px 12px;
+    }
+}
+
+@media (max-width:400px){
+    .container .success-message,
+    .container .err-message{
+        min-width:335px;
+        padding:16px 20px;
+    }
+    
+    .container .success-message .content-wrapper .content-title,
+    .container .err-message .content-wrapper .content-title{
+        font-size:1.25rem;
+    }
+    
+    .container .success-message .content-wrapper .content-desc,
+    .container .err-message .content-wrapper .content-desc{
+        font-size:0.8rem;
+    }
+
+    .container .success-message .btns-wrapper,
+    .container .err-message .btns-wrapper{
+        flex-direction:column;
+    }
+
+    .container .success-message .btns-wrapper button,
+    .container .err-message .btns-wrapper button{
+        width:100%;
+    }
+}
