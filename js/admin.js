@@ -206,7 +206,7 @@ menuItems.forEach(function(menuItem){
             menuTitle.innerHTML = '<h2>Outinz Customers  <span>List</span></h2>'
         } else if(userTargetMenu.className === 'stores-content'){
             searchInput.parentNode.style.display = 'block'
-            menuTitle.innerHTML = '<h2>Outinz Stores  <span>List</span></h2>'
+            menuTitle.innerHTML = '<h2>Outinz Providers  <span>List</span></h2>'
         } else if(userTargetMenu.className === 'tickets-content'){
             searchInput.parentNode.style.display = 'block'
             menuTitle.innerHTML = '<h2>Outinz All Tickets <span>List</span></h2>'
