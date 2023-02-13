@@ -1057,9 +1057,10 @@
 .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count .ticket-counter{
     background:none;
     border:none;
-    width:15px;
-    font-size:1.25rem;
+    width:30px;
+    font-size:1.1rem;
     outline:none;
+    overflow-x:visible !important;
 }
 
 .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count input:disabled{

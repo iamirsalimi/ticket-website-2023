@@ -79,6 +79,7 @@ function increaseTicketCount(event){
     let ticketContainer = event.target.parentNode
     let ticketCountElem = ticketContainer.querySelector('.ticket-counter')
     ticketCountElem.value = +ticketCountElem.value + 1
+    ticketCountElem.setAttribute('value',ticketCountElem.value ) 
 }
 
 function decreaseTicketCount(event){
@@ -88,6 +89,7 @@ function decreaseTicketCount(event){
     if(+ticketCountElem.innerHTML !== 1){
         if(+ticketCountElem.value > 1){
             ticketCountElem.value = +ticketCountElem.value - 1
+            ticketCountElem.setAttribute('value',ticketCountElem.value) 
         }
     }
 }
