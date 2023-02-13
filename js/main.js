@@ -259,28 +259,6 @@ formInputs.forEach(function(input){
     })
 })
 
-
-// sending email
-
-let emailInput = $.getElementById('Email-input')
-let nameInput = $.getElementById('name-input')
-let messageInput = $.getElementById('message-input')
-
-function sendEmail(){
-    if(nameInput.value !== ''&& emailInput.value!== '' && messageInput.value !== ''){
-        Email.send({
-            SecureToken :'e4c153e9-2328-4e7d-bd33-db4b3680bb9c',
-            To : 'e638fe6b03@boxmail.lol',
-            From : 'wonderguy2003@gmail.com',
-            Subject : "New Contact From Enquiry",
-            Body : "Name : " + nameInput.value + '<br><br> Email : '+ emailInput.value + '<br><br> Message : ' + messageInput.value
-        }).then(
-          message => alert(message)
-        );
-    }
-}
-
-
 // events
 window.addEventListener('load',changeDetailsDependWidth)
 sliderNextBtn.addEventListener('click',nextCardHandler)
