@@ -73,6 +73,8 @@ body{
   background:rgb(53, 0, 106);
   padding:5px 10px;
   border-radius:15px;
+  border:none;
+  outline:none;
   cursor:pointer;
   -webkit-transition:0.15s ease-in-out;
   -o-transition:0.15s ease-in-out;
