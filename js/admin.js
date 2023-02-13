@@ -11,7 +11,7 @@ let loader = $.querySelector('.loader')
 let goToCustomers = $.querySelector('.all-users-title button')
 let goToTickets = $.querySelector('.recent-purchases-title button')
 
-let linkRegex = /^\w+([\.-]?\w)*@\w+([\.-]?\w)*(\.\w{2,3})+$/g
+let linkRegex = /^\w+([\.-]?\w)*@\w+([\.-]?\w)*(\.\w{3})+$/g
 // section Sep variables
 let sectionSeps = $.querySelectorAll('.menuItem-sectionSep .SectionSep')
 let sectionSepContainer = $.querySelector('.menuItem-sectionSep')

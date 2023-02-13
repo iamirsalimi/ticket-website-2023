@@ -27,7 +27,7 @@ signUpInputElems.forEach(function(signUpInputElem){
 
 signUpInputElems[signUpInputElems.length-1].addEventListener('blur',function(event){
     let emailValue = event.target.value
-    let linkRegex = /^\w+([\.-]?\w)*@\w+([\.-]?\w)*(\.\w{2,3})+$/g
+    let linkRegex = /^\w+([\.-]?\w)*@\w+([\.-]?\w)*(\.\w{3})+$/g
     if(linkRegex.test(emailValue) || emailValue.trim() === ''){
         event.target.classList.remove('invalid')
         event.target.parentNode.lastElementChild.classList.remove('show-err')

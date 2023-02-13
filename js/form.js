@@ -22,9 +22,9 @@ signUpInputElems.forEach(function(signUpInputElem){
     signUpInputElem.addEventListener('keyup',clearSpace)
 })
 
-signUpInputElems[5].addEventListener('blur',function(event){
+signUpInputElems[3].addEventListener('blur',function(event){
     let emailValue = event.target.value.trim()
-    let linkRegex = /^\w+([\.-]?\w)*@\w+([\.-]?\w)*(\.\w{2,3})+$/g
+    let linkRegex = /^\w+([\.-]?\w)*@\w+([\.-]?\w)*(\.\w{3})+$/g
     if(linkRegex.test(emailValue) || emailValue === ''){
         event.target.classList.remove('invalid')
         event.target.parentNode.lastElementChild.classList.remove('show-err')
@@ -36,28 +36,35 @@ signUpInputElems[5].addEventListener('blur',function(event){
 
 
 signUpInputElems[4].addEventListener('keyup',function(event){
-    if(event.target.value !== signUpInputElems[3].value){
-        signUpInputElems[3].classList.add('invalid')
+    if(event.target.value !== signUpInputElems[5].value){
+        signUpInputElems[5].classList.add('invalid')
         signUpInputElems[4].classList.add('invalid')
-        event.target.parentNode.querySelector('p').classList.add('show-err')
-    } else {
-
-        signUpInputElems[3].classList.remove('invalid')
+        signUpInputElems[5].parentNode.querySelector('p').classList.add('show-err')
+    } else if(event.target.value === '' && signUpInputElems[5].value === ''){
+        signUpInputElems[5].classList.remove('invalid')
         signUpInputElems[4].classList.remove('invalid')
-        event.target.parentNode.querySelector('p').classList.remove('show-err')
+        signUpInputElems[5].parentNode.querySelector('p').classList.remove('show-err')
+    } else {
+        signUpInputElems[5].classList.remove('invalid')
+        signUpInputElems[4].classList.remove('invalid')
+        signUpInputElems[5].parentNode.querySelector('p').classList.remove('show-err')
     }
 })
 
-signUpInputElems[3].addEventListener('keyup',function(event){
+signUpInputElems[5].addEventListener('keyup',function(event){
     if(event.target.value !== signUpInputElems[4].value){
-        signUpInputElems[3].classList.add('invalid')
+        signUpInputElems[5].classList.add('invalid')
         signUpInputElems[4].classList.add('invalid')
-        signUpInputElems[4].parentNode.querySelector('p').classList.add('show-err')
+        signUpInputElems[5].parentNode.querySelector('p').classList.add('show-err')
+    } else if(event.target.value === '' && signUpInputElems[4].value === ''){
+        signUpInputElems[5].classList.remove('invalid')
+        signUpInputElems[4].classList.remove('invalid')
+        signUpInputElems[5].parentNode.querySelector('p').classList.remove('show-err')
     } else {
 
-        signUpInputElems[3].classList.remove('invalid')
+        signUpInputElems[5].classList.remove('invalid')
         signUpInputElems[4].classList.remove('invalid')
-        signUpInputElems[4].parentNode.querySelector('p').classList.remove('show-err')
+        signUpInputElems[5].parentNode.querySelector('p').classList.remove('show-err')
     }
 })
 

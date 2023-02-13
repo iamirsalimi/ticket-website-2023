@@ -40,6 +40,25 @@ body{
             justify-content:flex-start;
 }
 
+.container .back-to-home{
+    padding:8px 12px;
+    width:-webkit-fit-content;
+    width:-moz-fit-content;
+    width:fit-content;
+    border:none;
+    outline:none;
+    cursor:pointer;
+    border-radius: 8px;
+    text-decoration:none;
+    color:#fff;
+    background:-o-linear-gradient(45deg , #4700b1 , #7f2aff);
+    background:linear-gradient(45deg , #4700b1 , #7f2aff);
+    font-family:'Fredoka One', cursive;
+    -webkit-transition:0.1s linear;
+    -o-transition:0.1s linear;
+    transition:0.1s linear;
+}
+
 .container .title {
     height:75px;
     margin-bottom:15px;
@@ -49,12 +68,13 @@ body{
 .container .title h2{
     color:#6210de;
     font-size:1.5rem;
+    margin-top:10px;
     font-family: 'Pacifico', cursive;
 }
 
 .container .title p.desc{
     color:#6210de8e;
-    margin-top:10px;
+    margin-top:5px;
     font-size:1.2rem;
     font-family: 'Archivo', sans-serif;
 } 

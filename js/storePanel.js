@@ -65,7 +65,7 @@ menu.forEach(function(menuElem){
 
 // check email
 function checkEmail(emailValue){
-    if(!emailValue.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/) ){
+    if(!emailValue.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{3}$/) ){
         modal.firstElementChild.style.display = 'none'
         modal.lastElementChild.style.display = 'flex'
         let emailErr = modal.querySelectorAll('.message')

@@ -13,7 +13,7 @@ let passInput
 // checking Email 
 emailInput.addEventListener('keyup',function(event){
     let emailValue = event.target.value.trim()
-    let linkRegex = /^\w+([\.-]?\w)*@\w+([\.-]?\w)*(\.\w{2,3})+$/g
+    let linkRegex = /^\w+([\.-]?\w)*@\w+([\.-]?\w)*(\.\w{3})+$/g
     if(linkRegex.test(emailValue) || emailValue === ''){
         event.target.parentNode.classList.remove('invalid')
     } else {

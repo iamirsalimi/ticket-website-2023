@@ -24,6 +24,7 @@ body{
     border-radius:10px;
     width:850px;
     overflow:hidden;
+    margin-top:2rem;
     padding:30px 30px;
     height:-webkit-fit-content;
     height:-moz-fit-content;
@@ -40,6 +41,25 @@ body{
             justify-content:flex-start;
 }
 
+.container .back-to-home{
+    padding:8px 12px;
+    width:-webkit-fit-content;
+    width:-moz-fit-content;
+    width:fit-content;
+    border:none;
+    outline:none;
+    cursor:pointer;
+    border-radius: 8px;
+    text-decoration:none;
+    color:#fff;
+    background:-o-linear-gradient(45deg , #4700b1 , #7f2aff);
+    background:linear-gradient(45deg , #4700b1 , #7f2aff);
+    font-family:'Fredoka One', cursive;
+    -webkit-transition:0.1s linear;
+    -o-transition:0.1s linear;
+    transition:0.1s linear;
+}
+
 .container .title {
     height:75px;
     margin-bottom:15px;
@@ -49,12 +69,13 @@ body{
 .container .title h2{
     color:#6210de;
     font-size:1.5rem;
+    margin-top:15px;
     font-family: 'Pacifico', cursive;
 }
 
 .container .title p.desc{
     color:#6210de8e;
-    margin-top:10px;
+    margin-top:5px;
     font-size:1.2rem;
     font-family: 'Archivo', sans-serif;
 } 
@@ -234,7 +255,7 @@ body{
     grid-column: 1/-1;
 }
 
-.container .signUp-form .input-container:last-child{
+.container .signUp-form .input-container:nth-child(4){
     grid-column: 1/-1;
 }
 
@@ -373,6 +394,9 @@ body{
     .container .signUp-form .input-container:nth-child(5){
         grid-column: 1/-1;
     }
+    .container .signUp-form .input-container:last-child{
+        grid-column: 1/-1;
+    }
 }
 
 @media (max-width : 510px){
@@ -389,6 +413,9 @@ body{
         grid-column: 1/-1;
     }
     .container .signUp-form .input-container:nth-child(5){
+        grid-column: 1/-1;
+    }
+    .container .signUp-form .input-container:last-child{
         grid-column: 1/-1;
     }
     .form-inputs .login-inputs-container{
@@ -410,6 +437,9 @@ body{
         grid-column: 1/-1;
     }
     .container .signUp-form .input-container:nth-child(5){
+        grid-column: 1/-1;
+    }
+    .container .signUp-form .input-container:last-child{
         grid-column: 1/-1;
     }
     
