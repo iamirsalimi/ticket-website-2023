@@ -10,6 +10,9 @@ let content = $.querySelector('.container')
 let loader = $.querySelector('.loader')
 let formInputs = $.querySelectorAll('.store-profile input')
 let searchInput = $.querySelector('.search-input input')
+let logoutBtn = $.querySelector('.log-out')
+let logoutModal = $.querySelector('.logout-modal')
+let logoutCancelBtn = $.querySelector('.logout-modal .cancel-btn')
 
 // onload
 
@@ -103,6 +106,15 @@ searchInput.addEventListener('keyup',function(){
             username.parentNode.style.display = 'none'
         }
     })
+})
+
+// show and hide logout modal
+logoutBtn.addEventListener('click',function(){
+    logoutModal.classList.add('active')
+})
+
+logoutCancelBtn.addEventListener('click',function(){
+    logoutModal.classList.remove('active')
 })
 
 

@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles/register.css">
+    <link rel="stylesheet" href="styles/forgotPass.css">
     <link rel="icon" href="images/ticket logo purple png.png" type="image/icon type">
     <title>Outinz form</title>
 </head>
@@ -13,57 +12,28 @@
 
     <div class="container">
         <div class="title">
-            <a href="./index.html" class="back-to-home">Back To Home</a>
-            <h2>Sign Up To Outinz</h2>
-            <p class="desc">Let's create your account</p>
+            <a href="./login.html" class="back-to-home">Back To Login Form</a>
+            <h2>Outinz Change Password</h2>
+            <p class="desc">Let's change your password</p>
         </div>
-
-        <!-- sign up form -->
-        <form action="" class="signUp-form" >
+        <!-- log in form -->
+        <form action="" class="changePass-form">
             <div class="inputs-desc">
                 <ul>
-                    <li>Please enter your details carefully so you don't run into problems later</li>
-                    <li>all inputs are required. Please enter all your details</li>
-                    <li>The maximum length of the username should be 15 characters</li>
-                    <li>The maximum length of the password should be 16 characters</li>
-                    <li>To create an account, you need to confirm your e-mail. After registration, an e-mail will be sent to you through which you must confirm your e-mail.</li>
+                    <ul>
+                        <li>Please enter your details carefully so you don't run into problems later</li>
+                        <li>The password must be at least 8 characters and at most 16 characters</li>
+                    </ul>
                 </ul>
             </div>
             <div class="form-title">
                 <h4>Enter your details below</h4>
             </div>
-            <ul class="err-wrapper">
-                <li>username is already in use</li>
-                <li>email is already in use</li>
-            </ul>
             <div class="form-inputs">
-                <div class="singup-inputs-container">
-                    <div class="input-container">
-                        <input type="text" class="name-input" required maxlength="16">
-                        <span class="input-ph">first name</span>
-                        <span class="star">*</span>
-                    </div>
-                    <div class="input-container">
-                        <input type="text" class="family-input" required maxlength="16">
-                        <span class="input-ph">last name</span>
-                        <span class="star">*</span>
-                    </div>
-                    <div class="input-container">
-                        <input type="text" class="username-input" required maxlength="15">
-                        <span class="input-ph">user name</span>
-                        <span class="star">*</span>
-                        <p class="show-err"></p>
-                    </div>
-                    <div class="input-container">
-                        <input type="text" class="email-input" required >
-                        <span class="input-ph">Email</span>         
-                        <span class="star">*</span>
-                        <p>The email is invalid</p>
-                    </div>
+                <div class="changePass-inputs-container">
                     <div class="input-container pass-input">
-                        <input type="password" class="password-input" required  minlength="8"  maxlength="16">
+                        <input type="password" class="password-input" required minlength="8" maxlength="16">
                         <span class="input-ph">password</span>
-                        <span class="star">*</span>
                         <div class="show-pass-icons">
                             <div class="show-pass-icon icon-wrapper">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"/></svg>
@@ -74,10 +44,9 @@
                         </div>
                     </div>
                     <div class="input-container repeat-pass-input">
-                        <input type="password" class="repeat-password-input" required minlength="8"  maxlength="16">
-                        <span class="input-ph">confirm password</span>
-                        <span class="star">*</span>
-                        <p>Passwords are not the same</p>
+                        <input type="password" class="password-input" required  minlength="8" maxlength="16">
+                        <span class="input-ph">repeat password</span>
+                        <p>Passwords are not  same</p>
                         <div class="show-pass-icons">
                             <div class="show-pass-icon icon-wrapper">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"/></svg>
@@ -88,11 +57,11 @@
                         </div>
                     </div>
                 </div>
-                <input type="submit" class="submit" value="Sign Up">
-                <p class="goToLogin">have an account ? <a href="login.html">login</a></p>
+                <input type="submit" class="submit" value="Change Password">
             </div>    
         </form>
     </div>
-    <script src="js/form.js"></script>
+
+    <script src="js/forgotPass.js"></script>
 </body>
 </html>

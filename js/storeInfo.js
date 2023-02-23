@@ -8,7 +8,9 @@ let signUpInputElems = $.querySelectorAll('.singup-inputs-container input')
 let forms = $.querySelectorAll('form')
 let formTitle = $.querySelector('.title h2')
 let formDesc = $.querySelector('.title p')
-let showPass =  $.querySelectorAll('.show-pass i')
+let deleteStoreBtn = $.querySelector('.content .delete-store')
+let deleteStoreModal = $.querySelector('.delete-modal')
+let deleteStoreCancelBtn = $.querySelector('.delete-modal .cancel-btn')
 let formTarget , passTarget
 
 window.addEventListener('load',function(){
@@ -37,20 +39,6 @@ signUpInputElems[signUpInputElems.length-1].addEventListener('blur',function(eve
     }
 })
 
-// show pass
-showPass.forEach(function(showPassElem){
-    showPassElem.parentNode.addEventListener('click',function(event){
-        passTarget = $.querySelector('.'+event.target.dataset.passtarget)
-        if(passTarget.type === 'password'){
-            passTarget.type = 'text'
-            showPassElem.className = 'fa-solid fa-eye-slash'
-        } else {
-            passTarget.type = 'password'
-            showPassElem.className = 'fa-solid fa-eye'
-        }
-    })
-})
-
 editBtn.addEventListener('click',function(){
     container.style.display = 'none'
     editForm.style.display = 'block'
@@ -61,4 +49,12 @@ backBtn.addEventListener('click',function(){
     editForm.style.display = 'none'
 })
 
+// show and hide logout modal
+deleteStoreBtn.addEventListener('click',function(){
+    deleteStoreModal.classList.add('active')
+})
+
+deleteStoreCancelBtn.addEventListener('click',function(){
+    deleteStoreModal.classList.remove('active')
+})
 

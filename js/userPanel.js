@@ -7,8 +7,10 @@ let closeModalBtns = $.querySelectorAll('.close-modalBtn button')
 let content = $.querySelector('.container')
 let loader = $.querySelector('.loader')
 let formInputs = $.querySelectorAll('.user-profile input')
+let logoutBtn = $.querySelector('.log-out')
+let logoutModal = $.querySelector('.logout-modal')
+let logoutCancelBtn = $.querySelector('.logout-modal .cancel-btn')
 let targetMenu , targetPasswordInput
-
 // onload
 
 window.addEventListener('DOMContentLoaded',function(){
@@ -63,6 +65,14 @@ function clearInputsValue(){
     })
 }
 
+// show and hide logout modal
+logoutBtn.addEventListener('click',function(){
+    logoutModal.classList.add('active')
+})
+
+logoutCancelBtn.addEventListener('click',function(){
+    logoutModal.classList.remove('active')
+})
 
 // show and hide Modal
 closeModalBtns.forEach(function(closeModalBtn){

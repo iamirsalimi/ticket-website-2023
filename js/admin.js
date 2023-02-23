@@ -19,9 +19,12 @@ let sectionSepContainer = $.querySelector('.menuItem-sectionSep')
 let ticketSeps = $.querySelectorAll('.menuItem-sectionSep .tickets input') 
 let ticketContents = $.querySelectorAll('.tickets-content .tickets-table')
 
+let logoutBtn = $.querySelector('.logout')
+let logoutModal = $.querySelector('.logout-modal')
+let logoutCancelBtn = $.querySelector('.logout-modal .cancel-btn')
+
 // Inputs variables
 let showPass =  $.querySelectorAll('.show-pass span')
-let adminEmailInput = $.getElementById('admin-email')
 let searchInput = $.querySelector('.serachbar input')
 let searchBtn = $.querySelector('.serachbar span')
 
@@ -46,23 +49,6 @@ function clearInputsValueHandler(){
             input.value = ''
         }
     })
-}
-
-// checking Email 
-function checkEmail(event){
-    let emailValue = event.target.value.trim()
-    let emailErr = event.target.parentNode.lastElementChild
-    let submitBtn = event.target.parentNode.parentNode.parentNode.lastElementChild
-    if(!emailValue.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
-        emailErr.innerHTML = 'Please enter a Valid Email'
-        emailErr.parentNode.classList.add('invalid')
-        submitBtn.setAttribute('disabled', 'disabled')
-        return false
-    }
-
-    emailErr.innerHTML = ''
-    emailErr.parentNode.classList.remove('invalid')
-    submitBtn.removeAttribute('disabled')
 }
 
 // load 
@@ -217,6 +203,15 @@ menuItems.forEach(function(menuItem){
     })
 })
 
+// show and hide logout modal
+logoutBtn.addEventListener('click',function(){
+    logoutModal.classList.add('active')
+})
+
+logoutCancelBtn.addEventListener('click',function(){
+    logoutModal.classList.remove('active')
+})
+
 
 // search inputs
 
@@ -230,6 +225,3 @@ searchInput.addEventListener('keyup',function(event){
         }
     })
 })
-
-
-adminEmailInput.addEventListener('keyup',checkEmail)

@@ -1151,6 +1151,79 @@ body{
     background:rgb(255, 48, 48) !important;
 }
 
+/* delete modal */
+.delete-modal{
+    position:absolute;
+    width:450px;
+    top:-200%;
+    left:50%;
+    background:#fff;
+    transform:translate(-50%);
+    box-shadow: 0px 0px 100px 1px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+    overflow: hidden;
+    transition:0.4s ease-out;
+}
+
+.delete-modal.active{
+    top:35%;
+}
+
+.delete-modal .content{
+    padding:15px 10px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.delete-modal .content h3{
+    text-transform: capitalize;
+    font-family:'Radio Canada', sans-serif;
+}
+
+.delete-modal .content p{
+    font-family:'Radio Canada', sans-serif;
+    color:rgba(0, 0, 0, 0.634);
+    
+}
+
+.delete-modal .btns{
+    background:rgb(191, 191, 191);
+    width:100%;
+    padding:5px 10px;
+    text-align:right;
+}
+
+.delete-modal button{
+    padding:10px 18px;
+    border-radius:5px;
+    border:none;
+    outline:none;
+    cursor:pointer;
+    color:#fff;
+    font-family:'Radio Canada', sans-serif;
+    transition:background-color 0.15s ease-in-out;
+}
+
+.delete-modal .cancel-btn{
+    background:none;
+}
+
+.delete-modal .cancel-btn:hover{
+    background:#cdcdcd;
+}
+
+.delete-modal .delete-btn{
+    background:rgb(252, 50, 50);
+}
+
+.delete-modal .delete-btn:hover{
+    background:rgb(213, 45, 45);
+}
+
 /* media  queries*/
 @media (max-width : 1120px){
     .edit-user-form{
@@ -1179,6 +1252,10 @@ body{
         -webkit-box-direction:normal;
             -ms-flex-direction:column;
                 flex-direction:column;
+    }
+
+    .container .content .userProfile .btns button{
+        width: 100%;
     }
 }
 
@@ -1231,6 +1308,10 @@ body{
                 flex-direction:row !important;
     }
 
+    .container .content .userProfile .btns button{
+        width: 100%;
+    }
+
     .content .purchased-tickets-table table thead th{
         font-size:0.9rem;
     }
@@ -1269,6 +1350,9 @@ body{
                 flex-direction:column;
     }
 
+    .container .content .userProfile .btns button{
+        width: 100%;
+    }
 }
 
 @media (max-width : 720px){
@@ -1356,5 +1440,21 @@ body{
         -webkit-box-direction:normal !important;
             -ms-flex-direction:column !important;
                 flex-direction:column !important;
+    }
+
+    .container .content .userProfile .btns button{
+        width: 100%;
+    }
+
+    .delete-modal{
+        width:85% !important;
+    }
+
+    .delete-modal .content h3{
+        font-size:1rem;
+    }
+
+    .delete-modal .content p{
+        font-size:0.9rem;
     }
 }

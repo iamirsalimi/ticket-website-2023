@@ -24,7 +24,6 @@ body{
     border-radius:10px;
     width:850px;
     overflow:hidden;
-    margin-top:2rem;
     padding:30px 30px;
     height:-webkit-fit-content;
     height:-moz-fit-content;
@@ -69,7 +68,7 @@ body{
 .container .title h2{
     color:#6210de;
     font-size:1.5rem;
-    margin-top:15px;
+    margin-top:10px;
     font-family: 'Pacifico', cursive;
 }
 
@@ -80,7 +79,7 @@ body{
     font-family: 'Archivo', sans-serif;
 } 
 
-.container .signUp-form{
+.container .changePass-form{
     margin-top:20px;
     display:-webkit-box;
     display:-ms-flexbox;
@@ -93,14 +92,15 @@ body{
         -ms-flex-pack:start;
             justify-content:flex-start;
 }
-.container .signUp-form .form-title h4{
+
+.container .changePass-form .form-title h4{
     font-family: 'Archivo', sans-serif;
     color:#747474;
     font-size:1rem;
     margin-top:10px;
 }
 
-.container .signUp-form .form-inputs{
+.container .changePass-form .form-inputs{
     display:-webkit-box;
     display:-ms-flexbox;
     display:flex;
@@ -114,16 +114,32 @@ body{
     gap:15px;
 }
 
-.container .signUp-form .singup-inputs-container{
-    margin-top:30px;
-    display:-ms-grid;
-    display:grid;
-    -ms-grid-columns : 1fr 25px 1fr;
-    grid-template-columns : repeat(2,1fr);
-    gap:25px;
+
+.changePass-form .inputs-desc{
+    margin:10px;
+    width:100%;
+    margin:0 auto;
+    background:#888;
+    padding:5px;
+    border-radius:6px;
 }
 
-.container .signUp-form .singup-inputs-container input{
+.changePass-form .inputs-desc ul{
+    padding:5px 15px;
+} 
+
+.changePass-form .inputs-desc li::marker{
+    content:'*  ';
+    color:#c80c1b;
+}
+
+.changePass-form .inputs-desc li{
+    color:#fff;
+    font-family: 'Archivo', sans-serif;
+    margin-top:10px;
+}
+
+.container .changePass-form .changePass-inputs-container input{
     border:1.5px solid #9a9a9a;
     outline:none;
     caret-color: #4700b1;
@@ -136,26 +152,28 @@ body{
     transition:0.15s ease-out; 
     width:100%;
 }
-.container .signUp-form .input-container input:focus ~ span.input-ph,
-.container .signUp-form .input-container input:valid ~ span.input-ph{
+
+.container .changePass-form .input-container input:focus ~ span.input-ph,
+.container .changePass-form .input-container input:valid ~ span.input-ph{
     color:#6210de;
 }
 
-.container .signUp-form .input-container p{
+.container .changePass-form .input-container p{
     display:none;
     color:#c80c1b;
     margin-top:5px;
 }
 
-.container .signUp-form .input-container p.show-err{
+.container .changePass-form .input-container p.show-err{
     display:block;
 }
 
-.container .signUp-form .input-container input:focus,
-.container .signUp-form .input-container input:valid{
+.container .changePass-form .input-container input:focus,
+.container .changePass-form .input-container input:valid{
     border-color:#6210de;
 }
-.container .signUp-form .input-container span.input-ph{
+
+.container .changePass-form .input-container span.input-ph{
     position:absolute;
     left:10px;
     top:-10px;
@@ -172,62 +190,24 @@ body{
     transition:0.15s ease-out; 
 }
 
-.container .signUp-form .input-container input.invalid{
+.container .changePass-form .input-container input.invalid{
     border-color:#c80c1b;
     color:#ff6e7a;
     caret-color: #ff6f7b;
 }
 
+.container .changePass-form .input-container input.invalid ~ .input-ph{
+    color:#c80c1b !important;
+}
 
-.container .signUp-form .input-container{
+.container .changePass-form .input-container{
     position:relative;
     height:-webkit-fit-content;
     height:-moz-fit-content;
     height:fit-content;
 }
 
-.signUp-form .inputs-desc{
-    margin:10px;
-    width:100%;
-    margin:0 auto;
-    background:#888;
-    padding:5px;
-    border-radius:6px;
-}
-
-.signUp-form .inputs-desc ul{
-    padding:5px 15px;
-} 
-
-.signUp-form .inputs-desc li::marker{
-    content:'*  ';
-    color:#c80c1b;
-}
-
-.signUp-form .inputs-desc li{
-    color:#fff;
-    font-family: 'Archivo', sans-serif;
-    margin-top:10px;
-    line-height: 1.5rem;
-}
-
-.container .signUp-form .input-container span.star{
-    position:absolute;
-    color:#c80c1b;
-    right:0;
-    top:-15px;
-}
-
-
-.container .signUp-form .input-container input.invalid ~ span.input-ph{
-    color:#c80c1b;
-}
-
-.container .signUp-form .input-container input.invalid ~ .show-pass .material-symbols-outlined{
-    color:#c80c1b;
-}
-
-.container .signUp-form .form-inputs .submit{
+.container .changePass-form .form-inputs .submit{
     padding:15px 40px;
     width:-webkit-fit-content;
     width:-moz-fit-content;
@@ -245,35 +225,41 @@ body{
     transition:0.1s linear;
 }
 
-.container .signUp-form .form-inputs .submit:hover{
+.container .changePass-form .form-inputs .submit:hover{
     -webkit-transform:scale(1.05);
         -ms-transform:scale(1.05);
             transform:scale(1.05);
 }
 
-.container .signUp-form .input-container:nth-child(3){
-    grid-column: 1/-1;
+
+.changePass-form .form-inputs{
+    margin-top:40px;
 }
 
-.container .signUp-form .input-container:nth-child(4){
-    grid-column: 1/-1;
+.form-inputs .changePass-inputs-container{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+        -ms-flex-direction:column;
+            flex-direction:column;
+    -webkit-box-pack:justify;
+        -ms-flex-pack:justify;
+            justify-content:space-between;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+    gap:40px;
+    height:-webkit-fit-content;
+    height:-moz-fit-content;
+    height:fit-content;
+    width:80%;
+    margin:0 auto;
 }
 
-.signUp-form .goToLogin{
-    margin-top:10px;
-    text-align:center;
-    color:#8850ff;
-    font-size:1.1rem;
-    font-family:'Fredoka One', cursive;
-}
-
-.signUp-form .goToLogin a{
-    color:#4800ef;
-    text-decoration:none;
-}
-
-.signUp-form .goToLogin a:hover{
-    text-decoration:underline;
+.form-inputs .changePass-inputs-container .input-container{
+    width:100%;
 }
 
 .input-container .show-pass-icons{
@@ -296,25 +282,13 @@ body{
     height:1.5rem;
 }
 
-.container .input-container input:focus ~ .show-pass-icons .icon-wrapper svg,
-.container .input-container input:valid ~ .show-pass-icons .icon-wrapper svg{
-    fill:#6210de !important;
+.container .changePass-form .input-container input:focus ~ .show-pass-icons .icon-wrapper svg,
+.container .changePass-form .input-container input:valid ~ .show-pass-icons .icon-wrapper svg{
+    fill:#6210de;
 }
 
-.container .input-container input.invalid  ~ .show-pass-icons .icon-wrapper svg{
-    fill:#ff6e7a !important;
-}
-
-/* errors */
-.err-wrapper{
-    color:rgb(255, 36, 36);
-    list-style: none;
-    text-align:center;
-    display:flex;
-    justify-content: center;
-    gap:10px;
-    margin-top:10px;
-    font-family:'Fredoka One', cursive;
+.container .changePass-form .input-container input.invalid ~ .show-pass-icons .icon-wrapper svg{
+    fill:#c80c1b !important;
 }
 
 
@@ -329,52 +303,11 @@ body{
     .container{
         width:450px;
     }
-    .container .signUp-form .input-container:nth-child(1){
-        grid-column: 1/-1;
-    }
-    .container .signUp-form .input-container:nth-child(2){
-        grid-column: 1/-1;
-    }
-    .container .signUp-form .input-container:nth-child(4){
-        grid-column: 1/-1;
-    }
-    .container .signUp-form .input-container:nth-child(5){
-        grid-column: 1/-1;
-    }
-    .container .signUp-form .input-container:last-child{
-        grid-column: 1/-1;
-    }
-    
-    .err-wrapper{
-        flex-direction:column;
-    }
 }
 
 @media (max-width : 510px){
     .container{
         width:400px;
-    }
-    .container .signUp-form .input-container:nth-child(1){
-        grid-column: 1/-1;
-    }
-    .container .signUp-form .input-container:nth-child(2){
-        grid-column: 1/-1;
-    }
-    .container .signUp-form .input-container:nth-child(4){
-        grid-column: 1/-1;
-    }
-    .container .signUp-form .input-container:nth-child(5){
-        grid-column: 1/-1;
-    }
-    .container .signUp-form .input-container:last-child{
-        grid-column: 1/-1;
-    }
-    .form-inputs .login-inputs-container{
-        width:100%;
-    }
-
-    .err-wrapper{
-        flex-direction:column;
     }
 }
 
@@ -382,28 +315,4 @@ body{
     .container{
         width:350px;
     }
-    .container .signUp-form .input-container:nth-child(1){
-        grid-column: 1/-1;
-    }
-    .container .signUp-form .input-container:nth-child(2){
-        grid-column: 1/-1;
-    }
-    .container .signUp-form .input-container:nth-child(4){
-        grid-column: 1/-1;
-    }
-    .container .signUp-form .input-container:nth-child(5){
-        grid-column: 1/-1;
-    }
-    .container .signUp-form .input-container:last-child{
-        grid-column: 1/-1;
-    }
-    
-    .form-inputs .login-inputs-container{
-        width:100%;
-    }
-
-    .err-wrapper{
-        flex-direction:column;
-    }
 }
-

@@ -921,23 +921,79 @@
     background:rgb(84, 84, 84);
 }
 
-
-/* icons */
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+/* logout modal */
+.logout-modal{
+    position:absolute;
+    width:450px;
+    top:-200%;
+    left:50%;
+    background:#fff;
+    transform:translate(-50%);
+    box-shadow: 0px 0px 100px 1px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+    overflow: hidden;
+    transition:0.4s ease-out;
 }
 
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+.logout-modal.active{
+    top:35%;
 }
+
+.logout-modal .content{
+    padding:15px 10px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.logout-modal .content h3{
+    text-transform: capitalize;
+    font-family:'Radio Canada', sans-serif;
+}
+
+.logout-modal .content p{
+    font-family:'Radio Canada', sans-serif;
+    color:rgba(0, 0, 0, 0.634);
+    
+}
+
+.logout-modal .btns{
+    background:rgb(191, 191, 191);
+    width:100%;
+    padding:5px 10px;
+    text-align:right;
+}
+
+.logout-modal button{
+    padding:10px 18px;
+    border-radius:5px;
+    border:none;
+    outline:none;
+    cursor:pointer;
+    color:#fff;
+    font-family:'Radio Canada', sans-serif;
+    transition:background-color 0.15s ease-in-out;
+}
+
+.logout-modal .cancel-btn{
+    background:none;
+}
+
+.logout-modal .cancel-btn:hover{
+    background:#cdcdcd;
+}
+
+.logout-modal .logout-btn{
+    background:rgb(252, 50, 50);
+}
+
+.logout-modal .logout-btn:hover{
+    background:rgb(213, 45, 45);
+}
+
 
 /* media queries */
 
@@ -1414,6 +1470,17 @@
         font-size: 0.8rem;
       }
 
+      .logout-modal{
+        width:85% !important;
+      }
+
+      .logout-modal .content h3{
+        font-size:1rem;
+      }
+
+      .logout-modal .content p{
+        font-size:0.9rem;
+      }
 }
 
 @media screen and (max-width: 420px) {
@@ -1534,8 +1601,8 @@
         padding:5px;
     }
     .container .store-infos{
-        -ms-flex-preferred-size:60%;
-            flex-basis:60%;
+        -ms-flex-preferred-size:100%;
+            flex-basis:100%;
     }
 
     .container .content .store-profile{
@@ -1560,6 +1627,13 @@
             -ms-flex-align:center;
                 align-items:center;
                 gap:5px;
+    }
+    .content .store-profile .store-informations .store-profile-icon{
+        display:none;
+    }
+
+    .content .store-profile .store-informations .store-profile-icon{
+        display:none;
     }
 
     .content .store-profile .store-purchased-ticket-sc{
@@ -1647,4 +1721,15 @@
         font-size: 0.8rem;
       }
 
+      .logout-modal{
+        width:90% !important;
+      }
+
+      .logout-modal .content h3{
+        font-size:1rem;
+      }
+
+      .logout-modal .content p{
+        font-size:0.9rem;
+      }
 }

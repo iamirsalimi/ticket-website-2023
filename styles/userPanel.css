@@ -1032,7 +1032,7 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 0 10px;
+    padding: 0 20px;
     width:55%;
 }
 
@@ -1096,6 +1096,10 @@
     transition:0.15s ease-out;
 }
 
+.user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count .increase-icon{
+    margin-left:-15px;
+}
+
 .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-delete:hover,
 .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count .ticket-count-icon:hover{
     background:rgba(217, 217, 217, 0.393);
@@ -1140,6 +1144,79 @@
 .content .user-profile .user-purchased-ticket-sc table tr:nth-child(even),
 .content .user-purchased-tickets table tr:nth-child(even){
     background:rgb(225, 225, 225);
+}
+
+/* logout modal */
+.logout-modal{
+    position:absolute;
+    width:450px;
+    top:-200%;
+    left:50%;
+    background:#fff;
+    transform:translate(-50%);
+    box-shadow: 0px 0px 100px 1px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+    overflow: hidden;
+    transition:0.4s ease-out;
+}
+
+.logout-modal.active{
+    top:35%;
+}
+
+.logout-modal .content{
+    padding:15px 10px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.logout-modal .content h3{
+    text-transform: capitalize;
+    font-family:'Radio Canada', sans-serif;
+}
+
+.logout-modal .content p{
+    font-family:'Radio Canada', sans-serif;
+    color:rgba(0, 0, 0, 0.634);
+    
+}
+
+.logout-modal .btns{
+    background:rgb(191, 191, 191);
+    width:100%;
+    padding:5px 10px;
+    text-align:right;
+}
+
+.logout-modal button{
+    padding:10px 18px;
+    border-radius:5px;
+    border:none;
+    outline:none;
+    cursor:pointer;
+    color:#fff;
+    font-family:'Radio Canada', sans-serif;
+    transition:background-color 0.15s ease-in-out;
+}
+
+.logout-modal .cancel-btn{
+    background:none;
+}
+
+.logout-modal .cancel-btn:hover{
+    background:#cdcdcd;
+}
+
+.logout-modal .logout-btn{
+    background:rgb(252, 50, 50);
+}
+
+.logout-modal .logout-btn:hover{
+    background:rgb(213, 45, 45);
 }
 
 /* media queries */
@@ -1593,6 +1670,9 @@
         font-size: 0.8rem;
       }
 
+      .logout-modal{
+        width:370px;
+      }
 }
 
 @media screen and (max-width: 400px) {
@@ -1704,6 +1784,8 @@
             -ms-flex-align:start;
                 align-items:start;
         font-size:0.8rem;
+        gap:2px;
+        padding:5px;
     }
     .container .user-infos{
         -ms-flex-preferred-size:60%;
@@ -1824,6 +1906,14 @@
         width: 20%;
     }
 
+    .user-shopping-cart .user-shopping-cart-content .right-content .btns button{  
+        width: 100%;
+    }
+
+    .user-shopping-cart .user-shopping-cart-content .right-content .btns a{  
+        width: 50%;
+    }
+
     .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count .ticket-count-icon , 
     .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-delete{
         background-color:rgba(230, 229, 229, 0.296);
@@ -1861,11 +1951,316 @@
       
       .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-details .ticket-count-sec{
         width:100%;
+        padding:0px 5px;
       }
       .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-details .ticket-date{
         width:60%;
       }
       .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count{
         gap:10px;
+      }
+
+      .logout-modal{
+        width:85% !important;
+      }
+
+      .logout-modal .content h3{
+        font-size:1rem;
+      }
+
+      .logout-modal .content p{
+        font-size:0.9rem;
+      }
+}
+
+@media screen and (max-width: 335px) {
+    .container{
+        -webkit-box-orient:vertical;
+        -webkit-box-direction:reverse;
+            -ms-flex-direction:column-reverse;
+                flex-direction:column-reverse;
+    }
+    
+    .content .user-profile .user-purchased-ticket-sc table tbody td{
+        font-size:0.6rem;
+    }
+
+    .content .user-profile .user-purchased-ticket-sc table thead th{
+        font-size:0.75rem;
+    }
+    
+    .content .user-purchased-tickets {
+        overflow:auto;
+    }
+
+    .content .user-purchased-tickets table thead th{
+        font-size:0.75rem;
+    }
+    .content .user-purchased-tickets table tbody td{
+        font-size:0.5rem;
+    }
+
+    .content .user-purchased-tickets table tbody td .show-ticket-btn{
+        padding:2.5px;
+    }
+
+    .container .content{
+        margin:0 auto;
+    }
+
+    .container .userPanel-menu{
+        height:-webkit-fit-content;
+        height:-moz-fit-content;
+        height:fit-content;
+        width:100%;
+        min-width:unset;
+    }
+
+    .container .userPanel-menu ul{
+        -webkit-box-orient:horizontal;
+        -webkit-box-direction:normal;
+            -ms-flex-direction:row;
+                flex-direction:row;
+    }
+
+    .container .userPanel-menu ul .top-menu{
+        -webkit-box-orient:horizontal;
+        -webkit-box-direction:normal;
+            -ms-flex-direction:row;
+                flex-direction:row;
+        -webkit-box-pack: space-evenly;
+            -ms-flex-pack: space-evenly;
+                justify-content: space-evenly;
+        width:100%;
+    }
+
+    .container .userPanel-menu ul .bottom-menu{
+        border:none;
+        width:-webkit-fit-content;
+        width:-moz-fit-content;
+        width:fit-content;
+    }
+
+    .container .userPanel-menu ul li{
+        width:-webkit-fit-content;
+        width:-moz-fit-content;
+        width:fit-content;
+    }
+
+    .user-profile .user-informations-inputs{
+        display:-webkit-box;
+        display:-ms-flexbox;
+        display:flex;
+        -webkit-box-orient:vertical;
+        -webkit-box-direction:normal;
+            -ms-flex-direction:column;
+                flex-direction:column;
+        gap:10px;
+    }
+
+    .user-change-informations .user-informations-inputs .inputs{
+        -ms-grid-rows:repeat(4,1fr);
+        grid-template-rows:repeat(4,1fr);
+        margin-top:-30px;
+    }
+
+    .content .user-purchased-tickets table thead th{
+        font-size:0.75rem;
+    }
+    .content .user-purchased-tickets table tbody td{
+        font-size:0.5rem;
+    }
+
+    .content .user-profile .user-informations .user-info{
+        -webkit-box-orient:horizontal;
+        -webkit-box-direction:normal;
+            -ms-flex-direction:column;
+                flex-direction:column;
+        -ms-flex-wrap:wrap;
+            flex-wrap:wrap;
+        -webkit-box-align:start;
+            -ms-flex-align:start;
+                align-items:start;
+        font-size:0.8rem;
+        padding:5px;
+    }
+    .container .user-infos{
+        -ms-flex-preferred-size:90%;
+            flex-basis:90%;
+    }
+
+    .container .content .user-profile{
+        -ms-grid-rows:175px 175px 1fr;
+        grid-template-rows:175px 175px 1fr;
+    }
+
+    .container .content .user-profile .user-change-informations{
+        grid-column:1/-1;
+        grid-row:3/-1;
+    }
+
+    .content .user-profile .user-informations .user-profile-icon{
+        display:none;
+    }
+
+    .content .user-profile .user-informations{
+        grid-column:1/-1;
+        -ms-grid-row:1;
+        -ms-grid-row-span:1;
+        grid-row:1/2;
+        -webkit-box-orient:horizontal;
+        -webkit-box-direction:normal;
+            -ms-flex-direction:row;
+                flex-direction:row;
+        -webkit-box-align:center;
+            -ms-flex-align:center;
+                align-items:center;
+        padding: 5px 10px;
+    }
+
+    .user-shopping-cart .user-shopping-cart-content .right-content .btns{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
+        -webkit-box-align:start;
+            -ms-flex-align:start;
+                align-items:start;
+        gap:10px;
+    }
+
+    .content .user-profile .user-purchased-ticket-sc{
+        grid-column:1/-1;
+        -ms-grid-row:2;
+        -ms-grid-row-span:1;
+        grid-row:2/3;
+    }
+
+    .user-profile .user-informations-inputs .tips .tip{
+        font-size:0.75rem;
+    }
+
+    .user-profile .user-informations-inputs .tips{
+        margin-top:-20px;
+    }
+
+    .user-change-informations .user-informations-inputs .inputs .input{
+        grid-column:1/-1;
+    }
+
+    .container .userPanel-menu ul li p{
+        display:block;
+        font-size:0.8rem;
+    }
+
+    .container .userPanel-menu ul .log-out p{
+        display:none;
+    }
+
+    .container .userPanel-menu ul li{
+        display:-webkit-box;
+        display:-ms-flexbox;
+        display:flex;
+        -webkit-box-orient:vertical;
+        -webkit-box-direction:normal;
+            -ms-flex-direction:column;
+                flex-direction:column;
+        -webkit-box-pack:center;
+            -ms-flex-pack:center;
+                justify-content:center;
+        -webkit-box-align:center;
+            -ms-flex-align:center;
+                align-items:center;
+    }
+
+    .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-titles {  
+        width: 100%;
+    }
+
+    .user-shopping-cart .user-shopping-cart-content .right-content .btns button{  
+        width: 100%;
+    }
+
+    .user-shopping-cart .user-shopping-cart-content .right-content .btns a{  
+        width: 50%;
+    }
+
+    .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-details {  
+        width: 100%;
+        margin-top: -10px;
+    }
+    .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail {  
+        -webkit-box-orient:vertical;  
+        -webkit-box-direction:normal;  
+            -ms-flex-direction:column;  
+                flex-direction:column;
+        font-size: 0.8rem;
+        gap:5px;
+    }
+
+    .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count {
+        gap: 2px;
+        width: 20%;
+    }
+
+    .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count .ticket-count-icon , 
+    .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-delete{
+        background-color:rgba(230, 229, 229, 0.296);
+    }
+
+    .container .userPanel-menu ul li{
+        text-align:center;
+    }
+
+    .user-profile .user-change-informations .modal{
+        font-size: 1rem;
+    }
+
+    .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-date {
+        -webkit-box-align: end;
+            -ms-flex-align: end;
+                align-items: flex-end;
+        font-size: 0.8rem;
+      }
+
+      .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-details{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: start;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: start;
+        gap: 10px;
+        padding-bottom:0;
+      }
+      
+      .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-details .ticket-count-sec{
+        width:100%;
+        padding:0px 5px;
+      }
+      .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-details .ticket-date{
+        width:60%;
+      }
+      .user-shopping-cart .user-shopping-cart-content .right-content .cart-detail .ticket-count{
+        gap:10px;
+      }
+      
+      .logout-modal{
+        width:90% !important;
+      }
+
+      .logout-modal .content h3{
+        font-size:1rem;
+      }
+
+      .logout-modal .content p{
+        font-size:0.9rem;
       }
 }

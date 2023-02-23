@@ -10,8 +10,6 @@ let passInput = document.querySelector('.pass-input input')
 let rShowPassIcon = document.querySelector('.repeat-pass-input .show-pass-icon')
 let rHidePassIcon = document.querySelector('.repeat-pass-input .hide-pass-icon')
 let rPassInput = document.querySelector('.repeat-pass-input input')
-let closeModalBtn = $.querySelector('.close-btn')
-let modal = $.querySelector('.modal') 
 let formTarget , passTarget
 
 function clearSpace(event){
@@ -66,11 +64,6 @@ signUpInputElems[5].addEventListener('keyup',function(event){
         signUpInputElems[4].classList.remove('invalid')
         signUpInputElems[5].parentNode.querySelector('p').classList.remove('show-err')
     }
-})
-
-// close Modal
-closeModalBtn.addEventListener('click', function(){
-    modal.classList.remove('active')
 })
 
 // show pass

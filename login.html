@@ -27,6 +27,9 @@
             <div class="form-title">
                 <h4>Enter your details below</h4>
             </div>
+            <ul class="err-wrapper">
+                <li>username is wrong</li>
+            </ul>
             <div class="form-inputs">
                 <div class="login-inputs-container">
                     <div class="input-container">
@@ -35,7 +38,7 @@
                         <p class="show-err"></p>
                     </div>
                     <div class="input-container">
-                        <input type="password" class="password-input" required  maxlength="12">
+                        <input type="password" class="password-input" required  minlength="8"  maxlength="16">
                         <span class="input-ph">password</span>
                         <p class="show-err"></p>
                         <div class="show-pass-icons">
@@ -54,6 +57,16 @@
         </form>
 
     </div>
+
+    <div class="modal active">
+        <div class="content-container">
+            <p class="content">
+                Dear <span class="username-info user-info">test</span> , please go to your E-mail <span class="user-email-info user-info">test@gmail.com</span> Inbox and click on received activation link to confirm and complete  the registration <span class="user-note">( Note : Check Your spam folder )</span> 
+            </p>
+            <button class="close-btn">&times;</button>
+        </div>
+    </div>
+
     <script src="js/login.js"></script>
 </body>
 </html>

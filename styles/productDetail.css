@@ -16,7 +16,7 @@ body{
     color:rgb(63, 0, 126);
     position:absolute;
     width:100%;
-    top:50px;
+    top:10px;
     text-align: center;
     font-family: 'Vollkorn SC', serif;
 }
@@ -174,6 +174,17 @@ body{
     text-align:center;
 }
 
+.content .ticket-btns{
+    display:flex;
+    flex-direction:column-reverse;
+    gap:10px;
+}
+
+.content .ticket-btns button{
+    width:100%;
+    margin-top:10px;
+}
+
 .content .ticket-btns .added-txt{
     background:rgba(205, 169, 255, 0.471);
     color:rgb(53, 0, 106);
@@ -189,16 +200,6 @@ body{
     fill:rgb(53, 0, 106);
     width:1.25rem;
     height:1.25rem;
-}
-
-/* icon  */
-
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
 }
 
 /* media queries */
