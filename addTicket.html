@@ -28,27 +28,24 @@
                     </div>
                     <div class="input">
                         <span class="input-title" >Ticket Price</span>
-                        <input type="number" name="ticket-price"
+                        <input type="number" name="ticket-price" class="ticket-price" min="1">
                         <p></p>
                     </div>
                     <div class="input">
                         <span class="input-title" >Ticket's Provider UserName</span>
                         <input type="text" name="ticket-store-username" class="ticket-input" >
-                        <p style="display:none;">Provider username not found</p>
                     </div>
                     <div class="input">
                         <span class="input-title" >Ticket Start Date</span>
                         <input type="date" name="ticket-start-date" class="ticket-input">
-                        <p style="display:none">Date is Invalid</p>
                     </div>
                     <div class="input">
                         <span class="input-title" >Ticket Start Hour</span>
                         <input type="time" name="ticket-start-date" class="ticket-input">
-                        <p style="display:none">Date is Invalid</p>
                     </div>
                     <div class="input capacity">
                         <span class="input-title " >Ticket Capacity</span>
-                        <input type="number" name="ticket-capacity ticket-input" class="ticket-capacity" min="0" > 
+                        <input type="number" name="ticket-capacity ticket-input" class="ticket-capacity" min="-1"> 
                         <p></p>
                     </div>
                     <div class="input">
@@ -57,12 +54,11 @@
                     </div>
                 </div>
                 <input type="submit" value="Add ticket" data-modalTarget="add-store-modal" class="addTicket-btn">
+                <ul class="err-wrapper">
+                    <li>provider username not found</li>
+                    <li>ticket date is invalid</li>
+                </ul>
             </form>
-            <div class="modal">
-                <div class="success">
-                    <p>Ticket Added</p>
-                </div>
-            </div>
         </div>
     </div>
     <script src="js/addTicket.js"></script>

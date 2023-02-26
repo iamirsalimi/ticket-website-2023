@@ -209,7 +209,7 @@ body{
     width:-moz-fit-content;
     width:fit-content;
     border:none;
-    margin:0 auto;
+    margin:25px auto 0;
     cursor:pointer;
     border-radius:25px;
     color:#fff;
@@ -289,6 +289,20 @@ body{
     cursor:pointer;
 }
 
+.input-container .forgot-pass{
+    color:#4800ef;
+    position:absolute;
+    right:0;
+    bottom:-25px;
+    font-family:'Fredoka One', cursive;
+    text-decoration:none;
+    transition:color 0.15s ease-in-out;
+}
+
+.input-container .forgot-pass:hover{
+    color:#6a2aff;
+}
+
 .input-container .show-pass-icons .icon-wrapper svg{
     fill:#747474;
     width:1.5rem;
@@ -319,8 +333,8 @@ body{
     left:50%;
     width:80%;
     transform:translate(-50%,-50%);
-    background:rgb(128, 246, 128);
-    color:#fefefe;
+    background:#f3f3f3;
+    color:green;
     padding:12px 24px;
     font-size:1.25rem;
     border-radius: 12px;
@@ -350,8 +364,13 @@ body{
 }
 
 .modal .user-info{
-    color:rgb(27, 133, 27);
+    color:rgb(100, 210, 100);
     font-weight:800;
+    word-wrap: break-word;
+}
+
+.modal .user-info:nth-child(2){
+    display:block;
 }
 
 .modal .user-note{
@@ -364,7 +383,7 @@ body{
     background:none;
     border:none;
     outline:none;
-    color:#fff;
+    color:#294423;
     cursor:pointer;
     transition: color -0.2s;
     position:absolute;
@@ -376,7 +395,7 @@ body{
 }
 
 .modal .close-btn:hover{
-    color:#ececec;
+    color:#61915a;
 }
 
 

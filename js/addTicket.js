@@ -6,11 +6,13 @@ let addStoreBtn = $.querySelector('.addTicket-btn')
 
 function validateInputs(event){
     let targetErr = event.target.parentNode.lastElementChild
-    if(capacityInput.value === '' || priceInput.value === ''){
-        targetErr.innerHTML = 'please Enter a valid number'
-        targetErr.parentNode.classList.add('invalid')
-        addStoreBtn.setAttribute('disabled', 'disabled')
-        return true
+    if(isNaN(event.target.value) || event.target.value <= 0){
+        if(event.target.value !== '-1'){
+            targetErr.innerHTML = 'please Enter a valid number'
+            targetErr.parentNode.classList.add('invalid')
+            addStoreBtn.setAttribute('disabled', 'disabled')
+            return true
+        }
     }
     
     addStoreBtn.removeAttribute('disabled')
