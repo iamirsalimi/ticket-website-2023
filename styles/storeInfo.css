@@ -873,6 +873,20 @@ body{
     background:rgb(213, 45, 45);
 }
 
+/* errors */
+.err-wrapper{
+    color:rgb(255, 36, 36);
+    list-style: none;
+    text-align:center;
+    display:flex;
+    justify-content: center;
+    flex-direction:column;
+    gap:10px;
+    margin-top:15px;
+    font-family:'Fredoka One', cursive;
+}
+
+
 /* media  queries*/
 @media (max-width : 1120px){
     .edit-store-form{
