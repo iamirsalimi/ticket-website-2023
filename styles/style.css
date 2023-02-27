@@ -1163,7 +1163,7 @@ footer{
         -ms-flex-align:center;
             align-items:center;
     gap:40px;
-    padding:40px 0;
+    padding:40px 0 50px;
 }
 
 footer .footer-desc{
@@ -1237,19 +1237,9 @@ footer .copy-write{
     color:#fff;
     text-align:center;
     font-family:'Fredoka One', cursive;
-    font-size:1.25rem;
+    font-size:1rem;
+    padding:0 10px;
 }
-/* icons */
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48;
-  color:#1d004b;
-  font-size:2rem;
-}
-
 
 /*animations */
 
@@ -1441,6 +1431,9 @@ footer .copy-write{
             -ms-flex-align:center;
                 align-items:center;
     }
+    footer .copy-write{
+        font-size:1.25rem;
+    }
     footer{
         background:#18003d;
         height:-webkit-fit-content;
@@ -1608,6 +1601,9 @@ footer .copy-write{
     }
     footer .footer-desc .desc{
         width:60%;
+    }
+    footer .copy-write{
+        font-size:1.25rem;
     }
     footer{
         background:#18003d;
@@ -1785,6 +1781,9 @@ footer .copy-write{
     footer .footer-desc .desc{
         width:60%;
     }
+    footer .copy-write{
+        font-size:1.25rem;
+    }
     footer{
         background:#18003d;
         height:200px;
@@ -1961,6 +1960,9 @@ footer .copy-write{
     }
     footer .footer-desc .desc{
         width:60%;
+    }
+    footer .copy-write{
+        font-size:1.25rem;
     }
     footer{
         background:#18003d;
