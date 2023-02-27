@@ -1,3 +1,4 @@
+@import './fonts.css';
 
 *{
     margin:0;
@@ -84,19 +85,6 @@ body{
     position:relative;
 }
 
-.add-content .modal{
-    display:none;
-    text-align:center;
-    font-size:1rem;
-    border-radius:10px;
-    background:red;
-    font-family: 'Titillium Web', sans-serif;
-    color:#f2eaff;
-}
-
-.add-content .modal ul {
-    list-style:none;
-}
 .add-content form .input input{
     width:100%;
     font-size:1.2rem;
@@ -118,12 +106,6 @@ body{
     right:5px;
     top:5px;
     cursor:pointer;
-}
-
-.add-content  form .input .show-pass .material-symbols-outlined{
-    color:#6600ff;
-    display:inline-block;
-    pointer-events: none;
 }
 
 .add-content form .input textarea{
