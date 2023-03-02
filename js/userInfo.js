@@ -18,12 +18,6 @@ let deleteUserModal = $.querySelector('.delete-modal')
 let deleteUserCancelBtn = $.querySelector('.delete-modal .cancel-btn')
 let formTarget , passTarget
 
-window.addEventListener('load',function(){
-    signUpInputElems.forEach(function(signUpInputElem){
-        signUpInputElem.value = ''
-    })
-})
-
 function clearSpace(event){
     event.target.value = event.target.value.trim()
 }
@@ -66,6 +60,9 @@ addTicketToUserBtn.addEventListener('click',function(event){
     event.preventDefault()
     if(ticketInput.value.trim()){
         editTicketModal.classList.add('active')
+    } else {
+        let ulElem =  ticketInput.parentNode.parentNode.parentNode.querySelector('.err-wrapper')
+        ulElem.insertAdjacentHTML('beforeend',`<li>Please enter ticket id</li>`)
     }
 })
 
