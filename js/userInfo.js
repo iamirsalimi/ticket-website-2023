@@ -68,7 +68,8 @@ closeEditModalBtn.addEventListener('click',function(){
 })
 
 // show and hide logout modal
-deleteUserBtn.addEventListener('click',function(){
+deleteUserBtn.addEventListener('click',function(event){
+    event.preventDefault()
     deleteUserModal.classList.add('active')
 })
 
