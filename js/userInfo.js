@@ -60,9 +60,6 @@ addTicketToUserBtn.addEventListener('click',function(event){
     event.preventDefault()
     if(ticketInput.value.trim()){
         editTicketModal.classList.add('active')
-    } else {
-        let ulElem =  ticketInput.parentNode.parentNode.parentNode.querySelector('.err-wrapper')
-        ulElem.insertAdjacentHTML('beforeend',`<li>Please enter ticket id</li>`)
     }
 })
 

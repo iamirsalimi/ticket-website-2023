@@ -1132,6 +1132,13 @@ body{
     font-size:1rem;
 }
 
+.modal-add-ticket-details .ticket-info{
+    text-align:center;
+    font-size:2rem;
+    color:#4700b1;
+    font-family: 'Merienda', cursive;
+}
+
 .modal-add-ticket-details .add-ticket-btns button{
     padding:12px 24px;
     border-radius:8px;
